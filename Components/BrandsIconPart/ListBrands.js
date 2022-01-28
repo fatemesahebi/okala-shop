@@ -1,0 +1,37 @@
+import React,{Component} from "react";
+import {Stack} from "@mui/material";
+import CreateBrand from "./CreateBrand";
+
+
+const brandsData = [
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FBrand%2F177235&w=64&q=75", among:"|"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FBrand%2F178004&w=64&q=75", among:"|"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FBrand%2F177253&w=64&q=75", among:"|"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FBrand%2F201484&w=64&q=75", among:"|"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FBrand%2F165276&w=64&q=75", among:"|"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FBrand%2F178004&w=64&q=75", among:"|"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FBrand%2F178004&w=64&q=75", among:"|"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FBrand%2F165206&w=64&q=75", among:"|"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FBrand%2F201484&w=64&q=75", among:"|"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FBrand%2F165276&w=64&q=75", among:"|"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FBrand%2F177235&w=64&q=75", among:"|"},
+
+
+
+]
+function ListBrands(){
+    return(
+        <div style={{ width: '100%' }}>
+            <Stack
+                p={2}
+                direction="row-reverse"
+                onScroll="swipe"
+                spacing={{ xs: 9, sm: 9, md: 9 }}
+            >
+                {brandsData.map((item,index) => (<CreateBrand key={index} imageBrand={item.image} amongs={item.among}/> ))}
+            </Stack>
+
+        </div>
+    )
+}
+export default ListBrands;
