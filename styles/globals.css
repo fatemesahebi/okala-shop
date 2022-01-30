@@ -19,3 +19,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.swpier-button-disabled {
+  opacity: 0 !important;
+}
