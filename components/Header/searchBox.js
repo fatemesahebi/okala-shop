@@ -18,10 +18,20 @@ import {styled} from "@mui/system";
 
 function SearchBox() {
     return (
-        <Box sx={{display:'flex',flexDirection:'row',alignItems:'center',width:'800px',height:'60px',border:'1px solid #c2b9b9ba',padding:'0px 15px',borderRadius:'10px'}}>
+        <Box sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            width: '820px',
+            height: '55px',
+            border: '1px solid #c2b9b9ba',
+            marginLeft:'70px',
+            padding: '0px 15px',
+            borderRadius: '10px'
+        }}>
             <Image src={searchSvg}/>
             <Input disableUnderline
-                   placeholder={'جستجو در محصولات اکالا'} sx={{fontSize: '14px',paddingRight:'10px'}}/>
+                   placeholder={'جستجو در محصولات اکالا'} sx={{fontSize: '14px', paddingRight: '10px'}}/>
 
 
         </Box>

@@ -5,7 +5,7 @@ import {Box, Button, IconButton} from "@mui/material";
 import profileSvg from './../../public/SVG/profile.svg'
 import shopBascket from './../../public/SVG/shopBascket.svg'
 import {styled} from "@mui/system";
-
+import ShoppingCard from './shoppingCard'
 const IconHeader = styled('div')(
     () => `
                     height: 56px;
@@ -20,15 +20,16 @@ const IconHeader = styled('div')(
 
 function HeaderDesktop() {
     return (
-        <Box sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',padding:'10px 40px'}}>
+        <Box sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between',position:'relative', alignItems: 'center',padding:'20px 40px'}}>
             <Image src={okalaLogo2} alt={"فروشگاه اکالا"}/>
             <SearchBox/>
-            <Box sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',columnGap:'10px'}}>
+            <Box sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',columnGap:'18px'}}>
                 <IconHeader sx={{
                     backgroundColor: 'lightGray.dark',
                 }}><Image src={profileSvg}/></IconHeader>
                 <IconHeader sx={{backgroundColor: 'aqua.light'}}><Image src={shopBascket}/></IconHeader>
             </Box>
+            <ShoppingCard/>
         </Box>
     )
 }
