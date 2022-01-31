@@ -95,39 +95,6 @@ const DailyOffer = () => {
                                 <SingleProduct key="1" product={productData[0]}/>
                             </SwiperSlide>
                         ))}
-                        {/*<SwiperSlide>*/}
-                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
-                        {/*</SwiperSlide>*/}
-                        {/*<SwiperSlide>*/}
-                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
-                        {/*</SwiperSlide>*/}
-                        {/*<SwiperSlide>*/}
-                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
-                        {/*</SwiperSlide>*/}
-                        {/*<SwiperSlide>*/}
-                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
-                        {/*</SwiperSlide>*/}
-                        {/*<SwiperSlide>*/}
-                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
-                        {/*</SwiperSlide>*/}
-                        {/*<SwiperSlide>*/}
-                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
-                        {/*</SwiperSlide>*/}
-                        {/*<SwiperSlide>*/}
-                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
-                        {/*</SwiperSlide>*/}
-                        {/*<SwiperSlide>*/}
-                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
-                        {/*</SwiperSlide>*/}
-                        {/*<SwiperSlide>*/}
-                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
-                        {/*</SwiperSlide>*/}
-                        {/*<SwiperSlide>*/}
-                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
-                        {/*</SwiperSlide>*/}
-                        {/*<SwiperSlide>*/}
-                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
-                        {/*</SwiperSlide>*/}
                     </Swiper>
                     <Box component={"div"} sx={{
                         ":active,:hover": {
