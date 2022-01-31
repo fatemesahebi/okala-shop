@@ -26,7 +26,7 @@ const ShoppingCard = ({open,setOpen}) => {
             color: 'black',
             height: '100vh',
             transition:'translateX 10s linear',
-            background: 'white'
+            background: 'white',
             // -webkitTapHighlightColor: "transparent",
         }}>
             <Box sx={{
