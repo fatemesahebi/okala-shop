@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import { Box, Typography} from "@mui/material";
+import ListBrands from "./../Components/BrandsIconPart/ListBrands"
 import {
     getBrandProducts,
 } from "../lib/axios/getData";
@@ -14,7 +15,7 @@ const Home = () => {
     return (<div>
         <Typography  sx={{backgroundColor:'darkGray.main'}} variant={"subtitle1"}>تایید</Typography>
         <Box sx={{backgroundColor:'red.main',color:'aqua.main',}}>نبیبتب</Box>
-
+        <ListBrands/>
     </div>)
 
 };
