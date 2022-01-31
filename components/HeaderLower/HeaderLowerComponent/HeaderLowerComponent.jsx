@@ -1,12 +1,23 @@
 import {Box, Typography} from "@mui/material"
+import Image from "next/image"
 
- const HeaderLowerComponent = () => {
+ const HeaderLowerComponent = ({children , icon}) => {
     return (
-        <Box>
+        <Box sx={{
+            display: "inline-flex",
+            gap: "5px",
+            alignContent: "center",
+            alignItems: "center",
+            padding: "0 10px !important"
+        }}>
             <Box>
+                <Image height="18px" width="18px" src={icon}/>
             </Box>
-            <Typography>
-
+            <Typography sx={{
+                fontSize: "12px",
+                fontWeight: "bold"
+            }}>
+                {children}
             </Typography>
         </Box>
     )
