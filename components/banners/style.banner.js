@@ -7,8 +7,6 @@ export const useStyles = makeStyles((theme) => ({
             borderRadisus: '12px',
             maxWidth: '100%',
             height: 'auto'
-
-
         }
     }
 }))
