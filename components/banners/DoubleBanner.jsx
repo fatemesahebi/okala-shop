@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box, Grid} from '@mui/material'
-import {useStyles} from '../../../okala/styles/style.banner'
+import {useStyles} from '../banners/style.banner'
 
 const DoubleBanner = () => {
     const classes = useStyles()
