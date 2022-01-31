@@ -7,8 +7,9 @@ body {
   margin: 0;
   font-size: 1.6rem;
   font-weight: 400;
-  /*font-family: IRANSans, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,*/
-    /*Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;*/
+  direction: rtl;
+  font-family: IRANSans, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
 }
 
 a {

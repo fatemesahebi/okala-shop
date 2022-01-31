@@ -14,6 +14,11 @@ const theme = createTheme({
         MuiCssBaseline: {
             styleOverrides:
                 {
+                    body:{
+                        fontWeight: 400,
+                        fontsize:14,
+                    }
+                    ,
                     "@font-face": {
                         fontFamily: "iranSans",
                         fontStyle: "normal",
@@ -53,11 +58,7 @@ const theme = createTheme({
     typography: {
         fontFamily: "iranSans",
     },
-    body:{
-        fontWeight: 400,
-        fontsize:14,
-    }
-    , palette: {
+     palette: {
         white:{
             main : '#FFFFFF',
         } ,
@@ -68,7 +69,10 @@ const theme = createTheme({
             main:'#f01436',
         },
         aqua:{
+            light:'rgba(208,243,245,0.8)',
             main:'#02a0a4',
+            dark:'rgba(176, 222, 224, 1)',
+
         },
         lightGray:{
             light:'#F8F8F8',

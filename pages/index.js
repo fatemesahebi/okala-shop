@@ -3,7 +3,7 @@ import { Box, Typography} from "@mui/material";
 import {
     getBrandProducts,
 } from "../lib/axios/getData";
-
+import HomePage from "../HomePage/homePage";
 const Home = () => {
     const [data, setData] = useState([])
     useEffect(() => {
@@ -12,9 +12,9 @@ const Home = () => {
         catch(res => alert(res.status))
     }, [])
     return (<div>
-        <Typography  sx={{backgroundColor:'darkGray.main'}} variant={"subtitle1"}>تایید</Typography>
-        <Box sx={{backgroundColor:'red.main',color:'aqua.main',}}>نبیبتب</Box>
-
+        {/*<Typography  sx={{backgroundColor:'darkGray.main'}} variant={"subtitle1"}>تایید</Typography>*/}
+        {/*<Box sx={{backgroundColor:'red.main',color:'aqua.main',}}>نبیبتب</Box>*/}
+<HomePage/>
     </div>)
 
 };
