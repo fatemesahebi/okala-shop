@@ -90,42 +90,44 @@ const DailyOffer = () => {
                         scrollBehavior: "smooth",
                         margin: "0 !important"
                     }} ref={parentRef} direction={'horizontal'} navigation={{nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}} slidesPerView={pageWidth>=1532?4.5:pageWidth>=1200?3.7:3.2}  spaceBetween={5} autoplay={ {delay: 5000 , disableOnInteraction: false}}>
-                        <SwiperSlide>
-                            <SingleProduct key="1" product={productData[0]}/>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <SingleProduct key="1" product={productData[0]}/>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <SingleProduct key="1" product={productData[0]}/>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <SingleProduct key="1" product={productData[0]}/>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <SingleProduct key="1" product={productData[0]}/>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <SingleProduct key="1" product={productData[0]}/>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <SingleProduct key="1" product={productData[0]}/>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <SingleProduct key="1" product={productData[0]}/>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <SingleProduct key="1" product={productData[0]}/>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <SingleProduct key="1" product={productData[0]}/>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <SingleProduct key="1" product={productData[0]}/>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <SingleProduct key="1" product={productData[0]}/>
-                        </SwiperSlide>
+                        {[0,1,2,3,4,5].map(item => (
+                            <SwiperSlide>
+                                <SingleProduct key="1" product={productData[0]}/>
+                            </SwiperSlide>
+                        ))}
+                        {/*<SwiperSlide>*/}
+                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
+                        {/*</SwiperSlide>*/}
+                        {/*<SwiperSlide>*/}
+                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
+                        {/*</SwiperSlide>*/}
+                        {/*<SwiperSlide>*/}
+                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
+                        {/*</SwiperSlide>*/}
+                        {/*<SwiperSlide>*/}
+                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
+                        {/*</SwiperSlide>*/}
+                        {/*<SwiperSlide>*/}
+                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
+                        {/*</SwiperSlide>*/}
+                        {/*<SwiperSlide>*/}
+                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
+                        {/*</SwiperSlide>*/}
+                        {/*<SwiperSlide>*/}
+                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
+                        {/*</SwiperSlide>*/}
+                        {/*<SwiperSlide>*/}
+                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
+                        {/*</SwiperSlide>*/}
+                        {/*<SwiperSlide>*/}
+                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
+                        {/*</SwiperSlide>*/}
+                        {/*<SwiperSlide>*/}
+                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
+                        {/*</SwiperSlide>*/}
+                        {/*<SwiperSlide>*/}
+                        {/*    <SingleProduct key="1" product={productData[0]}/>*/}
+                        {/*</SwiperSlide>*/}
                     </Swiper>
                     <Box component={"div"} sx={{
                         ":active,:hover": {
