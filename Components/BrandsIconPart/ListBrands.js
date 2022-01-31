@@ -21,7 +21,7 @@ const brandsData = [
 ]
 function ListBrands(){
     return(
-        <div style={{ width: '100%' }}>
+        <div >
             <Swiper watchSlidesProgress={true} slidesPerView={9} className="mySwiper">
                 {brandsData.map((item,index) => (<SwiperSlide> <CreateBrand key={index} imageBrand={item.image} amongs={item.among}/> </SwiperSlide>))}
             </Swiper>
