@@ -3,6 +3,8 @@ import {useEffect, useRef, useState} from "react";
 import Countdown from "./Countdown/Countdown";
 import {Swiper, SwiperSlide} from "swiper/react";
 import SwiperCore, {Pagination , Autoplay, Navigation} from "swiper";
+import {productData} from "../productCard/ProductCardData";
+import SingleProduct from "../productCard/ProductCardElements";
 import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
@@ -37,7 +39,7 @@ const DailyOffer = () => {
                 maxWidth: "100vw !important",
                 margin: "0 !important",
                 boxSizing: "border-box",
-                height: "27.5rem",
+                height: "17rem !important",
                 padding: "0 !important",
                 backgroundColor: "rgba(240, 20, 54, 1)",
                 backgroundImage: "url(https://new.okala.com/static/images/siteImages/backgrounds/slidersPrimary.svg)",
@@ -49,7 +51,7 @@ const DailyOffer = () => {
                 <Countdown/>
                 <Box dir="rtl" sx={{
                     width: {
-                        xl:"1100px",
+                        xl:"1300px",
                         lg:"900px",
                         md:"800px"
                     },
@@ -61,10 +63,10 @@ const DailyOffer = () => {
                 }}  component={"div"}>
                     <Box component={"div"} sx={{
                         ":active,:hover": {
-                            backgroundColor: "white"
+                            backgroundColor: "white !important"
                         },
                         position: "relative !important",
-                        transform: "scale(-1) translateX(35px)",
+                        transform: "scale(-1) translateX(70px) ",
                         border: "1px solid rgba(0,0,0,0.3)",
                         borderRadius: "15px !important",
                         margin: "0 !important",
@@ -72,9 +74,9 @@ const DailyOffer = () => {
                         boxShadow: "-7px 5px 30px -12px rgba(0,0,0,0.7)",
                         top: "45% !important",
                         right: "0 !important",
-                        backgroundColor: "white",
-                        minWidth: "3rem !important",
-                        height: "3rem !important",
+                        backgroundColor: "white !important",
+                        minWidth: "2rem !important",
+                        height: "2rem !important",
                     }} className={"swiper-button-prev"}>
                     </Box>
                     <Swiper style={{
@@ -87,126 +89,42 @@ const DailyOffer = () => {
                         overflowX: "hidden",
                         scrollBehavior: "smooth",
                         margin: "0 !important"
-                    }} ref={parentRef} direction={'horizontal'} navigation={{nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}} slidesPerView={pageWidth>=1532?4.5:pageWidth>=1200?3.7:3.2}  spaceBetween={0} freeMode={true} autoplay={ {delay: 5000 , disableOnInteraction: false}}>
+                    }} ref={parentRef} direction={'horizontal'} navigation={{nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}} slidesPerView={pageWidth>=1532?4.5:pageWidth>=1200?3.7:3.2}  spaceBetween={5} autoplay={ {delay: 5000 , disableOnInteraction: false}}>
                         <SwiperSlide>
-                            <Box sx={{
-                                width: "200px",
-                                height: "300px",
-                                borderRadius: "5px",
-                                margin: "10px",
-                                backgroundColor: "white",
-                                userSelect: "none"
-                            }}>helfghkjfhkgdhkgfhghhhddsf</Box>
+                            <SingleProduct key="1" product={productData[0]}/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Box sx={{
-                                width: "200px",
-                                height: "300px",
-                                borderRadius: "5px",
-                                margin: "10px",
-                                backgroundColor: "white",
-                                userSelect: "none"
-                            }}>helfghkjfhkgdhkgfhghhhddsf</Box>
+                            <SingleProduct key="1" product={productData[0]}/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Box sx={{
-                                width: "200px",
-                                height: "300px",
-                                borderRadius: "5px",
-                                margin: "10px",
-                                backgroundColor: "white",
-                                userSelect: "none"
-                            }}>helfghkjfhkgdhkgfhghhhddsf</Box>
+                            <SingleProduct key="1" product={productData[0]}/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Box sx={{
-                                width: "200px",
-                                height: "300px",
-                                borderRadius: "5px",
-                                margin: "10px",
-                                backgroundColor: "white",
-                                userSelect: "none"
-                            }}>helfghkjfhkgdhkgfhghhhddsf</Box>
+                            <SingleProduct key="1" product={productData[0]}/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Box sx={{
-                                width: "200px",
-                                height: "300px",
-                                borderRadius: "5px",
-                                margin: "10px",
-                                backgroundColor: "white",
-                                userSelect: "none"
-                            }}>helfghkjfhkgdhkgfhghhhddsf</Box>
+                            <SingleProduct key="1" product={productData[0]}/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Box sx={{
-                                width: "200px",
-                                height: "300px",
-                                borderRadius: "5px",
-                                margin: "10px",
-                                backgroundColor: "white",
-                                userSelect: "none"
-                            }}>helfghkjfhkgdhkgfhghhhddsf</Box>
+                            <SingleProduct key="1" product={productData[0]}/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Box sx={{
-                                width: "200px",
-                                height: "300px",
-                                borderRadius: "5px",
-                                margin: "10px",
-                                backgroundColor: "white",
-                                userSelect: "none"
-                            }}>helfghkjfhkgdhkgfhghhhddsf</Box>
+                            <SingleProduct key="1" product={productData[0]}/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Box sx={{
-                                width: "200px",
-                                height: "300px",
-                                borderRadius: "5px",
-                                margin: "10px",
-                                backgroundColor: "white",
-                                userSelect: "none"
-                            }}>helfghkjfhkgdhkgfhghhhddsf</Box>
+                            <SingleProduct key="1" product={productData[0]}/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Box sx={{
-                                width: "200px",
-                                height: "300px",
-                                borderRadius: "5px",
-                                margin: "10px",
-                                backgroundColor: "white",
-                                userSelect: "none"
-                            }}>helfghkjfhkgdhkgfhghhhddsf</Box>
+                            <SingleProduct key="1" product={productData[0]}/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Box sx={{
-                                width: "200px",
-                                height: "300px",
-                                borderRadius: "5px",
-                                margin: "10px",
-                                backgroundColor: "white",
-                                userSelect: "none"
-                            }}>helfghkjfhkgdhkgfhghhhddsf</Box>
+                            <SingleProduct key="1" product={productData[0]}/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Box sx={{
-                                width: "200px",
-                                height: "300px",
-                                borderRadius: "5px",
-                                margin: "10px",
-                                backgroundColor: "white",
-                                userSelect: "none"
-                            }}>helfghkjfhkgdhkgfhghhhddsf</Box>
+                            <SingleProduct key="1" product={productData[0]}/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Box sx={{
-                                width: "200px",
-                                height: "300px",
-                                borderRadius: "5px",
-                                margin: "10px",
-                                backgroundColor: "white",
-                                userSelect: "none"
-                            }}>helfghkjfhkgdhkgfhghhhddsf</Box>
+                            <SingleProduct key="1" product={productData[0]}/>
                         </SwiperSlide>
                     </Swiper>
                     <Box component={"div"} sx={{
@@ -214,7 +132,7 @@ const DailyOffer = () => {
                             backgroundColor: "white"
                         },
                         position: "relative !important",
-                        transform: "scale(-1) translateX(-30px)",
+                        transform: "scale(-1) translateX(-50px)",
                         border: "1px solid rgba(0,0,0,0.3)",
                         borderRadius: "15px !important",
                         margin: "0 !important",
@@ -222,9 +140,9 @@ const DailyOffer = () => {
                         boxShadow: "7px 5px 30px -12px rgba(0,0,0,0.7)",
                         top: "45% !important",
                         left: "0 !important",
-                        backgroundColor: "white",
-                        minWidth: "3rem !important",
-                        height: "3rem !important",
+                        backgroundColor: "white !important",
+                        minWidth: "2rem !important",
+                        height: "2rem !important",
                     }} className={"swiper-button-next"}>
                     </Box>
                 </Box>

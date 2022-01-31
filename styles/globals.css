@@ -21,6 +21,10 @@ a {
   box-sizing: border-box;
 }
 
-.swpier-button-disabled {
+:root {
+  --swiper-navigation-size: 1rem !important;
+}
+
+.swiper-button-disabled {
   opacity: 0 !important;
 }
