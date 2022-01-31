@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import {Stack} from "@mui/material";
 import CreateBrand from "./CreateBrand";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 
 const brandsData = [
@@ -22,15 +23,16 @@ const brandsData = [
 function ListBrands(){
     return(
         <div style={{ width: '100%' }}>
+            <Swiper>
             <Stack
                 p={2}
                 direction="row-reverse"
                 onScroll="swipe"
                 spacing={{ xs: 9, sm: 9, md: 9 }}
             >
-                {brandsData.map((item,index) => (<CreateBrand key={index} imageBrand={item.image} amongs={item.among}/> ))}
+                {brandsData.map((item,index) => (<SwiperSlide> <CreateBrand key={index} imageBrand={item.image} amongs={item.among}/> </SwiperSlide>))}
             </Stack>
-
+            </Swiper>
         </div>
     )
 }
