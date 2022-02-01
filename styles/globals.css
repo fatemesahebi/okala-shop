@@ -5,7 +5,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-weight: 400;
   direction: rtl;
   font-family: IRANSans, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -19,4 +19,12 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --swiper-navigation-size: 0.7rem !important;
+}
+
+.swiper-button-disabled {
+  opacity: 0 !important;
 }
