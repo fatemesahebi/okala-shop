@@ -23,14 +23,12 @@ const brandsData = [
 ]
 function ListBrands(){
     return(
-        <div>
+        <div >
             {/*<Swiper watchSlidesProgress={true} slidesPerView={10.9}>*/}
             <Swiper
+                style={{width:"80%"}}
                 slidesPerView={2}
                 spaceBetween={10}
-                pagination={{
-                    clickable: true,
-                }}
                 breakpoints={{
                     300: {
                         slidesPerView: 3,
@@ -53,11 +51,11 @@ function ListBrands(){
                         spaceBetween: 40,
                     },
                     1024: {
-                        slidesPerView: 8,
+                        slidesPerView: 8.5,
                         spaceBetween: 50,
                     },
                     1400: {
-                        slidesPerView: 10,
+                        slidesPerView: 8,
                         spaceBetween: 60,
                     },
                 }}
