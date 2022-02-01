@@ -28,9 +28,6 @@ function ListBrands(){
             <Swiper
                 slidesPerView={2}
                 spaceBetween={10}
-                pagination={{
-                    clickable: true,
-                }}
                 breakpoints={{
                     300: {
                         slidesPerView: 3,
