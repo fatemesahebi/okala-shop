@@ -5,6 +5,7 @@ import SearchBox from "./Header/searchBox";
 import ShoppingCard from './Header/ShoppingCard';
 import DailyOffer from "./DailyOffer/DailyOffer";
 import DoubleBanner from './banners/DoubleBanner';
+import FourthBanner from './banners/FourthBanner';
 import ListBrands from "./BrandsIconPart/ListBrands";
 export {
     Header,
@@ -13,6 +14,7 @@ export {
     SearchBox,
     ShoppingCard,
     DailyOffer,
+    FourthBanner,
     DoubleBanner,
     ListBrands,
 }
