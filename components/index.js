@@ -8,6 +8,7 @@ import DoubleBanner from './banners/DoubleBanner';
 import FourthBanner from './banners/FourthBanner';
 import ListBrands from "./BrandsIconPart/ListBrands";
 import ListMiddleNavbar from "./middleNavbar/ListMiddleNavbar";
+import OkalaBlog from './okakaBlog/OkalaBlog'
 import {FooterContainer} from "./Footer/footer";
 export {
     Header,
@@ -20,5 +21,6 @@ export {
     DoubleBanner,
     ListBrands,
     ListMiddleNavbar,
+    OkalaBlog,
     FooterContainer
 }
