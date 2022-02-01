@@ -26,6 +26,7 @@ function ListBrands(){
         <div>
             {/*<Swiper watchSlidesProgress={true} slidesPerView={10.9}>*/}
             <Swiper
+                style={{width:"80%"}}
                 slidesPerView={2}
                 spaceBetween={10}
                 breakpoints={{
