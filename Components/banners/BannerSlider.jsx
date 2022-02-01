@@ -14,7 +14,7 @@ import Image from 'next/image'
 const BannerSlider = () => {
     return (
         <Box >
-            <Grid  container xs={12}  sx={{display: 'flex', justifyContent: 'center',justifyItems:'center'}} spacing={2} style={{width:'85vw'}}>
+            <Grid  container xs={12} spacing={2} style={{width:'85vw'}}>
                 <Grid item xs={8}>
                     <Swiper spaceBetween={2} autoplay={{
                         delay: 5000, disableOnInteraction: false,}} effect={'fade'} pagination={{clickable: true,}}  navigation={true} >
