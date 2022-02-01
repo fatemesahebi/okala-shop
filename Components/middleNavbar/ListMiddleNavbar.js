@@ -20,7 +20,7 @@ function ListMiddleNavbar(){
     return(
         <div style={{ width: '100%',fontSize:".5rem" }}>
             <Swiper
-                slidesPerView={2}
+                slidesPerView={3}
                 spaceBetween={2}
                 pagination={{
                     clickable: true,
