@@ -3,6 +3,7 @@ import { Box, Typography} from "@mui/material";
 import {
     getBrandProducts,
 } from "../lib/axios/getData";
+import HomePage from "../HomePage/homePage";
 
 const Home = () => {
     const [data, setData] = useState([])
@@ -14,7 +15,7 @@ const Home = () => {
     return (<div>
         <Typography  sx={{backgroundColor:'darkGray.main'}} variant={"subtitle1"}>تایید</Typography>
         <Box sx={{backgroundColor:'red.main',color:'aqua.main',}}>نبیبتب</Box>
-
+        <HomePage/>
     </div>)
 
 };
