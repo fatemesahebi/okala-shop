@@ -9,7 +9,7 @@ import {BottomRow} from "./bottomrow";
 
 export function FooterContainer() {
     return (
-        <footer style={{backgroundColor:'#FAFAFA',}}>
+        <footer style={{backgroundColor:'#F0F0F0',}}>
             <Box sx={{backgroundColor:' #F0F0F0', marginBottom:'.125rem'
             }} >
                 <CustomizedAccordions sx={{backgroundColor:'#F0F0F0'}}/>
