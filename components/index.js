@@ -8,6 +8,8 @@ import DailyOffer from "./DailyOffer/DailyOffer";
 import DoubleBanner from './banners/DoubleBanner';
 import FourthBanner from './banners/FourthBanner';
 import ListBrands from "./BrandsIconPart/ListBrands";
+import ListMiddleNavbar from "./middleNavbar/ListMiddleNavbar";
+import {FooterContainer} from "./Footer/footer";
 export {
     Header,
     HeaderDesktop,
@@ -19,4 +21,6 @@ export {
     FourthBanner,
     DoubleBanner,
     ListBrands,
+    ListMiddleNavbar,
+    FooterContainer
 }

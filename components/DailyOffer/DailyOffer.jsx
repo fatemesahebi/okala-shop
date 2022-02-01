@@ -40,7 +40,7 @@ const DailyOffer = () => {
                 maxWidth: "100vw !important",
                 margin: "0 !important",
                 boxSizing: "border-box",
-                height: "17rem !important",
+                height: "27.5rem !important",
                 padding: "0 !important",
                 backgroundColor: "rgba(240, 20, 54, 1)",
                 backgroundImage: "url(https://new.okala.com/static/images/siteImages/backgrounds/slidersPrimary.svg)",
@@ -52,9 +52,8 @@ const DailyOffer = () => {
                 <Countdown/>
                 <Box dir="rtl" sx={{
                     width: {
-                        xl: "45.5rem",
-                        lg: "30rem",
-                        md: "800px"
+                        xl: "70rem",
+                        lg: "47.5rem",
                     },
                     display: "flex",
                     alignItems: "center",
@@ -67,7 +66,7 @@ const DailyOffer = () => {
                             backgroundColor: "white !important"
                         },
                         position: "relative !important",
-                        transform: "scale(-1) translateX(1.5rem) ",
+                        transform: "scale(-1) translateX(2rem) ",
                         border: "1px solid rgba(0,0,0,0.3)",
                         borderRadius: "0.65rem !important",
                         margin: "0 !important",
@@ -76,8 +75,8 @@ const DailyOffer = () => {
                         top: "45% !important",
                         right: "0 !important",
                         backgroundColor: "white !important",
-                        minWidth: "2rem !important",
-                        height: "2rem !important",
+                        minWidth: "3rem !important",
+                        height: "3rem !important",
                     }} className={"swiper-button-prev"}>
                     </Box>
                     <Swiper
@@ -121,7 +120,7 @@ const DailyOffer = () => {
                             backgroundColor: "white"
                         },
                         position: "relative !important",
-                        transform: "scale(-1) translateX(-1.5rem)",
+                        transform: "scale(-1) translateX(-2rem)",
                         border: "1px solid rgba(0,0,0,0.3)",
                         borderRadius: "15px !important",
                         margin: "0 !important",
@@ -130,8 +129,8 @@ const DailyOffer = () => {
                         top: "45% !important",
                         left: "0 !important",
                         backgroundColor: "white !important",
-                        minWidth: "2rem !important",
-                        height: "2rem !important",
+                        minWidth: "3rem !important",
+                        height: "3rem !important",
                     }} className={"swiper-button-next"}>
                     </Box>
                 </Box>
@@ -149,7 +148,7 @@ const DailyOffer = () => {
                 maxWidth: "100vw !important",
                 margin: "0 !important",
                 boxSizing: "border-box",
-                height: "17rem !important",
+                height: "27.5rem !important",
                 backgroundColor: "rgba(240, 20, 54, 1)",
                 backgroundImage: "url(https://new.okala.com/static/images/siteImages/backgrounds/slidersPrimary.svg)",
                 overflowX: "scroll"
