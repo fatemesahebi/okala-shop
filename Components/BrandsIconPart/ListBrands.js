@@ -5,6 +5,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
 
 
+
+
 const brandsData = [
     {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FBrand%2F177235&w=64&q=75", among:"|"},
     {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FBrand%2F178004&w=64&q=75", among:"|"},
@@ -22,7 +24,44 @@ const brandsData = [
 function ListBrands(){
     return(
         <div>
-            <Swiper watchSlidesProgress={true} slidesPerView={10.9}>
+            {/*<Swiper watchSlidesProgress={true} slidesPerView={10.9}>*/}
+            <Swiper
+                slidesPerView={2}
+                spaceBetween={10}
+                pagination={{
+                    clickable: true,
+                }}
+                breakpoints={{
+                    300: {
+                        slidesPerView: 3,
+                        spaceBetween: 50,
+                    },
+                    400: {
+                        slidesPerView: 4,
+                        spaceBetween: 11,
+                    },
+                   500: {
+                        slidesPerView: 5,
+                        spaceBetween: 15,
+                    },
+                    640: {
+                        slidesPerView: 6,
+                        spaceBetween: 20,
+                    },
+                    870: {
+                        slidesPerView: 7,
+                        spaceBetween: 40,
+                    },
+                    1024: {
+                        slidesPerView: 8,
+                        spaceBetween: 50,
+                    },
+                    1400: {
+                        slidesPerView: 10,
+                        spaceBetween: 60,
+                    },
+                }}
+            >
                 {brandsData.map((item,index) => (<SwiperSlide> <CreateBrand key={index} imageBrand={item.image} amongs={item.among}/> </SwiperSlide>))}
             </Swiper>
         </div>
