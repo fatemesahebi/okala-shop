@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import { Box, Typography} from "@mui/material";
-import ListBrands from "./../Components/BrandsIconPart/ListBrands"
+import ListBrands from "../Components/BrandsIconPart/ListBrands";
 import {
     getBrandProducts,
 } from "../lib/axios/getData";
