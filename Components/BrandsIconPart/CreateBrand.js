@@ -10,7 +10,7 @@ function CreateBrand({imageBrand,amongs}){
                 sx={{width:"3rem",height:"3rem"}}
             >
                 <img src={imageBrand}/>
-                <p style={{marginTop:'.7rem', color:"#ededed"}}>{amongs}</p>
+                <p style={{marginTop:'.9rem', color:"#ededed",fontSize:"1rem"}}>{amongs}</p>
             </Stack>
         </>
     )
