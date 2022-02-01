@@ -22,7 +22,7 @@ a {
 }
 
 :root {
-  --swiper-navigation-size: 1rem !important;
+  --swiper-navigation-size: 0.7rem !important;
 }
 
 .swiper-button-disabled {

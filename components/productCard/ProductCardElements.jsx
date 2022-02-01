@@ -10,7 +10,7 @@ import AddIcon from '@mui/icons-material/Add';
 const SingleProduct = ({product}) => {
     const classes = useStyles()
     return (
-        <Container className={classes.cardGrid} maxWidth='xs'>
+        <Container sx={{padding: "0 !important"}} className={classes.cardGrid} maxWidth='xs'>
 
             <Grid container spacing={4}>
                 <Grid item>
