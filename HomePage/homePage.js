@@ -1,8 +1,9 @@
-import {Header, DailyOffer,FourthBanner,DoubleBanner} from "../components";
+import {Header, DailyOffer,BigBanner,FourthBanner,DoubleBanner} from "../components";
 function HomePage(){
     return(<div>
         <Header/>
         <DailyOffer/>
+        <BigBanner/>
         <FourthBanner/>
         <DoubleBanner/>
     </div>)
