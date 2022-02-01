@@ -27,24 +27,20 @@ function ListMiddleNavbar(){
                 }}
                 breakpoints={{
                     300: {
-                        slidesPerView: 2,
+                        slidesPerView: 3,
                         spaceBetween: 1,
                     },
                     405: {
-                        slidesPerView: 3,
+                        slidesPerView: 4,
                         spaceBetween: 2,
                     },
-                    640: {
+                    740: {
                         slidesPerView: 5,
                         spaceBetween: 2,
                     },
-                    870: {
-                        slidesPerView: 5,
-                        spaceBetween: 3,
-                    },
-                    1000: {
+                    960: {
                         slidesPerView: 6,
-                        spaceBetween: 2,
+                        spaceBetween: 3,
                     },
                     1024: {
                         slidesPerView: 7,
@@ -53,10 +49,6 @@ function ListMiddleNavbar(){
                     1280: {
                         slidesPerView: 9,
                         spaceBetween: 1,
-                    },
-                    1800: {
-                        slidesPerView: 11,
-
                     },
                 }}
             >
