@@ -26,6 +26,7 @@ function ListBrands(){
         <div>
             {/*<Swiper watchSlidesProgress={true} slidesPerView={10.9}>*/}
             <Swiper
+                style={{width:"80%"}}
                 slidesPerView={2}
                 spaceBetween={10}
                 breakpoints={{
@@ -50,11 +51,11 @@ function ListBrands(){
                         spaceBetween: 40,
                     },
                     1024: {
-                        slidesPerView: 8,
+                        slidesPerView: 7.5,
                         spaceBetween: 50,
                     },
                     1400: {
-                        slidesPerView: 10,
+                        slidesPerView: 8,
                         spaceBetween: 60,
                     },
                 }}
