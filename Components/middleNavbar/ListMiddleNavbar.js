@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import CategoryProduct from "./CategoryProduct";
+import MiddleNavbar from "./MiddleNavbar";
 import {Box} from "@mui/system";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
@@ -16,7 +16,7 @@ const productList = [
     {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F390615&w=384&q=75",text: "نوشیدنی و دمنوش ها"},
     {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F390613&w=384&q=75",text: "مواد غذایی"},
 ]
-function ListCategoryProduct(){
+function ListMiddleNavbar(){
     return(
         <div style={{ width: '100%',fontSize:".5rem" }}>
             <Swiper
@@ -61,7 +61,7 @@ function ListCategoryProduct(){
                 }}
             >
 
-                    {productList.map((item,index) => (<SwiperSlide><CategoryProduct key={index} imagesProducts={item.image} textProducts={item.text}/> </SwiperSlide>))}
+                    {productList.map((item,index) => (<SwiperSlide><MiddleNavbar key={index} imagesProducts={item.image} textProducts={item.text}/> </SwiperSlide>))}
             </Swiper>
         </div>
     )
@@ -69,4 +69,4 @@ function ListCategoryProduct(){
 
 
 
-export default ListCategoryProduct;
+export default ListMiddleNavbar;

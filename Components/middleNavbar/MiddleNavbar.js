@@ -1,14 +1,13 @@
 import React from "react";
 import {Box} from "@mui/system";
 
-function CategoryProduct({imagesProducts, textProducts}) {
+function MiddleNavbar({imagesProducts, textProducts}) {
     return(
         <>
             <Box sx={{
                 display: "flex",
                 flexDirection:'column',
-                m:3,
-                p:2,
+                m:1,
                 textAlign: "center"
             }}
             >
@@ -18,4 +17,4 @@ function CategoryProduct({imagesProducts, textProducts}) {
         </>
     )
 }
-export default CategoryProduct;
+export default MiddleNavbar;
