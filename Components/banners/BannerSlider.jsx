@@ -6,9 +6,10 @@ import pril from '../../public/images/pril.jpg'
 import bite from '../../public/images/bite.jpg'
 import madline from '../../public/images/madline.jpg'
 import breakfast from '../../public/images/breakfast.jpg'
-import { Autoplay, Pagination, Navigation } from "swiper";
+import SwiperCore,{ Autoplay, Pagination, Navigation } from "swiper";
 import { EffectFade } from 'swiper';
-//swiper/scss/effect-fade
+import 'swiper/css/effect-fade'
+SwiperCore.use([EffectFade])
 import Image from 'next/image'
 
 const BannerSlider = () => {
