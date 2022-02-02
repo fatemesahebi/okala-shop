@@ -9,6 +9,7 @@ import FourthBanner from './banners/FourthBanner';
 import ListBrands from "./BrandsIconPart/ListBrands";
 import ListMiddleNavbar from "./middleNavbar/ListMiddleNavbar";
 import {FooterContainer} from "./Footer/footer";
+import CategoryProducts from "./CategoryProducts/CategoryProducts";
 export {
     Header,
     HeaderDesktop,
@@ -20,5 +21,6 @@ export {
     DoubleBanner,
     ListBrands,
     ListMiddleNavbar,
-    FooterContainer
+    FooterContainer,
+    CategoryProducts
 }

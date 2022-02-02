@@ -7,8 +7,8 @@ export const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         padding: '5px',
-
-
+        boxShadow: "none",
+        borderRadius: "8px"
     },
     productName:{
         marginBottom:'5px',
