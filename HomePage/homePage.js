@@ -1,4 +1,4 @@
-import {Header, DailyOffer,FourthBanner,DoubleBanner,ListBrands,ListMiddleNavbar, FooterContainer} from "../components";
+import {Header, DailyOffer,FourthBanner,DoubleBanner,ListBrands,ListMiddleNavbar, FooterContainer, CategoryProducts} from "../components";
 function HomePage(){
     return(<div>
         <Header/>
@@ -6,6 +6,7 @@ function HomePage(){
         <DailyOffer/>
         <FourthBanner/>
         <DoubleBanner/>
+        <CategoryProducts/>
         <ListBrands/>
         <FooterContainer/>
     </div>)
