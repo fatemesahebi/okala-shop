@@ -57,6 +57,7 @@ const theme = createTheme({
     },
     typography: {
         fontFamily: "iranSans",
+        fontWeigh:700
     },
      palette: {
         white:{

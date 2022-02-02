@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import okalaLogo2 from './../../public/SVG/logo-okala2.svg'
 import {SearchBox} from "../index";
-import {Box, Button, IconButton} from "@mui/material";
+import {Box} from "@mui/material";
 import profileSvg from './../../public/SVG/profile.svg'
 import shopBascket from './../../public/SVG/shopBascket.svg'
 import {styled} from "@mui/system";
-import ShoppingCard from './shoppingCard'
+import ShoppingCard from '../shoppingCard/shoppingCard'
 import {useState} from "react";
 
 const IconHeader = styled('div')(
