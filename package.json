@@ -13,14 +13,21 @@
     "@mui/icons-material": "^5.3.1",
     "@mui/material": "^5.3.1",
     "@mui/styled-engine-sc": "^5.3.0",
+    "@mui/styles": "^5.3.0",
+    "@reduxjs/toolkit": "^1.7.1",
     "axios": "^0.25.0",
     "next": "12.0.8",
     "next-fonts": "^1.5.1",
+    "persian-number": "^1.5.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-redux": "^7.2.6",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
     "styled-components": "^5.3.3",
     "stylis": "^4.0.13",
-    "stylis-plugin-rtl": "^2.1.1"
+    "stylis-plugin-rtl": "^2.1.1",
+    "swiper": "^8.0.1"
   },
   "devDependencies": {
     "eslint": "8.7.0",

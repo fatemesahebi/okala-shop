@@ -4,6 +4,7 @@ import HeaderMobile from "./Header/HeaderMobile";
 import SearchBox from "./Header/searchBox";
 import BannerSlider from './banners/BannerSlider'
 import ShoppingCard from './Header/ShoppingCard';
+import ShoppingCard from './shoppingCard/shoppingCard';
 import DailyOffer from "./DailyOffer/DailyOffer";
 import DoubleBanner from './banners/DoubleBanner';
 import FourthBanner from './banners/FourthBanner';
