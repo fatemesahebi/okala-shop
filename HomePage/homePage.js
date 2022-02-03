@@ -3,7 +3,7 @@ function HomePage(){
     return(<div>
         <Header/>
         <ListMiddleNavbar/>
-        <DailyOffer/>
+        {/*<DailyOffer/>*/}
         <FourthBanner/>
         <DoubleBanner/>
         <ListBrands/>
