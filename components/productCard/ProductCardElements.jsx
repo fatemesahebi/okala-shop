@@ -90,7 +90,7 @@ const SingleProduct = ({product}) => {
                             <StyledIcon>
                                 <AddIcon/>
                             </StyledIcon>
-                            <StyledImage src={product.image}/>
+                            <StyledImage src={product.productImage}/>
                         </StyledCardMedia>
                         {product.offPercent > 0 ? (
                                 <StyledCardContent>
