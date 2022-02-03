@@ -3,6 +3,7 @@ import HeaderLower from "../components/HeaderLower/HeaderLower"
 function HomePage(){
     return(<div>
         <Header/>
+        <HeaderLower/>
         <ListMiddleNavbar/>
         {/*<DailyOffer/>*/}
         <FourthBanner/>

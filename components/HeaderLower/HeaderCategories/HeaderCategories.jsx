@@ -5,12 +5,19 @@ import Subcategories from "./Subcategories/Subcategories";
 
 const HeaderCategories = () => {
     return (
-        <Container>
-            <CategoryBar/>
-            <Box>
-                <CategorySidebar/>
-                <Subcategories/>
-            </Box>
+        <Container maxWidth={"100vw"} sx={{
+            position: "fixed",
+            width: "100%",
+            backgroundColor: "rgba(0,0,0,0.5)",
+            height: "100vh",
+            display: "flex",
+            justifyContent: "center",
+            zIndex: "12",
+            top: "9.2rem",
+            margin: "0 !important",
+            padding: "0 !important",
+        }}>
+                <CategoryBar/>
         </Container>
     )
 }
