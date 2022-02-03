@@ -14,7 +14,8 @@ const StyledCard = styled.div({
     display: 'flex',
     flexDirection: 'column',
     border: 'solid lightgray 1px',
-    borderRadius:'5px'
+    borderRadius:'5px',
+    backgroundColor:'#ffffff'
 
 })
 const StyledImage = styled.img({
@@ -73,8 +74,8 @@ const StyledOffPercent = styled.div({
 const StyledPriceOffer = styled.div({
     position: "absolute",
     fontSize:'14px',
-    left: '10px',
-    top: '90px'
+    left: '20px',
+    bottom: '20px'
 })
 
 
@@ -111,7 +112,7 @@ const SingleProduct = ({product}) => {
                             :
                             (<CardContent>
                                 <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
-                                <StyledPriceOffer variant='paragraph'>{product.priceOffer} ریال</StyledPriceOffer>
+                                <StyledPriceOffer variant='paragraph'>{product.priceOffer} </StyledPriceOffer>
                             </CardContent>)}
                     </StyledCard>
                 </Grid>
