@@ -1,12 +1,16 @@
-import {Header, DailyOffer,FourthBanner,DoubleBanner,ListBrands,ListMiddleNavbar, FooterContainer, CategoryProducts} from "../components";
+import {Header, DailyOffer,FourthBanner,DoubleBanner,ListBrands,ListMiddleNavbar, FooterContainer} from "../components";
+
+import React from "react";
+
+
 function HomePage(){
+
     return(<div>
         <Header/>
         <ListMiddleNavbar/>
-        <DailyOffer/>
+        {/*<DailyOffer/>*/}
         <FourthBanner/>
         <DoubleBanner/>
-        <CategoryProducts/>
         <ListBrands/>
         <FooterContainer/>
     </div>)

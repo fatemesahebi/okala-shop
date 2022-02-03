@@ -6,6 +6,7 @@ body {
   padding: 0;
   margin: 0;
   font-size: 1rem;
+  color:black;
   /*font-weight: 400;*/
   direction: rtl;
   font-family: IRANSans, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -27,4 +28,7 @@ a {
 
 .swiper-button-disabled {
   opacity: 0 !important;
+}
+.banner{
+  border-radius: 12px;
 }

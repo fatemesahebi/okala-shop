@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import { Box, Typography} from "@mui/material";
 import Head from 'next/head';
 
 import {
