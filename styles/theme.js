@@ -71,7 +71,8 @@ const theme = createTheme({
         } ,
         red:{
             main:'#f01436',
-            dark:"rgba(178, 10, 18, 1)"
+            dark:"rgba(178, 10, 18, 1)",
+            mid:"#b00a24"
         },
         aqua:{
             light:'rgba(208,243,245,0.8)',

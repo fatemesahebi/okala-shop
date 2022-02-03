@@ -3,9 +3,10 @@ import {Button, Stack, Typography, Box, CardMedia, colors} from "@mui/material";
 import {styled} from "@mui/system";
 import PN from "persian-number";
 import AddIcon from '@mui/icons-material/Add';
-import Image from "next/image";
+import MinimizeIcon from '@mui/icons-material/Minimize';
 import deleteIcon from '../../public/SVG/delete.svg'
-
+import { useDispatch } from 'react-redux'
+import { addToCart, decreaseItem, removeItem } from '../../redux/cartReducer'
 const ShoppingCardTex = styled('p')(
     () => `
     font-size:0.85rem;
@@ -15,7 +16,8 @@ const ShoppingCardTex = styled('p')(
 
 
 const CardItem = ({product}) => {
-    console.log(product)
+
+    const dispatch=useDispatch()
     return (
         <>
             <Stack sx={{flexDirection: 'row', height: '18vh', alignItems: 'center', p: 2, mb: 3}}>
@@ -27,7 +29,7 @@ const CardItem = ({product}) => {
                         objectFit: 'conver'
                     }}
                     alt="عکس محصول"
-                    src="https://cdn.okala.com/Media/Index/Product/201211/1000/1000"
+                    src={product.productImage.src}
                 />
                 <Stack sx={{justifyContent: "space-around"}}>
                     <ShoppingCardTex>{PN.convertEnToPe(`${product.productName}`)}</ShoppingCardTex>
@@ -50,22 +52,27 @@ const CardItem = ({product}) => {
                             borderBottomRightRadius: 16
 
                         }}>
-                            <AddIcon color={'white'}/>
+                            <AddIcon onClick={()=>dispatch(addToCart(product))} color={'white'}/>
                         </Box>
                         <Box sx={{width: 70, height: '100%', verticalAlign: 'middle', textAlign: 'center'}}>
                             <Typography sx={{fontWeight: 700, p: 1}}>
-                                {PN.convertEnToPe(`${(product.count) ? product.count : 1}`)}</Typography>
+                                {PN.convertEnToPe(product.count)}</Typography>
                         </Box>
                         <Box sx={{
                             backgroundColor: 'lightGray.main',
                             height: '100%',
-                            p: 1,
                             width: 40,
                             borderTopLeftRadius: 16,
                             borderBottomLeftRadius: 16
 
-                        }}><Image
-                            src={deleteIcon}/></Box>
+                        }}>
+                            {
+                                (product.count===1)?
+                                    <Box component='img' src={deleteIcon.src} width='50%' sx={{m:1}} onClick={()=>{dispatch(removeItem(product))}}/>
+                                    :
+                                    <MinimizeIcon fontSize="large" sx={{color:'red.main',pb:1.2}} onClick={()=>{dispatch(decreaseItem(product))}}/>
+                            }
+                            </Box>
                     </Stack>
                 </Stack>
 
