@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Stack, Typography, Box} from "@mui/material";
+import {Button, Stack, Typography, Box, Slide} from "@mui/material";
 import Image from 'next/image'
 import okalaLogo from './../../public/SVG/logo-okala2.svg'
 import garbejeIcon from './../../public/SVG/garbeje.svg'
@@ -8,10 +8,22 @@ import CardItem from "./CardItem";
 import PN from "persian-number";
 import LinearProgress, {linearProgressClasses} from '@mui/material/LinearProgress';
 import {styled} from "@mui/styles";
+
 const minOrder = 500000
 import attentionImg from './../../public/SVG/attention.svg'
 import BuyButton from "../productCard/BuyButton";
 
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import {useDispatch} from "react-redux";
+import {removeAllItem} from "../../redux/cartReducer";
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+});
 const BorderLinearProgress = styled(LinearProgress)(({theme}) => ({
     height: 10,
     width: "80%",
@@ -27,16 +39,35 @@ const BorderLinearProgress = styled(LinearProgress)(({theme}) => ({
 }));
 
 
+const DialogButtons = styled(Button)(
+    () => `
+        font-weight:700;
+        height:55px;
+        // margin: auto 10px;
+        
+    `
+)
 const FullCard = () => {
     const items = useSelector(state => state.cart.items)
     const totalOrder = useSelector((state => state.cart.items.reduce(
         (price, item) => price + (item.price * item.count),
-        0))) || 20000
-    const CountOrder = useSelector((state => state.cart.items.reduce(
-        (count, item) => count +item.count,
-        0))) || 3
+        0)))
+    const CountOrder = useSelector((state => state.cart.items.length))
+    const [open, setOpen] = React.useState(false);
+const dispatch=useDispatch()
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
 
-    console.log(items)
+    const handleClose = () => {
+        setOpen(false);
+    };
+const handleDeleteShoppingCard=()=>{
+    setOpen(false);
+    dispatch(removeAllItem())
+
+}
+
     return (
         <div>
             <Stack sx={{
@@ -53,26 +84,78 @@ const FullCard = () => {
                         {PN.convertEnToPe(`(${CountOrder} کالا )`)}
                     </Typography>
                 </Stack>
-                <Button
-                    sx={{
-                        fontWeight: '700',
-                        backgroundColor: 'white.main',
-                        color: 'darkGray.main',
-                        width: '100px',
-                        height: '35px',
-                        '&:hover': {
-                            backgroundColor: 'lightGray.main',
-                            boxShadow: 'none',
-                        },
-                    }}
-                >
-                    <Image src={garbejeIcon}/>
-                    حذف همه
+                <>
+                    <Button
+                        sx={{
+                            fontWeight: '700',
+                            backgroundColor: 'white.main',
+                            color: 'darkGray.main',
+                            width: '100px',
+                            height: '35px',
+                            '&:hover': {
+                                backgroundColor: 'lightGray.main',
+                                boxShadow: 'none',
+                            },
+                        }}
+                        onClick={handleClickOpen}
+                    >
+                        <Image src={garbejeIcon}/>
+                        حذف همه
+                    </Button>
+                    {/************************************* Dialog Box ****************************************/}
+                    <Dialog
+                        open={open}
+                        TransitionComponent={Transition}
+                        keepMounted
+                        onClose={handleClose}
+                        aria-describedby="alert-dialog-slide-description"
+                        sx={{minWidth:"800px"}}
+                    >
+                        <DialogTitle sx={{color:'black.main',fontWeight:700,fontSize:"1.5rem"}}>{"حذف همه کالاها"}</DialogTitle>
+                        <DialogContent>
+                            <DialogContentText sx={{color:'black.main',fontWeight:600,mb:2}}  id="alert-dialog-slide-description">
+                                آیا از حذف همه کالاها از سبد خرید اطمینان دارید؟
+                            </DialogContentText>
+                        </DialogContent>
+                        <DialogActions>
+                            <DialogButtons
+                                sx={{
+                                    color: 'red.main',
+                                    backgroundColor: 'white.main',
+                                    borderRadius:'10px',
+                                    fontSize:"1.2rem",
+                                    fontWeight:700,
+                                    px:5,
+                                    "&:hover":{
+                                        backgroundColor: 'white.main',
+                                    },
+                                    border:'1px solid #b9b5b5',
+                                    mr:10,
+                                    ml:1,
+                                    mb:2,
+                                }}
 
-                </Button>
+                                onClick={handleClose}>انصراف </DialogButtons>
+                            <DialogButtons sx={{
+                                color: 'white.main',
+                                backgroundColor: 'red.main',
+                                borderRadius:'10px',
+                                fontSize:"1.2rem",
+                                fontWeight:700,
+                                px:4,
+                                ml:3,
+                                mb:2,
 
+                                "&:hover":{
+                                    backgroundColor: 'red.mid',
+                                }
+                            }} onClick={handleDeleteShoppingCard}>بله، حذف کن</DialogButtons>
+                        </DialogActions>
+                    </Dialog>
+                </>
             </Stack>
 
+            {/******************************************* shopping card Items **********************************************/}
             <Stack sx={{height: `${(totalOrder >= minOrder) ? "400px" : "300px"}`, overflowY: 'scroll'}}>
                 {items.map((item) => <CardItem product={item}/>)}
             </Stack>

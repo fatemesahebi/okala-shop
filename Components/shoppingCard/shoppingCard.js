@@ -7,14 +7,7 @@ import EmpetyCard from "./EmpetyCard";
 import FullCard from "./FullCard";
 
 const ShoppingCard = ({open,setOpen}) => {
-    const items = useSelector(state => state.cart.items)
-
-    // const totalCount= useSelector(state=>state.cart.items.reduce(
-    //     (count, item) => count + item.count,
-    //     0))
-    // console.log(totalCount)
-
-let totalCount=2
+let CountOrder=useSelector(state=>state.cart.items.length)
     const handleCloseShoppingCard=()=>{
         setOpen(false)
 
@@ -63,7 +56,7 @@ let totalCount=2
         </Box>
             {/*    ***********************************************************************************/}
 
-            {(totalCount===0)?<EmpetyCard/>:<FullCard/>}
+            {(CountOrder===0)?<EmpetyCard/>:<FullCard/>}
 
         </Box>
         </Modal>

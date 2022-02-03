@@ -1,5 +1,10 @@
 import {Header, DailyOffer,FourthBanner,DoubleBanner,ListBrands,ListMiddleNavbar, FooterContainer} from "../components";
+
+import React from "react";
+
+
 function HomePage(){
+
     return(<div>
         <Header/>
         <ListMiddleNavbar/>
