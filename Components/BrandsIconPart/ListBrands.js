@@ -6,6 +6,7 @@ import "swiper/css";
 
 
 
+
 const brandsData = [
     {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FBrand%2F177235&w=64&q=75", among:"|"},
     {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FBrand%2F178004&w=64&q=75", among:"|"},
@@ -22,7 +23,7 @@ const brandsData = [
 ]
 function ListBrands(){
     return(
-        <div>
+        <div >
             {/*<Swiper watchSlidesProgress={true} slidesPerView={10.9}>*/}
             <Swiper
                 style={{width:"80%"}}
@@ -50,7 +51,7 @@ function ListBrands(){
                         spaceBetween: 40,
                     },
                     1024: {
-                        slidesPerView: 7.5,
+                        slidesPerView: 8.5,
                         spaceBetween: 50,
                     },
                     1400: {
