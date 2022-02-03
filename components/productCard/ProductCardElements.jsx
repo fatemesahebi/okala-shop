@@ -17,21 +17,21 @@ const SingleProduct = ({product}) => {
                     <Card className={classes.card}>
                         <CardMedia className={classes.cardMedia}>
                             <AddIcon className={classes.icon}/>
-                            <img className={classes.image} src={product.image}/>
+                            <img className={classes.image} src={product.productImage}/>
                         </CardMedia>
                         <CardContent className={classes.cardContent}>
                             <div className={classes.productName}>
                                 <Typography variant='paragraph'>{product.productName} </Typography>
                             </div>
                             <div style={{display: 'flex', justifyContent: 'left'}}>
-                                <Typography className={classes.oldPriceCard} gutterBottom variant='paragraph'>{product.oldPrice} </Typography>
+                                <Typography className={classes.oldPriceCard} gutterBottom variant='paragraph'>{product.price} </Typography>
                             </div>
 
                             <div className={classes.newPrice}>
                                 <Typography className={classes.offPercent}
-                                            variant='paragraph'>{product.pricePercent}</Typography>
+                                            variant='paragraph'>{product.offPercent}</Typography>
                                 <Typography className={classes.cardPrice}
-                                            variant='paragraph'>{product.newPrice}</Typography>
+                                            variant='paragraph'>{product.priceOffer}</Typography>
 
                             </div>
                         </CardContent>
