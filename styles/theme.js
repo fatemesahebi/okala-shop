@@ -15,8 +15,9 @@ const theme = createTheme({
             styleOverrides:
                 {
                     body:{
-                        fontWeight: 400,
+                        fontWeight:700,
                         fontsize:14,
+                        color:'black',
                     }
                     ,
                     "@font-face": {
@@ -57,6 +58,9 @@ const theme = createTheme({
     },
     typography: {
         fontFamily: "iranSans",
+        fontWeigh:700,
+        color:'black',
+
     },
      palette: {
         white:{
@@ -67,6 +71,8 @@ const theme = createTheme({
         } ,
         red:{
             main:'#f01436',
+            dark:"rgba(178, 10, 18, 1)",
+            mid:"#b00a24"
         },
         aqua:{
             light:'rgba(208,243,245,0.8)',
@@ -75,7 +81,8 @@ const theme = createTheme({
 
         },
         lightGray:{
-            light:'#F8F8F8',
+            ultraLight:"rgba(240, 240, 240, 1)",
+            light:'rgba(248, 248, 248, 1)',
             main:'#F0F0F0',
             dark:"#E6E6E6",
         },
@@ -87,6 +94,9 @@ const theme = createTheme({
         darkGray:{
             main:'rgba(28,27,27,0.82)',
         },
+         green:{
+            light:'#4CB04C'
+         }
 
     }});
 
