@@ -2,6 +2,7 @@ import Header from "./Header/Header";
 import HeaderDesktop from "./Header/HeaderDesktop";
 import HeaderMobile from "./Header/HeaderMobile";
 import SearchBox from "./Header/searchBox";
+import BannerSlider from './banners/BannerSlider'
 import ShoppingCard from './shoppingCard/shoppingCard';
 import DailyOffer from "./DailyOffer/DailyOffer";
 import BigBanner from './banners/BigBanner'
@@ -16,6 +17,7 @@ export {
     HeaderDesktop,
     HeaderMobile,
     SearchBox,
+    BannerSlider,
     ShoppingCard,
     // DailyOffer,
     BigBanner,
