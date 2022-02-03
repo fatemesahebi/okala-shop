@@ -14,7 +14,8 @@ const StyledCard = styled.div({
     display: 'flex',
     flexDirection: 'column',
     border: 'solid lightgray 1px',
-    borderRadius:'5px'
+    borderRadius:'5px',
+    backgroundColor:'#ffffff'
 
 })
 const StyledImage = styled.img({
