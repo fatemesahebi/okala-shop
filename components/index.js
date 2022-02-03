@@ -17,7 +17,7 @@ export {
     HeaderMobile,
     SearchBox,
     ShoppingCard,
-    DailyOffer,
+    // DailyOffer,
     BigBanner,
     FourthBanner,
     DoubleBanner,
