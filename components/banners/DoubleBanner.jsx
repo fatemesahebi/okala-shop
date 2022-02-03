@@ -9,10 +9,10 @@ const DoubleBanner = () => {
     return (
         <Box   sx={{width:'83vw',marginRight:'8vw'}}>
             <Grid container >
-                <Grid item xs={6} container style={{justifyContent: 'center'}}>
+                <Grid item xs={6} container >
                     <Image className={'banner'}  src={rightBanner}/>
                 </Grid>
-                <Grid item xs={6} container style={{justifyContent: 'center'}}>
+                <Grid item xs={6} container>
                     <Image className={'banner'}  src={leftBanner}/>
                 </Grid>
             </Grid>
