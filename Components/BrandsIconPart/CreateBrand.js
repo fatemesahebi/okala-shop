@@ -6,11 +6,11 @@ function CreateBrand({imageBrand,amongs}){
         <>
             <Stack
                 direction="row-reverse"
-                spacing={2}
+                // spacing={2}
                 sx={{width:"3rem",height:"3rem"}}
             >
-                <img src={imageBrand}/>
-                <p style={{marginTop:'.9rem', color:"#ededed",fontSize:"1rem"}}>{amongs}</p>
+                <img style={{width:"50px",height:"50px"}} src={imageBrand}/>
+                <p style={{marginTop:'.4rem',paddingLeft:"1.4rem", color:"#ededed",fontSize:"1rem"}}>{amongs}</p>
             </Stack>
         </>
     )
