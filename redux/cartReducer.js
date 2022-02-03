@@ -1,25 +1,47 @@
 import { createSlice } from "@reduxjs/toolkit";
+import img0 from "../public/images/0.png";
+import img1 from "../public/images/1.png";
+import img2 from "../public/images/2.png";
 
 export const CartSlice = createSlice({
     name: "cart",
     initialState: {
-        items: [{
-            id: 1,
-            productImage:"https://new.okala.com/_next/image?url=https3A2F2Fcdn.okala.com2Fmedia2Findex2FProduct2F388639202F3002F300&w=256&q=75",
-            productName:"نوار بهداشتی بالدار نازک متوسط 10 عددی نانسی",
-            brand:"نانسی",
-            categories:"cosmetics",
-            price:215000,
-            get isOff(){ return !this.offPercent},
-            get priceOffer(){
-                return(this.price-(this.price/100) * this.offPercent)
+        items: [
+            {
+                id: 0,
+                count:1,
+                productImage:img0,
+                productName:"دوغ بدون گاز نعناع  1.5 لیتری رامک",
+                brand:"رامک",
+                categories:"foodStuffs",
+                price: 160000,
+                get isOff(){ return !this.offPercent},
+                get priceOffer(){
+                    return(this.price-(this.price/100) * this.offPercent)
+                },
+                selerCount: 12,
+
+                offPercent: 0
             },
-            offPercent:30,
-            count:2
-        },
+            {
+                id: 1,
+                count:7,
+                productImage: img1,
+                productName:"نوار بهداشتی بالدار نازک متوسط 10 عددی نانسی",
+                brand:"نانسی",
+                categories:"cosmetics",
+                price:215000,
+                get isOff(){ return !this.offPercent},
+                get priceOffer(){
+                    return(this.price-(this.price/100) * this.offPercent)
+                },
+                selerCount:23,
+                offPercent:30
+            },
             {
                 id: 2,
-                productImage:"https://new.okala.com/_next/image?url=https3A2F2Fcdn.okala.com2Fmedia2Findex2FProduct2F344245202F3002F300&w=384&q=75",
+                count:3,
+                productImage: img2,
                 productName:"سفره یکبارمصرف تجزیه پذیر 50 متری  پتروکلین",
                 brand:"پتروکلین",
                 categories:"tools",
@@ -28,27 +50,10 @@ export const CartSlice = createSlice({
                 get priceOffer(){
                     return(this.price-(this.price/100) * this.offPercent)
                 },
-                offPercent:40,
-                count:2
-
-            },
-            {
-                id: 3,
-                productImage:"https://new.okala.com/_next/image?url=https3A2F2Fcdn.okala.com2Fmedia2Findex2FProduct2F161011202F3002F300&w=256&q=75",
-                productName:"ابر جادویی 35 گرمی بریتکس",
-                brand:"بریتکس",
-                categories:"tools",
-                price:330000,
-                get isOff(){ return !this.offPercent},
-                get priceOffer(){
-                    return(this.price-(this.price/100) * this.offPercent)
-                },
-                selerCount: 5,
-
-                offPercent:40,
-                count:2
-
-            }],
+                selerCount:76,
+                offPercent:40
+            }
+        ],
     },
     reducers: {
         addToCart: (state, action) => {
@@ -76,8 +81,11 @@ export const CartSlice = createSlice({
                 state.items.splice(p, 1);
             }
         },
+        removeAllItem:(state,action)=>{
+            state.items=[]
+        }
     },
 });
 
-export const { addToCart, decreaseItem, removeItem } = CartSlice.actions;
+export const { addToCart, decreaseItem, removeItem,removeAllItem } = CartSlice.actions;
 export default CartSlice.reducer;
