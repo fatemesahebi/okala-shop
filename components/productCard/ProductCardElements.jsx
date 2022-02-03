@@ -104,7 +104,7 @@ const SingleProduct = ({product}) => {
                                         </Grid>
                                         <Grid item>
                                             <StyledPriceOffer
-                                                variant='paragraph'> {product.priceOffer}ریال</StyledPriceOffer>
+                                                variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.priceOffer}`))} ریال</StyledPriceOffer>
                                         </Grid>
                                     </div>
                                 </StyledCardContent>)

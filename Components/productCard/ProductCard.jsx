@@ -1,7 +1,7 @@
 import React from 'react';
 import {Box, Container} from "@mui/material";
-import {productData} from "../components/productCard/ProductCardData";
-import SingleProduct from "../components/productCard/ProductCardElements";
+import {productData} from "./ProductCardData";
+import SingleProduct from "./ProductCardElements";
 
 
 const ProductCard = () => {
