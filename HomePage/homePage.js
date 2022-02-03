@@ -8,6 +8,7 @@ function HomePage(){
         <FourthBanner/>
         <DoubleBanner/>
         <ListBrands/>
+        <OkalaBlog/>
         <FooterContainer/>
     </div>)
 }
