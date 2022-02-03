@@ -1,4 +1,8 @@
 import {Header, DailyOffer,FourthBanner,DoubleBanner,ListBrands,ListMiddleNavbar, FooterContainer} from "../components";
+
+import React from "react";
+
+
 import HeaderLower from "../components/HeaderLower/HeaderLower"
 function HomePage(){
     return(<div>
