@@ -29,3 +29,6 @@ a {
 .swiper-button-disabled {
   opacity: 0 !important;
 }
+.banner{
+  border-radius: 12px;
+}
