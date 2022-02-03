@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import {Swiper, SwiperSlide} from "swiper/react";
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 
-const OkalaBlogList = () => {
+const OkalaBlog = () => {
     return (
         <div style={{width: '1310px', marginTop: '50px', marginRight: '50px'}}>
             <div style={{
@@ -31,4 +31,4 @@ const OkalaBlogList = () => {
     );
 };
 
-export default OkalaBlogList;
+export default OkalaBlog;
