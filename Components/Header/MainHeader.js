@@ -64,7 +64,12 @@ function MainHeader() {
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
-            padding: '20px 40px'
+            px: '40px',
+            backgroundColor:'white.main',
+            position:'fixed',
+            zIndex:'1000',
+            width:'100vw',
+            height:'80px'
         }}>
             <Image src={okalaLogo2} alt={"فروشگاه اکالا"}/>
             <SearchBox/>
@@ -178,8 +183,8 @@ function MainHeader() {
                             heigh: 20,
                             textAlign: "center",
                             position: 'absolute',
-                            top: "26px",
-                            left: "72px",
+                            top: "18px",
+                            left: "70px",
                             zIndex: '100',
                             fontSize: '0.8rem',
 

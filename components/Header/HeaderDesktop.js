@@ -1,11 +1,11 @@
 import MainHeader from "./MainHeader";
-import LocationHeader from "./locationHeader";
+import ScrollHeader from "./scrollHeader";
 function HeaderDesktop() {
 
     return (
         <div>
             <MainHeader/>
-            <LocationHeader/>
+            <ScrollHeader/>
         </div>
 
     )

@@ -7,7 +7,7 @@ import clockSvg from './../../public/SVG/clock.svg'
 import location from './../../public/SVG/location.svg'
 import Image from 'next/image'
 import {styled} from "@mui/system";
-
+import {useRef} from "react";
 const LocationTex = styled(Typography)(
     () => `
   font-size:0.85rem;
@@ -19,40 +19,45 @@ const LocationTex = styled(Typography)(
 )
 
 
-
 const LocationHeader = () => {
+    const handleMenuScroll=()=>{
+
+    }
+
+
     return (
-        <Stack sx={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', px: 5,my:3}}>
-            <Stack sx={{flexDirection: 'row', alignItems: 'center'}}>
+        <Stack  onScroll={handleMenuScroll} sx={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', px: 5, pt: 13}}>
+            <Stack  sx={{flexDirection: 'row', alignItems: 'center'}}>
                 <Box component='img' src={ofoghKala.src} sx={{pl: 2}}/>
-                <Typography sx={{fontSize: '0.9rem', pl: 0.8}}>
+                <Typography sx={{fontSize: '0.9rem', pl: 0.8,color:'black.main'}}>
                     خرید از
                 </Typography>
-                <Typography sx={{fontSize: '0.9rem', fontWeight: 700}}>افق کوروش</Typography>
+                <Typography sx={{fontSize: '0.9rem', fontWeight: 700,color:'black.main'}}>افق کوروش</Typography>
                 <Button sx={{
                     mx: 3,
                     border: "1px solid rgba(0, 0, 0, 0.23)",
                     color: 'darkGray.main',
                     borderRadius: '10px',
                     fontSize: "0.8rem",
-                    px:2,
-                    fontWeight:700,
-                    "&:hover":{
-                        backgroundColor:'lightGray.light'
+                    px: 2,
+                    fontWeight: 700,
+                    "&:hover": {
+                        backgroundColor: 'lightGray.light'
                     },
                 }}>تغییر فروشگاه</Button>
-                <Stack sx={{flexDirection: 'row',alignItems:'center'}}>
+                <Stack sx={{flexDirection: 'row', alignItems: 'center'}}>
                     <Image src={location}/>
-                    <Typography sx={{px:1,fontWeight:600,fontSize:'.85rem',color:'darkGray.main'}}>تحویل در تهران، میدان آرژانتین</Typography>
+                    <Typography sx={{px: 1, fontWeight: 600, fontSize: '.85rem', color: 'darkGray.main'}}>تحویل در
+                        تهران، میدان آرژانتین</Typography>
                     <KeyboardArrowDownIcon color="action"/>
                 </Stack>
             </Stack>
 
             <Stack sx={{flexDirection: 'row'}}>
                 <Image src={clockSvg}/>
-                <LocationTex sx={{pr:1.5}}>اولین بازه تحویل : ساعت </LocationTex>
-                <LocationTex > {PN.convertEnToPe(17)}</LocationTex>
-                <LocationTex >الی</LocationTex>
+                <LocationTex sx={{pr: 1.5}}>اولین بازه تحویل : ساعت </LocationTex>
+                <LocationTex> {PN.convertEnToPe(17)}</LocationTex>
+                <LocationTex>الی</LocationTex>
                 <LocationTex>{PN.convertEnToPe(19)}</LocationTex>
             </Stack>
 
