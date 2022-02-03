@@ -7,8 +7,8 @@ function HomePage(){
         <DailyOffer/>
         <FourthBanner/>
         <DoubleBanner/>
-        <ListBrands/>
         <OkalaBlog/>
+        <ListBrands/>
         <FooterContainer/>
     </div>)
 }

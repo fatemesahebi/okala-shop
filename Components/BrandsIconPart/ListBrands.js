@@ -47,7 +47,7 @@ function ListBrands(){
                         spaceBetween: 20,
                     },
                     870: {
-                        slidesPerView: 7,
+                        slidesPerView: 4,
                         spaceBetween: 40,
                     },
                     1024: {
