@@ -1,7 +1,7 @@
 import * as React from 'react';
 import home from "./../../public/SVG/home.svg"
 import profile from "./../../public/SVG/profile.svg"
-import cart from "./../../public/SVG/cart.svg"
+import cart from "./../../public/SVG/shopBascket.svg"
 import search from "./../../public/SVG/search.svg"
 import grouping from "./../../public/SVG/grouping.svg"
 import {Stack} from "@mui/material";
@@ -20,7 +20,7 @@ const listItem = [
 export default function MenuMobile() {
     return (
         <React.Fragment>
-            <Stack sx={{ display: 'flex',flexDirection:"row-reverse", textAlign: 'center',width:"960px" }}>
+            <Stack sx={{ display: 'flex',flexDirection:"row", textAlign: 'center',width:"960px" }}>
                 {listItem.map((item,index) => (<Button><MenuItem key={index} iconMenu={item.image} textMenu={item.title}/> </Button>))}
                 {/*/!*<SvgIcon>{home}</SvgIcon>*!/*/}
                 {/*<Typography>home</Typography>*/}
