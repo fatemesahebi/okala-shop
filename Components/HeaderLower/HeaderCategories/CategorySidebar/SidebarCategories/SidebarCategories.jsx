@@ -5,14 +5,13 @@ import {NavigateBefore} from "@mui/icons-material";
 import {red} from "@mui/material/colors";
 import {useState} from "react";
 
-const SidebarCategories = ({children}) => {
-    const [show, setShow] = useState(false)
+const SidebarCategories = ({children , value , index}) => {
     return (
-        <Box onMouseOver={() => setShow(true) } onMouseOut={() => setShow(false)} sx={{
+        <Box sx={{
             display: "inline-flex",
             width: "17rem",
             justifyContent: "space-between",
-            height: "4rem",
+            height: "3rem",
             alignContent: "center",
             alignItems: "center",
             padding: "0 10px !important",
@@ -23,19 +22,25 @@ const SidebarCategories = ({children}) => {
                 display: "inline-flex",
                 gap: "2rem"
             }}>
-                <Image height="20px" width="20px" src={Icon}/>
+                <Box sx={{
+                    filter: value===index?
+                        "unset"
+                        : "invert(0%) sepia(0%) saturate(0%) hue-rotate(320deg) brightness(97%) contrast(104%)"
+                }}>
+                    <Image height="20px" width="20px" src={Icon}/>
+                </Box>
                 <Typography  sx={{
-                    fontSize: "1rem",
-                    fontWeight: "bolder",
-                    color: "red !important"
+                    fontSize: "0.9rem",
+                    fontWeight: "bold",
+                    color: value===index?"#f01436 !important":"#363636 !important"
                 }}>
                     {children}
                 </Typography>
             </Box>
-            { show ? (<NavigateBefore sx={{
+            { value === index ? (<NavigateBefore sx={{
                 fontSize: "2rem",
                 fontWeight: "lighter"
-            }} color={"red"}/>) : (<></>)
+            }} color={"#f01436"}/>) : (<></>)
             }
 
         </Box>

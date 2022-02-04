@@ -6,15 +6,25 @@ const Subcategories = () => {
         <Box sx={{
             width: "68rem",
             display: "flex",
-            flexWrap: "wrap",
         }}>
             <Box sx={{
                 display: "flex",
+                padding: "1rem !important",
+                gap: "1rem",
                 flexDirection: "column",
                 flexWrap: "wrap",
-                width: "20rem",
+                width: "40rem",
                 height: "31.5rem"
             }}>
+                <CategoryBox/>
+                <CategoryBox/>
+                <CategoryBox/>
+                <CategoryBox/>
+                <CategoryBox/>
+                <CategoryBox/>
+                <CategoryBox/>
+                <CategoryBox/>
+                <CategoryBox/>
                 <CategoryBox/>
             </Box>
         </Box>
