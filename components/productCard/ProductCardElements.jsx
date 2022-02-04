@@ -5,11 +5,13 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import {Container, Grid} from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import styled from '@emotion/styled'
 import {Image} from "@mui/icons-material";
 import PN from "persian-number";
 import {useDispatch} from "react-redux";
-import {addToCart,decreaseItem,removeItem} from "../../redux/cartReducer";
+import {addToCart, decreaseItem, removeItem} from "../../redux/cartReducer";
+import state from "../../redux/state";
 
 const StyledCard = styled.div({
     height: '312px',
@@ -38,6 +40,38 @@ const StyledIcon = styled.text({
     position: 'absolute',
     zIndex: '1',
     right: '10px'
+})
+const StyledShoppingCount = styled.text({
+    backgroundColor: '#f8f8f8',
+    color: 'black',
+    width: '110px',
+    height: '40px',
+    // borderRadius: '10px',
+    padding: '8px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    zIndex: '1',
+    right: '45px',
+    animation: "ease-in",
+    animationDelay: '4s'
+})
+const StyledRemoveIcon = styled.text({
+    backgroundColor: '#f0f0f0',
+    color: '#f01436',
+    width: '40px',
+    height: '40px',
+    borderRadius: '10px',
+    padding: '8px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    zIndex: '1',
+    right: '150px',
+    animation: "ease-in",
+    animationDelay: '4s'
 })
 const StyledCardMedia = styled.div({
     display: "flex",
@@ -83,8 +117,9 @@ const StyledPriceOffer = styled.div({
 
 
 const SingleProduct = ({product}) => {
-
-    const dispatch=useDispatch()
+    const [counter, setCounter] = React.useState(0)
+    const [visible, setVisible] = React.useState(false);
+    const dispatch = useDispatch()
     return (
         <Container sx={{padding: "0 !important"}} maxWidth='xs'>
 
@@ -93,11 +128,21 @@ const SingleProduct = ({product}) => {
                     <StyledCard>
                         <StyledCardMedia>
                             <StyledIcon>
-                                <AddIcon onClick={()=>{dispatch(addToCart(product))}}/>
+                                <AddIcon onClick={() => {
+                                    dispatch(addToCart(product));
+                                    setVisible(true);
+                                    setCounter(counter + 1)
+                                }}/>
                             </StyledIcon>
+                            {visible && <div>
+                                <StyledShoppingCount>{counter}</StyledShoppingCount>
+                                <StyledRemoveIcon>
+                                    <DeleteOutlineOutlinedIcon onClick={() => setVisible(false)}/>
+                                </StyledRemoveIcon>
+                            </div>}
                             <StyledImage src={product.productImage}/>
                         </StyledCardMedia>
-                        {(product.offPercent > 0 )? (
+                        {(product.offPercent > 0) ? (
                                 <StyledCardContent>
                                     <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
                                     <StyledPrice gutterBottom variant='paragraph'>{product.price}</StyledPrice>
