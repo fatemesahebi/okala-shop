@@ -18,7 +18,7 @@ const BannerSlider = () => {
             <Grid  container xs={12} spacing={2} style={{width:'85vw',marginRight:'8vw'}}>
                 <Grid item xs={8}>
                     <Swiper spaceBetween={2} autoplay={{
-                        delay: 5000, disableOnInteraction: false,}} effect={'fade'} pagination={{clickable: true,}}  navigation={true} >
+                        delay: 5000, disableOnInteraction: false,}} effect={'fade'} pagination={{clickable: true}}  navigation={true} >
                         <SwiperSlide><Image className={'banner'} src={pril}/></SwiperSlide>
                         <SwiperSlide><Image className={'banner'} src={winter}/></SwiperSlide>
                     </Swiper>

@@ -5,6 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import {Container, Grid} from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import styled from '@emotion/styled'
 import {Image} from "@mui/icons-material";
 import PN from "persian-number";
@@ -38,6 +39,34 @@ const StyledIcon = styled.text({
     position: 'absolute',
     zIndex: '1',
     right: '10px'
+})
+const StyledShoppingCount = styled.text({
+    backgroundColor: '#f8f8f8',
+    color: 'black',
+    width: '110px',
+    height: '40px',
+    // borderRadius: '10px',
+    padding: '8px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    zIndex: '1',
+    right: '45px'
+})
+const StyledRemoveIcon = styled.text({
+    backgroundColor: '#f0f0f0',
+    color: '#f01436',
+    width: '40px',
+    height: '40px',
+    borderRadius: '10px',
+    padding: '8px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    zIndex: '1',
+    right: '150px',
 })
 const StyledCardMedia = styled.div({
     display: "flex",
@@ -83,7 +112,7 @@ const StyledPriceOffer = styled.div({
 
 
 const SingleProduct = ({product}) => {
-
+    const [visible, setVisible] = React.useState(false);
     const dispatch=useDispatch()
     return (
         <Container sx={{padding: "0 !important"}} maxWidth='xs'>
@@ -93,8 +122,14 @@ const SingleProduct = ({product}) => {
                     <StyledCard>
                         <StyledCardMedia>
                             <StyledIcon>
-                                <AddIcon onClick={()=>{dispatch(addToCart(product))}}/>
+                                <AddIcon onClick={()=>{dispatch(addToCart(product));setVisible(true)}}/>
                             </StyledIcon>
+                            {visible && <div>
+                            <StyledShoppingCount></StyledShoppingCount>
+                            <StyledRemoveIcon>
+                                <DeleteOutlineOutlinedIcon onClick={()=>setVisible(false)}/>
+                            </StyledRemoveIcon>
+                            </div>}
                             <StyledImage src={product.productImage}/>
                         </StyledCardMedia>
                         {(product.offPercent > 0 )? (
