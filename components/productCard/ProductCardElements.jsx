@@ -103,7 +103,7 @@ const StyledCardContent = styled.div({
 const StyledProductName = styled.div({
     fontSize: '14px',
     fontWeight: 'bold',
-    position: 'absolute'
+
 })
 const StyledPrice = styled.div({
     textDecoration: 'line-through',
