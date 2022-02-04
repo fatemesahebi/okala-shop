@@ -135,9 +135,9 @@ const SingleProduct = ({product}) => {
 
     const dispatch = useDispatch()
     let shoppingCardId = useSelector(state => state.cart.items.findIndex((item) => item.id === product.id)
-            ? state.cart.items.findIndex((item) => item.id === product.id) : -1)
-      let  shoppinCardCount = (shoppingCardId === -1) ? 0 :
-            useSelector(state => state.cart.items[shoppingCardId].count)
+        ? state.cart.items.findIndex((item) => item.id === product.id) : -1)
+    let shoppinCardCount = (shoppingCardId === -1) ? 0 :
+        useSelector(state => state.cart.items[shoppingCardId].count)
 
     return (
         <Container sx={{padding: "0 !important"}} maxWidth='xs'>
@@ -170,7 +170,7 @@ const SingleProduct = ({product}) => {
                             }
 
 
-                            <StyledImage src={product.productImage}/>
+                            <StyledImage src={product.productImage.src}/>
                         </StyledCardMedia>
                         {(product.offPercent > 0) ? (
                                 <StyledCardContent>
