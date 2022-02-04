@@ -109,7 +109,7 @@ const StyledPrice = styled.div({
     textDecoration: 'line-through',
     fontSize: '14px',
     position: 'absolute',
-    left: '10px',
+    left: '20px',
     top: '60px'
 })
 const StyledOffPercent = styled.div({
@@ -120,14 +120,14 @@ const StyledOffPercent = styled.div({
     fontWeight: 'bold',
     fontSize: '13px',
     position: 'absolute',
-    right: '10px',
+    right: '20px',
     top: "90px"
 })
 const StyledPriceOffer = styled.div({
     position: "absolute",
     fontSize: '14px',
     left: '20px',
-    bottom: '20px'
+    top: '90px'
 })
 
 
@@ -135,9 +135,9 @@ const SingleProduct = ({product}) => {
 
     const dispatch = useDispatch()
     let shoppingCardId = useSelector(state => state.cart.items.findIndex((item) => item.id === product.id)
-        ? state.cart.items.findIndex((item) => item.id === product.id) : -1)
-    let shoppinCardCount = (shoppingCardId === -1) ? 0 :
-        useSelector(state => state.cart.items[shoppingCardId].count)
+            ? state.cart.items.findIndex((item) => item.id === product.id) : -1)
+      let  shoppinCardCount = (shoppingCardId === -1) ? 0 :
+            useSelector(state => state.cart.items[shoppingCardId].count)
 
     return (
         <Container sx={{padding: "0 !important"}} maxWidth='xs'>
