@@ -2,6 +2,7 @@ import {Header,BannerSlider, DailyOffer,FourthBanner,DoubleBanner,ListBrands,Lis
 import {Button} from '@mui/material'
 import LinK from "next/link"
 function HomePage(){
+
     return(<div>
         <Header/>
         <ListMiddleNavbar/>
@@ -13,7 +14,9 @@ function HomePage(){
                 </a>
             </LinK>
         </Button>
+        {/*<HeaderLower/>*/}
         <BannerSlider/>
+        <ListMiddleNavbar/>
         <DailyOffer/>
         <FourthBanner/>
         <DoubleBanner/>
