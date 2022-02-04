@@ -39,12 +39,12 @@ const StyledIcon = styled.text({
     alignItems: 'center',
     position: 'absolute',
     zIndex: '1',
-    right: '10px'
+    right: '20px'
 })
 const StyledShoppingCount = styled.text({
     backgroundColor: '#f8f8f8',
     color: 'black',
-    width: '110px',
+    width: '70px',
     height: '40px',
     padding: '8px',
     display: 'flex',
@@ -52,7 +52,7 @@ const StyledShoppingCount = styled.text({
     alignItems: 'center',
     position: 'absolute',
     zIndex: '1',
-    right: '45px',
+    right: '53px',
     animation: "ease-in",
     animationDelay: '4s'
 })
@@ -68,7 +68,7 @@ const StyledRemoveIcon = styled.text({
     alignItems: 'center',
     position: 'absolute',
     zIndex: '1',
-    right: '150px',
+    right: '110px',
     animation: "ease-in",
     animationDelay: '4s'
 })
@@ -103,7 +103,7 @@ const StyledCardContent = styled.div({
 const StyledProductName = styled.div({
     fontSize: '14px',
     fontWeight: 'bold',
-    position: 'absolute'
+
 })
 const StyledPrice = styled.div({
     textDecoration: 'line-through',
@@ -135,9 +135,9 @@ const SingleProduct = ({product}) => {
 
     const dispatch = useDispatch()
     let shoppingCardId = useSelector(state => state.cart.items.findIndex((item) => item.id === product.id)
-            ? state.cart.items.findIndex((item) => item.id === product.id) : -1)
-      let  shoppinCardCount = (shoppingCardId === -1) ? 0 :
-            useSelector(state => state.cart.items[shoppingCardId].count)
+        ? state.cart.items.findIndex((item) => item.id === product.id) : -1)
+    let shoppingCardCount = (shoppingCardId === -1) ? 0 :
+        useSelector(state => state.cart.items[shoppingCardId].count)
 
     return (
         <Container sx={{padding: "0 !important"}} maxWidth='xs'>
@@ -147,14 +147,11 @@ const SingleProduct = ({product}) => {
                     <StyledCard>
                         <StyledCardMedia>
                             <StyledIcon>
-                                {(shoppinCardCount === 0) && <AddIcon onClick={() => {
-                                    dispatch(addToCart(product));
-                                    // setVisible(true);
-                                    // setCounter(counter + 1)
-                                }}/>}
+                                {(shoppingCardCount === 0) && <AddIcon onClick={() => {
+                                    dispatch(addToCart(product))}}/>}
                             </StyledIcon>
-                            {(shoppinCardCount > 1) && <div>
-                                <StyledShoppingCount>{shoppinCardCount}</StyledShoppingCount>
+                            {(shoppingCardCount > 1) && <div>
+                                <StyledShoppingCount>{shoppingCardCount}</StyledShoppingCount>
                                 <StyledMinusIcon>
                                     <RemoveIcon onClick={() => {
                                         dispatch(decreaseItem(product))
@@ -162,14 +159,12 @@ const SingleProduct = ({product}) => {
                             </div>}
 
                             {
-                                (shoppinCardCount === 1) && <div>
-                                    <StyledShoppingCount>{shoppinCardCount}</StyledShoppingCount>
+                                (shoppingCardCount === 1) && <div>
+                                    <StyledShoppingCount>{shoppingCardCount}</StyledShoppingCount>
                                     <StyledRemoveIcon><DeleteOutlineOutlinedIcon
                                         onClick={() => dispatch(removeItem(product))}/></StyledRemoveIcon>
                                 </div>
                             }
-
-
                             <StyledImage src={product.productImage}/>
                         </StyledCardMedia>
                         {(product.offPercent > 0) ? (
