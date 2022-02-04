@@ -10,7 +10,8 @@ import styled from '@emotion/styled'
 import {Image} from "@mui/icons-material";
 import PN from "persian-number";
 import {useDispatch} from "react-redux";
-import {addToCart,decreaseItem,removeItem} from "../../redux/cartReducer";
+import {addToCart, decreaseItem, removeItem} from "../../redux/cartReducer";
+import state from "../../redux/state";
 
 const StyledCard = styled.div({
     height: '312px',
@@ -53,8 +54,8 @@ const StyledShoppingCount = styled.text({
     position: 'absolute',
     zIndex: '1',
     right: '45px',
-    animation:"ease-in",
-    animationDelay:'4s'
+    animation: "ease-in",
+    animationDelay: '4s'
 })
 const StyledRemoveIcon = styled.text({
     backgroundColor: '#f0f0f0',
@@ -69,8 +70,8 @@ const StyledRemoveIcon = styled.text({
     position: 'absolute',
     zIndex: '1',
     right: '150px',
-    animation:"ease-in",
-    animationDelay:'4s'
+    animation: "ease-in",
+    animationDelay: '4s'
 })
 const StyledCardMedia = styled.div({
     display: "flex",
@@ -116,8 +117,9 @@ const StyledPriceOffer = styled.div({
 
 
 const SingleProduct = ({product}) => {
+    const [counter, setCounter] = React.useState(0)
     const [visible, setVisible] = React.useState(false);
-    const dispatch=useDispatch()
+    const dispatch = useDispatch()
     return (
         <Container sx={{padding: "0 !important"}} maxWidth='xs'>
 
@@ -126,17 +128,21 @@ const SingleProduct = ({product}) => {
                     <StyledCard>
                         <StyledCardMedia>
                             <StyledIcon>
-                                <AddIcon onClick={()=>{dispatch(addToCart(product));setVisible(true)}}/>
+                                <AddIcon onClick={() => {
+                                    dispatch(addToCart(product));
+                                    setVisible(true);
+                                    setCounter(counter + 1)
+                                }}/>
                             </StyledIcon>
                             {visible && <div>
-                            <StyledShoppingCount></StyledShoppingCount>
-                            <StyledRemoveIcon>
-                                <DeleteOutlineOutlinedIcon onClick={()=>setVisible(false)}/>
-                            </StyledRemoveIcon>
+                                <StyledShoppingCount>{counter}</StyledShoppingCount>
+                                <StyledRemoveIcon>
+                                    <DeleteOutlineOutlinedIcon onClick={() => setVisible(false)}/>
+                                </StyledRemoveIcon>
                             </div>}
                             <StyledImage src={product.productImage}/>
                         </StyledCardMedia>
-                        {(product.offPercent > 0 )? (
+                        {(product.offPercent > 0) ? (
                                 <StyledCardContent>
                                     <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
                                     <StyledPrice gutterBottom variant='paragraph'>{product.price}</StyledPrice>
