@@ -5,13 +5,13 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import {Container, Grid} from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import styled from '@emotion/styled'
 import {Image} from "@mui/icons-material";
 import PN from "persian-number";
-import {useDispatch} from "react-redux";
 import {addToCart, decreaseItem, removeItem} from "../../redux/cartReducer";
-import state from "../../redux/state";
+import {useSelector, useDispatch} from "react-redux";
 
 const StyledCard = styled.div({
     height: '312px',
@@ -46,7 +46,6 @@ const StyledShoppingCount = styled.text({
     color: 'black',
     width: '110px',
     height: '40px',
-    // borderRadius: '10px',
     padding: '8px',
     display: 'flex',
     justifyContent: 'center',
@@ -58,6 +57,22 @@ const StyledShoppingCount = styled.text({
     animationDelay: '4s'
 })
 const StyledRemoveIcon = styled.text({
+    backgroundColor: '#f0f0f0',
+    color: '#f01436',
+    width: '40px',
+    height: '40px',
+    borderRadius: '10px',
+    padding: '8px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    zIndex: '1',
+    right: '150px',
+    animation: "ease-in",
+    animationDelay: '4s'
+})
+const StyledMinusIcon = styled.text({
     backgroundColor: '#f0f0f0',
     color: '#f01436',
     width: '40px',
@@ -117,9 +132,13 @@ const StyledPriceOffer = styled.div({
 
 
 const SingleProduct = ({product}) => {
-    const [counter, setCounter] = React.useState(0)
-    const [visible, setVisible] = React.useState(false);
+
     const dispatch = useDispatch()
+    let shoppingCardId = useSelector(state => state.cart.items.findIndex((item) => item.id === product.id)
+            ? state.cart.items.findIndex((item) => item.id === product.id) : -1)
+      let  shoppinCardCount = (shoppingCardId === -1) ? 0 :
+            useSelector(state => state.cart.items[shoppingCardId].count)
+
     return (
         <Container sx={{padding: "0 !important"}} maxWidth='xs'>
 
@@ -128,18 +147,29 @@ const SingleProduct = ({product}) => {
                     <StyledCard>
                         <StyledCardMedia>
                             <StyledIcon>
-                                <AddIcon onClick={() => {
+                                {(shoppinCardCount === 0) && <AddIcon onClick={() => {
                                     dispatch(addToCart(product));
-                                    setVisible(true);
-                                    setCounter(counter + 1)
-                                }}/>
+                                    // setVisible(true);
+                                    // setCounter(counter + 1)
+                                }}/>}
                             </StyledIcon>
-                            {visible && <div>
-                                <StyledShoppingCount>{counter}</StyledShoppingCount>
-                                <StyledRemoveIcon>
-                                    <DeleteOutlineOutlinedIcon onClick={() => setVisible(false)}/>
-                                </StyledRemoveIcon>
+                            {(shoppinCardCount > 1) && <div>
+                                <StyledShoppingCount>{shoppinCardCount}</StyledShoppingCount>
+                                <StyledMinusIcon>
+                                    <RemoveIcon onClick={() => {
+                                        dispatch(decreaseItem(product))
+                                    }}/></StyledMinusIcon>
                             </div>}
+
+                            {
+                                (shoppinCardCount === 1) && <div>
+                                    <StyledShoppingCount>{shoppinCardCount}</StyledShoppingCount>
+                                    <StyledRemoveIcon><DeleteOutlineOutlinedIcon
+                                        onClick={() => dispatch(removeItem(product))}/></StyledRemoveIcon>
+                                </div>
+                            }
+
+
                             <StyledImage src={product.productImage}/>
                         </StyledCardMedia>
                         {(product.offPercent > 0) ? (
