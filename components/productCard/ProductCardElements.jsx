@@ -5,6 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import {Container, Grid} from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import styled from '@emotion/styled'
 import {Image} from "@mui/icons-material";
@@ -46,7 +47,6 @@ const StyledShoppingCount = styled.text({
     color: 'black',
     width: '110px',
     height: '40px',
-    // borderRadius: '10px',
     padding: '8px',
     display: 'flex',
     justifyContent: 'center',
@@ -58,6 +58,22 @@ const StyledShoppingCount = styled.text({
     animationDelay: '4s'
 })
 const StyledRemoveIcon = styled.text({
+    backgroundColor: '#f0f0f0',
+    color: '#f01436',
+    width: '40px',
+    height: '40px',
+    borderRadius: '10px',
+    padding: '8px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    zIndex: '1',
+    right: '150px',
+    animation: "ease-in",
+    animationDelay: '4s'
+})
+const StyledMinusIcon = styled.text({
     backgroundColor: '#f0f0f0',
     color: '#f01436',
     width: '40px',
@@ -134,12 +150,24 @@ const SingleProduct = ({product}) => {
                                     setCounter(counter + 1)
                                 }}/>
                             </StyledIcon>
-                            {visible && <div>
+                            {counter > 1 ? (
+                                 <div>
                                 <StyledShoppingCount>{counter}</StyledShoppingCount>
-                                <StyledRemoveIcon>
-                                    <DeleteOutlineOutlinedIcon onClick={() => setVisible(false)}/>
-                                </StyledRemoveIcon>
-                            </div>}
+                                <StyledMinusIcon> <RemoveIcon onClick={() => {
+                                    setCounter(counter - 1)
+                                }}/></StyledMinusIcon>
+                            </div>
+                                ):
+                                (
+                                    <div>
+                                <StyledShoppingCount>{counter}</StyledShoppingCount>
+                                <StyledRemoveIcon><DeleteOutlineOutlinedIcon
+                                onClick={() => setVisible(false)}/></StyledRemoveIcon>
+                                </div>
+                                )
+                            }
+
+
                             <StyledImage src={product.productImage}/>
                         </StyledCardMedia>
                         {(product.offPercent > 0) ? (
