@@ -163,8 +163,8 @@ const DailyOffer = () => {
                     scrollBehavior: "smooth",
                     margin: "0 !important"
                 }}>
-                    {[0, 1, 2, 3, 4, 5].map(item => (
-                        <SingleProduct key="1" product={productData[0]}/>
+                    {products.map(item => (
+                            <SingleProduct key={item.id} product={item}/>
                     ))}
                 </Container>
             </Container>
