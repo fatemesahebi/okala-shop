@@ -12,6 +12,11 @@ import {Image} from "@mui/icons-material";
 import PN from "persian-number";
 import {addToCart, decreaseItem, removeItem} from "../../redux/cartReducer";
 import {useSelector, useDispatch} from "react-redux";
+import NextLink from 'next/link'
+import Link from "@mui/material/Link"
+import {Button} from "@mui/material"
+
+
 
 const StyledCard = styled.div({
     height: '312px',
@@ -141,8 +146,19 @@ const SingleProduct = ({product}) => {
 
     return (
         <Container sx={{padding: "0 !important"}} maxWidth='xs'>
-
             <Grid container spacing={4}>
+                {/*<Button>*/}
+                    {/*<NextLink href={{*/}
+                    {/*    pathname:"/products/[productId]",*/}
+                    {/*    query:{productId:product.id}*/}
+                    {/*}}>*/}
+                    {/*    <Link>*/}
+                    {/*        ckick*/}
+
+                    {/*    </Link>*/}
+                    {/*</NextLink>*/}
+
+                {/*</Button>*/}
                 <Grid item>
                     <StyledCard>
                         <StyledCardMedia>
@@ -174,7 +190,11 @@ const SingleProduct = ({product}) => {
                         </StyledCardMedia>
                         {(product.offPercent > 0) ? (
                                 <StyledCardContent>
-                                    <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
+
+                                            <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
+
+
+
                                     <StyledPrice gutterBottom variant='paragraph'>{product.price}</StyledPrice>
                                     <div>
                                         <Grid container>
@@ -197,6 +217,7 @@ const SingleProduct = ({product}) => {
                     </StyledCard>
                 </Grid>
             </Grid>
+
         </Container>
 
     );

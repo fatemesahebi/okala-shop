@@ -54,7 +54,7 @@ const FullCard = () => {
         0)))
     const CountOrder = useSelector((state => state.cart.items.length))
     const [open, setOpen] = React.useState(false);
-const dispatch=useDispatch()
+    const dispatch = useDispatch()
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -62,11 +62,11 @@ const dispatch=useDispatch()
     const handleClose = () => {
         setOpen(false);
     };
-const handleDeleteShoppingCard=()=>{
-    setOpen(false);
-    dispatch(removeAllItem())
+    const handleDeleteShoppingCard = () => {
+        setOpen(false);
+        dispatch(removeAllItem())
 
-}
+    }
 
     return (
         <div>
@@ -109,11 +109,16 @@ const handleDeleteShoppingCard=()=>{
                         keepMounted
                         onClose={handleClose}
                         aria-describedby="alert-dialog-slide-description"
-                        sx={{minWidth:"800px"}}
+                        sx={{minWidth: "800px"}}
                     >
-                        <DialogTitle sx={{color:'black.main',fontWeight:700,fontSize:"1.5rem"}}>{"حذف همه کالاها"}</DialogTitle>
+                        <DialogTitle sx={{
+                            color: 'black.main',
+                            fontWeight: 700,
+                            fontSize: "1.5rem"
+                        }}>{"حذف همه کالاها"}</DialogTitle>
                         <DialogContent>
-                            <DialogContentText sx={{color:'black.main',fontWeight:600,mb:2}}  id="alert-dialog-slide-description">
+                            <DialogContentText sx={{color: 'black.main', fontWeight: 600, mb: 2}}
+                                               id="alert-dialog-slide-description">
                                 آیا از حذف همه کالاها از سبد خرید اطمینان دارید؟
                             </DialogContentText>
                         </DialogContent>
@@ -122,31 +127,31 @@ const handleDeleteShoppingCard=()=>{
                                 sx={{
                                     color: 'red.main',
                                     backgroundColor: 'white.main',
-                                    borderRadius:'10px',
-                                    fontSize:"1.2rem",
-                                    fontWeight:700,
-                                    px:5,
-                                    "&:hover":{
+                                    borderRadius: '10px',
+                                    fontSize: "1.2rem",
+                                    fontWeight: 700,
+                                    px: 5,
+                                    "&:hover": {
                                         backgroundColor: 'white.main',
                                     },
-                                    border:'1px solid #b9b5b5',
-                                    mr:10,
-                                    ml:1,
-                                    mb:2,
+                                    border: '1px solid #b9b5b5',
+                                    mr: 10,
+                                    ml: 1,
+                                    mb: 2,
                                 }}
 
                                 onClick={handleClose}>انصراف </DialogButtons>
                             <DialogButtons sx={{
                                 color: 'white.main',
                                 backgroundColor: 'red.main',
-                                borderRadius:'10px',
-                                fontSize:"1.2rem",
-                                fontWeight:700,
-                                px:4,
-                                ml:3,
-                                mb:2,
+                                borderRadius: '10px',
+                                fontSize: "1.2rem",
+                                fontWeight: 700,
+                                px: 4,
+                                ml: 3,
+                                mb: 2,
 
-                                "&:hover":{
+                                "&:hover": {
                                     backgroundColor: 'red.mid',
                                 }
                             }} onClick={handleDeleteShoppingCard}>بله، حذف کن</DialogButtons>

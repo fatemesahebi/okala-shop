@@ -54,7 +54,7 @@ function SearchBox() {
 
 
                    }}>
-                <Stack sx={{flexDirection:'row',gap:2}}>
+                <Stack sx={{flexDirection:'row',gap:2,justifyContent:'flex-start'}}>
                     {products.filter(product => product.productName.includes(searchTerm) ||
                         product.brand.includes(searchTerm)).map(
                         product=><SingleProduct key={product.id+product.productName} product={product}/>
