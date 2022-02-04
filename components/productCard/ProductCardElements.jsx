@@ -8,14 +8,17 @@ import AddIcon from '@mui/icons-material/Add';
 import styled from '@emotion/styled'
 import {Image} from "@mui/icons-material";
 import PN from "persian-number";
+import {useDispatch} from "react-redux";
+import {addToCart,decreaseItem,removeItem} from "../../redux/cartReducer";
+
 const StyledCard = styled.div({
     height: '312px',
     width: '220px',
     display: 'flex',
     flexDirection: 'column',
     border: 'solid lightgray 1px',
-    borderRadius:'5px',
-    backgroundColor:'#ffffff'
+    borderRadius: '5px',
+    backgroundColor: '#ffffff'
 
 })
 const StyledImage = styled.img({
@@ -66,14 +69,14 @@ const StyledOffPercent = styled.div({
     color: 'white',
     padding: '2px 10px 2px 10px',
     fontWeight: 'bold',
-    fontSize:'13px',
+    fontSize: '13px',
     position: 'absolute',
     right: '10px',
     top: "90px"
 })
 const StyledPriceOffer = styled.div({
     position: "absolute",
-    fontSize:'14px',
+    fontSize: '14px',
     left: '20px',
     bottom: '20px'
 })
@@ -81,6 +84,7 @@ const StyledPriceOffer = styled.div({
 
 const SingleProduct = ({product}) => {
 
+    const dispatch=useDispatch()
     return (
         <Container sx={{padding: "0 !important"}} maxWidth='xs'>
 
@@ -89,18 +93,19 @@ const SingleProduct = ({product}) => {
                     <StyledCard>
                         <StyledCardMedia>
                             <StyledIcon>
-                                <AddIcon/>
+                                <AddIcon onClick={()=>{dispatch(addToCart(product))}}/>
                             </StyledIcon>
                             <StyledImage src={product.productImage}/>
                         </StyledCardMedia>
-                        {product.offPercent > 0 ? (
+                        {(product.offPercent > 0 )? (
                                 <StyledCardContent>
                                     <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
                                     <StyledPrice gutterBottom variant='paragraph'>{product.price}</StyledPrice>
                                     <div>
                                         <Grid container>
                                             <Grid item>
-                                                <StyledOffPercent variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.offPercent}`))}%</StyledOffPercent>
+                                                <StyledOffPercent
+                                                    variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.offPercent}`))} %</StyledOffPercent>
                                             </Grid>
                                         </Grid>
                                         <Grid item>
