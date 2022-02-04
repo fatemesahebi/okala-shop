@@ -1,4 +1,4 @@
-import {Header,BannerSlider, DailyOffer,FourthBanner,DoubleBanner,ListBrands,ListMiddleNavbar, FooterContainer, OkalaBlog} from "../components";
+import {Header,BannerSlider, CategoryProducts, DailyOffer,FourthBanner,DoubleBanner,ListBrands,ListMiddleNavbar, FooterContainer, OkalaBlog} from "../components";
 function HomePage(){
     return(<div>
         <Header/>
@@ -7,6 +7,7 @@ function HomePage(){
         <DailyOffer/>
         <FourthBanner/>
         <DoubleBanner/>
+        <CategoryProducts/>
         <OkalaBlog/>
         <ListBrands/>
         <FooterContainer/>
