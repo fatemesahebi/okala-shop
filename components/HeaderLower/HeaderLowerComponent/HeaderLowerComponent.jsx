@@ -17,7 +17,8 @@ import Image from "next/image"
             </Box>
             <Typography sx={{
                 fontSize: "12px",
-                fontWeight: "bold"
+                fontWeight: "bold",
+                color: "black !important"
             }}>
                 {children}
             </Typography>

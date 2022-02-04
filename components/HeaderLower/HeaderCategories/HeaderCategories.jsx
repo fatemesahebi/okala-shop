@@ -13,7 +13,7 @@ const HeaderCategories = () => {
             display: "flex",
             justifyContent: "center",
             zIndex: "12",
-            top: "9.2rem",
+            top: "14.7rem",
             margin: "0 !important",
             padding: "0 !important",
         }}>

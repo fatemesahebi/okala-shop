@@ -21,7 +21,7 @@ const HeaderLower = () => {
             margin: "0 !important",
             padding: "0 !important",
             position: "fixed",
-            top: "6rem",
+            top: "11.5rem",
             zIndex: 12
         }}>
             <Container maxWidth="100vw" sx={{
