@@ -14,7 +14,7 @@ const SidebarCategories = ({children , value , index}) => {
             height: "3rem",
             alignContent: "center",
             alignItems: "center",
-            padding: "0 10px !important",
+            paddingRight: "10px !important",
             margin: "0 !important",
             cursor: "pointer"
         }}>

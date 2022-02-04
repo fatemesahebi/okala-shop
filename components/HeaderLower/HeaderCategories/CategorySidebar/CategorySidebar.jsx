@@ -2,6 +2,7 @@ import {Box, Tab, Tabs, TabsUnstyled, TabUnstyled} from "@mui/material";
 import SidebarCategories from "./SidebarCategories/SidebarCategories"
 import Subcategories from "../Subcategories/Subcategories";
 import {useState} from "react";
+import {menuData} from "../../../../lib/mirage/menuData";
 
 const CategorySidebar = ({categories}) => {
     const [value, setValue] = useState(0)
@@ -43,13 +44,20 @@ const CategorySidebar = ({categories}) => {
                             onMouseOver={() => {
                                 document.getElementById(`sidebar-tab-${index}`).click();
                             }}
-                            icon={<SidebarCategories value={value} index={0}>مواد غذایی</SidebarCategories>}
+                            icon={<SidebarCategories value={value} index={index}>{item.title}</SidebarCategories>}
                             id={`sidebar-tab-${index}`}
                             aria-controls={`sidebar-tabpanel-${index}`}/>
                     ))}
                 </Tabs>
             </Box>
-            <Subcategories/>
+            {categories.items1.map((item, index) => (
+                <Box role={"tabpanel"} id={`sidebar-tabpanel-${index}`} aria-labelledby={`sidebar-tab-${index}`} hidden={value !== index}>
+                    {value === index && (
+                        <Subcategories categories={item}/>
+                    )}
+                </Box>
+            ))}
+
         </Box>
     )
 }

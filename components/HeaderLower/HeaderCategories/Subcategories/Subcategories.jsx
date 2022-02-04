@@ -1,7 +1,7 @@
 import {Box, Typography} from "@mui/material";
 import CategoryBox from "./CategoryBox/CategoryBox";
 
-const Subcategories = () => {
+const Subcategories = ({categories}) => {
     return (
         <Box sx={{
             width: "68rem",
@@ -16,16 +16,9 @@ const Subcategories = () => {
                 width: "40rem",
                 height: "31.5rem"
             }}>
-                <CategoryBox/>
-                <CategoryBox/>
-                <CategoryBox/>
-                <CategoryBox/>
-                <CategoryBox/>
-                <CategoryBox/>
-                <CategoryBox/>
-                <CategoryBox/>
-                <CategoryBox/>
-                <CategoryBox/>
+                {categories.items2.map((item) => (
+                    <CategoryBox categories={item}/>
+                    ))}
             </Box>
         </Box>
     )

@@ -1,6 +1,6 @@
 import {Box, Typography} from "@mui/material";
 
-const CategoryBox = () => {
+const CategoryBox = ({categories}) => {
     return (
         <>
             <Box sx={{
@@ -18,33 +18,20 @@ const CategoryBox = () => {
                     fontSize: "0.9rem",
                     fontWeight: "bold"
                 }}>
-                    بستنی
+                    {categories.title}
                 </Typography>
             </Box>
-            <Typography sx={{
-                paddingRight: "2rem",
-                color: "black !important",
-                fontSize: "0.9rem",
+            {categories.items3.map(item => (
+                <Typography sx={{
+                    paddingRight: "2rem",
+                    color: "black !important",
+                    fontSize: "0.9rem",
 
-            }}>
-                بستنی چوبی
-            </Typography>
-            <Typography sx={{
-                paddingRight: "2rem",
-                color: "black !important",
-                fontSize: "0.9rem",
+                }}>
+                    {item.title}
+                </Typography>
+            ))}
 
-            }}>
-                بستنی قیفی
-            </Typography>
-            <Typography sx={{
-                paddingRight: "2rem",
-                color: "black !important",
-                fontSize: "0.9rem",
-
-            }}>
-                بستنی قیفی
-            </Typography>
         </>
     )
 }
