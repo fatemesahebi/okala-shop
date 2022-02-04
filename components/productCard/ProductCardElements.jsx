@@ -52,7 +52,9 @@ const StyledShoppingCount = styled.text({
     alignItems: 'center',
     position: 'absolute',
     zIndex: '1',
-    right: '45px'
+    right: '45px',
+    animation:"ease-in",
+    animationDelay:'4s'
 })
 const StyledRemoveIcon = styled.text({
     backgroundColor: '#f0f0f0',
@@ -67,6 +69,8 @@ const StyledRemoveIcon = styled.text({
     position: 'absolute',
     zIndex: '1',
     right: '150px',
+    animation:"ease-in",
+    animationDelay:'4s'
 })
 const StyledCardMedia = styled.div({
     display: "flex",
