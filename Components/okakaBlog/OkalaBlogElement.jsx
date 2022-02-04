@@ -11,7 +11,7 @@ const OkalaBlogElement = ({blogItem}) => {
         <Container>
             <Card sx={{width: '312px', height: '312px'}}>
                 <CardMedia>
-                    <Image style={{width: '312px', height: '180px'}} src={blogItem.image}/>
+                    <Image width={310} height={180} src={blogItem.image}/>
                 </CardMedia>
                 <CardContent>
                     <div>

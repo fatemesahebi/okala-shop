@@ -19,7 +19,7 @@ export {
     SearchBox,
     BannerSlider,
     ShoppingCard,
-    // DailyOffer,
+    DailyOffer,
     BigBanner,
     FourthBanner,
     DoubleBanner,
