@@ -10,9 +10,8 @@ import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined
 import styled from '@emotion/styled'
 import {Image} from "@mui/icons-material";
 import PN from "persian-number";
-import {useDispatch} from "react-redux";
 import {addToCart, decreaseItem, removeItem} from "../../redux/cartReducer";
-import state from "../../redux/state";
+import {useSelector, useDispatch} from "react-redux";
 
 const StyledCard = styled.div({
     height: '312px',
@@ -133,9 +132,13 @@ const StyledPriceOffer = styled.div({
 
 
 const SingleProduct = ({product}) => {
-    const [counter, setCounter] = React.useState(0)
-    const [visible, setVisible] = React.useState(false);
+
     const dispatch = useDispatch()
+    let shoppingCardId = useSelector(state => state.cart.items.findIndex((item) => item.id === product.id)
+            ? state.cart.items.findIndex((item) => item.id === product.id) : -1)
+      let  shoppinCardCount = (shoppingCardId === -1) ? 0 :
+            useSelector(state => state.cart.items[shoppingCardId].count)
+
     return (
         <Container sx={{padding: "0 !important"}} maxWidth='xs'>
 
@@ -144,27 +147,26 @@ const SingleProduct = ({product}) => {
                     <StyledCard>
                         <StyledCardMedia>
                             <StyledIcon>
-                                <AddIcon onClick={() => {
+                                {(shoppinCardCount === 0) && <AddIcon onClick={() => {
                                     dispatch(addToCart(product));
-                                    setVisible(true);
-                                    setCounter(counter + 1)
-                                }}/>
+                                    // setVisible(true);
+                                    // setCounter(counter + 1)
+                                }}/>}
                             </StyledIcon>
-                            {counter > 1 ? (
-                                 <div>
-                                <StyledShoppingCount>{counter}</StyledShoppingCount>
-                                <StyledMinusIcon> <RemoveIcon onClick={() => {
-                                    setCounter(counter - 1)
-                                }}/></StyledMinusIcon>
-                            </div>
-                                ):
-                                (
-                                    <div>
-                                <StyledShoppingCount>{counter}</StyledShoppingCount>
-                                <StyledRemoveIcon><DeleteOutlineOutlinedIcon
-                                onClick={() => setVisible(false)}/></StyledRemoveIcon>
+                            {(shoppinCardCount > 1) && <div>
+                                <StyledShoppingCount>{shoppinCardCount}</StyledShoppingCount>
+                                <StyledMinusIcon>
+                                    <RemoveIcon onClick={() => {
+                                        dispatch(decreaseItem(product))
+                                    }}/></StyledMinusIcon>
+                            </div>}
+
+                            {
+                                (shoppinCardCount === 1) && <div>
+                                    <StyledShoppingCount>{shoppinCardCount}</StyledShoppingCount>
+                                    <StyledRemoveIcon><DeleteOutlineOutlinedIcon
+                                        onClick={() => dispatch(removeItem(product))}/></StyledRemoveIcon>
                                 </div>
-                                )
                             }
 
 
