@@ -109,7 +109,7 @@ const StyledPrice = styled.div({
     textDecoration: 'line-through',
     fontSize: '14px',
     position: 'absolute',
-    left: '10px',
+    left: '20px',
     top: '60px'
 })
 const StyledOffPercent = styled.div({
@@ -120,14 +120,14 @@ const StyledOffPercent = styled.div({
     fontWeight: 'bold',
     fontSize: '13px',
     position: 'absolute',
-    right: '10px',
+    right: '20px',
     top: "90px"
 })
 const StyledPriceOffer = styled.div({
     position: "absolute",
     fontSize: '14px',
     left: '20px',
-    bottom: '20px'
+    top: '90px'
 })
 
 
