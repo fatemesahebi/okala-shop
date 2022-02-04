@@ -5,6 +5,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import SwiperCore, {Pagination, Autoplay, Navigation} from "swiper";
 import {productData} from "../productCard/ProductCardData";
 import SingleProduct from "../productCard/ProductCardElements";
+import {getMostOffProducts} from "../../lib/axios/getData";
 import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
@@ -13,25 +14,21 @@ SwiperCore.use([Pagination, Autoplay, Navigation])
 
 const DailyOffer = () => {
     const [pageWidth, setPageWidth] = useState(0)
+    const [products , setProducts] = useState([])
     const containerRef = useRef(null)
     const parentRef = useRef(null)
 
     useEffect(() => {
+        getMostOffProducts()
+            .then(data => setProducts(data.products))
+            .catch(res => alert(res.status))
         setPageWidth(window.innerWidth)
-
         function handleResize() {
             setPageWidth(window.innerWidth)
         }
-
         window.addEventListener("resize", handleResize)
         return () => window.removeEventListener("resize", handleResize)
     }, [])
-    const handlePrevPage = () => {
-        parentRef.current.scrollLeft += 250
-    }
-    const handleNextPage = () => {
-        parentRef.current.scrollLeft -= 250
-    }
     return pageWidth > 1230 ? (
             <Container dir="rtl" ref={containerRef} sx={{
                 display: "flex",
@@ -109,9 +106,9 @@ const DailyOffer = () => {
                             disableOnInteraction: false
                         }}
                     >
-                        {[0, 1, 2, 3, 4, 5].map(item => (
+                        {products.map(item => (
                             <SwiperSlide>
-                                <SingleProduct key="1" product={productData[0]}/>
+                                <SingleProduct key={item.id} product={item}/>
                             </SwiperSlide>
                         ))}
                     </Swiper>
