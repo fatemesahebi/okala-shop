@@ -4,7 +4,7 @@ import search from "./../../public/SVG/search.svg"
 import cart from "./../../public/SVG/buy.svg";
 import profile from "./../../public/SVG/profile.svg"
 import grouping from "./../../public/SVG/grouping.svg"
-import {Grid, Stack,Typography} from "@mui/material";
+import {Box, Stack,Typography} from "@mui/material";
 import MenuItem from "./MenuItem";
 import {Button} from "@mui/material";
 import Image from "next/image"
@@ -13,42 +13,42 @@ import Image from "next/image"
 
 export default function MenuMobile() {
     return (
-
-            <Grid spacing={8}>
+        <Box >
+            <Stack md={8} sx={{width:"960px",display:"flex",flexDirection:"row",justifyContent:"space-between",flexShrink:"1"}}>
                 <Button>
-                <Grid item sx={4}>
+                <Stack>
                   <Image src={home}/>
                     <Typography style={{color:"#888a89",fontSize:".625rem"}}>خانه</Typography>
-                </Grid>
+                </Stack>
                 </Button>
 
                 <Button>
-                    <Grid item sx={4}>
+                <Stack>
                     <Image src={search}/>
                         <Typography style={{color:"#888a89",fontSize:".625rem"}}>جستجو</Typography>
-                </Grid>
+                </Stack>
                 </Button>
 
-                   <Button sx={{border:"2px solid red", borderRadius:"80%"}}>
+                   <Button sx={{boxShadow:"0px -5px 5px 1px #888a89", borderRadius:"80%"}}>
                        <Image src={cart}/>
                    </Button>
 
                     <Button>
-                        <Grid item sx={4}>
+                        <Stack>
                         <Image src={grouping}/>
                         <Typography style={{color:"#888a89",fontSize:".625rem"}}>دسته بندی</Typography>
-                        </Grid>
+                        </Stack>
                     </Button>
 
                     <Button>
-                        <Grid item sx={4}>
+                        <Stack>
                     <Image src={profile}/>
                     <Typography style={{color:"#888a89",fontSize:".625rem"}}>پروفایل</Typography>
-                        </Grid>
+                        </Stack>
                     </Button>
 
 
-            </Grid>
-
+            </Stack>
+        </Box>
     );
 }
