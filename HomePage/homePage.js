@@ -21,7 +21,7 @@ function HomePage(){
         <OkalaBlogHeader/>
         <OkalaBlog/>
         <ListBrands/>
-        <MenuMobile/>
+        {/*<MenuMobile/>*/}
         <FooterContainer/>
     </div>)
 }
