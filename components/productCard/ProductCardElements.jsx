@@ -18,7 +18,6 @@ const StyledCard = styled.div({
     width: '220px',
     display: 'flex',
     flexDirection: 'column',
-    border: 'solid lightgray 1px',
     borderRadius: '5px',
     backgroundColor: '#ffffff'
 
