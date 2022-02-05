@@ -9,7 +9,7 @@ import {Button} from "@mui/material";
 import Image from "next/image"
 
 
-export default function MenuMobilee() {
+export default function MenuMobile() {
     return (
         <Box item xs={1} sx={{display: {lg:'none', md:'none'},justifyContent:"space-between",flexShrink:"1",width:"100vw",position:"fixed",bottom:"0",boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px;"}}  >
             <Stack sx={{display:"flex",flexDirection:"row",justifyContent:"space-between",flexShrink:"1"}}>
