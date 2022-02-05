@@ -129,6 +129,12 @@ const StyledPriceOffer = styled.div({
     left: '20px',
     top: '90px'
 })
+const StyledNoneOffer = styled.div({
+    position: "absolute",
+    fontSize: '14px',
+    left: '20px',
+    bottom: '18px'
+})
 
 
 const SingleProduct = ({product}) => {
@@ -175,7 +181,7 @@ const SingleProduct = ({product}) => {
                         {(product.offPercent > 0) ? (
                                 <StyledCardContent>
                                     <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
-                                    <StyledPrice gutterBottom variant='paragraph'>{product.price}</StyledPrice>
+                                    <StyledPrice gutterBottom variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.price}`))}</StyledPrice>
                                     <div>
                                         <Grid container>
                                             <Grid item>
@@ -192,7 +198,7 @@ const SingleProduct = ({product}) => {
                             :
                             (<CardContent>
                                 <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
-                                <StyledPriceOffer variant='paragraph'>{product.priceOffer} </StyledPriceOffer>
+                                <StyledNoneOffer variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.priceOffer}`))} ریال </StyledNoneOffer>
                             </CardContent>)}
                     </StyledCard>
                 </Grid>
