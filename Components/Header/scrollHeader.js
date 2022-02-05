@@ -32,7 +32,7 @@ const ScrollHeader = (props) => {
             <HideOnScroll {...props} >
                 <AppBar sx={{backgroundColor:'white.main',zIndex:100,pb:4,boxShadow:'none',display:{xs:'none',md:'block'}}}>
                         <LocationHeader/>
-                    {/*<HeaderLower/>*/}
+                    <HeaderLower/>
                 </AppBar>
             </HideOnScroll>
 
