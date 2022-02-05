@@ -6,15 +6,6 @@ function HomePage(){
     return(<div>
         <Header/>
         <ListMiddleNavbar/>
-        <Button>
-            <LinK href={'/products/1'}>
-                <a>
-                    click
-
-                </a>
-            </LinK>
-        </Button>
-        {/*<HeaderLower/>*/}
         <BannerSlider/>
         <ListMiddleNavbar/>
         <DailyOffer/>
