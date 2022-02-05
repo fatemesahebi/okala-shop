@@ -1,4 +1,4 @@
-import {Header,BannerSlider, DailyOffer,FourthBanner,DoubleBanner,ListBrands,ListMiddleNavbar, FooterContainer, OkalaBlog, HeaderLower, CategoryProducts} from "../components";
+import {Header,BannerSlider, DailyOffer,FourthBanner,DoubleBanner,ListBrands,ListMiddleNavbar, FooterContainer,OkalaBlogHeader, OkalaBlog, HeaderLower,CategoryProducts} from "../components";
 function HomePage(){
 
     return(<div>
@@ -17,6 +17,7 @@ function HomePage(){
         <CategoryProducts category={"غذا"}/>
         <CategoryProducts category={"لوازم بهداشتی"}/>
         <CategoryProducts category={"سایر غذاها"}/>
+        <OkalaBlogHeader/>
         <OkalaBlog/>
         <ListBrands/>
         <FooterContainer/>
