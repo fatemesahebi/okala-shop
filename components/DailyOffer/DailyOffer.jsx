@@ -14,7 +14,7 @@ SwiperCore.use([Pagination, Autoplay, Navigation])
 
 const DailyOffer = () => {
     const [pageWidth, setPageWidth] = useState(0)
-    const [products , setProducts] = useState([])
+    const [products, setProducts] = useState([])
     const containerRef = useRef(null)
     const parentRef = useRef(null)
 
@@ -23,15 +23,21 @@ const DailyOffer = () => {
             .then(data => setProducts(data.products))
             .catch(res => alert(res.status))
         setPageWidth(window.innerWidth)
+
         function handleResize() {
             setPageWidth(window.innerWidth)
         }
+
         window.addEventListener("resize", handleResize)
         return () => window.removeEventListener("resize", handleResize)
     }, [])
-    return pageWidth > 1230 ? (
-            <Container dir="rtl" ref={containerRef} sx={{
-                display: "flex",
+    return (
+        <Box>
+            <Container dir="rtl" sx={{
+                display: {
+                    lg:"flex",
+                    xs:"none"
+                },
                 flexDirection: "row",
                 width: "100vw",
                 maxWidth: "100vw !important",
@@ -88,7 +94,6 @@ const DailyOffer = () => {
                             scrollBehavior: "smooth",
                             margin: "0 !important"
                         }}
-                        ref={parentRef}
                         direction={'horizontal'}
                         navigation={{nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}}
                         slidesPerView={4.5}
@@ -106,7 +111,7 @@ const DailyOffer = () => {
                             disableOnInteraction: false
                         }}
                     >
-                        {products.slice(0,10).map(item => (
+                        {products.slice(0, 10).map(item => (
                             <SwiperSlide>
                                 <SingleProduct key={item.id} product={item}/>
                             </SwiperSlide>
@@ -132,11 +137,11 @@ const DailyOffer = () => {
                     </Box>
                 </Box>
             </Container>
-        )
-        :
-        (
-            <Container dir="rtl" ref={containerRef} sx={{
-                display: "flex",
+            <Container dir="rtl" sx={{
+                display: {
+                    lg:"none",
+                    xs:"flex"
+                },
                 flexDirection: "row",
                 alignItems: "center",
                 padding: "1rem",
@@ -163,12 +168,13 @@ const DailyOffer = () => {
                     scrollBehavior: "smooth",
                     margin: "0 !important"
                 }}>
-                    {products.slice(0,10).map(item => (
-                            <SingleProduct key={item.id} product={item}/>
+                    {products.slice(0, 10).map(item => (
+                        <SingleProduct key={item.id} product={item}/>
                     ))}
                 </Container>
             </Container>
-        )
+        </Box>
+    )
 }
 
 export default DailyOffer
