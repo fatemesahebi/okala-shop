@@ -23,16 +23,4 @@ const OkalaBlogHeader = () => {
 };
 
 export default OkalaBlogHeader;
-//<Box  sx={{display:'flex',justifyContent:'space-between',alignItems:'center',justifyItems:'center',alignContent:'space-between'}}>
-//             <Grid container   style={{marginRight:'6vw',backgroundColor:'red',display:'flex',justifyContent:'space-between'}}>
-//                 <Grid item  ><Typography >اُکالا بلاگ</Typography></Grid>
-//
-//            <Grid item  container >
-//                <Typography sx={{fontSize:'14px',color:'#02a0a4',fontWeight:'bold'}}>مشاهده همه</Typography>
-//                <Grid>
-//                    <Typography ><ArrowBackIosNewOutlinedIcon/></Typography>
-//                </Grid>
-//
-//            </Grid>
-//             </Grid>
-//         </Box>
+
