@@ -27,7 +27,7 @@ export default function MenuMobile() {
                 </Stack>
                 </Button>
 
-                   <Button sx={{boxShadow:"rgba(0, 0, 0, 0.35) 0px 5px 15px", borderRadius:"80%"}}>
+                   <Button sx={{boxShadow:"rgba(0, 0, 0, 0.35) 0px 5px 15px", borderRadius:"50%"}}>
                        <Image src={cart}/>
                    </Button>
 
