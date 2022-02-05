@@ -15,7 +15,6 @@ import {FooterContainer} from "./Footer/footer";
 import OkalaBlogHeader from './okakaBlog/OkalaBlogHeader'
 import HeaderLower from "./HeaderLower/HeaderLower";
 import CategoryProducts from "./CategoryProducts/CategoryProducts";
-import MenuMobile from "./moblieBottomNavbar/MenuMobile";
 export {
     Header,
     HeaderDesktop,
@@ -34,5 +33,4 @@ export {
     FooterContainer,
     HeaderLower,
     CategoryProducts,
-    MenuMobile
 }
