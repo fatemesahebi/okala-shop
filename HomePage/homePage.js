@@ -1,4 +1,4 @@
-import {Header,BannerSlider, DailyOffer,FourthBanner,DoubleBanner,ListBrands,ListMiddleNavbar, FooterContainer, OkalaBlog, HeaderLower} from "../components";
+import {Header,BannerSlider, DailyOffer,FourthBanner,DoubleBanner,ListBrands,ListMiddleNavbar, FooterContainer,OkalaBlogHeader, OkalaBlog, HeaderLower,CategoryProducts} from "../components";
 function HomePage(){
 
     return(<div>
@@ -8,7 +8,16 @@ function HomePage(){
         <ListMiddleNavbar/>
         <DailyOffer/>
         <FourthBanner/>
+        <CategoryProducts category={"محصولات جدید"}/>
+        <CategoryProducts category={"پرفروشترین در منطقه شما"}/>
+        <CategoryProducts category={"پرتخفیف ترین ها"}/>
         <DoubleBanner/>
+        <CategoryProducts category={"نوشیدنی"}/>
+        <CategoryProducts category={"میوه و سبزیجات"}/>
+        <CategoryProducts category={"غذا"}/>
+        <CategoryProducts category={"لوازم بهداشتی"}/>
+        <CategoryProducts category={"سایر غذاها"}/>
+        <OkalaBlogHeader/>
         <OkalaBlog/>
         <ListBrands/>
         <FooterContainer/>

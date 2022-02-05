@@ -1,34 +1,36 @@
 import {okalaBlog} from "../../lib/mirage/dataOKB";
 import {useState} from "react";
 import OkalaBlogElement from "./OkalaBlogElement";
-import {Box, Container} from "@mui/material";
+import {Box, Container, Grid, Stack} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {Swiper, SwiperSlide} from "swiper/react";
-import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
+import OkalaBlogHeader from "./OkalaBlogHeader";
 
-const OkalaBlogList = () => {
+const OkalaBlog = () => {
     return (
-        <div style={{width: '1310px', marginTop: '50px', marginRight: '50px'}}>
-            <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignContent: 'center',
-                alignItems: 'center',
-                justifyItems: 'center',
-            }}>
-                <Typography>اُکالا بلاگ</Typography>
-                <Typography>مشاهده همه<ArrowBackIosNewOutlinedIcon/></Typography>
-            </div>
+        <Container >
+            <Container style={{display:'flex',justifyContent:'center',marginBottom:'50px'}}>
+                <Grid container style={{
+                    padding: '20px',
+                    width:'90vw'
 
-            <Box>
-                <Swiper style={{marginRight: '-22px'}} slidesPerView={4} initialSlide='0'>
-                    {okalaBlog.map(blogItem => <SwiperSlide><OkalaBlogElement key={blogItem.id}
-                                                                           blogItem={blogItem}/></SwiperSlide>)}
-                </Swiper>
-
-            </Box>
-        </div>
+                }}>
+                    <Swiper initialSlide='0' breakpoints={{320:{slidesPerView:1},375:{slidesPerView:1},425:{slidesPerView:1.5,spaceBetween:15},768:{slidesPerView:2.5},1024:{slidesPerView:3,spaceBetween:22},1440:{slidesPerView:4}}}>
+                        {okalaBlog.map(blogItem => <SwiperSlide><OkalaBlogElement key={blogItem.id}
+                                                                                  blogItem={blogItem}/></SwiperSlide>)}
+                    </Swiper>
+                </Grid>
+            </Container>
+        </Container>
     );
 };
 
-export default OkalaBlogList;
+export default OkalaBlog;
+// breakpoints={{
+//                             480: {
+//                                 slidesPerView: 2.9,
+//                             },
+//                             1532: {
+//                                 slidesPerView: 4.5,
+//                             }
+//                         }}

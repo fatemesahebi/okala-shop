@@ -12,7 +12,9 @@ import ListBrands from "./BrandsIconPart/ListBrands";
 import ListMiddleNavbar from "./middleNavbar/ListMiddleNavbar";
 import OkalaBlog from './okakaBlog/OkalaBlog'
 import {FooterContainer} from "./Footer/footer";
+import OkalaBlogHeader from './okakaBlog/OkalaBlogHeader'
 import HeaderLower from "./HeaderLower/HeaderLower";
+import CategoryProducts from "./CategoryProducts/CategoryProducts";
 export {
     Header,
     HeaderDesktop,
@@ -26,7 +28,9 @@ export {
     DoubleBanner,
     ListBrands,
     ListMiddleNavbar,
+    OkalaBlogHeader,
     OkalaBlog,
     FooterContainer,
-    HeaderLower
+    HeaderLower,
+    CategoryProducts
 }
