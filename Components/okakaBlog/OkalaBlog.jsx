@@ -8,8 +8,8 @@ import OkalaBlogHeader from "./OkalaBlogHeader";
 
 const OkalaBlog = () => {
     return (
-        <Container>
-            <Container style={{display:'flex',justifyContent:'center'}}>
+        <Container >
+            <Container style={{display:'flex',justifyContent:'center',marginBottom:'50px'}}>
                 <Grid container style={{
                     padding: '20px',
                     width:'90vw'
