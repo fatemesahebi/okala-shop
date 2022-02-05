@@ -8,7 +8,7 @@ const DoubleBanner = () => {
 
     return (
         <Box   sx={{width:'83vw',marginRight:'8vw'}}>
-            <Grid container >
+            <Grid container  spacing={1} >
                 <Grid item xs={6} container >
                     <Image className={'banner'}  src={rightBanner}/>
                 </Grid>
