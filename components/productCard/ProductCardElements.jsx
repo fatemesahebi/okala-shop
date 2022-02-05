@@ -12,18 +12,12 @@ import {Image} from "@mui/icons-material";
 import PN from "persian-number";
 import {addToCart, decreaseItem, removeItem} from "../../redux/cartReducer";
 import {useSelector, useDispatch} from "react-redux";
-import NextLink from 'next/link'
-import Link from "@mui/material/Link"
-import {Button} from "@mui/material"
-
-
 
 const StyledCard = styled.div({
     height: '312px',
     width: '220px',
     display: 'flex',
     flexDirection: 'column',
-    border: 'solid lightgray 1px',
     borderRadius: '5px',
     backgroundColor: '#ffffff'
 
@@ -108,7 +102,7 @@ const StyledCardContent = styled.div({
 const StyledProductName = styled.div({
     fontSize: '14px',
     fontWeight: 'bold',
-    position: 'absolute'
+    // position: 'absolute'
 })
 const StyledPrice = styled.div({
     textDecoration: 'line-through',
@@ -134,6 +128,12 @@ const StyledPriceOffer = styled.div({
     left: '20px',
     top: '90px'
 })
+const StyledNoneOffer = styled.div({
+    position: "absolute",
+    fontSize: '14px',
+    left: '20px',
+    bottom: '18px'
+})
 
 
 const SingleProduct = ({product}) => {
@@ -146,19 +146,8 @@ const SingleProduct = ({product}) => {
 
     return (
         <Container sx={{padding: "0 !important"}} maxWidth='xs'>
+
             <Grid container spacing={4}>
-                {/*<Button>*/}
-                    {/*<NextLink href={{*/}
-                    {/*    pathname:"/products/[productId]",*/}
-                    {/*    query:{productId:product.id}*/}
-                    {/*}}>*/}
-                    {/*    <Link>*/}
-                    {/*        ckick*/}
-
-                    {/*    </Link>*/}
-                    {/*</NextLink>*/}
-
-                {/*</Button>*/}
                 <Grid item>
                     <StyledCard>
                         <StyledCardMedia>
@@ -190,12 +179,8 @@ const SingleProduct = ({product}) => {
                         </StyledCardMedia>
                         {(product.offPercent > 0) ? (
                                 <StyledCardContent>
-
-                                            <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
-
-
-
-                                    <StyledPrice gutterBottom variant='paragraph'>{product.price}</StyledPrice>
+                                    <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
+                                    <StyledPrice gutterBottom variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.price}`))}</StyledPrice>
                                     <div>
                                         <Grid container>
                                             <Grid item>
@@ -212,7 +197,7 @@ const SingleProduct = ({product}) => {
                             :
                             (<CardContent>
                                 <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
-                                <StyledPriceOffer variant='paragraph'>{product.priceOffer} </StyledPriceOffer>
+                                <StyledNoneOffer variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.priceOffer}`))} ریال </StyledNoneOffer>
                             </CardContent>)}
                     </StyledCard>
                 </Grid>
