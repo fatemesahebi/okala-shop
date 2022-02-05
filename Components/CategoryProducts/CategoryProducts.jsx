@@ -5,17 +5,34 @@ import SingleProduct from "../productCard/ProductCardElements";
 import {productData} from "../productCard/ProductCardData";
 import "swiper/css"
 import "swiper/css/navigation"
-import {getMostOffProducts} from "../../lib/axios/getData";
 import {useEffect, useState} from "react";
+import {getAllProducts, getCategoryProducts, getMostOffProducts, getMostSaleProducts} from "../../lib/axios/getData";
 
 SwiperCore.use([Navigation])
 
-const CategoryProducts = () => {
+const CategoryProducts = ({category}) => {
     const [products , setProducts] = useState([])
     useEffect(()=> {
-        getMostOffProducts()
-            .then(data => setProducts(data.products))
-            .catch(res => alert(res.status))
+        if(category === "محصولات جدید") {
+            getAllProducts()
+                .then(data => setProducts(data.products))
+                .catch(res => alert(res.status))
+        }
+        else if (category === "پرفروشترین در منطقه شما"){
+            getMostSaleProducts()
+                .then(data => setProducts(data.products))
+                .catch(res => alert(res.status))
+        }
+        else if (category === "پرتخفیف ترین ها"){
+            getMostOffProducts()
+                .then(data => setProducts(data.products))
+                .catch(res => alert(res.status))
+        }
+        else {
+            getCategoryProducts(category)
+                .then(data => setProducts(data.products))
+                .catch(res => alert(res.status))
+        }
     },[])
     return (
         <Container dir="rtl" maxWidth="100vw" sx={{
@@ -45,7 +62,7 @@ const CategoryProducts = () => {
                     <Typography sx={{
                         fontWeight: "bold"
                     }}>
-                        محصولات جدید
+                        {category}
                     </Typography>
                 </Box>
                 <Box>
@@ -84,7 +101,7 @@ const CategoryProducts = () => {
                     backgroundColor: "white !important",
                     minWidth: "3rem !important",
                     height: "3rem !important",
-                }} id={"swiper-button-prev-"+productData[0].id} className={"swiper-button-prev"}>
+                }} id={"swiper-button-prev-"+category.slice(0,3)} className={"swiper-button-prev"}>
                 </Box>
                 <Swiper
                     style={{
@@ -100,13 +117,13 @@ const CategoryProducts = () => {
                         margin: "0 !important"
                     }}
                     navigation={{
-                        nextEl: "#swiper-button-next-"+productData[0].id,
-                        prevEl: "#swiper-button-prev-"+productData[0].id,
+                        nextEl: "#swiper-button-next-"+category.slice(0,3),
+                        prevEl: "#swiper-button-prev-"+category.slice(0,3),
                     }}
                     spaceBetween={0}
                     slidesPerView={"auto"}
                 >
-                    {products.map(item => (
+                    {products.slice(0,10).map(item => (
                         <SwiperSlide style={{
                             width: "220px"
                         }}>
@@ -135,7 +152,7 @@ const CategoryProducts = () => {
                     minWidth: "3rem !important",
                     height: "3rem !important",
                     zIndex: 10
-                }} id={"swiper-button-next-"+productData[0].id} className={"swiper-button-next"}>
+                }} id={"swiper-button-next-"+category.slice(0,3)} className={"swiper-button-next"}>
                 </Box>
             </Box>
         </Container>
