@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Box, Typography, Button} from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
-import Image from 'next/image'
-import empetyCart from './../../public/images/emptyCart.png'
 import Modal from '@mui/material/Modal';
+import {useSelector} from "react-redux";
+import EmpetyCard from "./EmpetyCard";
+import FullCard from "./FullCard";
 
 const ShoppingCard = ({open,setOpen}) => {
- const handleCloseShoppingCard=()=>{
+let CountOrder=useSelector(state=>state.cart.items.length)
+    const handleCloseShoppingCard=()=>{
         setOpen(false)
 
  }
+
     return (
         <Modal
             open={open}
@@ -17,6 +20,8 @@ const ShoppingCard = ({open,setOpen}) => {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
         >
+
+        {/*    **************************************shopping card Header*********************************************/}
         <Box sx={{
             position: 'fixes',
             transform:(open)? 'translateX(-63.5vw)' : 'translate(-100vw)',
@@ -26,8 +31,7 @@ const ShoppingCard = ({open,setOpen}) => {
             color: 'black',
             height: '100vh',
             transition:'translateX 10s linear',
-            background: 'white'
-            // -webkitTapHighlightColor: "transparent",
+            background: 'white',
         }}>
             <Box sx={{
                 display: 'flex',
@@ -36,9 +40,8 @@ const ShoppingCard = ({open,setOpen}) => {
                 p: 2.5,
                 alignItems: 'center'
             }}>
-                <Typography sx={{fontSize: '0.6rem', fontWeight: '700'}}>سبد خرید شما</Typography>
+                <Typography sx={{fontWeight: '700'}}>سبد خرید شما</Typography>
                 <Button onClick={handleCloseShoppingCard} sx={{
-                    fontSize: '0.6rem',
                     fontWeight: '700',
                     backgroundColor: 'lightGray.main',
                     color: 'darkGray.main',
@@ -50,13 +53,10 @@ const ShoppingCard = ({open,setOpen}) => {
                         boxShadow: 'none',
                     },
                 }} endIcon={<CloseIcon/>}>بستن</Button>
-            </Box>
-            <Box sx={{display:'flex', flexDirection:'column',justifyContent:'center', alignItems:'center',rowGap:'20px',mt:10}}>
-                <Image src={empetyCart}/>
-                <Typography sx={{fontSize: '0.6rem',fontWeight:'700'}}>درحال حاضر سبد خرید شما خالی است!</Typography>
-                <Typography sx={{fontSize: '0.6rem', fontWeight: '700',color:'midGray.dark'}}>کالاهایی که دوست داری داشته باشی رو بهش اضافه کن</Typography>
-            </Box >
+        </Box>
+            {/*    ***********************************************************************************/}
 
+            {(CountOrder===0)?<EmpetyCard/>:<FullCard/>}
 
         </Box>
         </Modal>

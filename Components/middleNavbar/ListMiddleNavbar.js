@@ -56,7 +56,7 @@ function ListMiddleNavbar(){
                 }}
             >
 
-                {productList.map((item,index) => (<SwiperSlide><MiddleNavbar key={index} imagesProducts={item.image} textProducts={item.text}/> </SwiperSlide>))}
+                    {productList.map((item,index) => (<SwiperSlide><MiddleNavbar key={index} imagesProducts={item.image} textProducts={item.text}/> </SwiperSlide>))}
             </Swiper>
         </div>
     )
