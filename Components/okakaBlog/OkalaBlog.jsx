@@ -4,6 +4,7 @@ import OkalaBlogElement from "./OkalaBlogElement";
 import {Box, Container, Grid, Stack} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {Swiper, SwiperSlide} from "swiper/react";
+import OkalaBlogHeader from "./OkalaBlogHeader";
 
 const OkalaBlog = () => {
     return (

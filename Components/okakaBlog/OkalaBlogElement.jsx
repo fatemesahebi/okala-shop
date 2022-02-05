@@ -21,7 +21,7 @@ const OkalaBlogElement = ({blogItem}) => {
                     <Grid item container>
                         <CardContent>
                             <Grid item container>
-                                <Typography mb='20px' style={{color: 'black'}}>{blogItem.title}</Typography>
+                                <Typography mb='20px' sx={{fontWeight:'bold'}}>{blogItem.title}</Typography>
                             </Grid>
                             <Grid>
                                 <Stack direction="row" display={"flex"}
@@ -29,11 +29,11 @@ const OkalaBlogElement = ({blogItem}) => {
                                     <Grid item container
                                           sx={{display: 'flex', justifyContent: 'flex-start'}}>
                                         <Grid item>
-                                            <Image color={'#8f8f8f'} src={recipe}/>
+                                            <Image color={'#8f8f8f'} src={recipe} sx={{fontWeight:'bold'}} />
                                         </Grid>
                                         <Grid item>
                                             <Typography
-                                                sx={{ color: '#8f8f8f', fontSize: '12px', marginLeft: '15px'}}>
+                                                sx={{ color: '#8f8f8f', fontSize: '12px', marginLeft: '15px',fontWeight:'bold'}}>
                                                 {blogItem.subtitle}
                                             </Typography>
                                         </Grid>
@@ -46,7 +46,8 @@ const OkalaBlogElement = ({blogItem}) => {
                                             <Typography
                                                 style={{
                                                     color: '#8f8f8f',
-                                                    fontSize: '12px'
+                                                    fontSize: '12px',
+                                                    fontWeight:'bold'
                                                 }}>{blogItem.date}</Typography>
                                         </Grid>
                                     </Grid>
