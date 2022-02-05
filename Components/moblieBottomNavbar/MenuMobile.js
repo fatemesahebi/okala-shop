@@ -5,14 +5,13 @@ import cart from "./../../public/SVG/buy.svg";
 import profile from "./../../public/SVG/profile.svg"
 import grouping from "./../../public/SVG/grouping.svg"
 import {Box, Stack,Typography} from "@mui/material";
-import MenuItem from "./MenuItem";
 import {Button} from "@mui/material";
 import Image from "next/image"
 
 
 export default function MenuMobile() {
     return (
-        <Box item xs={1} sx={{display: {lg:'none', md:'none'}}}  >
+        <Box item xs={1} sx={{display: {lg:'none', md:'none'},justifyContent:"space-between",flexShrink:"1",width:"100vw",position:"fixed",bottom:"0",boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px;"}}  >
             <Stack sx={{display:"flex",flexDirection:"row",justifyContent:"space-between",flexShrink:"1"}}>
                 <Button>
                 <Stack>
@@ -28,7 +27,7 @@ export default function MenuMobile() {
                 </Stack>
                 </Button>
 
-                   <Button sx={{boxShadow:"0px -5px 5px 1px #888a89", borderRadius:"80%"}}>
+                   <Button sx={{boxShadow:"rgba(0, 0, 0, 0.35) 0px 5px 15px", borderRadius:"80%"}}>
                        <Image src={cart}/>
                    </Button>
 
