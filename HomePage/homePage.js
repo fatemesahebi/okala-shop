@@ -1,4 +1,6 @@
-import {Header,BannerSlider, DailyOffer,FourthBanner,DoubleBanner,ListBrands,ListMiddleNavbar, FooterContainer, OkalaBlog, HeaderLower} from "../components";
+import {Header,BannerSlider, DailyOffer,FourthBanner,DoubleBanner,ListBrands,ListMiddleNavbar, FooterContainer, OkalaBlog} from "../components";
+import {Button} from '@mui/material'
+import LinK from "next/link"
 function HomePage(){
 
     return(<div>
