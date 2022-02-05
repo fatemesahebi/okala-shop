@@ -2,52 +2,55 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import {Box, Container, Grid} from "@mui/material";
+import {Box, Container, Grid, Stack} from "@mui/material";
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import Image from 'next/image'
+import {Divider} from "@mui/material";
 
 const OkalaBlogElement = ({blogItem}) => {
     return (
+        <>
+
         <Container maxWidth={"xs"}>
             <Card sx={{width: '312px', height: '312px',boxSizing:"initial"}}>
                 <CardMedia>
                     <Image width={310} height={180} src={blogItem.image}/>
                 </CardMedia>
                 <CardContent>
-                    <Grid container>
-                        <Grid item container>
-                            <Typography>{blogItem.title}</Typography>
-                        </Grid>
-                        <Grid item container display={"flex"}>
-                            <Grid item container
+                    <Stack>
+                        <Box>
+                            <Typography mb='20px' >{blogItem.title}</Typography>
+                        </Box>
+                        <Stack  direction="row" display={"flex"}  divider={<Divider orientation="vertical" flexItem />}>
+                            <Box item container
                                   sx={{display: 'flex', justifyContent: 'flex-start'}}>
-                                <Grid item>
+                                <Box>
                                     <ArticleOutlinedIcon style={{color: '#989898', fontSize: '16px'}}/>
-                                </Grid>
+                                </Box>
 
-                                <Grid item>
+                                <Box>
                                     <Typography
-                                        sx={{color: '#989898', fontSize: '12px', marginLeft: '15px'}}>
+                                        sx={{color: '#989898', fontSize: '14px', marginLeft: '15px'}}>
                                         {blogItem.subtitle}
                                     </Typography>
-                                </Grid>
-                            </Grid>
-                            <Grid item container
-                                  sx={{display: 'flex', justifyContent: 'flex-start'}}>
-                                <Grid item>
+                                </Box>
+                            </Box>
+                            <Box sx={{display: 'flex', justifyContent: 'flex-start',mr:'10px'}}>
+                                <Box>
                                     <CalendarTodayOutlinedIcon style={{color: '#989898', fontSize: '16px'}}/>
-                                </Grid>
-                                <Grid item>
+                                </Box>
+                                <Box>
                                     <Typography
-                                        style={{color: '#989898', fontSize: '12px'}}>{blogItem.date}</Typography>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                    </Grid>
+                                        style={{color: '#989898', fontSize: '14px'}}>{blogItem.date}</Typography>
+                                </Box>
+                            </Box>
+                        </Stack>
+                    </Stack>
                 </CardContent>
             </Card>
         </Container>
+        </>
     );
 };
 
