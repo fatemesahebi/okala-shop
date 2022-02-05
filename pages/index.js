@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import Head from 'next/head';
-
+import SearchResults from "../Components/searchResults/SearchResults";
 import {
     getBrandProducts,
 } from "../lib/axios/getData";
