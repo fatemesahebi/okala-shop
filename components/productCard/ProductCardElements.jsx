@@ -18,7 +18,6 @@ const StyledCard = styled.div({
     width: '220px',
     display: 'flex',
     flexDirection: 'column',
-    border: 'solid lightgray 1px',
     borderRadius: '5px',
     backgroundColor: '#ffffff'
 
@@ -103,13 +102,13 @@ const StyledCardContent = styled.div({
 const StyledProductName = styled.div({
     fontSize: '14px',
     fontWeight: 'bold',
-    position: 'absolute'
+    // position: 'absolute'
 })
 const StyledPrice = styled.div({
     textDecoration: 'line-through',
     fontSize: '14px',
     position: 'absolute',
-    left: '10px',
+    left: '20px',
     top: '60px'
 })
 const StyledOffPercent = styled.div({
@@ -120,14 +119,20 @@ const StyledOffPercent = styled.div({
     fontWeight: 'bold',
     fontSize: '13px',
     position: 'absolute',
-    right: '10px',
+    right: '20px',
     top: "90px"
 })
 const StyledPriceOffer = styled.div({
     position: "absolute",
     fontSize: '14px',
     left: '20px',
-    bottom: '20px'
+    top: '90px'
+})
+const StyledNoneOffer = styled.div({
+    position: "absolute",
+    fontSize: '14px',
+    left: '20px',
+    bottom: '18px'
 })
 
 
@@ -135,9 +140,9 @@ const SingleProduct = ({product}) => {
 
     const dispatch = useDispatch()
     let shoppingCardId = useSelector(state => state.cart.items.findIndex((item) => item.id === product.id)
-        ? state.cart.items.findIndex((item) => item.id === product.id) : -1)
-    let shoppinCardCount = (shoppingCardId === -1) ? 0 :
-        useSelector(state => state.cart.items[shoppingCardId].count)
+            ? state.cart.items.findIndex((item) => item.id === product.id) : -1)
+      let  shoppinCardCount = (shoppingCardId === -1) ? 0 :
+            useSelector(state => state.cart.items[shoppingCardId].count)
 
     return (
         <Container sx={{padding: "0 !important"}} maxWidth='xs'>
@@ -175,7 +180,7 @@ const SingleProduct = ({product}) => {
                         {(product.offPercent > 0) ? (
                                 <StyledCardContent>
                                     <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
-                                    <StyledPrice gutterBottom variant='paragraph'>{product.price}</StyledPrice>
+                                    <StyledPrice gutterBottom variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.price}`))}</StyledPrice>
                                     <div>
                                         <Grid container>
                                             <Grid item>
@@ -192,11 +197,12 @@ const SingleProduct = ({product}) => {
                             :
                             (<CardContent>
                                 <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
-                                <StyledPriceOffer variant='paragraph'>{product.priceOffer} </StyledPriceOffer>
+                                <StyledNoneOffer variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.priceOffer}`))} ریال </StyledNoneOffer>
                             </CardContent>)}
                     </StyledCard>
                 </Grid>
             </Grid>
+
         </Container>
 
     );

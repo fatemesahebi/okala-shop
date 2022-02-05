@@ -1,5 +1,6 @@
 import React from 'react';
 import LocationHeader from "./locationHeader";
+import HeaderLower from "../HeaderLower/HeaderLower";
 import Slide from '@mui/material/Slide';
 import PropTypes from 'prop-types';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
@@ -28,9 +29,10 @@ const ScrollHeader = (props) => {
     return (
         <div>
             <CssBaseline />
-            <HideOnScroll {...props}>
-                <AppBar sx={{backgroundColor:'white.main',zIndex:100,pb:4,boxShadow:'none'}}>
+            <HideOnScroll {...props} >
+                <AppBar sx={{backgroundColor:'white.main',zIndex:100,pb:4,boxShadow:'none',display:{xs:'none',md:'block'}}}>
                         <LocationHeader/>
+                    <HeaderLower/>
                 </AppBar>
             </HideOnScroll>
 

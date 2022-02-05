@@ -20,7 +20,7 @@ const productList = [
 ]
 function ListMiddleNavbar(){
     return(
-        <div style={{ width: '100%',fontSize:"1rem",fontWeight:"bold" }}>
+        <div style={{ width: '100%',fontSize:".875rem",fontWeight:"bold" }}>
             <Swiper
                 slidesPerView={3}
                 spaceBetween={2}
