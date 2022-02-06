@@ -12,6 +12,11 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import styled from '@emotion/styled'
 import {useState} from "react";
+import {useEffect} from "react";
+import axios from "axios";
+import {specialOffer} from '../../lib/mirage/data'
+import SingleProductCard from '../productCard/ProductCard'
+import SingleProduct from "../productCard/ProductCardElements";
 
 const label = [
     {name: 'خشک پاک', id: 100}, {name: 'گلها', id: 101}, {name: 'نوبر سبز', id: 102}, {name: 'فله', id: 103},
@@ -21,20 +26,20 @@ const label = [
     }, {name: 'ارمغان پارس', id: 108},
     {name: 'برتر', id: 109}, {name: ' یک و یک', id: 110}, {name: 'دکتر بیژن', id: 111}, {
         name: 'سرد وتازه', id: 112
-    }, {name: 'کرالیچین', id: 112}, {name: 'باملیکا', id: 112}, {name: 'سحرخیز', id: 112}, {
+    }, {name: 'کرالیچین', id: 113}, {name: 'باملیکا', id: 114}, {name: 'سحرخیز', id: 115}, {
         name: ' رضوانی',
-        id: 113
+        id: 116
     },
-    {name: 'نصر خاتم', id: 114}, {name: 'فارسی', id: 115}]
+    {name: 'نصر خاتم', id: 117}, {name: 'فارسی', id: 118}]
 
 
 const BrandFilter = () => {
     const [filter, setFilter] = useState('')
-    const handleChange = () => {
 
-    }
     return (
         <Box>
+            {specialOffer.map(product => <SingleProductCard product={product}/>)}
+
             <div>
                 <Accordion sx={{width: '308px'}}>
                     <AccordionSummary sx={{width: '308px', height: '83px'}}
@@ -42,27 +47,31 @@ const BrandFilter = () => {
                                       aria-controls="panel1a-content"
                                       id="panel1a-header">
 
-                            <Box sx={{display: "inline-flex", gap: "10px"}}>
-                                <Box sx={{
-                                    height: "1.5rem",
-                                    border: "4px solid rgba(124, 200, 204, 1)",
-                                    borderRadius: "100px"}}>
-                                </Box>
-                                <Typography>برندهای موجود</Typography>
+                        <Box sx={{display: "inline-flex", gap: "10px"}}>
+                            <Box sx={{
+                                height: "1.5rem",
+                                border: "4px solid rgba(124, 200, 204, 1)",
+                                borderRadius: "100px"
+                            }}>
                             </Box>
+                            <Typography>برندهای موجود</Typography>
+                        </Box>
                     </AccordionSummary>
                     <AccordionDetails sx={{height: '300px', width: '308px', overflow: "scroll"}}>
                         <Box
                             component="form"
                             sx={{'& > :not(style)': {m: 1},}} noValidate autoComplete="off">
-                            <OutlinedInput onChange={handleChange} value={filter} name='search' startAdornment={
-                                <InputAdornment position="start"><Image src={search}/></InputAdornment>}
+                            <OutlinedInput onChange={e => setFilter(e.target.value)} value={filter} name='search'
+                                           startAdornment={
+                                               <InputAdornment position="start"><Image src={search}/></InputAdornment>}
                                            style={{borderRadius: '12px', width: '253px', height: '50px'}}
                                            placeholder="جستجوی نام برند ..."/></Box>
                         <Box component="div">
                             <FormGroup>
-                                {label.map(item => <FormControlLabel key={item.id} control={<Checkbox/>}
-                                                                     label={item.name}/>)}
+
+                                {label.filter(item => item.name.includes(filter)).length === 0 ? null : label.filter(item => item.name.includes(filter)).map(item =>
+                                    <FormControlLabel key={item.id} control={<Checkbox/>}
+                                                      label={item.name}/>)}
                             </FormGroup>
                         </Box>
                     </AccordionDetails>
