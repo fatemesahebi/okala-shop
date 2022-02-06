@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Grid} from '@mui/material';
+import {Grid, Typography} from '@mui/material';
+import {Box} from "@mui/material";
 
 export default function Feature({ imagesrc, text }) {
     return (
@@ -8,10 +9,17 @@ export default function Feature({ imagesrc, text }) {
                    direction="column"
                    justifyContent="center"
                    alignItems="center">
-                <img style={{ width:'6.1vw', height:'5.9vw' }} src={imagesrc}/>
-                <h6 style={{textAlign:'center'}}>
-                    {text}
-                </h6>
+                <Box sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignContent: "center",
+                    alignItems: 'center'
+                }}>
+                    <img style={{ maxWidth:'9rem', height:'5rem' }} src={imagesrc}/>
+                    <Typography sx={{textAlign:'center', fontSize:"0.9rem", fontWeight:"bold", margin: "1.5rem 0"}}>
+                        {text}
+                    </Typography>
+                </Box>
             </Grid>
         </React.Fragment>
     )
