@@ -6,7 +6,7 @@ import {Typography} from "@mui/material";
 const OkalaBlogHeader = () => {
     return (
         <div style={{display: "flex", justifyContent: 'center'}}>
-            <div style={{display: "flex", justifyContent: 'space-between',  width: '83rem',alignContent:'center',alignItems:'center',borderBottom:'#e6e6e6 solid 2px',marginBottom:'5px'}}>
+            <div style={{display: "flex", justifyContent: 'space-between',  width: '83rem',alignContent:'center',alignItems:'center',borderBottom:'1px solid rgba(0,0,0,0.1)',marginBottom:'5px'}}>
                 <div style={{marginBottom:'20px'}}>
                     <Typography sx={{fontSize:'16px',fontWeight:'bold'}}>اُکالا بلاگ</Typography>
                 </div>

@@ -27,35 +27,47 @@ export function BottomRow() {
                 container
                 spacing={3}
                 direction="row"
-                justifyContent="center"
-                alignItems="center">
+            >
                 <Grid item xs={12} md={4}>
                     <Box >
                         <Typography
+                            fontWeight={"bold"}
                             variant="h6"
                             gutterBottom
                             component="div">
                             راه های ارتباطی
                         </Typography>
-                        <Typography
-                            variant="body1"
-                            gutterBottom>
-                            تلفن پشتیبانی: 1536
-                            آدرس: خیابان احمد قصیر (بخارست)،
-                            خیابان پانزدهم
-                            غربی (احمدیان)، پلاک 11، طبقه 3
-                            ایمیل: info@okala.com
-                        </Typography>
+                        <List sx={{
+                            fontWeight: "normal"
+                        }}>
+                                <ListItem sx={{paddingRight: "0"}}>
+                                    <Typography
+                                        textAlign={"right"}
+                                        variant="body1"
+                                        gutterBottom>
+                                        تلفن پشتیبانی: 1536
+                                        <br/>
+                                        آدرس: خیابان احمد قصیر (بخارست)،
+                                        خیابان پانزدهم
+                                        غربی (احمدیان)، پلاک 11، طبقه 3
+                                        <br/>
+                                        ایمیل: info@okala.com
+                                    </Typography>
+                                </ListItem>
+                        </List>
+
                     </Box>
                 </Grid>
                 <Grid item xs={6} md={2}>
                     <Box >
-                        <Typography variant="h6"  component="div">
+                        <Typography fontWeight={"bold"} variant="h6"  component="div">
                             اکالا
                         </Typography>
-                        <List>
+                        <List sx={{
+                            fontWeight: "normal"
+                        }}>
                             {okalaItems.map(item => (
-                                <ListItem key={item.text}>
+                                <ListItem sx={{paddingRight: "0"}} key={item.text}>
                                     <Link href="#" underline="none" color="inherit" >{item.text}
                                     </Link>
                                 </ListItem>
@@ -65,12 +77,14 @@ export function BottomRow() {
                 </Grid>
                 <Grid item xs={6} md={3}>
                     <Box >
-                        <Typography variant="h6" gutterBottom component="div">
+                        <Typography fontWeight={"bold"} variant="h6" gutterBottom component="div">
                             خدمات مشتریان
                         </Typography>
-                        <List>
+                        <List sx={{
+                            fontWeight: "normal"
+                        }}>
                             {costumerServiceItems.map(item => (
-                                <ListItem key={item.text}>
+                                <ListItem sx={{paddingRight: "0"}} key={item.text}>
                                     <Link href="#" underline="none" color="inherit" >{item.text}</Link>
                                 </ListItem>
                             ))}

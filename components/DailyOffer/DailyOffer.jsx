@@ -80,7 +80,7 @@ const DailyOffer = () => {
                         backgroundColor: "white !important",
                         minWidth: "3rem !important",
                         height: "3rem !important",
-                    }} className={"swiper-button-prev"}>
+                    }} id={"swiper-button-prev-daily"} className={"swiper-button-prev"}>
                     </Box>
                     <Swiper
                         style={{
@@ -95,7 +95,7 @@ const DailyOffer = () => {
                             margin: "0 !important"
                         }}
                         direction={'horizontal'}
-                        navigation={{nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}}
+                        navigation={{nextEl: "#swiper-button-next-daily", prevEl: "#swiper-button-prev-daily"}}
                         slidesPerView={4.5}
                         breakpoints={{
                             480: {
@@ -133,7 +133,7 @@ const DailyOffer = () => {
                         backgroundColor: "white !important",
                         minWidth: "3rem !important",
                         height: "3rem !important",
-                    }} className={"swiper-button-next"}>
+                    }} id={"swiper-button-next-daily"} className={"swiper-button-next"}>
                     </Box>
                 </Box>
             </Container>
