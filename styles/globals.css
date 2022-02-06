@@ -32,3 +32,28 @@ a {
 .banner{
   border-radius: 12px;
 }
+.accordion{
+/*background-color: red;*/
+  overflow: scroll;
+  overflow-x: hidden;
+  width: 380px;}
+::-webkit-scrollbar {
+  width: 5px;
+
+}
+::-webkit-scrollbar-button{
+  height: 50px;
+}
+  /* Track */
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #AAAAAA;
+ border-radius: 20px;
+
+}
+
+

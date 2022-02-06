@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router'
-import BrandFilter from "./‌BrandFilter/BrandFilter";
+import BrandFilter from "../../components/\u200CBrandFilter/BrandFilter";
 
 const ProductPage = () => {
     const router = useRouter()
@@ -8,7 +8,7 @@ const ProductPage = () => {
     return (
         <div>
             {/*productsId*/}
-            <BrandFilter/>
+
         </div>
     );
 };

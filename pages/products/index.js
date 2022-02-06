@@ -1,11 +1,11 @@
 import React from 'react';
+import BrandFilter from "../../components/‌BrandFilter/BrandFilter";
 
 const ProductPages = () => {
     return (
         <div>
-            <p>
-                hi
-            </p>        </div>
+            <BrandFilter/>
+        </div>
     );
 };
 
