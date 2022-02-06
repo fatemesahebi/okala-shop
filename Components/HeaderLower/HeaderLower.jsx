@@ -21,7 +21,7 @@ const HeaderLower = () => {
             margin: "0 !important",
             padding: "0 !important",
             position: "fixed",
-            top: "11.5rem",
+            top: "10.5rem",
             zIndex: 12
         }}>
             <Container maxWidth="100vw" sx={{
@@ -40,7 +40,7 @@ const HeaderLower = () => {
                     margin: "0 !important",
                     padding: "0 !important",
                     width: {
-                        lg: "85rem !important",
+                        lg: "81rem !important",
                         md: "100% !important"
                     },
                     display: "inline-flex",

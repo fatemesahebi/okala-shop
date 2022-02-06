@@ -29,8 +29,8 @@ const ScrollHeader = (props) => {
     return (
         <div>
             <CssBaseline />
-            <HideOnScroll {...props}>
-                <AppBar sx={{backgroundColor:'white.main',zIndex:100,pb:4,boxShadow:'none'}}>
+            <HideOnScroll {...props} >
+                <AppBar sx={{backgroundColor:'white.main',zIndex:100,pb:4,boxShadow:'none',display:{xs:'none',md:'block'}}}>
                         <LocationHeader/>
                     <HeaderLower/>
                 </AppBar>

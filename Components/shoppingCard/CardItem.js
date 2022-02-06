@@ -68,10 +68,13 @@ const CardItem = ({product}) => {
                         }}>
                             {
                                 (product.count===1)?
-                                    <Box component='img' src={deleteIcon.src} width='50%' sx={{m:1}} onClick={()=>{dispatch(removeItem(product))}}/>
+                                    <Box component='img' src={deleteIcon.src} width='50%' sx={{m:1}}
+                                         onClick={()=>{dispatch(removeItem(product))}}/>
                                     :
-                                    <MinimizeIcon fontSize="large" sx={{color:'red.main',pb:1.2}} onClick={()=>{dispatch(decreaseItem(product))}}/>
+                                    <MinimizeIcon fontSize="large" sx={{color:'red.main',pb:1.2}}
+                                                  onClick={()=>{dispatch(decreaseItem(product))}}/>
                             }
+
                             </Box>
                     </Stack>
                 </Stack>
