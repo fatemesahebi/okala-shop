@@ -3,7 +3,8 @@ import Product from "./mobile/mobileproductpage"
 const ProductInfoMob = () => {
     return (
         <div>
-            <Product/>
+            {/*<Product/>*/}
+            mobile
         </div>
     );
 };
