@@ -3,13 +3,7 @@ import {Grid} from '@mui/material';
 
 export default function Feature({ imagesrc, text }) {
     return (
-        <React.Fragment
-            sx={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(4, 1fr)',
-                alignItems:'center',
-                gap: 1
-            }}>
+        <React.Fragment>
             <Grid  sx={{marginTop:'3rem'}}
                    direction="column"
                    justifyContent="center"
