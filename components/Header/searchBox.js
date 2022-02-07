@@ -1,5 +1,5 @@
 import {Box} from "@mui/system";
-
+import {Swiper, SwiperSlide} from "swiper/react"
 import searchSvg from './../../public/SVG/search.svg'
 import Image from 'next/image'
 import {Input, Paper, Typography, Stack, Divider, Button} from '@mui/material';
@@ -70,9 +70,9 @@ function SearchBox() {
                        display: {md: `${searchPaperShow}`, xs: "none"},
                        position: "fixed",
                        width: '80vw',
-                       height: '70vh',
+                       height: '26rem',
                        top: 100,
-                       left: 100,
+                       left: 150,
                        borderRadius: '10px',
                        overflow: 'auto',
                        p: 6,
@@ -81,14 +81,35 @@ function SearchBox() {
 
                    }}>
 
-                <Stack sx={{
-                    flexDirection: 'row', gap: 2, justifyContent: 'flex-start',
-
-                }}>
+                <Swiper
+                    style={{
+                        display: "flex",
+                        maxWidth: "100%",
+                        // padding: "0.5rem",
+                        flexDirection: "row",
+                        flexGrow: "0",
+                        flexShrink: "0",
+                        overflowX: "hidden",
+                        scrollBehavior: "smooth",
+                        margin: "0 !important"
+                    }}
+                    slidesPerView={"auto"}
+                    spaceBetween={0}
+                    >
                     {filterDtat.map(
-                        product => <SingleProduct key={product.id + product.productName} product={product}/>
+                        product => (
+                            <SwiperSlide style={{
+                                width: "220px"
+                            }}>
+                                <Box sx={{
+                                    border: "1px solid rgba(0,0,0,0.1)"
+                                }}>
+                                    <SingleProduct key={product.id + product.productName} product={product}/>
+                                </Box>
+                            </SwiperSlide>
+                        )
                     )}
-                </Stack>
+                </Swiper>
             </Paper>
             {/*************************************Mibile SearchModel***********************************************/}
             <Paper
@@ -122,12 +143,18 @@ function SearchBox() {
                     }
 
                 </Stack>
-
-                <Stack flexDirection={"row"} flexWrap={"wrap"} justifyContent={"center"} gap={1} alignItems={"center"}
+                <Stack flexDirection={"column"} justifyContent={"center"} alignItems={"center"}
                        sx={{overflowY: "scroll", height: "80vh", width: "95%", mt: 4}}
                 >
                     {filterDtat.map(
-                        product => <SingleProduct key={product.id + product.productName} product={product}/>
+
+                        product => (
+                            <Box sx={{
+                                border: "1px solid rgba(0,0,0,0.1)"
+                            }}>
+                                <SingleProduct key={product.id + product.productName} product={product}/>
+                            </Box>
+                        )
                     )}
                 </Stack>
 

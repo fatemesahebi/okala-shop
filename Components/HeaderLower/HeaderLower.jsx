@@ -40,7 +40,7 @@ const HeaderLower = () => {
                     margin: "0 !important",
                     padding: "0 !important",
                     width: {
-                        lg: "85rem !important",
+                        lg: "81rem !important",
                         md: "100% !important"
                     },
                     display: "inline-flex",

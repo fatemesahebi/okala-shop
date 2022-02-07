@@ -161,7 +161,7 @@ const FullCard = () => {
             </Stack>
 
             {/******************************************* shopping card Items **********************************************/}
-            <Stack sx={{height: `${(totalOrder >= minOrder) ? "400px" : "300px"}`, overflowY: 'scroll'}}>
+            <Stack justifyContent={"start"} sx={{height: `${(totalOrder >= minOrder) ? '65vh' : '49vh'}`, overflowY: 'scroll'}}>
                 {items.map((item) => <CardItem product={item}/>)}
             </Stack>
             {/******************************************************Card Buy Buttons *********************************************************/}

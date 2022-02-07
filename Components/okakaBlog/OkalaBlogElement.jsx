@@ -12,7 +12,7 @@ const OkalaBlogElement = ({blogItem}) => {
     return (
         <Grid container>
             <Grid item container>
-                <Card  sx={{width: '312px', height: '312px',backgroundColor:'white'}}>
+                <Card  sx={{width: '312px', height: '312px',backgroundColor:'white', border: "none", boxShadow: "0px 1px 2px rgb(22 22 22 / 4%), 0px 1px 4px rgb(22 22 22 / 4%) !important"}}>
                     <Grid item container>
                         <CardMedia>
                             <Image width={312} height={180} src={blogItem.image}/>
