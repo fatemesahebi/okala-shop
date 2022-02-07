@@ -85,9 +85,9 @@ const CategoryProducts = ({category}) => {
                 justifyContent: "center"
             }} component={"div"}>
                 <Box component={"div"} sx={{
-                    visibility:{
-                      lg:"visible",
-                      xs:"collapse"
+                    visibility: {
+                        lg: "visible",
+                        xs: "collapse"
                     },
                     ":active,:hover": {
                         backgroundColor: "white !important"
@@ -127,7 +127,7 @@ const CategoryProducts = ({category}) => {
                 >
                     {products.slice(0, 10).map(item => (
                         <SwiperSlide style={{
-                            width: "220px"
+                            maxWidth: "fit-content",
                         }}>
                             <Box sx={{
                                 border: "1px solid rgba(0,0,0,0.1)"
@@ -141,9 +141,9 @@ const CategoryProducts = ({category}) => {
                     ":active,:hover": {
                         backgroundColor: "white"
                     },
-                    visibility:{
-                        lg:"visible",
-                        xs:"collapse"
+                    visibility: {
+                        lg: "visible",
+                        xs: "collapse"
                     },
                     position: "relative !important",
                     transform: "scale(-1) translateX(-3.5rem)",
