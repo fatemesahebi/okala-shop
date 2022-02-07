@@ -1,16 +1,16 @@
-import {Header, FooterContainer} from "../index";
-import {Box} from "@material-ui/core";
+import {Header, FooterContainer, MenuMobile} from "../index";
+import {Box} from "@mui/material";
 
 const HeaderFooterProvider = ({children}) => {
     return (
-        <>
+        <div>
             <Header/>
-            <Box height={"11rem"}>
-
+            <Box height={{md:"11rem", xs: "0"}}>
             </Box>
             {children}
+            <MenuMobile/>
             <FooterContainer/>
-        </>
+        </div>
     )
 }
 

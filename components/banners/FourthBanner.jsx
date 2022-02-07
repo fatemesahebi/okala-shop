@@ -10,8 +10,8 @@ const StyledImage = styled.img({
 })
 const FourthBanner = () => {
     return (
-        <Box xs={12} sx={{margin:'auto',width:{lg:'81rem', xs:"100%"},marginTop:'20px'}}>
-            <Grid container  spacing={0} >
+        <Box xs={12}  sx={{margin:'auto',width:{lg:'81rem', xs: "100%"},marginTop:'20px'}}>
+            <Grid container  spacing={1} >
                 <Grid item  xs={6}  >
                     <Image className={'banner'} src={coldDrink}/>
                 </Grid>
