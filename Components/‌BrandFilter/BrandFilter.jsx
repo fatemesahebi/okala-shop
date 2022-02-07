@@ -12,7 +12,7 @@ const BrandFilter = () => {
     return (
         <Box sx={{display: 'flex',gap:'50px'}}>
             <Box>
-                <Accordion sx={{width: '308px'}}>
+                <Accordion sx={{width:"20rem",boxShadow:"rgba(0, 0, 0, 0.04) 0px 3px 5px",borderRadius:"1rem"}}>
                     <AccordionSummary sx={{width: '308px', height: '83px', borderRadius: '42px'}}
                                       expandIcon={<ExpandMoreIcon/>}
                                       aria-controls="panel1a-content"
@@ -38,9 +38,6 @@ const BrandFilter = () => {
                     <Products/>
                 </Box>
             </Box>
-
-
-
         </Box>
     );
 
