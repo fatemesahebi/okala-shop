@@ -1,6 +1,6 @@
 import {Box, Container} from "@mui/material";
 import {useEffect, useRef, useState} from "react";
-import Countdown from "../../../../Desktop/Countdown/Countdown";
+import Countdown from "../DailyOffer/Countdown/Countdown";
 import {Swiper, SwiperSlide} from "swiper/react";
 import SwiperCore, {Pagination, Autoplay, Navigation} from "swiper";
 import {productData} from "../productCard/ProductCardData";
