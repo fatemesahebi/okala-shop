@@ -3,7 +3,7 @@ import ProductInfo from "./ProductInfo";
 const ProductPage = () => {
     return (
         <div>
-            <ProductInfo/>
+            {/*<ProductInfo/>*/}
             
         </div>
     );
