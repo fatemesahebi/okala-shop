@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import Head from 'next/head';
 import SearchResults from "../Components/searchResults/SearchResults";
+import CommodityFilters from "../Components/CommodityFilters/CommodityFilters";
 import {
     getBrandProducts,
 } from "../lib/axios/getData";
@@ -20,7 +21,8 @@ const Home = () => {
             <link rel="icon" href="/favicon.ico" />
         </Head>
         {/*<SearchResults/>*/}
-        <HomePage/>
+        <CommodityFilters/>
+        {/*<HomePage/>*/}
     </div>)
 
 };
