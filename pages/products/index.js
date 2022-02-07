@@ -1,15 +1,12 @@
 import React from 'react';
-import BrandFilter from "../../components/‌BrandFilter/BrandFilter";
-import ProductCard from "../../components/productCard/ProductCard";
-import SingleProduct from "../../components/productCard/ProductCardElements";
+import ProductPage from "../../productPage/ProductPage";
 
-const ProductPages = () => {
+const ProductPageInformation = () => {
     return (
         <div>
-
-            <BrandFilter/>
+            <ProductPage/>
         </div>
     );
 };
 
-export default ProductPages;
+export default ProductPageInformation;

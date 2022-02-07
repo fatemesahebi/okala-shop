@@ -21,7 +21,7 @@ import {
     Brandwrapper,
     Bottomwrapper,
     Addtocart
-} from '../index';
+} from '../../pages/products';
 
 const ColorButton = styled(Button)(({ theme }) => ({
     width: '104px !important',
