@@ -23,7 +23,8 @@ export function BottomRow() {
     return (
         <Row>
             <Grid
-                sx={{marginTop:'1rem'}}
+                pb={"5rem"}
+                sx={{marginTop:'1rem' , borderBottom: "1px solid rgba(0,0,0,0.05)"}}
                 container
                 spacing={3}
                 direction="row"
@@ -45,11 +46,11 @@ export function BottomRow() {
                                         textAlign={"right"}
                                         variant="body1"
                                         gutterBottom>
-                                        تلفن پشتیبانی: 1536
+                                        تلفن پشتیبانی: ۱۵۳۶
                                         <br/>
                                         آدرس: خیابان احمد قصیر (بخارست)،
                                         خیابان پانزدهم
-                                        غربی (احمدیان)، پلاک 11، طبقه 3
+                                        غربی (احمدیان)، پلاک ۱۱، طبقه ۳
                                         <br/>
                                         ایمیل: info@okala.com
                                     </Typography>
@@ -95,17 +96,17 @@ export function BottomRow() {
                     <LicenseList/>
                 </Grid>
             </Grid>
-            <Grid xs={12}>
-                <hr className='line' style={{color:'rgba(230, 230, 230, 1)'}}/>
+            <Grid pb={"5rem"} xs={12}>
                 <Typography
                     variant='body1'
                     component="div"
                     sx={{
                         marginTop: '1rem',
                         textAlign: 'center',
+                        fontSize: "0.8rem"
                     }}>
                     © کلیه حقوق مادی و معنوی این سایت محفوظ و متعلق به شرکت توسعه تجارت الکترونیک کوروش است.
-                    تیر 1400
+                    تیر ۱۴۰۰
                 </Typography>
             </Grid>
         </Row>

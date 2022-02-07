@@ -65,7 +65,7 @@ function SearchBox() {
                        onChange={(e) => handleChangeSearchBar(e)}/>
             </Box>
 
-            <Paper variant="outlined" elevation="24"
+            <Paper variant="outlined" elevation={24}
                    sx={{
                        display: {md: `${searchPaperShow}`, xs: "none"},
                        position: "fixed",
