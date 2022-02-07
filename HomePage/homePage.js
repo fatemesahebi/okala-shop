@@ -10,7 +10,7 @@ import {
     ListMiddleNavbar,
     FooterContainer,
     OkalaBlog,
-    HeaderFooterProvider
+    HeaderFooterProvider, MenuMobile
 } from "../components";
 import {Box} from "@material-ui/core";
 function HomePage() {
@@ -33,6 +33,7 @@ function HomePage() {
             <OkalaBlogHeader/>
             <OkalaBlog/>
             <ListBrands/>
+            <MenuMobile/>
         </HeaderFooterProvider>
     </div>)
 }

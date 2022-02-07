@@ -1,4 +1,4 @@
-import {Header, FooterContainer, MenuMobile} from "../index";
+import {Header, FooterContainer} from "../index";
 import {Box} from "@mui/material";
 
 const HeaderFooterProvider = ({children}) => {
@@ -8,7 +8,6 @@ const HeaderFooterProvider = ({children}) => {
             </Box>
             <Header/>
             {children}
-            <MenuMobile/>
             <FooterContainer/>
         </div>
     )
