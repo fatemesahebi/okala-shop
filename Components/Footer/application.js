@@ -11,43 +11,66 @@ function Application() {
                 sx={{
                     backgroundColor: 'rgb(230,230,230)',
                     borderRadius: '10px',
-                    padding: "1rem 2rem",
-                    marginBottum:'6rem'}}>
+                    padding: {md:"1rem 2rem", xs:"1rem"},
+                }}>
                 <Grid
                     container md={12}
                     justifyContent="space-between"
                     direction="row" >
-                    <Grid item md={8} >
+                    <Grid item xs={12} md={8} >
                         <Grid container
                               direction="column">
-                            <Grid sx={{padding: "2rem"}} item>
-                                <Typography variant="h5" gutterBottom component="div" sx={{fontSize:'1.25rem' , fontWeight:"bold"}}>دانلود اپلیکیشن اُکالا
+                            <Grid sx={{padding: {md:"2rem", xs:"0rem"}}} item>
+                                <Typography variant="h5" gutterBottom component="div" sx={{fontSize: {md:'1.25rem', xs:'1rem'} , fontWeight:"bold"}}>دانلود اپلیکیشن اُکالا
                                 </Typography>
-                                <Box sx={{display: "inline-flex", alignItems: 'center', height: "3rem"}}>
-                                    <Typography variant='body1' sx={{fontSize:'.875rem'}}>
+                                <Box sx={{display: "inline-flex", flexWrap:"wrap", alignItems: 'center', height: "3rem"}}>
+                                    <Typography variant='body1' sx={{fontSize: {md:'.875rem', xs:'.725rem'}}}>
                                         خرید آسان و راحت با تخفیف های جذاب لحظه ای، دانلود برای سیستم عامل های اندروید و آیفون (iOS)
                                     </Typography>
                                     <Button
-                                        sx={{ color: 'rgba(2, 160, 164, 1)', marginRight: '.5rem' }}
+                                        sx={{ color: 'rgba(2, 160, 164, 1)', marginRight: '.5rem', display: {md: "inline-flex", xs:"none"} }}
                                         href="#text-buttons"
                                         endIcon={<KeyboardArrowLeftIcon/>}
                                     >آموزش نصب
                                     </Button>
                                 </Box>
-                                <Grid>
+                                <Grid display={{md: "block", xs:"none"}}>
+                                    <Box
+                                        mt={3}
+                                        sx={{
+                                            display: "flex",
+                                            gap: "1rem",
+                                            direction:"row",
+                                        }}>
+                                            <img src="https://new.okala.com/_next/image?url=%2Fstatic%2Fimages%2FsiteImages%2FGooglePlay.png&w=256&q=75" alt=""/>
+                                            <img src="https://new.okala.com/_next/image?url=%2Fstatic%2Fimages%2FsiteImages%2FCoffeBazar.png&w=256&q=75" alt=""/>
+                                            <img src="https://new.okala.com/_next/image?url=%2Fstatic%2Fimages%2FsiteImages%2FMyket.png&w=256&q=75" alt=""/>
+                                            <img src="https://new.okala.com/_next/image?url=%2Fstatic%2Fimages%2FsiteImages%2FDirectDownload.png&w=256&q=75" alt=""/>
+                                            <img src="https://new.okala.com/_next/image?url=%2Fstatic%2Fimages%2FsiteImages%2FAppStore.png&w=256&q=75" alt=""/>
+                                    </Box>
+                                </Grid>
+                                <Grid display={{ md: "none", xs:"block"}} alignItems={"center"} width={"100%"}>
                                     <Box
                                         mt={3}
                                         sx={{
                                             flexWrap:'wrap',
-                                            display:'flex',
-                                            gap: "1rem",
-                                            direction:"row",
+                                            display: "flex",
+                                            justifyContent: "center",
+                                            alignItems: {sm:"center", xs:"flex-start"},
+                                            flexDirection: {sm: "column" , xs:"row"},
                                         }}>
-                                        <img src="https://new.okala.com/_next/image?url=%2Fstatic%2Fimages%2FsiteImages%2FGooglePlay.png&w=256&q=75" alt=""/>
-                                        <img src="https://new.okala.com/_next/image?url=%2Fstatic%2Fimages%2FsiteImages%2FCoffeBazar.png&w=256&q=75" alt=""/>
-                                        <img src="https://new.okala.com/_next/image?url=%2Fstatic%2Fimages%2FsiteImages%2FMyket.png&w=256&q=75" alt=""/>
-                                        <img src="https://new.okala.com/_next/image?url=%2Fstatic%2Fimages%2FsiteImages%2FDirectDownload.png&w=256&q=75" alt=""/>
-                                        <img src="https://new.okala.com/_next/image?url=%2Fstatic%2Fimages%2FsiteImages%2FAppStore.png&w=256&q=75" alt=""/>
+                                        <Box sx={{
+                                            borderLeft: {xs:"1px solid rgba(0,0,0,0.1)", sm:"none"}
+                                        }} display={"flex"} flexDirection={{sm:"row", xs:"column"}}>
+                                            <img style={{margin:{xs:".5rem 1rem", sm:"0.5rem"}}} src="https://new.okala.com/_next/image?url=%2Fstatic%2Fimages%2FsiteImages%2FGooglePlay.png&w=256&q=75" alt=""/>
+                                            <img style={{margin:{xs:".5rem 1rem", sm:"0.5rem"}}} src="https://new.okala.com/_next/image?url=%2Fstatic%2Fimages%2FsiteImages%2FCoffeBazar.png&w=256&q=75" alt=""/>
+                                            <img style={{margin:{xs:".5rem 1rem", sm:"0.5rem"}}} src="https://new.okala.com/_next/image?url=%2Fstatic%2Fimages%2FsiteImages%2FMyket.png&w=256&q=75" alt=""/>
+                                        </Box>
+                                        <Box  display={"flex"} flexDirection={{sm:"row", xs:"column"}}>
+                                            <img style={{margin:{xs:".5rem 1rem", sm:"0.5rem"}}} src="https://new.okala.com/_next/image?url=%2Fstatic%2Fimages%2FsiteImages%2FDirectDownload.png&w=256&q=75" alt=""/>
+                                            <img style={{margin:{xs:".5rem 1rem", sm:"0.5rem"}}} src="https://new.okala.com/_next/image?url=%2Fstatic%2Fimages%2FsiteImages%2FAppStore.png&w=256&q=75" alt=""/>
+                                        </Box>
+
                                     </Box>
                                 </Grid>
                             </Grid>
