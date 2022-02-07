@@ -5,23 +5,17 @@ import {Box, Container, Grid, Stack} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {Swiper, SwiperSlide} from "swiper/react";
 import OkalaBlogHeader from "./OkalaBlogHeader";
-import "swiper/css"
 
 const OkalaBlog = () => {
     return (
-        <Container>
-            <Container style={{display: 'flex', flexDirection:"column", alignItems: "center"}}>
+        <Container >
+            <Container style={{display:'flex',justifyContent:'center'}}>
                 <Grid container sx={{
-                    width: {lg: "85rem", xs: "95vw"},
+                    padding: '20px',
+                    width: {lg:'85rem' , xs:"95vw"}
+
                 }}>
-                    <Swiper initialSlide={0} slidesPerView={4} spaceBetween={5} breakpoints={{
-                        320: {slidesPerView: 1},
-                        375: {slidesPerView: 1},
-                        425: {slidesPerView: 1.5,},
-                        768: {slidesPerView: 2.5},
-                        1024: {slidesPerView: 3},
-                        1440: {slidesPerView: 4}
-                    }}>
+                    <Swiper initialSlide='0' breakpoints={{320:{slidesPerView:1},375:{slidesPerView:1},425:{slidesPerView:1.5,spaceBetween:15},768:{slidesPerView:2.5},1024:{slidesPerView:3,spaceBetween:22},1440:{slidesPerView:4}}}>
                         {okalaBlog.map(blogItem => <SwiperSlide><OkalaBlogElement key={blogItem.id}
                                                                                   blogItem={blogItem}/></SwiperSlide>)}
                     </Swiper>

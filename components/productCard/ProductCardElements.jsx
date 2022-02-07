@@ -20,16 +20,17 @@ const StyledCard = styled.div({
     flexDirection: 'column',
     borderRadius: '10px',
     backgroundColor: '#ffffff',
-    [`@media (max-width: 768px)`]: {
+    ['@media (max-width: 768px)']:{
         height: '258px',
-        width: '176px',
+        width: '176px'
     }
+
 })
 const StyledImage = styled.img({
     width: '153px',
     position: 'block',
-    [`@media (max-width: 768px)`]: {
-        width: '100px',
+    ['@media (max-width: 768px)']:{
+        width: '100px'
     }
 })
 const StyledIcon = styled.text({
@@ -130,8 +131,7 @@ const StyledOffPercent = styled.div({
 })
 const StyledPriceOffer = styled.div({
     position: "absolute",
-    fontSize: '0.9rem',
-    fontWeight: 'bold',
+    fontSize: '14px',
     left: '20px',
     top: '90px'
 })
@@ -147,12 +147,13 @@ const SingleProduct = ({product}) => {
 
     const dispatch = useDispatch()
     let shoppingCardId = useSelector(state => state.cart.items.findIndex((item) => item.id === product.id)
-        ? state.cart.items.findIndex((item) => item.id === product.id) : -1)
-    let shoppinCardCount = (shoppingCardId === -1) ? 0 :
-        useSelector(state => state.cart.items[shoppingCardId].count)
+            ? state.cart.items.findIndex((item) => item.id === product.id) : -1)
+      let  shoppinCardCount = (shoppingCardId === -1) ? 0 :
+            useSelector(state => state.cart.items[shoppingCardId].count)
 
     return (
         <Container sx={{padding: "0 !important"}} maxWidth='xs'>
+
             <Grid container spacing={4}>
                 <Grid item>
                     <StyledCard>
@@ -183,27 +184,26 @@ const SingleProduct = ({product}) => {
 
                             <StyledImage src={product.productImage.src}/>
                         </StyledCardMedia>
-                        <StyledCardContent>
-                            <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
-                            <StyledPrice style={{
-                                visibility: product.offPercent === 0 ? "hidden" : "visible"
-                            }} gutterBottom
-                                         variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.price}`))}</StyledPrice>
-                            <div>
-                                <Grid container>
-                                    <Grid item>
-                                        <StyledOffPercent style={{
-                                            visibility: product.offPercent === 0 ? "hidden" : "visible"
-                                        }}
-                                                          variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.offPercent}`))} %</StyledOffPercent>
-                                    </Grid>
-                                </Grid>
-                                <Grid item>
-                                    <StyledPriceOffer
-                                        variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.priceOffer}`))} ریال</StyledPriceOffer>
-                                </Grid>
-                            </div>
-                        </StyledCardContent>
+                                <StyledCardContent>
+                                    <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
+                                    <StyledPrice style={{
+                                        visibility: product.offPercent === 0 ? "hidden":"visible"
+                                    }} gutterBottom variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.price}`))}</StyledPrice>
+                                    <div>
+                                        <Grid container>
+                                            <Grid item>
+                                                <StyledOffPercent style={{
+                                                    visibility: product.offPercent === 0 ? "hidden":"visible"
+                                                }}
+                                                    variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.offPercent}`))} %</StyledOffPercent>
+                                            </Grid>
+                                        </Grid>
+                                        <Grid item>
+                                            <StyledPriceOffer
+                                                variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.priceOffer}`))} ریال</StyledPriceOffer>
+                                        </Grid>
+                                    </div>
+                                </StyledCardContent>
                     </StyledCard>
                 </Grid>
             </Grid>
