@@ -6,11 +6,11 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import Link from '@mui/material/Link';
-import Accordion from './costumaccordion';
+import Accordion from './customAccordion';
 import { Button } from '@mui/material';
 import { styled } from '@mui/system';
 import AddIcon from '@mui/icons-material/Add';
-import Breadcrumbs from './bread';
+import Breadcrumbs from './breadcrumb';
 
 import {
     Showcomments,
