@@ -128,7 +128,7 @@ const CategoryProducts = ({category , similarProducts}) => {
                 >
                     {products.slice(0, 10).map(item => (
                         <SwiperSlide style={{
-                            width: "220px"
+                            maxWidth: "fit-content"
                         }}>
                             <Box sx={{
                                 border: "1px solid rgba(0,0,0,0.1)"
