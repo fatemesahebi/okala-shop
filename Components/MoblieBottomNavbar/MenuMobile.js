@@ -12,9 +12,10 @@ import Image from "next/image"
 
 export default function MenuMobile() {
     return (
-        <Box>
+        <Box sx={{display: {lg: 'none', md: 'none', xs:'flex'},flexDirection:"column", alignItems: "center"}}>
             <Box item xs={1} sx={{
-                display: {lg: 'none', md: 'none', zIndex: 12},
+                display: {lg: 'none', md: 'none'},
+                zIndex: 12,
                 justifyContent: "space-between",
                 flexShrink: "1",
                 width: "100vw",
@@ -22,7 +23,7 @@ export default function MenuMobile() {
                 bottom: "0",
             }}>
                 <Stack sx={{display: "flex", flexDirection: "row", justifyContent: "space-between", flexShrink: "1"}}>
-                    <Box sx={{height: '50px' ,backgroundColor: "white !important", width: "40%", display: "inline-flex", justifyContent: "space-around", zIndex: 12}}>
+                    <Box sx={{height: '50px' ,backgroundColor: "white !important", width: "33%", display: "inline-flex", justifyContent: "space-around", zIndex: 12}}>
                         <Button sx={{width: "50%", }}>
                             <Stack>
                                 <Image src={home}/>
@@ -54,7 +55,7 @@ export default function MenuMobile() {
                             <Image src={cart}/>
                         </Button>
                     </Box>
-                    <Box sx={{backgroundColor: "white !important", width: "40%", display: "inline-flex", justifyContent: "space-around", zIndex: 12}}>
+                    <Box sx={{backgroundColor: "white !important", width: {sm:"40%" , xs: "33%"}, display: "inline-flex", justifyContent: "space-around", zIndex: 12}}>
                         <Button sx={{backgroundColor: "white !important"}}>
                             <Stack>
                                 <Image src={grouping}/>
@@ -71,7 +72,7 @@ export default function MenuMobile() {
                     </Box>
                 </Stack>
             </Box>
-            <Box sx={{position: "fixed", bottom: "-1.7rem", zIndex: 11, width: "100vw", display: "flex", justifyContent: 'center'}}>
+            <Box sx={{position: "fixed", bottom: "-1.7rem", zIndex: 11, display: "flex", width:"30rem", justifyContent: 'center'}}>
                 <Image src={bottomCurve}/>
             </Box>
         </Box>
