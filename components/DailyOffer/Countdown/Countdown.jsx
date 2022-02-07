@@ -17,7 +17,7 @@ const Countdown = () => {
     },[time])
     return (
         <Box sx={{
-            height: {md:"19rem", xs:"16.5rem"},
+            height: {md:"19rem", xs:"16rem"},
             display: "flex",
             alignContent: "flex-end",
             alignItems: "flex-end",
@@ -29,7 +29,7 @@ const Countdown = () => {
             </Box>
             <Typography sx={{
                 fontWeight: "bold",
-                fontSize: {md:"1.6rem", xs:"1.2rem"},
+                fontSize: {md:"1.6rem",xs:"1.2rem"},
                 color: "white !important"
             }} variant="h2" component="h2">
                 پبشنهاد روز
@@ -38,35 +38,36 @@ const Countdown = () => {
                 display:"flex",
                 flexDirection: "column",
                 borderRadius: "0.65rem",
+                padding: {md: "0", xs:"0.5rem"},
                 backgroundColor: "#363636 !important",
                 fontSize: "2rem",
                 alignContent: "center",
                 alignItems: "center"
             }}>
                 <Typography sx={{
-                    textAlign:"center",
+                    textAlign: "center",
+                    mb: "0.5rem",
                     fontWeight: "bold",
                     color: "white !important",
-                    fontSize: {md:"0.8rem", xs:"1rem"}
+                    fontSize: {sm:"0.8rem" , xs:"1rem"}
                 }}>
                     زمان باقیمانده پیشنهاد
                 </Typography>
                 <Box sx={{
                     display:"inline-flex",
                     alignContent: "center",
-                    alignItems: "center",
-                    margin: {md:"0", xs:"8px"}
+                    alignItems: "center"
                 }}>
                     <Box sx={{
                         borderRadius: "15px",
                         backgroundColor: "white !important",
                         padding: "10px !important",
-                        margin: {md:"10px", xs:"0"},
+                        margin: {md:"10px",xs:"0"},
                     }}>
                         <Typography sx={{
-                            fontSize: {md:"1.6rem", xs:"1.2rem"},
+                            fontSize: {md:"1.6rem",xs:"1.2rem"},
                             fontWeight: "bold",
-                            width: {md:"1.6rem", xs:"1.2rem"},
+                            width: {md:"1.6rem",xs:"1.2rem"},
                             textAlign:"center"
                         }} component="div">
                             {PN.convertEnToPe(time.hours>9?time.hours:"0"+time.hours)}
@@ -74,7 +75,7 @@ const Countdown = () => {
                     </Box>
                     <Typography sx={{
                         color: "white !important",
-                        fontSize: {md:"1.6rem", xs:"1.2rem"}
+                        fontSize: {md:"1.6rem",xs:"1.2rem"}
                     }} component="div">
                         :
                     </Typography>
@@ -82,13 +83,13 @@ const Countdown = () => {
                         borderRadius: "15px",
                         backgroundColor: "white !important",
                         padding: "10px !important",
-                        margin: {md:"10px", xs:"0"},
+                        margin: {md:"10px",xs:"0"},
                         fontSize: "40px"
                     }}>
                         <Typography sx={{
-                            fontSize: {md:"1.6rem", xs:"1.2rem"},
+                            fontSize: {md:"1.6rem",xs:"1.2rem"},
                             fontWeight: "bold",
-                            width: {md:"1.6rem", xs:"1.2rem"},
+                            width: {md:"1.6rem",xs:"1.2rem"},
                             textAlign:"center"
                         }} component="div">
                             {PN.convertEnToPe(time.minutes>9?time.minutes:"0"+time.minutes)}
@@ -96,7 +97,7 @@ const Countdown = () => {
                     </Box>
                     <Typography sx={{
                         color: "white !important",
-                        fontSize: {md:"1.6rem", xs:"1.2rem"}
+                        fontSize: {md:"1.6rem",xs:"1.2rem"}
                     }} component="div">
                         :
                     </Typography>
@@ -104,13 +105,13 @@ const Countdown = () => {
                         borderRadius: "15px",
                         backgroundColor: "white !important",
                         padding: "10px !important",
-                        margin: {md:"10px", xs:"0"},
+                        margin: {md:"10px",xs:"0"},
                         fontSize: "40px"
                     }}>
                         <Typography sx={{
-                            fontSize: {md:"1.6rem", xs:"1.2rem"},
+                            fontSize: {md:"1.6rem",xs:"1.2rem"},
                             fontWeight: "bold",
-                            width: {md:"1.6rem", xs:"1.2rem"},
+                            width: {md:"1.6rem",xs:"1.2rem"},
                             textAlign:"center"
                         }} component="div">
                             {PN.convertEnToPe(time.seconds>9?time.seconds:"0"+time.seconds)}
