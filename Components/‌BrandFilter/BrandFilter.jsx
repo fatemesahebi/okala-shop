@@ -17,6 +17,7 @@ import axios from "axios";
 import {specialOffer} from '../../lib/mirage/data'
 import SingleProductCard from '../productCard/ProductCard'
 import SingleProduct from "../productCard/ProductCardElements";
+import {productData} from "../productCard/ProductCardData";
 
 const label = [
     {name: 'خشک پاک', id: 100}, {name: 'گلها', id: 101}, {name: 'نوبر سبز', id: 102}, {name: 'فله', id: 103},
@@ -37,9 +38,14 @@ const BrandFilter = () => {
     const [filter, setFilter] = useState('')
 
     return (
-        <Box>
-            {specialOffer.map(product => <SingleProductCard product={product}/>)}
-
+        <Box sx={{
+            display: 'flex',
+            flexDirection: "row",
+            justifyContent: 'flex-start',
+            alignItems: 'start',
+            justifyItems: 'center',
+            alignContent: 'center'
+        }}>
             <div>
                 <Accordion sx={{width: '308px'}}>
                     <AccordionSummary sx={{width: '308px', height: '83px'}}
@@ -77,6 +83,13 @@ const BrandFilter = () => {
                     </AccordionDetails>
                 </Accordion>
             </div>
+            <Box sx={{display: 'flex', flexWrap: 'wrap'}}>
+                {specialOffer.slice(0, 20).map(item =>
+                    <Box sx={{display: 'flex', flexWrap: 'wrap'}}><SingleProduct product={item}/></Box>)}
+            </Box>
+
+
+
         </Box>
     );
 
