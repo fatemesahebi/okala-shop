@@ -6,9 +6,11 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import Link from '@mui/material/Link';
-import Accordion from './customAccordion';
+import Accordion from './costumaccordion';
 import { Button } from '@mui/material';
 import { styled } from '@mui/system';
+import AddIcon from '@mui/icons-material/Add';
+import Breadcrumbs from './bread';
 
 import {
     Showcomments,
@@ -21,7 +23,7 @@ import {
     Brandwrapper,
     Bottomwrapper,
     Addtocart
-} from '../../pages/products';
+} from './index';
 
 const ColorButton = styled(Button)(({ theme }) => ({
     width: '104px !important',
@@ -32,9 +34,17 @@ const ColorButton = styled(Button)(({ theme }) => ({
     color:' rgb(248, 248, 248) !important',
 }));
 
-export default function Prodct() {
+
+export default function Productmobile() {
     return (
-        <React.Fragment sx={{backgroundColor:'#FAFAFA'}}>
+        <React.Fragment sx={{
+            backgroundColor: '#F8F8F8',
+            height: '100%',
+            position: 'relative',
+            direction: 'rtl',
+            overflowX: 'hidden',
+            overflowY: 'auto',
+            paddingBottom: '56px',}}>
             <Topsection>
                 <IconButton>
                     <ArrowForwardOutlinedIcon/>
@@ -43,10 +53,13 @@ export default function Prodct() {
                     <ShareOutlined/>
                 </IconButton>
             </Topsection>
+            <Box>
+
+            </Box>
             <Slidercontainer>
 
             </Slidercontainer>
-            <Infosection>
+            <Infosection sx={{backgroundColor: '#F8F8F8'}}>
                 <Topwrapper sx={{fontSize:'1rem'}}>
                     <Typography variant='h6' component='h1'>
                         شامپو بدن مناسب پوست چرب بامبو  400 میلی لیتری دیپ سنس
@@ -110,16 +123,23 @@ export default function Prodct() {
             <div>
                 <Accordion />
             </div>
-            <Showcomments>
+            <Showcomments sx={{background:'#F8F8F8'}}>
                 <Box sx={{ display: 'flex' }}>
-                    <span>نظر ثبت شده1 </span>
+         <span>
+
+           1نظر ثبت شده
+         </span>
                 </Box>
                 <Box sx={{ display: 'flex' }}>
                     <span>مشاهده نظرات</span>
                 </Box>
             </Showcomments>
+            <Breadcrumbs/>
             <Addtocart>
-                <ColorButton>+خرید</ColorButton>
+                <ColorButton>
+                    <AddIcon ml={ 20}/>
+                    خرید
+                </ColorButton>
                 <Pricewrapper sx={{ flexDirection: 'column' }}>
                     <Box sx={{
                         display: 'flex',
@@ -159,6 +179,7 @@ export default function Prodct() {
                         }}>۳۵۲٬۰۰۰</span>
                     </Box>
                 </Pricewrapper>
+
             </Addtocart>
         </React.Fragment>
 
