@@ -25,7 +25,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
     ...theme.mixins.toolbar,
 }));
 
-export default function Drawer() {
+export default function HeaderDrawer() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
@@ -37,12 +37,12 @@ export default function Drawer() {
         setOpen(false);
     };
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box dir={'rtl'} sx={{ display: 'flex' }}>
             <CssBaseline />
             <AppBar position="fixed" open={open}
                     sx={{
                         boxShadow:'none',
-                        backgroundColor:'white',
+                        backgroundColor:'white !important',
                         display: { xs: 'block', sm: 'none' }}}>
                 <Toolbar
                     sx={{ justifyContent:'space-between'}}>
@@ -66,7 +66,7 @@ export default function Drawer() {
                                 <PhoneIcon sx={{color:'black'}}/>
                             </Grid>
                             <Grid item>
-                                <Link sx={{color:'black'}} mr={1} href="tel:1536"  underline="none" >1536</Link>
+                                <Link sx={{color:'black'}} mr={1} href="tel:1536"  underline="none" >۱۵۳۶</Link>
                             </Grid>
                         </Grid>
                     </Button>
@@ -79,13 +79,12 @@ export default function Drawer() {
                     '& .MuiDrawer-paper': {
                         width: drawerWidth,
                         boxSizing: 'border-box',
-                        display: { xs: 'block', sm: 'none' },
+                        display: { xs: 'block', md: 'none' },
                     },
                 }}
                 variant="temporary"
                 anchor="right"
                 open={open}
-                anchor='right'
             >
                 <DrawerHeader >
                     <Link>
