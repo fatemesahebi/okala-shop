@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { boxSizing, styled } from '@mui/system';
-import { Data } from '../data';
+import { Data } from './Data';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import {Container,AccordionSection,Wrap,Dropdown } from './index';

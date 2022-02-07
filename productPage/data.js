@@ -1,8 +1,9 @@
 import React from 'react';
 import { styled } from '@mui/system';
 
-const styledlist = styled('ul')({
+const Styledlist = styled('ul')({
     paddingRight: '0',
+    listStyle: 'none',
 });
 
 const Content = styled('div')({
@@ -12,166 +13,180 @@ const Content = styled('div')({
     alignItems: 'center',
 })
 
+const Customspan = styled('span')({
+    fontSize: '.75rem',
+    fontWeight: '400',
+    lineHeight: '22px',
+    ":first-child": {
+        flex: '0 0 150px',
+        color: 'rgba(143, 143, 143, 1)',
+        marginLeft: '12px',
+    }
+});
+
+const Customli = styled('li')({
+    ":nth-child(2n+1)": { background: 'rgba(240, 240, 240, 1)' }
+})
 
 export const Data = [
     {
         summary: 'ویژگی های محصول',
-        detail: <styledlist className='attributesContainer' style={{listStyle:'none'}}>
-            <li>
+        detail: <Styledlist >
+            <Customli>
                 <Content>
-          <span>
-            سایر ویژگی ها :
-          </span>
-                    <span>
-            شوینده غیر صابونی با کف مطلوب.آبکشی آسان
+                    <Customspan>
+                        سایر ویژگی ها :
+                    </Customspan>
+                    <Customspan>
+                        شوینده غیر صابونی با کف مطلوب.آبکشی آسان
 
-         </span>
+                    </Customspan>
                 </Content>
-            </li>
-            <li>
+            </Customli>
+            <Customli>
                 <Content>
-          <span>
-            حجم
-          </span>
-                    <span>
-            400 میلی لیتر
+                    <Customspan>
+                        حجم
+                    </Customspan>
+                    <Customspan>
+                        400 میلی لیتر
 
-         </span>
+                    </Customspan>
                 </Content>
-            </li><li>
+            </Customli><Customli>
             <Content>
-          <span>
-            کاربرد
-           </span>
-                <span>
-            متعادل کننده چربی پوست و از بین برنده آکنه.کمک به درمان جوش بدن
+                <Customspan>
+                    کاربرد
+                </Customspan>
+                <Customspan>
+                    متعادل کننده چربی پوست و از بین برنده آکنه.کمک به درمان جوش بدن
 
-         </span>
+                </Customspan>
             </Content>
-        </li><li>
+        </Customli><Customli>
             <Content>
-          <span>
-            جنس بسته بندی :
+                <Customspan>
+                    جنس بسته بندی :
 
-           </span>
-                <span>
-            پلاستیک
-         </span>
+                </Customspan>
+                <Customspan>
+                    پلاستیک
+                </Customspan>
             </Content>
-        </li><li>
+        </Customli><Customli>
             <Content>
-          <span>
-            ویتامین ها :
+                <Customspan>
+                    ویتامین ها :
 
-           </span>
-                <span>
-            ویتامین E
+                </Customspan>
+                <Customspan>
+                    ویتامین E
 
-         </span>
+                </Customspan>
             </Content>
-        </li><li>
+        </Customli><Customli>
             <Content>
-          <span>
-            شماره مجوز/ پروانه بهداشت :
+                <Customspan>
+                    شماره مجوز/ پروانه بهداشت :
 
-           </span>
-                <span>
-            4495/ظ/56
+                </Customspan>
+                <Customspan>
+                    4495/ظ/56
 
-         </span>
+                </Customspan>
             </Content>
-        </li><li>
+        </Customli><Customli>
             <Content>
-          <span>
-            بسته بندی قابل بازیافت :
-           </span>
-                <span>
-            بله
-         </span>
+                <Customspan>
+                    بسته بندی قابل بازیافت :
+                </Customspan>
+                <Customspan>
+                    بله
+                </Customspan>
             </Content>
-        </li>
-            <li>
+        </Customli>
+            <Customli>
                 <Content>
-          <span>
-            مناسب برای نوع پوست :
+                    <Customspan>
+                        مناسب برای نوع پوست :
 
-           </span>
-                    <span>
-            مناسب پوست های چرب
-         </span>
+                    </Customspan>
+                    <Customspan>
+                        مناسب پوست های چرب
+                    </Customspan>
                 </Content>
-            </li>
-            <li>
+            </Customli>
+            <Customli>
                 <Content>
-          <span>
-            شرایط نگهداری :
+                    <Customspan>
+                        شرایط نگهداری :
 
-           </span>
-                    <span>
-            در دمای معمولی نگه داری شود.
+                    </Customspan>
+                    <Customspan>
+                        در دمای معمولی نگه داری شود.
 
-         </span>
+                    </Customspan>
                 </Content>
-            </li>
-            <li>
+            </Customli>
+            <Customli>
                 <Content>
-          <span>
-            مواد تشکیل دهنده (ترکیبات) :
+                    <Customspan>
+                        مواد تشکیل دهنده (ترکیبات) :
 
-           </span>
-                    <span>
-            آب، سدیم هیالورونات، عصاره درخت چای، سالیسیلیک اسید، آلانتوئین، عصاره بامبو، روغن آملا، بیزابولول، سورفاکتانت های غیر آنیونی و آمفوتریک، گلیسرین، پروپیلن گلیکول، کوکو گلوکوزید، دکسپانتنول، فنوکسی اتانول، سدیم کلراید، کاپریلیل گلیکول، عصاره آلوئه ورا، اسانس، ا.د.ت.آ، ویتامین E، سیتریک اسید.
+                    </Customspan>
+                    <Customspan>
+                        آب، سدیم هیالورونات، عصاره درخت چای، سالیسیلیک اسید، آلانتوئین، عصاره بامبو، روغن آملا، بیزابولول، سورفاکتانت های غیر آنیونی و آمفوتریک، گلیسرین، پروپیلن گلیکول، کوکو گلوکوزید، دکسپانتنول، فنوکسی اتانول، سدیم کلراید، کاپریلیل گلیکول، عصاره آلوئه ورا، اسانس، ا.د.ت.آ، ویتامین E، سیتریک اسید.
 
-         </span>
+                    </Customspan>
                 </Content>
-            </li>
-            <li>
+            </Customli>
+            <Customli>
                 <Content>
-          <span>
-            وزن محصول :
+                    <Customspan>
+                        وزن محصول :
 
-           </span>
-                    <span>
-            400 گرم
+                    </Customspan>
+                    <Customspan>
+                        400 گرم
 
-         </span>
+                    </Customspan>
                 </Content>
-            </li>
-            <li>
+            </Customli>
+            <Customli>
                 <Content>
-          <span>
-            مناسب
-           </span>
-                    <span>
-            مناسب برای بانوان و آقایان
+                    <Customspan>
+                        مناسب
+                    </Customspan>
+                    <Customspan>
+                        مناسب برای بانوان و آقایان
 
-         </span>
+                    </Customspan>
                 </Content>
-            </li>
-            <li>
+            </Customli>
+            <Customli>
                 <Content>
-          <span>
-            عصاره :
+                    <Customspan>
+                        عصاره :
 
-           </span>
-                    <span>
-            درخت چای، بامبو، آلوئه ورا
+                    </Customspan>
+                    <Customspan>
+                        درخت چای، بامبو، آلوئه ورا
 
-         </span>
+                    </Customspan>
                 </Content>
-            </li>
-            <li>
+            </Customli>
+            <Customli>
                 <Content>
-          <span>
+                    <Customspan>
 
-           </span>
-                    <span>
+                    </Customspan>
+                    <Customspan>
 
-         </span>
+                    </Customspan>
                 </Content>
-            </li>
+            </Customli>
 
-        </styledlist>
+        </Styledlist>
 
     },
     {
