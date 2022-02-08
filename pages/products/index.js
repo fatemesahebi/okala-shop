@@ -1,12 +1,12 @@
 import React from 'react';
 import ProductPage from "../../productPage/ProductPage";
-import CategoryPage from "../../CategoryPage/CategoryPage";
+import Productmobile from "../../productPage/mobile/mobileproductpage"
 
 const ProductPageInformation = () => {
     return (
         <div>
+            <Productmobile/>
             <ProductPage/>
-            <CategoryPage/>
         </div>
     );
 };

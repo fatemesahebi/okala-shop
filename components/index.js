@@ -17,6 +17,7 @@ import HeaderLower from "./HeaderLower/HeaderLower";
 import CategoryProducts from "./CategoryProducts/CategoryProducts";
 import HeaderFooterProvider from "./HeaderFooterProvider/HeaderFooterProvider";
 import MenuMobile from "./MoblieBottomNavbar/MenuMobile";
+import HeaderDrawer from "./Header/Appbar&drawer";
 
 export {
     Header,
@@ -37,5 +38,6 @@ export {
     HeaderLower,
     CategoryProducts,
     HeaderFooterProvider,
-    MenuMobile
+    MenuMobile,
+    HeaderDrawer
 }

@@ -14,13 +14,20 @@ const StyledCard = styled.div({
     width: '220px',
     display: 'flex',
     flexDirection: 'column',
-    borderRadius: '5px',
-    backgroundColor: '#ffffff'
+    borderRadius: '10px',
+    backgroundColor: '#ffffff',
+    ['@media (max-width: 768px)']:{
+        height: '258px',
+        width: '176px'
+    }
 
 })
 const StyledImage = styled.img({
     width: '153px',
-    position: 'block'
+    position: 'block',
+    ['@media (max-width: 768px)']:{
+        width: '100px'
+    }
 })
 const StyledIcon = styled.text({
     backgroundColor: '#f01436',
