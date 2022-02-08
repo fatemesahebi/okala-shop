@@ -16,6 +16,7 @@ import OkalaBlogHeader from './okakaBlog/OkalaBlogHeader'
 import HeaderLower from "./HeaderLower/HeaderLower";
 import CategoryProducts from "./CategoryProducts/CategoryProducts";
 import HeaderFooterProvider from "./HeaderFooterProvider/HeaderFooterProvider";
+import SearchResults from "./searchResults/SearchResults";
 
 export {
     Header,
@@ -35,5 +36,6 @@ export {
     FooterContainer,
     HeaderLower,
     CategoryProducts,
-    HeaderFooterProvider
+    HeaderFooterProvider,
+    SearchResults
 }
