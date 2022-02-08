@@ -6,7 +6,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import FormSection from "./FormSection";
 import Products from "./Products";
-import ShowBar from "./othersection/ShowBar";
+// import ShowBar from "./othersection/ShowBar";
 import {Paper} from "@material-ui/core";
 
 const BrandFilter = () => {
