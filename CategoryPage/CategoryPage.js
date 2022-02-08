@@ -1,5 +1,7 @@
 import React from 'react';
-import BrandFilter from "../components/‌BrandFilter/BrandFilter";
+import {BrandFilter} from "./index";
+
+
 
 const CategoryPage = () => {
     return (

@@ -7,11 +7,12 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import FormSection from "./FormSection";
 import Products from "./Products";
 import ShowBar from "./ShowBar";
+import {Paper} from "@material-ui/core";
 
 const BrandFilter = () => {
     return (
-        <Box sx={{display: 'flex',gap:'50px'}}>
-            <Box>
+        <Box sx={{display: 'flex',justifyContent:'flex-start'}}>
+            <Box display={{xl:'block',lg:'block',md:'none',sm:'none',xs:'none'}}>
                 <Accordion sx={{width:"20rem",boxShadow:"rgba(0, 0, 0, 0.04) 0px 3px 5px",borderRadius:"1rem"}}>
                     <AccordionSummary sx={{width: '308px', height: '83px', borderRadius: '42px'}}
                                       expandIcon={<ExpandMoreIcon/>}
@@ -33,11 +34,11 @@ const BrandFilter = () => {
                     </AccordionDetails>
                 </Accordion>
             </Box>
-            <Box sx={{width:'1000px',bgcolor:'red'}}>
-                <Box>
+            <Paper elevation={0} sx={{padding:"10px"}}>
+                <Paper elevation={0} >
                     <Products/>
-                </Box>
-            </Box>
+                </Paper>
+            </Paper>
         </Box>
     );
 
