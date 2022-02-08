@@ -59,7 +59,7 @@ export default function BasicTabs() {
                 <Box sx={{
                     background: 'teal',
                     height: '25rem',
-                    width: '45rem'
+                    width: '25rem'
                 }}>
                 </Box>
             </TabPanel>
@@ -67,14 +67,14 @@ export default function BasicTabs() {
                 <Box sx={{
                     background: 'red',
                     height: '25rem',
-                    width: '45rem'}}>
+                    width: '25rem'}}>
                 </Box>
             </TabPanel>
             <TabPanel value={value} index={2}>
                 <Box sx={{
                     background: 'black',
                     height: '25rem',
-                    width: '45rem'}}>
+                    width: '25rem'}}>
                 </Box>
             </TabPanel>
         </Box>

@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import Link from '@mui/material/Link';
 import Accordion from './customAccordion';
-import {Button,Fab } from '@mui/material';
+import {Button } from '@mui/material';
 import {styled} from '@mui/system';
 import AddIcon from '@mui/icons-material/Add';
 import Breadcrumbs from './breadcrumb';
@@ -101,6 +101,7 @@ export default function Productmobile() {
                                 </Link>
                             </Brandwrapper>
                             <Pricewrapper>
+
                                 <span style={{
                                     color: 'rgba(54, 54, 54, 1)',
                                     fontSize: '0.75rem',
