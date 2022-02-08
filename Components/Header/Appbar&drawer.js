@@ -6,8 +6,10 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import ListItemText from '@mui/material/ListItemText';
+import {menuData} from "../../lib/mirage/menuData";
 import { createSvgIcon } from '@mui/material';
 import {Link,Grid,Button,ListItem,List,Toolbar,Box,AppBar,Divider} from '@mui/material';
+import CategoryAccordion from "../CategoryAccordion/CategoryAccordion";
 
 const drawerWidth = {sm:"30rem", xs:"100vw"};
 
@@ -104,21 +106,9 @@ export default function HeaderDrawer() {
                     </Box>
                 </DrawerHeader>
                 <Divider />
-                <List>
-                    {['مواد غذایی ',
-                        'نوشیدنی و دمنوش',
-                        'خوار و بار',
-                        'آرایشی و بهداشتی',
-                        'میوه و سبزیجات',
-                        'لوازم التحریر و اداری',
-                        'مادر و کودک',
-                        'پوشاک'
-                    ].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemText sx={{textAlign:'right'}} primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
+                {menuData.map(item => (
+                    <CategoryAccordion categories={item}/>
+                ))}
             </Drawer>
         </Box>
     );
