@@ -2,8 +2,8 @@ import React from 'react';
 import {specialOffer} from "../../lib/mirage/data";
 import {Box, Paper} from "@mui/material";
 import SingleProduct from "../productCard/ProductCardElements";
-import ShowBar from "./ShowBar";
-import MobileShowBar from "./MobileShowBar";
+import ShowBar from "./othersection/ShowBar";
+import MobileShowBar from "./othersection/MobileShowBar";
 
 const Products = () => {
     return (
