@@ -16,7 +16,7 @@ const BannerSlider = () => {
     return (
         <Box >
             <Grid  container xs={12} spacing={2} style={{width:'81rem',margin:'auto', paddingRight: "1rem"}}>
-                <Grid item xs={8}>
+                <Grid item xs={12} md={8}>
                     <Swiper spaceBetween={2} autoplay={{
                         delay: 5000, disableOnInteraction: false,}} effect={'fade'} pagination={{clickable: true}}  navigation={{nextEl: "#swiper-button-next-banner", prevEl: "#swiper-button-prev-banner"}} >
                         <Box component={"div"} sx={{
@@ -59,7 +59,7 @@ const BannerSlider = () => {
                 </Grid>
 
 
-                <Grid  item container direction='column' spacing={1.7} xs={4}>
+                <Grid  item container direction='column' spacing={1.7} md={4} sx={{display: {md: "block", xs: "none"}}}>
                     <Grid item container> <Image className={'banner'} src={bite}/></Grid>
                     <Grid item container> <Image className={'banner'} src={breakfast}/></Grid>
                     <Grid item container> <Image className={'banner'} src={madline}/></Grid>

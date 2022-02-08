@@ -2,6 +2,9 @@ import {Box, Button, Container, Typography} from "@mui/material";
 import HeaderLowerComponent from "./HeaderLowerComponent/HeaderLowerComponent";
 import HeaderCategories from "./HeaderCategories/HeaderCategories";
 import Category from "./HeaderLowerComponent/category.svg"
+import Discount from "../../public/SVG/discountIcon.svg"
+import Rank from "../../public/SVG/okalaRank.svg"
+import Blog from "../../public/SVG/okalaBlog.svg"
 import {useState} from "react";
 
 const HeaderLower = () => {
@@ -65,15 +68,15 @@ const HeaderLower = () => {
                         }}>
                             |
                         </Box>
-                        <HeaderLowerComponent icon={Category}>
+                        <HeaderLowerComponent icon={Discount}>
                             تخفیف ها
                         </HeaderLowerComponent>
                     </Box>
                     <Box>
-                        <HeaderLowerComponent icon={Category}>
+                        <HeaderLowerComponent icon={Rank}>
                             اکالا رنک
                         </HeaderLowerComponent>
-                        <HeaderLowerComponent icon={Category}>
+                        <HeaderLowerComponent icon={Blog}>
                             اکالا بلاگ
                         </HeaderLowerComponent>
                     </Box>

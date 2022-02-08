@@ -10,7 +10,7 @@ import {getAllProducts, getCategoryProducts, getMostOffProducts, getMostSaleProd
 
 SwiperCore.use([Navigation])
 
-const CategoryProducts = ({category}) => {
+const CategoryProducts = ({category , similarProducts}) => {
     const [products, setProducts] = useState([])
     useEffect(() => {
         if (category === "محصولات جدید") {
@@ -62,11 +62,12 @@ const CategoryProducts = ({category}) => {
                     <Typography sx={{
                         fontWeight: "bold"
                     }}>
-                        {category}
+                        {similarProducts?"محصولات مشابه":category}
                     </Typography>
                 </Box>
                 <Box>
                     <Typography sx={{
+                        display: similarProducts ? "none":"block",
                         fontWeight: "bold",
                         color: "#02a0a4"
                     }}>
@@ -127,7 +128,7 @@ const CategoryProducts = ({category}) => {
                 >
                     {products.slice(0, 10).map(item => (
                         <SwiperSlide style={{
-                            width: "220px"
+                            maxWidth: "fit-content"
                         }}>
                             <Box sx={{
                                 border: "1px solid rgba(0,0,0,0.1)"

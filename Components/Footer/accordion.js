@@ -20,10 +20,10 @@ export default function CustomizedAccordions() {
                 maxWidth:'81rem',margin:'auto !important' ,}}>
                 <AccordionSummary sx={{
                     height: "4rem !important",
-                    width: expanded?"6.5rem":"23rem",
+                    width: {md:expanded? "6.5rem" : "23rem", xs:"100%"},
                     margin: "auto",
                 }} expandIcon={<ExpandMoreIcon />}>
-                    <Typography align={'center'}>{expanded ? "بستن":"فروشگاه اُکالا، بزرگترین سوپرمارکت آنلاین ایران"}</Typography>
+                    <Typography fontSize={{md:"1rem", xs:"0.9rem"}} align={'center'}>{expanded ? "بستن":"فروشگاه اُکالا، بزرگترین سوپرمارکت آنلاین ایران"}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography sx={{padding: "1rem 0" , fontWeight: "bold", fontSize: "1.2rem"}}>فروشگاه اُکالا، بزرگترین سوپرمارکت آنلاین ایران</Typography>

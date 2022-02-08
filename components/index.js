@@ -37,5 +37,5 @@ export {
     HeaderLower,
     CategoryProducts,
     HeaderFooterProvider,
-    SearchResults
+    SearchResults,
 }

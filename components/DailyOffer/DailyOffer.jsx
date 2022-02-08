@@ -1,6 +1,6 @@
 import {Box, Container} from "@mui/material";
 import {useEffect, useRef, useState} from "react";
-import Countdown from "./Countdown/Countdown";
+import Countdown from "../DailyOffer/Countdown/Countdown";
 import {Swiper, SwiperSlide} from "swiper/react";
 import SwiperCore, {Pagination, Autoplay, Navigation} from "swiper";
 import {productData} from "../productCard/ProductCardData";
@@ -150,7 +150,7 @@ const DailyOffer = () => {
                 maxWidth: "100vw !important",
                 margin: "0 !important",
                 boxSizing: "border-box",
-                height: "27.5rem !important",
+                height: {md:"27.5rem !important" , xs:"19rem"},
                 backgroundColor: "rgba(240, 20, 54, 1)",
                 backgroundImage: "url(https://new.okala.com/static/images/siteImages/backgrounds/slidersPrimary.svg)",
                 overflowX: "scroll"
