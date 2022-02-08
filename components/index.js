@@ -16,8 +16,9 @@ import OkalaBlogHeader from './okakaBlog/OkalaBlogHeader'
 import HeaderLower from "./HeaderLower/HeaderLower";
 import CategoryProducts from "./CategoryProducts/CategoryProducts";
 import HeaderFooterProvider from "./HeaderFooterProvider/HeaderFooterProvider";
-import MenuMobile from "./MoblieBottomNavbar/MenuMobile";
+import SearchResults from "./searchResults/SearchResults";
 import HeaderDrawer from "./Header/Appbar&drawer";
+import MenuMobile from "./MoblieBottomNavbar/MenuMobile";
 
 export {
     Header,
@@ -38,6 +39,7 @@ export {
     HeaderLower,
     CategoryProducts,
     HeaderFooterProvider,
-    MenuMobile,
-    HeaderDrawer
+    SearchResults,
+    HeaderDrawer,
+    MenuMobile
 }

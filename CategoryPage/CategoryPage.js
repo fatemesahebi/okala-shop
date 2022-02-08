@@ -1,14 +1,17 @@
-import React from 'react';
-import {BrandFilter} from "./index";
+import {
+    Header,
+    FooterContainer,
+    SearchResults,
+} from "../components";
 
 
+function CategoryPage() {
 
-const CategoryPage = () => {
-    return (
-        <div>
-            <BrandFilter/>
-        </div>
-    );
-};
+    return (<div>
+    <Header/>
+        <SearchResults/>
+        <FooterContainer/>
+    </div>)
+}
 
-export default CategoryPage;
+export default CategoryPage
