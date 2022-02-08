@@ -3,7 +3,7 @@ import {
     FooterContainer,
     SearchResults,
 } from "../components";
-import BrandFilter from "../components/‌BrandFilter/BrandFilter";
+import BrandFilter from "../components/BrandFilter/BrandFilter";
 
 
 function CategoryPage() {

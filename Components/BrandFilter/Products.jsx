@@ -4,7 +4,6 @@ import {Box, Paper} from "@mui/material";
 import SingleProduct from "../productCard/ProductCardElements";
 import ShowBar from "./ShowBar";
 import MobileShowBar from "./MobileShowBar";
-
 const Products = () => {
     return (
         <Paper  elevation={0} sx={{padding:'20px',width:{xs:'80vw',sm:'80vw',md:'80vw',lg:'80vw',xl:'65vw'}}}>
