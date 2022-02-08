@@ -159,3 +159,25 @@ export const Ratesprogress = styled('div')({
     paddingBottom: '10px',
     borderBottom:' 4px solid rgba(240, 240, 240, 1)',
 });
+export const Buttonwrapper = styled('div')({
+    top: '1rem',
+    left: '1rem',
+    display: 'flex',
+    position: 'relative',
+    flexDirection: 'column',
+    boxSizing:'inherit'
+});
+
+export const Buttoncontainer = styled('div')({
+    width: '40px',
+    cursor: 'pointer',
+    display: 'flex',
+    padding: '5px 0',
+    position: 'relative',
+    alignItems: 'center',
+    borderRadius: '8px',
+    margiBottom: '8px',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(248, 248, 248, 1)',
+})

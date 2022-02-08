@@ -7,18 +7,20 @@ import Typography from '@mui/material/Typography';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import Link from '@mui/material/Link';
 import Accordion from './customAccordion';
-import {Button} from '@mui/material';
+import {Button,Fab } from '@mui/material';
 import {styled} from '@mui/system';
 import AddIcon from '@mui/icons-material/Add';
 import Breadcrumbs from './breadcrumb';
 import CategoryProducts from '../../components/CategoryProducts/CategoryProducts'
 import {HeaderFooterProvider} from "../../components";
-import chat from "../../public/SVG/chat.svg"
+import chat from "../../public/SVG/chat.svg";
+import heart from "../../public/SVG/heart.svg";
+
 
 import {
     Addtocart,
     Bottomwrapper,
-    Brandwrapper,
+    Brandwrapper, Buttoncontainer, Buttonwrapper, Container,
     Infosection,
     Pricewrapper,
     Showcomments,
@@ -59,9 +61,18 @@ export default function Productmobile() {
                         <ShareOutlined/>
                     </IconButton>
                 </Topsection>
-                <Box sx={{backgroundColor: '#f8f8f8'}}>
-                    <Slidercontainer>
-
+                <Container sx={{backgroundColor: '#f8f8f8'}}>
+                    <Slidercontainer sx={{direction:'ltr'}}>
+                        <Buttonwrapper>
+                            <Buttoncontainer>
+                                <Image src={heart}/>
+                                <span style={{
+                                    color:' rgba(54, 54, 54, 1)',
+                                    fontWeight: '700'}}>
+                                1
+                            </span>
+                            </Buttoncontainer>
+                        </Buttonwrapper>
                     </Slidercontainer>
                     <Infosection sx={{backgroundColor: '#F8F8F8'}}>
                         <Topwrapper sx={{fontSize: '1rem'}}>
@@ -130,8 +141,12 @@ export default function Productmobile() {
                     </div>
                     <Showcomments sx={{background: '#F8F8F8'}}>
                         <Box sx={{display: 'flex'}}>
-                            <span>
-                                <Image src={chat}/>
+                            <span >
+                                <span style={{verticalAlign:'middle',
+                                marginLeft:'.8rem'}}>
+                                    <Image src={chat}/>
+
+                                </span>
                                 <span>1نظر ثبت شده</span>
                             </span>
                         </Box>
@@ -142,7 +157,7 @@ export default function Productmobile() {
                     <Breadcrumbs/>
                     <CategoryProducts similarProducts={true} category={"محصولات جدید"}/>
 
-                </Box>
+                </Container>
 
                 <Addtocart>
                     <ColorButton>
