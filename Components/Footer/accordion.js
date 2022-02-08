@@ -16,7 +16,7 @@ export default function CustomizedAccordions() {
     }
     return (
         <div style={{borderBottom: "2px solid white"}}>
-            <Accordion dir={"rtl"} expanded={expanded} onChange={handleExpansion} sx={{background:'transparent', boxShadow: "none",
+            <Accordion dir={"rtl"} expanded={expanded} onChange={handleExpansion} sx={{background:'#f0f0f0 !important', boxShadow: "none !important",
                 maxWidth:'81rem',margin:'auto !important' ,}}>
                 <AccordionSummary sx={{
                     height: "4rem !important",
