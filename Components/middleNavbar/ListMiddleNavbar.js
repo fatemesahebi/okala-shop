@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import MiddleNavbar from "./MiddleNavbar";
-import {Box} from "@mui/system";
+import {Box} from "@mui/material";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
 
@@ -20,7 +20,7 @@ const productList = [
 ]
 function ListMiddleNavbar(){
     return(
-        <div style={{ width: '100%',fontSize:"1rem",fontWeight:"bold" }}>
+        <Box sx={{ margin: "auto", width: {xs: "100%",lg: '85rem'},fontSize:"1rem",fontWeight:"bold" }}>
             <Swiper
                 slidesPerView={3}
                 spaceBetween={2}
@@ -58,7 +58,7 @@ function ListMiddleNavbar(){
 
                     {productList.map((item,index) => (<SwiperSlide><MiddleNavbar key={index} imagesProducts={item.image} textProducts={item.text}/> </SwiperSlide>))}
             </Swiper>
-        </div>
+        </Box>
     )
 }
 

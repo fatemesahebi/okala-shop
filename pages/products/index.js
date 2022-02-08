@@ -1,12 +1,14 @@
 import React from 'react';
+import ProductPage from "../../productPage/ProductPage";
+import Productmobile from "../../productPage/mobile/mobileproductpage"
 
-const ProductPages = () => {
+const ProductPageInformation = () => {
     return (
         <div>
-            <p>
-                hi
-            </p>        </div>
+            <Productmobile/>
+            <ProductPage/>
+        </div>
     );
 };
 
-export default ProductPages;
+export default ProductPageInformation;

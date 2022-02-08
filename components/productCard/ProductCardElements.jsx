@@ -18,13 +18,20 @@ const StyledCard = styled.div({
     width: '220px',
     display: 'flex',
     flexDirection: 'column',
-    borderRadius: '5px',
-    backgroundColor: '#ffffff'
+    borderRadius: '10px',
+    backgroundColor: '#ffffff',
+    ['@media (max-width: 768px)']:{
+        height: '258px',
+        width: '176px'
+    }
 
 })
 const StyledImage = styled.img({
     width: '153px',
-    position: 'block'
+    position: 'block',
+    ['@media (max-width: 768px)']:{
+        width: '100px'
+    }
 })
 const StyledIcon = styled.text({
     backgroundColor: '#f01436',
@@ -177,14 +184,17 @@ const SingleProduct = ({product}) => {
 
                             <StyledImage src={product.productImage.src}/>
                         </StyledCardMedia>
-                        {(product.offPercent > 0) ? (
                                 <StyledCardContent>
                                     <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
-                                    <StyledPrice gutterBottom variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.price}`))}</StyledPrice>
+                                    <StyledPrice style={{
+                                        visibility: product.offPercent === 0 ? "hidden":"visible"
+                                    }} gutterBottom variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.price}`))}</StyledPrice>
                                     <div>
                                         <Grid container>
                                             <Grid item>
-                                                <StyledOffPercent
+                                                <StyledOffPercent style={{
+                                                    visibility: product.offPercent === 0 ? "hidden":"visible"
+                                                }}
                                                     variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.offPercent}`))} %</StyledOffPercent>
                                             </Grid>
                                         </Grid>
@@ -193,12 +203,7 @@ const SingleProduct = ({product}) => {
                                                 variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.priceOffer}`))} ریال</StyledPriceOffer>
                                         </Grid>
                                     </div>
-                                </StyledCardContent>)
-                            :
-                            (<CardContent>
-                                <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
-                                <StyledNoneOffer variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.priceOffer}`))} ریال </StyledNoneOffer>
-                            </CardContent>)}
+                                </StyledCardContent>
                     </StyledCard>
                 </Grid>
             </Grid>

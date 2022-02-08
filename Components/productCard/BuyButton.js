@@ -16,7 +16,9 @@ const BuyButton = ({totalOrder,active}) => {
                 m: "auto",
                 mt: 2,
                 borderRadius: "10px",
-                opacity:`${(active)? '100%': "30%"}`
+                opacity:`${(active)? '100%': "30%"}`,
+                // position:"relative",
+                // bottom:"10px"
             }}>
                 <Typography variant={"h7"} sx={{m: "auto", fontWeight: 700, pr: 15}}>ثبت سفارش</Typography>
                 <Stack

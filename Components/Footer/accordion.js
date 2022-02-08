@@ -1,52 +1,33 @@
-import React, { Component } from 'react';
+import React, {Component, useState} from 'react';
 import { styled } from '@mui/material/styles';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-
-const Accordion = styled((props) => (
-    <MuiAccordion disableGutters elevation={0} square {...props} />
-))(({ theme }) => ({}));
-
-const AccordionSummary = styled((props) => (
-    <MuiAccordionSummary
-        expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
-        {...props}
-    />
-))(({ theme }) => ({
-    backgroundColor:' #F0F0F0',
-    justifyContent:'center',
-    flexDirection: 'row-reverse',
-    '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
-        backgroundColor:' #F0F0F0',
-        transform: 'rotate(90deg)',
-    },
-    '& .MuiAccordionSummary-content': {
-        justifyContent:'center',
-        alignContent:'center',
-        alignItems:'center'
-    },
-}));
-
-const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-    padding: theme.spacing(2),
-}));
+import {Accordion, AccordionSummary, AccordionDetails} from "@mui/material";
 
 export default function CustomizedAccordions() {
+    const [expanded , setExpanded] = useState(false)
 
+    const handleExpansion = (e) => {
+        setExpanded(!expanded)
+    }
     return (
-        <div>
-            <Accordion sx={{margin:'auto', background:'transparent',
-                maxWidth:'1280px'}}>
-                <AccordionSummary>
-                    <Typography align={'center'}>فروشگاه اُکالا، بزرگترین سوپرمارکت آنلاین ایران</Typography>
+        <div style={{borderBottom: "2px solid white"}}>
+            <Accordion dir={"rtl"} expanded={expanded} onChange={handleExpansion} sx={{background:'transparent', boxShadow: "none",
+                maxWidth:'81rem',margin:'auto !important' ,}}>
+                <AccordionSummary sx={{
+                    height: "4rem !important",
+                    width: {md:expanded? "6.5rem" : "23rem", xs:"100%"},
+                    margin: "auto",
+                }} expandIcon={<ExpandMoreIcon />}>
+                    <Typography fontSize={{md:"1rem", xs:"0.9rem"}} align={'center'}>{expanded ? "بستن":"فروشگاه اُکالا، بزرگترین سوپرمارکت آنلاین ایران"}</Typography>
                 </AccordionSummary>
-                <AccordionDetails sx={{backgroundColor:' #F0F0F0',
-                }}>
-                    <Typography variant='h5'>فروشگاه اُکالا، بزرگترین سوپرمارکت آنلاین ایران</Typography>
-                    <Typography>
+                <AccordionDetails>
+                    <Typography sx={{padding: "1rem 0" , fontWeight: "bold", fontSize: "1.2rem"}}>فروشگاه اُکالا، بزرگترین سوپرمارکت آنلاین ایران</Typography>
+                    <Typography sx={{textAlign: "justify", lineHeight: "1.5rem", fontSize:"0.85rem",fontWeight: "bold"}}>
                         شرکت اکالا (توسعه تجارت الکترونک کوروش) یکی از زیرمجموعه‌های هولدینگ بزرگ گروه صنعتی گلرنگ است که به عنوان بزرگ‌ترین سوپرمارکت اینترنتی در ایران فعالیت می‌کند .کالاهایی که از طریق اکالا به فروش می‌رسند در دسته‌بندی‌های متنوع مواد غذایی، نوشیدنی‌ها، خواروبار، محصولات آرایشی و بهداشتی، میوه و سبزیجات، ابزار و ملزومات، لوازم تحریر و لوازم اداری، محصولات مادر و کودک و پوشاک طبقه‌بندی می‌شوند که با تخفیف‌های شگفت‌انگیز و حتی تا 50% تخفیف به فروش می‌رسند.
                         <br/>
                         این کالاها از فروشگاه های متنوعی به فروش می‌رسند. این مجموعه‌ها عبارت اند از:

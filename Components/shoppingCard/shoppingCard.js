@@ -23,10 +23,15 @@ let CountOrder=useSelector(state=>state.cart.items.length)
 
         {/*    **************************************shopping card Header*********************************************/}
         <Box sx={{
-            position: 'fixes',
-            transform:(open)? 'translateX(-63.5vw)' : 'translate(-100vw)',
-            top: 0,
-            width: '500px',
+            // position: 'fixed',
+            // transform:(open)? {lg:'translateX(-63.5vw)',md:'translateX(-50.5vw)'} : 'translate(-100vw)',
+            // top: 0,
+            // left:0,
+            position:"absolute",
+            left:0,
+            top:0,
+            bottom:0,
+            width: '520px',
             zIndex: '100',
             color: 'black',
             height: '100vh',

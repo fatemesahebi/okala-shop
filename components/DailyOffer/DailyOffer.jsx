@@ -1,6 +1,6 @@
 import {Box, Container} from "@mui/material";
 import {useEffect, useRef, useState} from "react";
-import Countdown from "./Countdown/Countdown";
+import Countdown from "../DailyOffer/Countdown/Countdown";
 import {Swiper, SwiperSlide} from "swiper/react";
 import SwiperCore, {Pagination, Autoplay, Navigation} from "swiper";
 import {productData} from "../productCard/ProductCardData";
@@ -80,7 +80,7 @@ const DailyOffer = () => {
                         backgroundColor: "white !important",
                         minWidth: "3rem !important",
                         height: "3rem !important",
-                    }} className={"swiper-button-prev"}>
+                    }} id={"swiper-button-prev-daily"} className={"swiper-button-prev"}>
                     </Box>
                     <Swiper
                         style={{
@@ -95,7 +95,7 @@ const DailyOffer = () => {
                             margin: "0 !important"
                         }}
                         direction={'horizontal'}
-                        navigation={{nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"}}
+                        navigation={{nextEl: "#swiper-button-next-daily", prevEl: "#swiper-button-prev-daily"}}
                         slidesPerView={4.5}
                         breakpoints={{
                             480: {
@@ -133,7 +133,7 @@ const DailyOffer = () => {
                         backgroundColor: "white !important",
                         minWidth: "3rem !important",
                         height: "3rem !important",
-                    }} className={"swiper-button-next"}>
+                    }} id={"swiper-button-next-daily"} className={"swiper-button-next"}>
                     </Box>
                 </Box>
             </Container>
@@ -150,7 +150,7 @@ const DailyOffer = () => {
                 maxWidth: "100vw !important",
                 margin: "0 !important",
                 boxSizing: "border-box",
-                height: "27.5rem !important",
+                height: {md:"27.5rem !important" , xs:"19rem"},
                 backgroundColor: "rgba(240, 20, 54, 1)",
                 backgroundImage: "url(https://new.okala.com/static/images/siteImages/backgrounds/slidersPrimary.svg)",
                 overflowX: "scroll"
