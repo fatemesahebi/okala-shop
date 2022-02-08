@@ -11,23 +11,15 @@ import {Paper} from "@material-ui/core";
 
 const BrandFilter = () => {
     return (
-        <Box sx={{display: 'flex',justifyContent:'flex-start'}}>
+        <Box sx={{display: 'flex',justifyContent:'flex-start',padding:"1rem"}} >
             <Box display={{xl:'block',lg:'block',md:'none',sm:'none',xs:'none'}}>
                 <Accordion sx={{width:"20rem",boxShadow:"rgba(0, 0, 0, 0.04) 0px 3px 5px",borderRadius:"1rem"}}>
-                    <AccordionSummary sx={{width: '308px', height: '83px', borderRadius: '42px'}}
+                    <AccordionSummary
                                       expandIcon={<ExpandMoreIcon/>}
                                       aria-controls="panel1a-content"
                                       id="panel1a-header">
 
-                        <Box sx={{display: "inline-flex", gap: "10px"}}>
-                            <Box sx={{
-                                height: "1.5rem",
-                                border: "4px solid rgba(124, 200, 204, 1)",
-                                borderRadius: "100px"
-                            }}>
-                            </Box>
-                            <Typography>برندهای موجود</Typography>
-                        </Box>
+                        <Typography sx={{borderRight:"4px solid rgba(124, 200, 204, 1)",height:"1rem",top:".5rem",paddingRight:".41rem",right:"0",fontWeight:"bolder"}}> برندهای موجود</Typography>
                     </AccordionSummary>
                     <AccordionDetails sx={{height: '300px', width: '308px', overflow: "scroll", overflowX: 'hidden'}}>
                         <FormSection/>
@@ -45,3 +37,4 @@ const BrandFilter = () => {
 };
 
 export default BrandFilter;
+
