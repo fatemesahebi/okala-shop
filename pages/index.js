@@ -5,6 +5,7 @@ import {
     getBrandProducts,
 } from "../lib/axios/getData";
 import HomePage from "../HomePage/homePage";
+import CategoryPage from "../CategoryPage/CategoryPage";
 
 const Home = () => {
     const [data, setData] = useState([])
@@ -21,6 +22,7 @@ const Home = () => {
         </Head>
         {/*<SearchResults/>*/}
         <HomePage/>
+        {/*<CategoryPage/>*/}
     </div>)
 
 };
