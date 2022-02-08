@@ -1,26 +1,41 @@
-import {Header,BannerSlider, DailyOffer,FourthBanner,DoubleBanner,ListBrands,ListMiddleNavbar, FooterContainer,OkalaBlogHeader, OkalaBlog, HeaderLower,CategoryProducts} from "../components";
-function HomePage(){
+import {
+    Header,
+    BannerSlider,
+    DailyOffer,
+    FourthBanner,
+    DoubleBanner,
+    OkalaBlogHeader,
+    ListBrands,
+    CategoryProducts,
+    ListMiddleNavbar,
+    FooterContainer,
+    OkalaBlog,
+    HeaderFooterProvider, MenuMobile
+} from "../components";
+import {Box} from "@material-ui/core";
+function HomePage() {
 
-    return(<div>
-        <Header/>
-        {/*<HeaderLower/>*/}
-        <BannerSlider/>
-        <ListMiddleNavbar/>
-        <DailyOffer/>
-        <FourthBanner/>
-        <CategoryProducts category={"محصولات جدید"}/>
-        <CategoryProducts category={"پرفروشترین در منطقه شما"}/>
-        <CategoryProducts category={"پرتخفیف ترین ها"}/>
-        <DoubleBanner/>
-        <CategoryProducts category={"نوشیدنی"}/>
-        <CategoryProducts category={"میوه و سبزیجات"}/>
-        <CategoryProducts category={"غذا"}/>
-        <CategoryProducts category={"لوازم بهداشتی"}/>
-        <CategoryProducts category={"سایر غذاها"}/>
-        <OkalaBlogHeader/>
-        <OkalaBlog/>
-        <ListBrands/>
-        <FooterContainer/>
+    return (<div>
+        <HeaderFooterProvider>
+            <BannerSlider/>
+            <ListMiddleNavbar/>
+            <DailyOffer/>
+            <FourthBanner/>
+            <CategoryProducts similarProducts={false} category={"محصولات جدید"}/>
+            <CategoryProducts similarProducts={false} category={"پرفروشترین در منطقه شما"}/>
+            <CategoryProducts similarProducts={false} category={"پرتخفیف ترین ها"}/>
+            <DoubleBanner/>
+            <CategoryProducts similarProducts={false} category={"نوشیدنی"}/>
+            <CategoryProducts similarProducts={false} category={"میوه و سبزیجات"}/>
+            <CategoryProducts similarProducts={false} category={"غذا"}/>
+            <CategoryProducts similarProducts={false} category={"لوازم بهداشتی"}/>
+            <CategoryProducts similarProducts={false} category={"سایر غذاها"}/>
+            <OkalaBlogHeader/>
+            <OkalaBlog/>
+            <ListBrands/>
+            <MenuMobile/>
+        </HeaderFooterProvider>
     </div>)
 }
+
 export default HomePage

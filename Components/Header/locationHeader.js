@@ -1,6 +1,6 @@
 import React from 'react';
 import {Stack, Box, Typography, Button} from "@mui/material";
-import ofoghKala from '../../public/images/ofoghKala.png';
+import ofoghKala from '../../public/SVG/logo-okala2.svg';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import PN from "persian-number";
 import clockSvg from './../../public/SVG/clock.svg'
@@ -8,6 +8,8 @@ import location from './../../public/SVG/location.svg'
 import Image from 'next/image'
 import {styled} from "@mui/system";
 import {useRef} from "react";
+import LocationShopButton from "./LocationShopButton";
+
 const LocationTex = styled(Typography)(
     () => `
   font-size:0.85rem;
@@ -20,47 +22,40 @@ const LocationTex = styled(Typography)(
 
 
 const LocationHeader = () => {
-    const handleMenuScroll=()=>{
-
-    }
 
 
     return (
-        <Stack  onScroll={handleMenuScroll} sx={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', px: 5, pt: 13}}>
-            <Stack  sx={{flexDirection: 'row', alignItems: 'center'}}>
-                <Box component='img' src={ofoghKala.src} sx={{pl: 2}}/>
-                <Typography sx={{fontSize: '0.9rem', pl: 0.8,color:'black.main'}}>
-                    خرید از
-                </Typography>
-                <Typography sx={{fontSize: '0.9rem', fontWeight: 700,color:'black.main'}}>افق کوروش</Typography>
-                <Button sx={{
-                    mx: 3,
-                    border: "1px solid rgba(0, 0, 0, 0.23)",
-                    color: 'darkGray.main',
-                    borderRadius: '10px',
-                    fontSize: "0.8rem",
-                    px: 2,
-                    fontWeight: 700,
-                    "&:hover": {
-                        backgroundColor: 'lightGray.light'
-                    },
-                }}>تغییر فروشگاه</Button>
+        <Stack flexDirection={"row"} alignItems={"center"} justifyContent={"center"} width={"100vw"}
+               sx={{backgroundColor: 'white.main',display:{xs:"none",md:"flex"}}}>
+
+            <Stack flexDirection={"row"} alignItems={"center"} justifyContent={'space-between'}
+                   width={{md: "90%", lg: "1280px"}}
+
+                   sx={{ pt: 13}}>
                 <Stack sx={{flexDirection: 'row', alignItems: 'center'}}>
-                    <Image src={location}/>
-                    <Typography sx={{px: 1, fontWeight: 600, fontSize: '.85rem', color: 'darkGray.main'}}>تحویل در
-                        تهران، میدان آرژانتین</Typography>
-                    <KeyboardArrowDownIcon color="action"/>
+                    <Box component='img' width={'70px'} src={ofoghKala.src} sx={{pl: 2}}/>
+                    <Typography sx={{fontSize: '0.9rem', pl: 0.8, color: 'black.main'}}>
+                        خرید از
+                    </Typography>
+                    <Typography sx={{fontSize: '0.9rem', fontWeight: 700, color: 'black.main'}}>اکالا</Typography>
+                    <LocationShopButton/>
+                    <Stack sx={{flexDirection: 'row', alignItems: 'center'}}>
+                        <Image src={location}/>
+                        <Typography sx={{px: 1, fontWeight: 600, fontSize: '.85rem', color: 'darkGray.main'}}>تحویل در
+                            تهران، میدان آرژانتین</Typography>
+                        <KeyboardArrowDownIcon color="action"/>
+                    </Stack>
                 </Stack>
-            </Stack>
 
-            <Stack sx={{flexDirection: 'row'}}>
-                <Image src={clockSvg}/>
-                <LocationTex sx={{pr: 1.5}}>اولین بازه تحویل : ساعت </LocationTex>
-                <LocationTex> {PN.convertEnToPe(17)}</LocationTex>
-                <LocationTex>الی</LocationTex>
-                <LocationTex>{PN.convertEnToPe(19)}</LocationTex>
-            </Stack>
+                <Stack sx={{flexDirection: 'row'}}>
+                    <Image src={clockSvg}/>
+                    <LocationTex sx={{pr: 1.5}}>اولین بازه تحویل : ساعت </LocationTex>
+                    <LocationTex> {PN.convertEnToPe(17)}</LocationTex>
+                    <LocationTex>الی</LocationTex>
+                    <LocationTex>{PN.convertEnToPe(19)}</LocationTex>
+                </Stack>
 
+            </Stack>
 
         </Stack>
     );

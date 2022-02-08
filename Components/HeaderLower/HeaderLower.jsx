@@ -2,6 +2,9 @@ import {Box, Button, Container, Typography} from "@mui/material";
 import HeaderLowerComponent from "./HeaderLowerComponent/HeaderLowerComponent";
 import HeaderCategories from "./HeaderCategories/HeaderCategories";
 import Category from "./HeaderLowerComponent/category.svg"
+import Discount from "../../public/SVG/discountIcon.svg"
+import Rank from "../../public/SVG/okalaRank.svg"
+import Blog from "../../public/SVG/okalaBlog.svg"
 import {useState} from "react";
 
 const HeaderLower = () => {
@@ -21,7 +24,7 @@ const HeaderLower = () => {
             margin: "0 !important",
             padding: "0 !important",
             position: "fixed",
-            top: "11.5rem",
+            top: "10.5rem",
             zIndex: 12
         }}>
             <Container maxWidth="100vw" sx={{
@@ -40,7 +43,7 @@ const HeaderLower = () => {
                     margin: "0 !important",
                     padding: "0 !important",
                     width: {
-                        lg: "85rem !important",
+                        lg: "81rem !important",
                         md: "100% !important"
                     },
                     display: "inline-flex",
@@ -65,15 +68,15 @@ const HeaderLower = () => {
                         }}>
                             |
                         </Box>
-                        <HeaderLowerComponent icon={Category}>
+                        <HeaderLowerComponent icon={Discount}>
                             تخفیف ها
                         </HeaderLowerComponent>
                     </Box>
                     <Box>
-                        <HeaderLowerComponent icon={Category}>
+                        <HeaderLowerComponent icon={Rank}>
                             اکالا رنک
                         </HeaderLowerComponent>
-                        <HeaderLowerComponent icon={Category}>
+                        <HeaderLowerComponent icon={Blog}>
                             اکالا بلاگ
                         </HeaderLowerComponent>
                     </Box>

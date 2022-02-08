@@ -8,11 +8,11 @@ import OkalaBlogHeader from "./OkalaBlogHeader";
 
 const OkalaBlog = () => {
     return (
-        <Container>
+        <Container >
             <Container style={{display:'flex',justifyContent:'center'}}>
-                <Grid container style={{
+                <Grid container sx={{
                     padding: '20px',
-                    width:'90vw'
+                    width: {lg:'85rem' , xs:"95vw"}
 
                 }}>
                     <Swiper initialSlide='0' breakpoints={{320:{slidesPerView:1},375:{slidesPerView:1},425:{slidesPerView:1.5,spaceBetween:15},768:{slidesPerView:2.5},1024:{slidesPerView:3,spaceBetween:22},1440:{slidesPerView:4}}}>

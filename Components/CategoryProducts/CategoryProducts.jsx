@@ -10,34 +10,34 @@ import {getAllProducts, getCategoryProducts, getMostOffProducts, getMostSaleProd
 
 SwiperCore.use([Navigation])
 
-const CategoryProducts = ({category}) => {
-    const [products , setProducts] = useState([])
-    useEffect(()=> {
-        if(category === "محصولات جدید") {
+const CategoryProducts = ({category , similarProducts}) => {
+    const [products, setProducts] = useState([])
+    useEffect(() => {
+        if (category === "محصولات جدید") {
             getAllProducts()
                 .then(data => setProducts(data.products))
                 .catch(res => alert(res.status))
-        }
-        else if (category === "پرفروشترین در منطقه شما"){
+        } else if (category === "پرفروشترین در منطقه شما") {
             getMostSaleProducts()
                 .then(data => setProducts(data.products))
                 .catch(res => alert(res.status))
-        }
-        else if (category === "پرتخفیف ترین ها"){
+        } else if (category === "پرتخفیف ترین ها") {
             getMostOffProducts()
                 .then(data => setProducts(data.products))
                 .catch(res => alert(res.status))
-        }
-        else {
+        } else {
             getCategoryProducts(category)
                 .then(data => setProducts(data.products))
                 .catch(res => alert(res.status))
         }
-    },[])
+    }, [])
     return (
         <Container dir="rtl" maxWidth="100vw" sx={{
             margin: "1rem auto !important",
-            width: "85rem",
+            width: {
+                xl: "85rem",
+                lg: "100vw"
+            },
             display: "flex",
             flexDirection: "column",
             boxShadow: "0px 2px 8px 1px rgb(22 22 22 / 4%)"
@@ -62,11 +62,12 @@ const CategoryProducts = ({category}) => {
                     <Typography sx={{
                         fontWeight: "bold"
                     }}>
-                        {category}
+                        {similarProducts?"محصولات مشابه":category}
                     </Typography>
                 </Box>
                 <Box>
                     <Typography sx={{
+                        display: similarProducts ? "none":"block",
                         fontWeight: "bold",
                         color: "#02a0a4"
                     }}>
@@ -76,8 +77,7 @@ const CategoryProducts = ({category}) => {
             </Box>
             <Box dir="rtl" sx={{
                 width: {
-                    xl: "85rem",
-                    lg: "47.5rem",
+                    xl: "100%",
                 },
                 display: "flex",
                 alignItems: "center",
@@ -86,22 +86,25 @@ const CategoryProducts = ({category}) => {
                 justifyContent: "center"
             }} component={"div"}>
                 <Box component={"div"} sx={{
+                    visibility:{
+                      lg:"visible",
+                      xs:"collapse"
+                    },
                     ":active,:hover": {
                         backgroundColor: "white !important"
                     },
                     position: "relative !important",
                     transform: "scale(-1)",
-                    border: "1px solid rgba(0,0,0,0.3)",
+                    border: "1px solid rgba(0,0,0,0.1)",
                     borderRadius: "0.65rem !important",
                     margin: "0 !important",
                     color: "black !important",
-                    boxShadow: "-7px 5px 30px -12px rgba(0,0,0,0.7)",
                     top: "45% !important",
                     right: "0 !important",
                     backgroundColor: "white !important",
-                    minWidth: "3rem !important",
-                    height: "3rem !important",
-                }} id={"swiper-button-prev-"+category.slice(0,3)} className={"swiper-button-prev"}>
+                    minWidth: "2.8rem !important",
+                    height: "2.8rem !important",
+                }} id={"swiper-button-prev-" + category.slice(0, 3)} className={"swiper-button-prev"}>
                 </Box>
                 <Swiper
                     style={{
@@ -117,15 +120,15 @@ const CategoryProducts = ({category}) => {
                         margin: "0 !important"
                     }}
                     navigation={{
-                        nextEl: "#swiper-button-next-"+category.slice(0,3),
-                        prevEl: "#swiper-button-prev-"+category.slice(0,3),
+                        nextEl: "#swiper-button-next-" + category.slice(0, 3),
+                        prevEl: "#swiper-button-prev-" + category.slice(0, 3),
                     }}
                     spaceBetween={0}
                     slidesPerView={"auto"}
                 >
-                    {products.slice(0,10).map(item => (
+                    {products.slice(0, 10).map(item => (
                         <SwiperSlide style={{
-                            width: "220px"
+                            maxWidth: "fit-content"
                         }}>
                             <Box sx={{
                                 border: "1px solid rgba(0,0,0,0.1)"
@@ -139,20 +142,23 @@ const CategoryProducts = ({category}) => {
                     ":active,:hover": {
                         backgroundColor: "white"
                     },
+                    visibility:{
+                        lg:"visible",
+                        xs:"collapse"
+                    },
                     position: "relative !important",
                     transform: "scale(-1) translateX(-3.5rem)",
-                    border: "1px solid rgba(0,0,0,0.3)",
+                    border: "1px solid rgba(0,0,0,0.1)",
                     borderRadius: "15px !important",
                     margin: "0 !important",
                     color: "black !important",
-                    boxShadow: "7px 5px 30px -12px rgba(0,0,0,0.7)",
                     top: "45% !important",
                     left: "0 !important",
                     backgroundColor: "white !important",
-                    minWidth: "3rem !important",
-                    height: "3rem !important",
+                    minWidth: "2.8rem !important",
+                    height: "2.8rem !important",
                     zIndex: 10
-                }} id={"swiper-button-next-"+category.slice(0,3)} className={"swiper-button-next"}>
+                }} id={"swiper-button-next-" + category.slice(0, 3)} className={"swiper-button-next"}>
                 </Box>
             </Box>
         </Container>

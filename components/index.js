@@ -15,6 +15,11 @@ import {FooterContainer} from "./Footer/footer";
 import OkalaBlogHeader from './okakaBlog/OkalaBlogHeader'
 import HeaderLower from "./HeaderLower/HeaderLower";
 import CategoryProducts from "./CategoryProducts/CategoryProducts";
+import HeaderFooterProvider from "./HeaderFooterProvider/HeaderFooterProvider";
+import SearchResults from "./searchResults/SearchResults";
+import HeaderDrawer from "./Header/Appbar&drawer";
+import MenuMobile from "./MoblieBottomNavbar/MenuMobile";
+
 export {
     Header,
     HeaderDesktop,
@@ -32,5 +37,9 @@ export {
     OkalaBlog,
     FooterContainer,
     HeaderLower,
-    CategoryProducts
+    CategoryProducts,
+    HeaderFooterProvider,
+    SearchResults,
+    HeaderDrawer,
+    MenuMobile
 }
