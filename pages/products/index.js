@@ -5,7 +5,7 @@ import Productmobile from "../../productPage/mobile/mobileproductpage"
 const ProductPageInformation = () => {
     return (
         <div>
-            <Productmobile/>
+            {/*<Productmobile/>*/}
             <ProductPage/>
         </div>
     );
