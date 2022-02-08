@@ -76,39 +76,47 @@ export default function HeaderDrawer() {
             <Drawer
                 dir={'ltr'}
                 sx={{
-                    width: drawerWidth,
+                    width: `100vw`,
                     '& .MuiDrawer-paper': {
-                        width: drawerWidth,
+                        backgroundColor:"transparent !important",
+                        width: `100vw`,
+                        boxShadow: "none",
                         boxSizing: 'border-box',
                         display: { xs: 'block', md: 'none' },
                     },
                 }}
-                transitionDuration={0}
-                anchor="right"
+                anchor="left"
                 open={open}
             >
-                <DrawerHeader >
-                    <Link>
-                        <Box>
-                            <img src="https://new.okala.com/_next/image?url=%2Fstatic%2Fimages%2Ficons%2Flogo-okala2.svg&w=128&q=75" alt="" />
+                <Box sx={{
+                    width: drawerWidth,
+                    height: "100vh",
+                    backgroundColor: "white !important",
+                    transform: {sm:`translateX(100vw) translateX(-30rem)`}
+                }}>
+                    <DrawerHeader >
+                        <Link>
+                            <Box>
+                                <img src="https://new.okala.com/_next/image?url=%2Fstatic%2Fimages%2Ficons%2Flogo-okala2.svg&w=128&q=75" alt="" />
+                            </Box>
+                        </Link>
+                        <Box
+                            sx={{
+                                position: 'absolute',
+                                left: '.5rem',
+                                top:'.5rem'
+                            }}>
+                            <IconButton
+                                onClick={handleDrawerClose}>
+                                <CloseIcon />
+                            </IconButton>
                         </Box>
-                    </Link>
-                    <Box
-                        sx={{
-                            position: 'absolute',
-                            left: '.5rem',
-                            top:'.5rem'
-                        }}>
-                        <IconButton
-                            onClick={handleDrawerClose}>
-                            <CloseIcon />
-                        </IconButton>
-                    </Box>
-                </DrawerHeader>
-                <Divider />
-                {menuData.map(item => (
-                    <CategoryAccordion categories={item} items={"items1"}/>
-                ))}
+                    </DrawerHeader>
+                    {/*<Divider />*/}
+                    {menuData.map(item => (
+                        <CategoryAccordion categories={item} items={"items1"}/>
+                    ))}
+                </Box>
             </Drawer>
         </Box>
     );
