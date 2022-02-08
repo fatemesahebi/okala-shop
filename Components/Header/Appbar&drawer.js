@@ -107,7 +107,7 @@ export default function HeaderDrawer() {
                 </DrawerHeader>
                 <Divider />
                 {menuData.map(item => (
-                    <CategoryAccordion categories={item}/>
+                    <CategoryAccordion categories={item} items={"items1"}/>
                 ))}
             </Drawer>
         </Box>

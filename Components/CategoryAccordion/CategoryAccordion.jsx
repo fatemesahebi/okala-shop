@@ -31,7 +31,7 @@ const AccordionSummary = styled((props) => (
 const AccordionDetails = styled(MuiAccordionDetails)(() => ({
 }));
 
-export default function CategoryAccordion({categories}) {
+export default function CategoryAccordion({categories , items}) {
     const [expanded, setExpanded] = React.useState(false);
 
     const handleChange = (event) => {
@@ -45,26 +45,12 @@ export default function CategoryAccordion({categories}) {
                     <Typography>{categories.mainTitle || categories.title}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    {categories.items1 ? categories.items1.map(item => (
+                    { items !== "noitems" ? categories[items].map(item => (
                         <Box>
-                            <CategoryAccordion categories={item}/>
+                            <CategoryAccordion categories={item} items={items === "items1" ? "items2":items === "items2" ? "items3" : "noitems"}/>
                         </Box>
 
                     ))
-                    :
-                    categories.items2 ? categories.items2.map(item => (
-                        <Box>
-                            <CategoryAccordion categories={item}/>
-                        </Box>
-
-                    ))
-                    :
-                        categories.items3 ? categories.items3.map(item => (
-                            <Box>
-                                <CategoryAccordion categories={item}/>
-                            </Box>
-
-                        ))
                     :
                     <></>}
                 </AccordionDetails>
