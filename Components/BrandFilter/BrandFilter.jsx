@@ -5,10 +5,8 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import FormSection from "./FormSection";
-import Products from "./Products";
 // import ShowBar from "./othersection/ShowBar";
 import {Paper} from "@material-ui/core";
-import FilterSelection from "./FilterSelection";
 
 const BrandFilter = () => {
     return (
@@ -27,12 +25,6 @@ const BrandFilter = () => {
                     </AccordionDetails>
                 </Accordion>
             </Box>
-            <Paper elevation={0} sx={{padding:"10px"}}>
-                <Paper elevation={0} >
-                    <Products/>
-                </Paper>
-            </Paper>
-
         </Box>
     );
 
