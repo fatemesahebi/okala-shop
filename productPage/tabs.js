@@ -64,10 +64,13 @@ export default function BasicTabs() {
                 </Box>
             </TabPanel>
             <TabPanel value={value} index={1}>
-                <Box sx={{
-                    background: 'red',
-                    height: '25rem',
-                    width: '25rem'}}>
+                <Box>
+                    <p style={{color:' rgba(54, 54, 54, 1)',
+                        fontSize: '.875rem',
+                        fontWeight: '500',
+                        lineHeight:' 22px',
+                    }}>شامپو بدن مناسب پوست چرب بامبو 400 میلی لیتری دیپ سنس
+                    </p>
                 </Box>
             </TabPanel>
             <TabPanel value={value} index={2}>
