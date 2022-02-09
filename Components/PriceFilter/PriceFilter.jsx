@@ -28,7 +28,7 @@ const PriceFilter = () => {
     };
 
     return (
-        <Box sx={{display: 'flex',justifyContent:'flex-start',padding:"1rem"}}>
+        <Box sx={{display: 'flex',justifyContent:'flex-start',padding:"1rem"}} display={{xl:'block',lg:'block',md:'none',sm:'none',xs:'none'}}>
             <div>
                 <Accordion sx={{width:"20rem",boxShadow:"rgba(0, 0, 0, 0.04) 0px 3px 5px",borderRadius:"1rem"}}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon/>}
