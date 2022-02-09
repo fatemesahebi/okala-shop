@@ -35,7 +35,7 @@ const ColorButton = styled(Button)(({ theme }) => ({
 }));
 
 
-export default function Productmobile() {
+export default function ProductMobile() {
     return (
         <React.Fragment sx={{
             backgroundColor: '#F8F8F8',

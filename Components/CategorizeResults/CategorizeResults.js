@@ -18,7 +18,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 export default function CategorizeResults() {
     return (
-        <Box sx={{padding:"1rem"}}>
+        <Box sx={{padding:"1rem 1rem 0 0"}}>
             <Accordion sx={{width:"20rem",boxShadow:"rgba(0, 0, 0, 0.04) 0px 3px 5px",borderRadius:"1rem"}}>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}

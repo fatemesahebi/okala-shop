@@ -20,7 +20,7 @@ const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 export default function CommodityFilters() {
     return (
-        <Box sx={{width:"19rem", height:"7rem",boxShadow:"rgba(0, 0, 0, 0.04) 0px 3px 5px",borderRadius:"1rem",padding:"1rem",margin:"2rem"}}>
+        <Box sx={{width:"19rem",color:"white", height:"7rem",boxShadow:"rgba(0, 0, 0, 0.04) 0px 3px 5px",borderRadius:"1rem",padding:"1rem",margin:"1rem",background:"white"}}>
             <GreenSwitch {...label} />
             <Typography sx={{display:"inline"}}>فقط کالاهای موجود</Typography>
             <hr style={{color:"rgba(236,236,236,0.21)"}}/>
