@@ -11,6 +11,7 @@ import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import {Box} from "@mui/material";
+import {InputAdornment, OutlinedInput} from "@material-ui/core";
 
 export default function SearchResults() {
     return (
@@ -23,19 +24,11 @@ export default function SearchResults() {
                 >
                     <Typography sx={{borderRight:"4px solid rgba(124, 200, 204, 1)",height:"1rem",top:".5rem",paddingRight:".41rem",right:"0",fontWeight:"bolder"}}> جستجو در نتایج</Typography>
                 </AccordionSummary>
-                <AccordionDetails>
-                    <Paper
-                        component="form"
-                        sx={{ p: '.55rem .7rem', display: 'flex', alignItems: 'center', width: "18rem" , borderRadius:".43rem",border:"1px solid rgba(175, 175, 175, 1)",boxShadow:"0",fontSize:".875rem"}}
-                    >
-                        <Image src={search}/>
-
-                        <InputBase
-                            sx={{ ml: 1, flex: 1 }}
-                            placeholder="نام کالا یا برند ..."
-                            inputProps={{ 'aria-label': 'search okala' }}
-                        />
-                    </Paper>
+                <AccordionDetails >
+                    <OutlinedInput name='search'
+                                   startAdornment={<InputAdornment position="start"><Image src={search}/></InputAdornment>}
+                                   style={{borderRadius: '12px', width: '18rem',height:"3.2rem"}}
+                                   placeholder="نام کالا یا برند ..."/>
                 </AccordionDetails>
             </Accordion>
 
