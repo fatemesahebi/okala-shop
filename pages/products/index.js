@@ -1,11 +1,11 @@
 import React from 'react';
 import ProductPage from "../../productPage/ProductPage";
-import Productmobile from "../../productPage/mobile/mobileproductpage"
+import ProductMobile from "../../productPage/mobile/ProductMobile"
 
 const ProductPageInformation = () => {
     return (
         <div>
-            {/*<Productmobile/>*/}
+            <ProductMobile/>
             <ProductPage/>
         </div>
     );

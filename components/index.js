@@ -16,9 +16,13 @@ import OkalaBlogHeader from './okakaBlog/OkalaBlogHeader'
 import HeaderLower from "./HeaderLower/HeaderLower";
 import CategoryProducts from "./CategoryProducts/CategoryProducts";
 import HeaderFooterProvider from "./HeaderFooterProvider/HeaderFooterProvider";
-import MenuMobile from "./MoblieBottomNavbar/MenuMobile";
+import SearchResults from "./searchResults/SearchResults";
 import HeaderDrawer from "./Header/Appbar&drawer";
-
+import MenuMobile from "./MoblieBottomNavbar/MenuMobile";
+import CategorizeResults from "./CategorizeResults/CategorizeResults";
+import CommodityFilters from "./CommodityFilters/CommodityFilters";
+import PaginationRounded from "./pagination/PaginationRounded";
+import BrandFilter from "./BrandFilter/BrandFilter";
 export {
     Header,
     HeaderDesktop,
@@ -38,6 +42,11 @@ export {
     HeaderLower,
     CategoryProducts,
     HeaderFooterProvider,
+    SearchResults,
+    HeaderDrawer,
     MenuMobile,
-    HeaderDrawer
+    CategorizeResults,
+    CommodityFilters,
+    PaginationRounded,
+    BrandFilter
 }

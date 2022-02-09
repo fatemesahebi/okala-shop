@@ -1,14 +1,10 @@
 import React from 'react';
-import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
 import {Container, Grid} from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import styled from '@emotion/styled'
-import {Image} from "@mui/icons-material";
 import PN from "persian-number";
 import {addToCart, decreaseItem, removeItem} from "../../redux/cartReducer";
 import {useSelector, useDispatch} from "react-redux";

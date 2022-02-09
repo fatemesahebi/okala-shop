@@ -1,5 +1,5 @@
 import React from 'react';
-import Product from "./mobile/mobileproductpage"
+import Product from "./mobile/ProductMobile"
 const ProductInfoMob = () => {
     return (
         <div>

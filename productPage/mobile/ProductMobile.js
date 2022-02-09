@@ -41,7 +41,7 @@ const ColorButton = styled(Button)(({theme}) => ({
 }));
 
 
-export default function Productmobile() {
+export default function ProductMobile() {
     return (
         <HeaderFooterProvider>
             <React.Fragment sx={{

@@ -6,7 +6,8 @@ const ProductPage = () => {
     console.log(router.query)
     return (
         <div>
-            productsId
+            {/*productsId*/}
+
         </div>
     );
 };
