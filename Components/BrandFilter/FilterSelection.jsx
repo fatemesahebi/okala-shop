@@ -9,24 +9,26 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 import {Typography} from "@mui/material";
+import {useState} from "react";
 
 const FilterSelection = () => {
-    const [age, setAge] = React.useState('');
-
+    const [show, setShow] = useState('پرفروش ترین');
     const handleChange = (event) => {
-        setAge(event.target.value);
+        setShow(event.target.value);
     };
+
     return (
         <FormControl>
-            <FormLabel id="demo-radio-buttons-group-label"><Typography>پرفروشترین</Typography></FormLabel>
+            <FormLabel id="demo-radio-buttons-group-label"><Typography>{}</Typography></FormLabel>
             <RadioGroup
                 aria-labelledby="demo-radio-buttons-group-label"
                 defaultValue="female"
                 name="radio-buttons-group"
             >
-                <FormControlLabel value="female" control={<Radio/>} label="بیشترین تخفیف"/>
-                <FormControlLabel value="male" control={<Radio/>} label="ارزانترین"/>
-                <FormControlLabel value="other" control={<Radio/>} label="گرانترین"/>
+                <FormControlLabel value="پرفروش ترین" control={<Radio onChange={handleChange}/>} label="پرفروشترین"/>
+                <FormControlLabel value="بیشترین تخفیف" control={<Radio onChange={handleChange}/>} label="بیشترین تخفیف"/>
+                <FormControlLabel value="ارزانترین" control={<Radio onChange={handleChange}/>} label="ارزانترین"/>
+                <FormControlLabel value="گرانترین" control={<Radio onChange={handleChange}/>} label="گرانترین"/>
             </RadioGroup>
         </FormControl>
 )

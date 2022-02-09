@@ -9,7 +9,9 @@ import Image from 'next/image'
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import FilterSelection from "./FilterSelection";
+import {useState} from "react";
 const ShowBar = () => {
+
     return (
         <AppBar position="static" color={'white'} elevation={0}>
             <Container>
