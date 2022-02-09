@@ -19,7 +19,10 @@ import HeaderFooterProvider from "./HeaderFooterProvider/HeaderFooterProvider";
 import SearchResults from "./searchResults/SearchResults";
 import HeaderDrawer from "./Header/Appbar&drawer";
 import MenuMobile from "./MoblieBottomNavbar/MenuMobile";
-
+import CategorizeResults from "./CategorizeResults/CategorizeResults";
+import CommodityFilters from "./CommodityFilters/CommodityFilters";
+import PaginationRounded from "./pagination/PaginationRounded";
+import BrandFilter from "./BrandFilter/BrandFilter";
 export {
     Header,
     HeaderDesktop,
@@ -41,5 +44,9 @@ export {
     HeaderFooterProvider,
     SearchResults,
     HeaderDrawer,
-    MenuMobile
+    MenuMobile,
+    CategorizeResults,
+    CommodityFilters,
+    PaginationRounded,
+    BrandFilter
 }
