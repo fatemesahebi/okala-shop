@@ -28,25 +28,15 @@ const PriceFilter = () => {
     };
 
     return (
-        <Box>
+        <Box sx={{display: 'flex',justifyContent:'flex-start',padding:"1rem"}}>
             <div>
-                <Accordion sx={{width: '308px', borderRadius: '20px'}}>
-                    <AccordionSummary sx={{width: '308px', height: '83px'}}
-                                      expandIcon={<ExpandMoreIcon/>}
+                <Accordion sx={{width:"20rem",boxShadow:"rgba(0, 0, 0, 0.04) 0px 3px 5px",borderRadius:"1rem"}}>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon/>}
                                       aria-controls="panel1a-content"
                                       id="panel1a-header">
-
-                        <Box sx={{display: "inline-flex", gap: "10px"}}>
-                            <Box sx={{
-                                height: "1.5rem",
-                                border: "4px solid rgba(124, 200, 204, 1)",
-                                borderRadius: "100px"
-                            }}>
-                            </Box>
-                            <Typography>فیلتر قیمت</Typography>
-                        </Box>
+                        <Typography sx={{borderRight:"4px solid rgba(124, 200, 204, 1)",height:"1rem",top:".5rem",paddingRight:".41rem",right:"0",fontWeight:"bolder"}}> فیلتر قیمت</Typography>
                     </AccordionSummary>
-                    <AccordionDetails sx={{height: '300px', width: '308px', overflow: "scroll"}}>
+                    <AccordionDetails >
                         <Box sx={{width: 250}}>
                             <Slider
                                 sx={{color: '#f01436'}}

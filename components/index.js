@@ -23,6 +23,8 @@ import CategorizeResults from "./CategorizeResults/CategorizeResults";
 import CommodityFilters from "./CommodityFilters/CommodityFilters";
 import PaginationRounded from "./pagination/PaginationRounded";
 import BrandFilter from "./BrandFilter/BrandFilter";
+import PriceFilter from './PriceFilter/PriceFilter';
+import Products from './BrandFilter/Products'
 export {
     Header,
     HeaderDesktop,
@@ -48,5 +50,8 @@ export {
     CategorizeResults,
     CommodityFilters,
     PaginationRounded,
-    BrandFilter
+    BrandFilter,
+    PriceFilter,
+    Products,
+
 }
