@@ -74,11 +74,11 @@ function BestBrandsFruitsVegetables() {
                             spaceBetween: 11,
                         },
                         500: {
-                            slidesPerView: 5,
+                            slidesPerView: 4,
                             spaceBetween: 15,
                         },
                         640: {
-                            slidesPerView: 6,
+                            slidesPerView: 4,
                             spaceBetween: 20,
                         },
                         870: {
@@ -86,7 +86,7 @@ function BestBrandsFruitsVegetables() {
                             spaceBetween: 40,
                         },
                         1024: {
-                            slidesPerView: 8.5,
+                            slidesPerView: 5,
                             spaceBetween: 50,
                         },
                         1400: {
