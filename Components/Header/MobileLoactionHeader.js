@@ -22,7 +22,7 @@ const MobileLoactionHeader = () => {
         <Stack alignItems={"center"} justifyContent={"space-between"} width={"100vw"} sx={{display:{md:"none"},mb:3}} >
             <StyledFlexRow >
                 <Stack alignItems={"center"} flexDirection={"row"}>
-                    <Box component='img' src={okalaLogo.src} width={'50px'} sx={{ml:3}}/>
+                    <Typography fontWeight={400} paddingLeft={"5px"} fontSize={"0.85rem"}> خرید از </Typography>
                     <Typography fontWeight={700} fontSize={"0.85rem"}>اکالا</Typography>
                 </Stack>
                 <LocationShopButton/>

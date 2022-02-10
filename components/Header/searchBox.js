@@ -118,7 +118,7 @@ function SearchBox() {
                     backgroundColor: "white",
                     minWidth: "100vw",
                     minHeight: "100vh",
-                    zIndex: 100,
+                    zIndex: 1000,
                     position: 'fixed',
                     top: 0,
                     right: 0,
@@ -134,7 +134,7 @@ function SearchBox() {
                     <Input disableUnderline
                            placeholder={'جستجو در محصولات اکالا'}
                            value={searchTerm}
-                           sx={{fontSize: '14px', pr: '20px', color: 'black.main', width: '80%'}}
+                           sx={{fontSize: '18px', fontWeight:"bold !important",  pr: '20px', color: 'black.main', width: '80%'}}
                            onChange={(e) => handleChangeMobileSearchBar(e)}/>
                     {(searchTerm != "") &&
                     <Box component="img" src={closeIcon.src} width={"40px"}
