@@ -5,6 +5,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import ProductFeaturesList from "./ProducFeaturesList";
+import CommentsSection from "./CommentsSection";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -72,11 +73,7 @@ export default function BasicTabs() {
                 </Box>
             </TabPanel>
             <TabPanel value={value} index={2}>
-                <Box sx={{
-                    background: 'black',
-                    height: '25rem',
-                    width: '25rem'}}>
-                </Box>
+                <CommentsSection/>
             </TabPanel>
         </Box>
     );

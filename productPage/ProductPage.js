@@ -8,6 +8,8 @@ import BasicTabs from "./tabs";
 import {Usersrate} from "./mobile";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import AddIcon from "@mui/icons-material/Add";
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 
 
 const ColorButton = styled(Button)(({theme}) => ({
@@ -20,16 +22,15 @@ const ColorButton = styled(Button)(({theme}) => ({
 }));
 
 const MainContainer = styled('div')({
-    maxWidth: '1280px',
+    maxWidth:'1280px !imprtant',
     margin: 'auto'
 })
 const MyContainer = styled('div')({
-    maxWidth: '1280px',
-    height: '1300px',
     padding: '36px',
     position: 'relative',
     background: ' #fff',
     borderRadius: '12px',
+    margin:'auto'
 });
 
 const InfoSection = styled('div')({
@@ -40,7 +41,7 @@ const InfoSection = styled('div')({
 });
 
 const ThumbnailWrapper = styled('div')({
-    width: '600px',
+    width: '550px',
     height: '408px',
     display: 'flex',
     marginLeft: '16px',
@@ -50,9 +51,9 @@ const ThumbnailWrapper = styled('div')({
 })
 
 const InformationWrapper = styled('div')({
+    width:'32rem',
     display: 'flex',
     flexGrow: '1',
-    paddingLeft: "50px",
     flexDirection: 'column',
 });
 
@@ -72,14 +73,15 @@ const AmountWrapper = styled('div')({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop:'2rem'
-})
+});
+
 const ProductPage = () => {
     return (
         <HeaderFooterProvider>
             <ProductInfo/>
             {/*<ImageMagnifire/>*/}
-            <Container maxWidth={'lg'} sx={{background: '#f8f8f8'}}>
-                <MainContainer>
+            <Container maxWidth={'false'} sx={{background: '#f8f8f8'}}>
+                <MainContainer >
                     <MyContainer>
                         <Box>
                             <InfoSection>
@@ -87,7 +89,7 @@ const ProductPage = () => {
 
                                 </ThumbnailWrapper>
                                 <InformationWrapper>
-                                    <Typography sx={{
+                                    <Typography variant={"h6"} component={"div"} sx={{
                                         fontSize: '1.25rem',
                                         fontWeight: 'bold',
                                         marginBottom: '47px'

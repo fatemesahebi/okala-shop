@@ -3,7 +3,7 @@ import ProductPage from "./ProductPage";
 const ProductInfoDesk = () => {
     return (
         <div>
-            Dektop mod
+            {/*Dektop mod*/}
         </div>
     );
 };
