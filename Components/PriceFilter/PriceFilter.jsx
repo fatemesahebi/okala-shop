@@ -5,8 +5,26 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {Box, Typography} from "@mui/material";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Slider from '@mui/material/Slider';
-import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import styled from '@emotion/styled'
+import {InputAdornment, OutlinedInput} from "@material-ui/core";
+import Image from "next/image";
+import search from "../../public/SVG/search.svg";
+import FormGroup from "@mui/material/FormGroup";
+import {labelData} from "../BrandFilter/labelData";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+
+const StyledSlider = styled(Slider)({
+    color: '#f01436',
+    touchAction: 'none',
+    display: 'flex',
+    "& .MuiSlider-thumb": {backgroundColor: '#f01436', ":hover": {boxShadow: 'none'}, boxShadow: 'none', padding: '0'},
+    "& .MuiSlider-track": {backgroundColor: '#f01436'},
+    // "& .MuiSlider-rail":{backgroundColor:'black'},
+
+
+})
 
 function valuetext(value) {
     return `${value}°C`;
@@ -28,28 +46,48 @@ const PriceFilter = () => {
     };
 
     return (
-        <Box sx={{display: 'flex',justifyContent:'flex-start',padding:"1rem"}}>
+        <Box sx={{display: 'flex', justifyContent: 'flex-start', padding: "1rem"}}>
             <div>
-                <Accordion sx={{width:"20rem",boxShadow:"rgba(0, 0, 0, 0.04) 0px 3px 5px",borderRadius:"1rem"}}>
+                <Accordion sx={{width: "20rem", boxShadow: "rgba(0, 0, 0, 0.04) 0px 3px 5px", borderRadius: "1rem"}}>
                     <AccordionSummary expandIcon={<ExpandMoreIcon/>}
                                       aria-controls="panel1a-content"
                                       id="panel1a-header">
-                        <Typography sx={{borderRight:"4px solid rgba(124, 200, 204, 1)",height:"1rem",top:".5rem",paddingRight:".41rem",right:"0",fontWeight:"bolder"}}> فیلتر قیمت</Typography>
+                        <Typography sx={{
+                            borderRight: "4px solid rgba(124, 200, 204, 1)",
+                            height: "1rem",
+                            top: ".5rem",
+                            paddingRight: ".41rem",
+                            right: "0",
+                            fontWeight: "bolder"
+                        }}> فیلتر قیمت</Typography>
                     </AccordionSummary>
-                    <AccordionDetails >
-                        <Box sx={{width: 250}}>
-                            <Slider
-                                sx={{color: '#f01436'}}
+                    <AccordionDetails>
+                        <Box sx={{display:'flex',justifyContent:'center',mb:'1rem'}}>
+
+                            <StyledSlider
+                                valueLabelDisplay={"off"}
                                 getAriaLabel={() => 'Minimum distance'}
                                 value={value1}
-
                                 onChange={handleChange}
-                                valueLabelDisplay="auto"
                                 getAriaValueText={valuetext}
                             />
                         </Box>
-                        <Stack spacing={2} direction="row">
+
+                        <Box
+                            component="form"
+                            sx={{display:'flex',justifyContent:'center',mb:'2rem'}} noValidate autoComplete="off">
+                            <OutlinedInput name='search'
+                                           startAdornment='تا'
+                                           endAdornment='ریال'
+                                           style={{width: '140px', height: '50px',backgroundColor:'#F8F8F8'}}/>
+                            <OutlinedInput name='search'
+                                           startAdornment='از'
+                                           endAdornment='ریال'
+                                           style={{width: '140px', height: '50px',backgroundColor:'#F8F8F8'}}/>
+                        </Box>
+                        <Box spacing={2} sx={{display: 'flex', justifyContent: 'center',mb:'1rem'}}>
                             <Button sx={{
+                                ml: '10px',
                                 color: '#f01436',
                                 border: 'solid 1px #b9b9b9',
                                 borderRadius: '10px',
@@ -60,7 +98,7 @@ const PriceFilter = () => {
                                 borderRadius: '10px',
                                 "&.MuiButtonBase-root:hover": {bgcolor: "#f01436"}
                             }} variant="contained"><Typography>فیلتر قیمت</Typography></Button>
-                        </Stack>
+                        </Box>
                     </AccordionDetails>
                 </Accordion>
             </div>
