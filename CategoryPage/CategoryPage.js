@@ -6,8 +6,7 @@ import {
     PriceFilter,
     CommodityFilters,
     PaginationRounded,
-    CategorizeResults,
-    MenuMobile
+    MenuMobile,
     CategorizeResults,
     Products
 } from "../components";
@@ -19,11 +18,11 @@ function CategoryPage() {
 
     return (<div style={{backgroundColor: "#f8f8f8"}}>
         {/*<Header/>*/}
-        <SearchResults/>
-        <CategorizeResults/>
-        <BrandFilter/>
-        <CommodityFilters/>
-        <PaginationRounded/>
+        {/*<SearchResults/>*/}
+        {/*<CategorizeResults/>*/}
+        {/*<BrandFilter/>*/}
+        {/*<CommodityFilters/>*/}
+        {/*<PaginationRounded/>*/}
         <MenuMobile/>
         <div style={{display: 'flex'}}>
             <div style={{marginTop:'30px'}}>
