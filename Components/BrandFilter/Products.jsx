@@ -26,7 +26,7 @@ const Products = () => {
             </Box>
             <Box>
                 <Paper elevation={0}
-                       sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', xs: {width: '200px'}}}>
+                       sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
                     {specialOffer.slice(0, 20).map(item =>
                         <Box sx={{border: 'solid 1px #f9f9f9'}}><SingleProduct product={item}/></Box>)}
                 </Paper>
