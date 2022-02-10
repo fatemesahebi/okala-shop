@@ -6,9 +6,9 @@ import {
     PriceFilter,
     CommodityFilters,
     PaginationRounded,
-    CategorizeResults,
-    MenuMobile
-    CategorizeResults,
+    // CategorizeResults,
+    // MenuMobile,
+    // CategorizeResults,
     Products
 } from "../components";
 import * as React from "react";

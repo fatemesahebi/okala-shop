@@ -78,7 +78,7 @@ const ProductPage = () => {
         <HeaderFooterProvider>
             <ProductInfo/>
             {/*<ImageMagnifire/>*/}
-            <Container maxWidth={"false"} sx={{background: '#f8f8f8'}}>
+            <Container maxWidth={'lg'} sx={{background: '#f8f8f8'}}>
                 <MainContainer>
                     <MyContainer>
                         <Box>
