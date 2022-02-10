@@ -83,7 +83,7 @@ const HeaderLower = () => {
                 </Container>
             </Container>
             {open ? (
-                    <HeaderCategories/>
+                    <HeaderCategories open={open} setOpen={setOpen}/>
             ) : (<></>)}
         </Container>
 
