@@ -8,7 +8,9 @@ import {
     PaginationRounded,
     MenuMobile,
     CategorizeResults,
-    Products
+    Products,
+    BestBrandsFruitsVegetables
+
 } from "../components";
 import * as React from "react";
 import {Paper} from "@mui/material";
@@ -39,6 +41,7 @@ function CategoryPage() {
                 </Paper>
             </Paper>
         </div>
+        <BestBrandsFruitsVegetables/>
         <FooterContainer/>
     </div>)
 }
