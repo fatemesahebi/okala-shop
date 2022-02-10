@@ -16,6 +16,8 @@ import MobileCategory from "./MobileCategory";
 import PriceFilterSlider from "../PriceFilter/PriceFilterSlider";
 import {Box} from "@material-ui/core";
 import {Stack} from "@mui/material";
+import OnlyAvailableProducts from "../CommodityFilters/OnlyAvailableProducts";
+import OnlyOfferProducts from "../CommodityFilters/OnlyOfferProducts";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -85,11 +87,11 @@ const MobileDialog = () => {
                     </ListItem>
                     <Divider/>
                     <ListItem button>
-                        <Typography>فقط کالاهای موجود</Typography>
+                        <Typography><OnlyAvailableProducts/></Typography>
                     </ListItem>
                     <Divider/>
                     <ListItem button>
-                        <Typography>فقط کالاهای پیشنهاد روز</Typography>
+                        <Typography><OnlyOfferProducts/></Typography>
                     </ListItem>
                     <Divider/>
                     <ListItem button>

@@ -12,8 +12,8 @@ import RangePriceInput from "./RangePriceInput";
 const PriceFilter = () => {
 
     return (
-        <Box sx={{display: 'flex', justifyContent: 'flex-start', padding: "1rem"}}>
-            <div>
+        <Box sx={{ justifyContent: 'flex-start', padding: "1rem",display:{xl:'block',lg:'block',md:'none',sm:'none',xs:'none'}}}>
+            <div style={{display:{xl:'block',lg:'block',md:'none',sm:'none',xs:'none'}}}>
                 <Accordion square={false}
                            sx={{
                                width: "20rem", boxShadow: "rgba(0, 0, 0, 0.04) 0px 3px 5px",
