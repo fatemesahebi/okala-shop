@@ -15,7 +15,7 @@ import {InputAdornment, OutlinedInput} from "@material-ui/core";
 
 export default function SearchResults() {
     return (
-        <Box sx={{padding:"1rem 1rem 0 0"}}>
+        <Box display={{xl:'block',lg:'block',md:'none',sm:'none',xs:'none'}} sx={{padding:"1rem 1rem 0 0"}}>
             <Accordion sx={{width:"20rem",boxShadow:"rgba(0, 0, 0, 0.04) 0px 3px 5px",borderRadius:"1rem"}}>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
