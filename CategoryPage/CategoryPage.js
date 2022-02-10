@@ -14,6 +14,7 @@ import {
 } from "../components";
 import * as React from "react";
 import {Paper} from "@mui/material";
+import {Box} from "@material-ui/core";
 
 
 function CategoryPage() {
@@ -27,13 +28,13 @@ function CategoryPage() {
         {/*<PaginationRounded/>*/}
         <MenuMobile/>
         <div style={{display: 'flex'}}>
-            <div style={{marginTop:'30px'}}>
+            <Box style={{marginTop:'30px'}}>
                 <SearchResults/>
                 <CategorizeResults/>
                 <BrandFilter/>
                 <CommodityFilters/>
                 <PriceFilter/>
-            </div>
+            </Box>
             <Paper elevation={0} sx={{display:'flex',flexDirection:'column',alignItems:'center',marginTop:'30px',borderRadius:'2rem'}}>
                 <Products/>
                 <Paper elevation={0} sx={{my:'20px'}}>
