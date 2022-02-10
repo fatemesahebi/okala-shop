@@ -27,199 +27,199 @@ export default function CategorizeResults() {
                 >
                     <Typography sx={{borderRight:"4px solid rgba(124, 200, 204, 1)",height:"1rem",top:".5rem",paddingRight:".41rem",right:"0",fontWeight:"bolder"}}> دسته بندی در نتایج</Typography>
                 </AccordionSummary>
-                <AccordionDetails sx={{height:"11rem",overflowY:"scroll",fontSize:".8rem",lineHeight:"0",padding:"0"}}>
+                <AccordionDetails sx={{height:"11rem",overflowY:"scroll",lineHeight:"0",padding:"0"}}>
 
                     <Stack sx={{flexDirection:"row",paddingRight:"1rem"}}>
                         <Image src={arrowdwon}/>
-                    <Button>میوه و سبزیجات</Button>
+                    <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}>میوه و سبزیجات</Button>
                     </Stack>
-                    <Stack sx={{flexDirection:"row",marginRight:"2rem"}}>
+                    <Stack sx={{flexDirection:"row",marginRight:"2.2rem"}}>
                         <Image src={arrowleft}/>
-                        <Button> سبزی</Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",marginRight:"-.6rem",lineHeight:".7rem"}}> سبزی</Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3rem"}}>
                         <Image src={arrowdwon}/>
-                        <Button> سبزی تازه</Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> سبزی تازه</Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> سبزیجات تازه</Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> سبزیجات تازه</Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3rem"}}>
                         <Image src={arrowdwon}/>
-                        <Button> سبزیجات خشک و منجمد</Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> سبزیجات خشک و منجمد</Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> سبزیجات منجمد</Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> سبزیجات منجمد</Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> سبزی خشک </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> سبزی خشک </Button>
                     </Stack>
-                    <Stack sx={{flexDirection:"row",marginRight:"2rem"}}>
+                    <Stack sx={{flexDirection:"row",marginRight:"2.2rem"}}>
                         <Image src={arrowleft}/>
-                        <Button> میوه </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",marginRight:"-.6rem",lineHeight:".7rem"}}> میوه </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3rem"}}>
                         <Image src={arrowdwon}/>
-                        <Button> میوه منجمد</Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> میوه منجمد</Button>
                     </Stack>
 
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> آلبالو منجمد </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> آلبالو منجمد </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3rem"}}>
                         <Image src={arrowdwon}/>
-                        <Button> صیفی جات </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> صیفی جات </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> گل کلم </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> گل کلم </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> لوبیا سبز </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> لوبیا سبز </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> باقلا تازه </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> باقلا تازه </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> بامیه </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> بامیه </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> فلفل تند </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> فلفل تند </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> گوجه فرنگی </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> گوجه فرنگی </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> چغندر </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> چغندر </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> زنجبیل </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> زنجبیل </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> فلفل شیرین </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> فلفل شیرین </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> کاهو و کلم </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> کاهو و کلم </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> لیمو ترش </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> لیمو ترش </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> بلال </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> بلال </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> سیر </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> سیر </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> شلغم </Button>
-                    </Stack>
-                    <Stack sx={{flexDirection:"row",marginRight:"2.5rem"}}>
-                        <Button> کدو بادمجان </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> شلغم </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> فلفل دلمه </Button>
-                    </Stack>
-                    <Stack sx={{flexDirection:"row",marginRight:"2.5rem"}}>
-                        <Button> هویج </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> کدو بادمجان </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> پیاز و سیب زمینی </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> فلفل دلمه </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> قارچ </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> هویج </Button>
+                    </Stack>
+                    <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> پیاز و سیب زمینی </Button>
+                    </Stack>
+                    <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> قارچ </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3rem"}}>
                         <Image src={arrowdwon}/>
-                        <Button> میوه تازه </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> میوه تازه </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> هندوانه و طالبی </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> هندوانه و طالبی </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> نارنگی </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> نارنگی </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> لیمو شیرین </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> لیمو شیرین </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> پرتقال</Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> پرتقال</Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> انار </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> انار </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> موز </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> موز </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> سیب </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> سیب </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> خیار </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> خیار </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> کیوی </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> کیوی </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> گلابی </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> گلابی </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> خربزه </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> خربزه </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> انگور </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> انگور </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> گیلاس </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> گیلاس </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> هلو و شلیل </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> هلو و شلیل </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> آلو و زرد آلو </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> آلو و زرد آلو </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> گوجه سبز </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> گوجه سبز </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> توت فرنگی </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> توت فرنگی </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> آلبالو </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> آلبالو </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> میوه های استوایی </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> میوه های استوایی </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> نارگیل </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> نارگیل </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> خرمالو </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> خرمالو </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> گریپ فروت </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> گریپ فروت </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> پسته خام  </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> پسته خام  </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> آلوئه ورا </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> آلوئه ورا </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> زغال اخته </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> زغال اخته </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> انجیر تازه </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> انجیر تازه </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> ملون و دستنبو </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> ملون و دستنبو </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> زالزالک </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> زالزالک </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> به </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> به </Button>
                     </Stack>
                     <Stack sx={{flexDirection:"row",marginRight:"3.9rem"}}>
-                        <Button> نارنج </Button>
+                        <Button style={{color:"gray",fontSize:".9rem",fontWeight:"bold",lineHeight:".7rem"}}> نارنج </Button>
                     </Stack>
 
                 </AccordionDetails>
