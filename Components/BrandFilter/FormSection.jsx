@@ -13,11 +13,11 @@ const FormSection = () => {
         <div>
             <Box
                 component="form"
-                sx={{'& > :not(style)': {m: 1},}} noValidate autoComplete="off">
+                noValidate autoComplete="off">
                 <OutlinedInput onChange={e => setFilter(e.target.value)} value={filter} name='search'
                                startAdornment={<InputAdornment position="start"><Image src={search}/></InputAdornment>}
                                style={{borderRadius: '12px', width: '253px', height: '50px'}}
-                               placeholder="جستجوی نام برند ..."/></Box>
+                               placeholder={'جستجوی نام برند ...'}/></Box>
             <Box component="div">
                 <FormGroup>
                     {labelData.filter(item => item.name.includes(filter)).length === 0 ? null : labelData.filter(item => item.name.includes(filter)).map(item =>

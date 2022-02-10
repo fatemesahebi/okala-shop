@@ -24,7 +24,8 @@ import CommodityFilters from "./CommodityFilters/CommodityFilters";
 import PaginationRounded from "./pagination/PaginationRounded";
 import BrandFilter from "./BrandFilter/BrandFilter";
 import PriceFilter from './PriceFilter/PriceFilter';
-import Products from './BrandFilter/Products'
+import Products from './BrandFilter/Products';
+import BestBrandsFruitsVegetables from "./BestBrandsFruitsVegetables/BestBrandsFruitsVegetables";
 export {
     Header,
     HeaderDesktop,
@@ -53,5 +54,5 @@ export {
     BrandFilter,
     PriceFilter,
     Products,
-
+    BestBrandsFruitsVegetables
 }
