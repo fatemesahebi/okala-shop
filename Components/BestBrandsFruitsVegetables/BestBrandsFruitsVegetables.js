@@ -40,11 +40,11 @@ const brandsData = [
         among: "|"
     },
     {
-        image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FBrand%2F201484&w=64&q=75",
+        image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2Fmedia%2Findex%2FBrand%2F177235%2F&w=128&q=75",
         among: "|"
     },
     {
-        image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FBrand%2F165276&w=64&q=75",
+        image: "https://new.okala.com/_next/image?url=%2Fstatic%2Fimages%2FsiteImages%2Fbackgrounds%2FInstacart.svg&w=128&q=75",
         among: "|"
     },
     {
@@ -56,10 +56,10 @@ const brandsData = [
 
 function BestBrandsFruitsVegetables() {
     return (
-        <div>
-            <Typography>برترین برندها</Typography>
-            <hr/>
-            <Box sx={{width:{lg: "81rem !important" , xs: "100vw"}, margin:"auto"}}>
+        <div style={{padding:"2rem 22rem 0 10.5rem"}}>
+            <Typography sx={{fontWeight:"bold"}}>برترین برندها</Typography>
+            <hr style={{color:"rgba(230,230,230,0.3)"}}/>
+            <Box >
                 <Swiper
                     style={{width: "100%"}}
                     slidesPerView={2}
