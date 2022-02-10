@@ -5,7 +5,8 @@ import {
     BrandFilter,
     CommodityFilters,
     PaginationRounded,
-    CategorizeResults
+    CategorizeResults,
+    MenuMobile
 } from "../components";
 
 
@@ -20,6 +21,7 @@ function CategoryPage() {
         <BrandFilter/>
         <CommodityFilters/>
         <PaginationRounded/>
+        <MenuMobile/>
         <FooterContainer/>
     </div>)
 }
