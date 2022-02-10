@@ -29,8 +29,8 @@ function CategoryPage() {
                 <SearchResults/>
                 <CategorizeResults/>
                 <BrandFilter/>
-                <PriceFilter/>
                 <CommodityFilters/>
+                <PriceFilter/>
             </div>
             <Paper elevation={0} sx={{display:'flex',flexDirection:'column',alignItems:'center',marginTop:'30px',borderRadius:'2rem'}}>
                 <Products/>
