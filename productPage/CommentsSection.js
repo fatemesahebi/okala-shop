@@ -4,6 +4,9 @@ import {Button, Typography,Box} from "@mui/material";
 import chat from "../public/SVG/chat.svg"
 import star from "../public/SVG/star.svg"
 import Image from "next/image";
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
+
 const CommentsContainer = styled('div')({
     marginTop:'50px'
 })
@@ -54,6 +57,31 @@ const Avatar = styled('div')({
     marginLeft: '12px',
     borderRadius: '50%',
     justifyContent: 'center',
+});
+
+const Recommended = styled('span')({
+    padding: '4px 25px',
+    fontSize: '1rem',
+    marginRight: '16px',
+    color: 'rgb(55, 143, 56)',
+    background: 'rgb(232, 245, 233)',
+    display: 'inline-block',
+    textAlign: 'center',
+    lineHeight:' 32px',
+    borderRadius: '12px',
+    fontWeight:'Bold'
+})
+const Date = styled('span')({
+    padding: '4px 25px',
+    fontSize: '1rem',
+    marginRight: '16px',
+    display: 'inline-block',
+    textAlign: 'center',
+    lineHeight:' 32px',
+    borderRadius: '12px',
+    background: 'rgb(248, 248, 248)',
+    color: 'rgb(0, 0, 0)',
+    fontWeight:'Bold'
 })
 export default function CommentsSection (){
     return(
@@ -117,7 +145,11 @@ export default function CommentsSection (){
                                 </span>
                             </Box>
                             <Box className={'leftpart'}>
+                                <Recommended>پیشنهاد میکنم</Recommended>
+                                <Date sx={{
 
+                                }}> 12 بهمن
+                                    1400</Date>
                             </Box >
                         </CommentInformation>
                         <CommentDiscription>
@@ -125,6 +157,9 @@ export default function CommentsSection (){
                         </CommentDiscription>
                     </Comment>
                 </CommentsBottomSection>
+                <Stack alignItems={"center"} justifyContent={"center"} spacing={2}>
+                    <Pagination  color={"primary"} count={1} variant="outlined" shape="rounded" />
+                </Stack>
             </CommentsContainer>
         </div>
     )

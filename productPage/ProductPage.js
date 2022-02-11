@@ -8,8 +8,6 @@ import BasicTabs from "./tabs";
 import {Usersrate} from "./mobile";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import AddIcon from "@mui/icons-material/Add";
-import useMediaQuery from '@mui/material/useMediaQuery';
-
 
 
 const ColorButton = styled(Button)(({theme}) => ({
@@ -22,10 +20,11 @@ const ColorButton = styled(Button)(({theme}) => ({
 }));
 
 const MainContainer = styled('div')({
-    maxWidth:'1280px !imprtant',
+    maxWidth:'1280px!important',
     margin: 'auto'
 })
 const MyContainer = styled('div')({
+    maxwidth:'1280px',
     padding: '36px',
     position: 'relative',
     background: ' #fff',
