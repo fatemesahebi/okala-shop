@@ -27,7 +27,7 @@ function CategoryPage() {
         {/*<CommodityFilters/>*/}
         {/*<PaginationRounded/>*/}
         <MenuMobile/>
-        <div style={{display: 'flex'}}>
+        <div style={{display: 'flex',justifyContent:'center'}}>
             <Box style={{marginTop:'30px'}}>
                 <SearchResults/>
                 <CategorizeResults/>

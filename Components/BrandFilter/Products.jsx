@@ -5,23 +5,23 @@ import SingleProduct from "../productCard/ProductCardElements";
 import ShowBar from "./ShowBar";
 import MobileShowBar from "./MobileShowBar";
 import MobileDialog from "./MobileDialog";
+import MobileHeaderCategory from "./MobileHeaderCategory";
 
 const Products = () => {
     return (
-        <Paper elevation={0}
-               sx={{padding: '20px', width: {xs: '80vw', sm: '80vw', md: '80vw', lg: '80vw', xl: '65vw'}}}>
+        <Paper elevation={0} sx={{width:{xl: '59rem', lg: '49rem', md: '36rem', sm: '30rem', xs: '30rem'}}}>
             <Box display={{xl: 'flex', lg: 'flex', md: 'flex', sm: 'none', xs: 'none'}}>
                 <ShowBar/>
-
+            </Box>
+            <Box display={{xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none'}}>
+                <MobileHeaderCategory/>
             </Box>
             <Box sx={{display:'flex',justifyContent:'space-between'}}>
                 <Box sx={{}} display={{xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none'}}>
                     <MobileShowBar/>
-
                 </Box>
                 <Box display={{xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none'}}>
                     <MobileDialog/>
-
                 </Box>
             </Box>
             <Box>

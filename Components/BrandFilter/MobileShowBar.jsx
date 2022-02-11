@@ -10,7 +10,7 @@ import arrow from './arrow.svg'
 const MobileShowBar = () => {
     return (
         <AppBar position="static" color={'white'} elevation={0}>
-            <Container maxWidth="xl">
+            <Container sx={{flexGrow:'1'}}>
                 <Typography><Image width={15} src={arrow}/><FilterMobileDrawer/></Typography>
             </Container>
         </AppBar>

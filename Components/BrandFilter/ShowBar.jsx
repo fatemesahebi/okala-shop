@@ -15,14 +15,15 @@ import arrow from './arrow.svg'
 const ShowBar = () => {
 
     return (
-        <AppBar position="static" color={'white'} elevation={0}>
+        <AppBar position="static" color={'white'} elevation={0} sx={{flexGrow:'1'}}>
             <Container>
-                <Toolbar>
-                    <Typography><Image width={20} src={arrow}/></Typography>
-                    <Typography noWrap component="div" sx={{mr: 1, ml: 5, display: {xs: 'none', md: 'flex'}}}>
-                        نمایش بر اساس:
-                    </Typography>
-                    <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
+                <Toolbar sx={{display:'flex',justifyContent:'space-between'}}>
+                    <Box sx={{display:'flex' ,alignContent:'center',alignItems:'center',justifyItems:'center'}}>
+                        <Typography><Image width={18} src={arrow}/></Typography>
+                        <Typography  sx={{display: {xs: 'none', md: 'flex'}}}>نمایش بر اساس:</Typography>
+                    </Box>
+
+                    <Box sx={{ display: {xs: 'none', md: 'flex'}}}>
                         <Button color={'black'} sx={{fontWeight: 'bold', display: 'block'}}>پر فروشترین</Button>
                         <Button color={'black'} sx={{fontWeight: 'bold', display: 'block'}}>بیشترین تخفیف</Button>
                         <Button color={'black'} sx={{fontWeight: 'bold', display: 'block'}}>ارزانترین</Button>
