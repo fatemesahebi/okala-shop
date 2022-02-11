@@ -20,7 +20,7 @@ import {getCategoryProducts} from "../lib/axios/getData";
 
 
 function CategoryPage() {
-    let maxPrice=1185000
+    let maxPrice = 1185000
     const [dataCategory, setDataCategory] = useState([])
     const [page, setPage] = useState(1)
     const [filterBrand, setFilterBrand] = useState([])
@@ -37,10 +37,16 @@ function CategoryPage() {
 
     }, [])
 
+
+    // useEffect(() => {
+    //     finalData = dataMange()
+    // }, [dataCategory,page,filterBrand,searchTerm,priceFilter,offerFilter])
+    //
+
     const dataMange = () => {
         let filterData = []
         let result = []
-        const productNumPerPage = 4
+        const productNumPerPage = 32
         if (filterBrand.length === 0) filterData = dataCategory
         else {
             for (let filter of filterBrand) {
@@ -51,16 +57,26 @@ function CategoryPage() {
         filterData = filterData.filter(item => item.productName.includes(searchTerm)).filter(item => (item.price >= priceFilter[0] && item.price <= priceFilter[1]))
         if (offerFilter) filterData = filterData.filter(item => item.offPercent > 0)
 
-        pageCount = (Math.floor((filterData.length + 1) / productNumPerPage))
-
+        pageCount = (Math.floor((filterData.length) / productNumPerPage))+1
 
         for (let i = 0; i < pageCount; i++) {
             result.push(filterData.slice(productNumPerPage * i, productNumPerPage * (i + 1)))
+
         }
+
         return result
     }
+    const getBrandsOfCategory = () => {
+        let brandsOfCategory = []
+        dataCategory.map(item => (!brandsOfCategory.includes(item.brand)) ? brandsOfCategory.push(item.brand) : null)
+        return brandsOfCategory
+    }
 
+
+    let brandsOfCategory = getBrandsOfCategory()
     finalData = dataMange()
+
+
     return (<div style={{backgroundColor: "#f8f8f8"}}>
         {/*<Header/>*/}
         {/*<SearchResults/>*/}
@@ -73,7 +89,8 @@ function CategoryPage() {
             <Box style={{marginTop: '30px'}}>
                 <SearchResults searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
                 <CategorizeResults/>
-                <BrandFilter filterBrand={filterBrand} setFilterBrand={setFilterBrand}/>
+                <BrandFilter brandsOfCategory={brandsOfCategory} filterBrand={filterBrand}
+                             setFilterBrand={setFilterBrand}/>
                 <CommodityFilters offerFilter={offerFilter} setOfferFilter={setOfferFilter}/>
                 <PriceFilter maxPrice={maxPrice} priceFilter={priceFilter} setPriceFilter={setPriceFilter}/>
             </Box>
