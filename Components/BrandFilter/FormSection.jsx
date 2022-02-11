@@ -9,6 +9,7 @@ import Image from "next/image";
 import search from "../../public/SVG/search.svg";
 const FormSection = ({filterBrand,setFilterBrand,brandsOfCategory}) => {
     const [filter, setFilter] = useState('')
+    console.log(brandsOfCategory)
     const handleChangeFilterBrand=(e,item)=>{
         (e.target.checked)?
             setFilterBrand([...filterBrand,item])
@@ -26,7 +27,7 @@ const FormSection = ({filterBrand,setFilterBrand,brandsOfCategory}) => {
             <Box component="div">
                 <FormGroup>
                     {brandsOfCategory?.filter(item => item.includes(filter)).length === 0 ? null :
-                        brandsOfCategory.filter(item => item.includes(filter)).map(item =>
+                        brandsOfCategory?.filter(item => item.includes(filter)).map(item =>
                         <FormControlLabel key={item} control={<Checkbox
                             onChange={(e)=>handleChangeFilterBrand(e,item)}/>} label={item}/>)}
                 </FormGroup>

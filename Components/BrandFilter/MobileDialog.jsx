@@ -22,7 +22,7 @@ import OnlyOfferProducts from "../CommodityFilters/OnlyOfferProducts";
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
-const MobileDialog = () => {
+const MobileDialog = ({brandsOfCategory,setFilterBrand,filterBrand,setOfferFilter,offerFilter,setPriceFilter,maxPrice}) => {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -32,6 +32,13 @@ const MobileDialog = () => {
     const handleClose = () => {
         setOpen(false);
     };
+    const handleDeleteFilter=()=>{
+        setOpen(false)
+        setFilterBrand([])
+        setOfferFilter(false)
+        setPriceFilter([0,maxPrice])
+    }
+
     return (
         <div>
             <Button variant="outlined" sx={{border: 'none'}} onClick={handleClickOpen}>
@@ -55,7 +62,7 @@ const MobileDialog = () => {
                         <Typography sx={{ml: 2, flex: 1,color:'black'}} component="div">
                             فیلترها
                         </Typography>
-                        <Button autoFocus color="inherit" onClick={handleClose}>
+                        <Button autoFocus color="inherit" onClick={handleDeleteFilter}>
                             حذف همه فیلترها
                         </Button>
                     </Toolbar>
@@ -66,7 +73,8 @@ const MobileDialog = () => {
                     </ListItem>
                     <Divider/>
                     <ListItem button>
-                        <Typography><MobileBrandFilter/></Typography>
+                        <Typography><MobileBrandFilter brandsOfCategory={brandsOfCategory}
+                                                       filterBrand={filterBrand} setFilterBrand={setFilterBrand}/></Typography>
                     </ListItem>
                     <Divider/>
                     <ListItem button>
@@ -91,7 +99,7 @@ const MobileDialog = () => {
                     </ListItem>
                     <Divider/>
                     <ListItem button>
-                        <Typography><OnlyOfferProducts/></Typography>
+                        <Typography><OnlyOfferProducts offerFilter={offerFilter} setOfferFilter={setOfferFilter}/></Typography>
                     </ListItem>
                     <Divider/>
                     <ListItem button>

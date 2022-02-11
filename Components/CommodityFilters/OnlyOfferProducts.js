@@ -18,7 +18,7 @@ const GreenSwitch = styled(Switch)(({ theme }) => ({
 
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
-export default function OnlyOfferProducts({setOfferFilter,offerFilter}) {
+export default function OnlyOfferProducts({setOfferFilter}) {
     const handleChangeSwitchOffer = (e) => {
       setOfferFilter(e.target.checked)
     }

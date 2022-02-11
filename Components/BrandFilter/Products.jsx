@@ -6,7 +6,8 @@ import ShowBar from "./ShowBar";
 import MobileShowBar from "./MobileShowBar";
 import MobileDialog from "./MobileDialog";
 
-const Products = ({finalData,page,setSort}) => {
+const Products = ({finalData,page,setSort,sort,brandsOfCategory,setFilterBrand,
+                      filterBrand,offerFilter,setOfferFilter,setPriceFilter,maxPrice}) => {
     return (
         <Paper elevation={0}
                sx={{padding: '20px', width: {xs: '80vw', sm: '80vw', md: '80vw', lg: '80vw', xl: '65vw'}}}>
@@ -16,11 +17,17 @@ const Products = ({finalData,page,setSort}) => {
             </Box>
             <Box sx={{display:'flex',justifyContent:'space-between'}}>
                 <Box sx={{}} display={{xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none'}}>
-                    <MobileShowBar/>
+                    <MobileShowBar sort={sort} setSort={setSort}/>
 
                 </Box>
                 <Box display={{xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none'}}>
-                    <MobileDialog/>
+                    <MobileDialog brandsOfCategory={brandsOfCategory}
+                    filterBrand={filterBrand} setFilterBrand={setFilterBrand}
+                                  setOfferFilter={setOfferFilter} offerFilter={offerFilter}
+                                  setPriceFilter={setPriceFilter}
+                                  maxPrice={maxPrice}
+
+                    />
 
                 </Box>
             </Box>
