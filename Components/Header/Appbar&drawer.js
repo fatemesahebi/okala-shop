@@ -101,7 +101,7 @@ export default function HeaderDrawer({position}) {
                     <Box display={position !== "fixed" && "none"}>
                         <HideOnScroll>
                             <AppBar op sx={{
-                                zIndex: 10,
+                                zIndex: 100,
                                 boxShadow: "none",
                                 top: "4rem",
                                 display: {md: "none", xs: "block"},
