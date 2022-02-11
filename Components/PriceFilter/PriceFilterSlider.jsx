@@ -20,25 +20,25 @@ function valuetext(value) {
 }
 
 const minDistance = 10;
-const PriceFilterSlider = () => {
-    const [value1, setValue1] = React.useState([20, 37]);
-    const handleChange = (event, newValue, activeThumb) => {
+const PriceFilterSlider = ({maxPrice,priceFilter,setPriceFilter,value,setValue}) => {
+    const handleChange = async (event, newValue, activeThumb) => {
         if (!Array.isArray(newValue)) {
             return;
         }
 
         if (activeThumb === 0) {
-            setValue1([Math.min(newValue[0], value1[1] - minDistance), value1[1]]);
+           await setValue([Math.min(newValue[0], value[1] - minDistance), value[1]]);
         } else {
-            setValue1([value1[0], Math.max(newValue[1], value1[0] + minDistance)]);
+           await setValue([value[0], Math.max(newValue[1], value[0] + minDistance)]);
         }
+        setPriceFilter([(value[0]/100)*maxPrice,(value[1]/100)*maxPrice])
     };
     return (
         <Box sx={{display: 'flex', justifyContent: 'center', mb: '1rem'}}>
             <StyledSlider
                 valueLabelDisplay={"off"}
                 getAriaLabel={() => 'Minimum distance'}
-                value={value1}
+                value={value}
                 onChange={handleChange}
                 getAriaValueText={valuetext}
             />

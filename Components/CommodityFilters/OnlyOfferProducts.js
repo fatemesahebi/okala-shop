@@ -18,10 +18,13 @@ const GreenSwitch = styled(Switch)(({ theme }) => ({
 
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
-export default function OnlyOfferProducts() {
+export default function OnlyOfferProducts({setOfferFilter,offerFilter}) {
+    const handleChangeSwitchOffer = (e) => {
+      setOfferFilter(e.target.checked)
+    }
     return (
         <Box>
-            <GreenSwitch {...label} />
+            <GreenSwitch {...label} onChange={handleChangeSwitchOffer} />
             <Typography sx={{display:"inline"}}>فقط کالاهای پیشنهاد روز</Typography>
         </Box>
     );
