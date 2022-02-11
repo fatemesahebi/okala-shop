@@ -7,8 +7,13 @@ import Checkbox from "@mui/material/Checkbox";
 import {InputAdornment, OutlinedInput} from "@material-ui/core";
 import Image from "next/image";
 import search from "../../public/SVG/search.svg";
-const FormSection = () => {
+const FormSection = ({filterBrand,setFilterBrand,brandsOfCategory}) => {
     const [filter, setFilter] = useState('')
+    const handleChangeFilterBrand=(e,item)=>{
+        (e.target.checked)?
+            setFilterBrand([...filterBrand,item])
+            : setFilterBrand(filterBrand.filter(filter=> filter!== item))
+    }
     return (
         <div>
             <Box
@@ -20,8 +25,10 @@ const FormSection = () => {
                                placeholder={'جستجوی نام برند ...'}/></Box>
             <Box component="div">
                 <FormGroup>
-                    {labelData.filter(item => item.name.includes(filter)).length === 0 ? null : labelData.filter(item => item.name.includes(filter)).map(item =>
-                        <FormControlLabel key={item.id} control={<Checkbox/>} label={item.name}/>)}
+                    {brandsOfCategory?.filter(item => item.includes(filter)).length === 0 ? null :
+                        brandsOfCategory.filter(item => item.includes(filter)).map(item =>
+                        <FormControlLabel key={item} control={<Checkbox
+                            onChange={(e)=>handleChangeFilterBrand(e,item)}/>} label={item}/>)}
                 </FormGroup>
             </Box>
         </div>

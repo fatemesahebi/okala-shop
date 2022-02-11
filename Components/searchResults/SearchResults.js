@@ -13,7 +13,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import {Box} from "@mui/material";
 import {InputAdornment, OutlinedInput} from "@material-ui/core";
 
-export default function SearchResults() {
+export default function SearchResults({searchTerm,setSearchTerm}) {
     return (
         <Box display={{xl:'block',lg:'block',md:'none',sm:'none',xs:'none'}} sx={{padding:"1rem 1rem 0 0"}}>
             <Accordion sx={{width:"20rem",boxShadow:"rgba(0, 0, 0, 0.04) 0px 3px 5px",borderRadius:"1rem"}}>
@@ -28,6 +28,8 @@ export default function SearchResults() {
                     <OutlinedInput name='search'
                                    startAdornment={<InputAdornment position="start"><Image src={search}/></InputAdornment>}
                                    style={{borderRadius: '12px', width: '18rem',height:"3.2rem"}}
+                                   value={searchTerm}
+                                   onChange={(e)=>setSearchTerm(e.target.value)}
                                    placeholder="نام کالا یا برند ..."/>
                 </AccordionDetails>
             </Accordion>
