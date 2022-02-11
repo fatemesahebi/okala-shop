@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProductInfo = () => {
+const MobileFilterSlider = () => {
     return (
         <div>
 
@@ -8,4 +8,4 @@ const ProductInfo = () => {
     );
 };
 
-export default ProductInfo;
+export default MobileFilterSlider;
