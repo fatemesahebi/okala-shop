@@ -6,13 +6,12 @@ import ShowBar from "./ShowBar";
 import MobileShowBar from "./MobileShowBar";
 import MobileDialog from "./MobileDialog";
 
-const Products = ({finalData,page}) => {
-    console.log(finalData)
+const Products = ({finalData,page,setSort}) => {
     return (
         <Paper elevation={0}
                sx={{padding: '20px', width: {xs: '80vw', sm: '80vw', md: '80vw', lg: '80vw', xl: '65vw'}}}>
             <Box display={{xl: 'flex', lg: 'flex', md: 'flex', sm: 'none', xs: 'none'}}>
-                <ShowBar/>
+                <ShowBar setSort={setSort}/>
 
             </Box>
             <Box sx={{display:'flex',justifyContent:'space-between'}}>

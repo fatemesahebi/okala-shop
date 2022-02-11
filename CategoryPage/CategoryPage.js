@@ -27,6 +27,7 @@ function CategoryPage() {
     const [searchTerm, setSearchTerm] = useState('')
     const [priceFilter, setPriceFilter] = useState([0, maxPrice])
     const [offerFilter, setOfferFilter] = useState(false)
+    const [sort, setSort] = useState("mostSale")
     let finalData = []
     let pageCount = 1
 
@@ -54,10 +55,18 @@ function CategoryPage() {
             }
         }
 
-        filterData = filterData.filter(item => item.productName.includes(searchTerm)).filter(item => (item.price >= priceFilter[0] && item.price <= priceFilter[1]))
+        filterData = filterData.filter(item => item.productName.includes(searchTerm))
+            .filter(item => (item.price >= priceFilter[0] && item.price <= priceFilter[1]))
+
         if (offerFilter) filterData = filterData.filter(item => item.offPercent > 0)
 
-        pageCount = (Math.floor((filterData.length) / productNumPerPage))+1
+         if (sort === "mostSale") filterData = filterData.sort((a, b)=>( b.selerCount - a.selerCount))
+        else if (sort === "mostOff") filterData = filterData.sort((a, b) =>(b.offPercent - a.offPercent))
+       else if (sort === "leastPrice") filterData = filterData.sort((a,b)=>(a.price - b.price))
+        else  filterData = filterData.sort((a, b) => (b.price - a.price) )
+
+
+        pageCount = (Math.floor((filterData.length) / productNumPerPage)) + 1
 
         for (let i = 0; i < pageCount; i++) {
             result.push(filterData.slice(productNumPerPage * i, productNumPerPage * (i + 1)))
@@ -99,7 +108,7 @@ function CategoryPage() {
                 borderRadius: '2rem'
             }}
             >
-                <Products finalData={finalData} page={page}/>
+                <Products finalData={finalData} page={page} setSort={setSort}/>
                 <Paper elevation={0} sx={{my: '20px'}}>
                     <PaginationRounded setPage={setPage} pageCount={pageCount}/>
                 </Paper>
