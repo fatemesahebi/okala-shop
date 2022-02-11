@@ -6,7 +6,8 @@ import ShowBar from "./ShowBar";
 import MobileShowBar from "./MobileShowBar";
 import MobileDialog from "./MobileDialog";
 
-const Products = () => {
+const Products = ({finalData,page}) => {
+
     return (
         <Paper elevation={0}
                sx={{padding: '20px', width: {xs: '80vw', sm: '80vw', md: '80vw', lg: '80vw', xl: '65vw'}}}>
@@ -27,7 +28,7 @@ const Products = () => {
             <Box>
                 <Paper elevation={0}
                        sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
-                    {specialOffer.slice(0, 20).map(item =>
+                    {finalData[page-1]?.map(item =>
                         <Box sx={{border: 'solid 1px #f9f9f9'}}><SingleProduct product={item}/></Box>)}
                 </Paper>
             </Box>

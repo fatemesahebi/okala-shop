@@ -2,7 +2,11 @@ import React from 'react';
 import {Typography} from "@mui/material";
 import Button from "@mui/material/Button";
 
-const DefaultValueButton = () => {
+const DefaultValueButton = ({setValue,setPriceFilter,maxPrice}) => {
+    const handleDefaultValue=()=>{
+        setValue([0,100])
+        setPriceFilter([0,maxPrice])
+    }
     return (
         <Button sx={{
             ml: '10px',
@@ -10,7 +14,9 @@ const DefaultValueButton = () => {
             border: 'solid 1px #b9b9b9',
             borderRadius: '10px',
             '&hover': {color: 'transparent'}
-        }}><Typography>مقدار پیش فرض</Typography></Button>
+        }}
+        onClick={handleDefaultValue}
+        ><Typography>مقدار پیش فرض</Typography></Button>
     );
 };
 

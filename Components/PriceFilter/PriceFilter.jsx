@@ -8,9 +8,10 @@ import PriceFilterSlider from "./PriceFilterSlider";
 import FilterPriceButton from "./FilterPriceButton";
 import DefaultValueButton from "./DefaultValueButton";
 import RangePriceInput from "./RangePriceInput";
+import {useState} from "react";
 
-const PriceFilter = () => {
-
+const PriceFilter = ({setPriceFilter,priceFilter,maxPrice}) => {
+const [value,setValue]=useState([0,100])
     return (
         <Box sx={{ justifyContent: 'flex-start', padding: "1rem",display:{xl:'block',lg:'block',md:'none',sm:'none',xs:'none'}}}>
             <div style={{display:{xl:'block',lg:'block',md:'none',sm:'none',xs:'none'}}}>
@@ -29,7 +30,11 @@ const PriceFilter = () => {
                         }}> فیلتر قیمت</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <PriceFilterSlider/>
+                        <PriceFilterSlider
+                            maxPrice={maxPrice}
+                            value={value} setValue={setValue}
+                            priceFilter={priceFilter} setPriceFilter={setPriceFilter}
+                        />
                         <Box
                             component="form"
                             sx={{
@@ -37,10 +42,14 @@ const PriceFilter = () => {
                                 mb: '2rem', outline: 'none'
                             }} noValidate
                             autoComplete="off">
-                            <RangePriceInput/>
+                            <RangePriceInput priceFilter={priceFilter}/>
                         </Box>
                         <Box spacing={2} sx={{display: 'flex', justifyContent: 'center', mb: '1rem'}}>
-                            <DefaultValueButton/>
+                            <DefaultValueButton
+                                maxPrice={maxPrice}
+                               setValue={setValue}
+                               setPriceFilter={setPriceFilter}
+                            />
                             <FilterPriceButton/>
                         </Box>
                     </AccordionDetails>
