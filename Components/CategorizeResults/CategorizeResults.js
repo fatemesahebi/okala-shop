@@ -15,8 +15,11 @@ import {Box, Button, Stack} from "@mui/material";
 import arrowdwon from "./../../public/SVG/arrowdwon.svg"
 import arrowleft from "../../public/SVG/left.svg"
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import {menuData} from "../../lib/mirage/menuData";
 
 export default function CategorizeResults() {
+   const categorizeResultsData=menuData.filter(item=>item.mainTitle==="میوه و سبزیجات")
+    console.log(categorizeResultsData)
     return (
         <Box display={{xl:'block',lg:'block',md:'none',sm:'none',xs:'none'}} sx={{padding:"1rem 1rem 0 0"}}>
             <Accordion sx={{width:"20rem",boxShadow:"rgba(0, 0, 0, 0.04) 0px 3px 5px",borderRadius:"1rem"}}>

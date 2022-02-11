@@ -182,7 +182,7 @@ const FullCard = () => {
                         borderBottom: "1px solid midGray.light"
                     }}>
                         <Typography variant={"body2"} sx={{fontWeight: 700, color: 'red.main'}}>
-                            {PN.convertEnToPe(PN.sliceNumber(`${((totalOrder / minOrder * 100))}%`))}
+                            {PN.convertEnToPe(PN.sliceNumber(`${(Math.floor(totalOrder / minOrder * 100))}%`))}
                         </Typography>
                         <BorderLinearProgress variant="determinate" value={(100 - (totalOrder / minOrder * 100))}/>
                     </Stack>

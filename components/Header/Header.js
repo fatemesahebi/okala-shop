@@ -3,7 +3,7 @@ import {HeaderDesktop,HeaderMobile, HeaderDrawer} from "../index";
 function Header(){
     return(
         <div>
-            <HeaderDrawer/>
+            <HeaderDrawer position={"fixed"}/>
             <HeaderMobile/>
             <HeaderDesktop/>
         </div>

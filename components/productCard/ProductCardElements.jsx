@@ -142,10 +142,9 @@ const StyledNoneOffer = styled.div({
 const SingleProduct = ({product}) => {
 
     const dispatch = useDispatch()
-    let shoppingCardId = useSelector(state => state.cart.items.findIndex((item) => item.id === product.id)
+    let shoppingCardId = useSelector(state => state.cart.items.findIndex((item) => item.id === product.id) > -1
             ? state.cart.items.findIndex((item) => item.id === product.id) : -1)
-      let  shoppinCardCount = (shoppingCardId === -1) ? 0 :
-            useSelector(state => state.cart.items[shoppingCardId].count)
+      let  shoppinCardCount = useSelector(state => shoppingCardId === -1 ? 0 : state.cart.items[shoppingCardId].count)
 
     return (
         <Container sx={{padding: "0 !important"}} maxWidth='xs'>
@@ -155,14 +154,14 @@ const SingleProduct = ({product}) => {
                     <StyledCard>
                         <StyledCardMedia>
                             <StyledIcon>
-                                {(shoppinCardCount === 0) && <AddIcon onClick={() => {
+                                {(shoppinCardCount >= 0) && <AddIcon onClick={() => {
                                     dispatch(addToCart(product));
                                     // setVisible(true);
                                     // setCounter(counter + 1)
                                 }}/>}
                             </StyledIcon>
                             {(shoppinCardCount > 1) && <div>
-                                <StyledShoppingCount>{shoppinCardCount}</StyledShoppingCount>
+                                <StyledShoppingCount>{PN.convertEnToPe(shoppinCardCount)}</StyledShoppingCount>
                                 <StyledMinusIcon>
                                     <RemoveIcon onClick={() => {
                                         dispatch(decreaseItem(product))
@@ -171,7 +170,7 @@ const SingleProduct = ({product}) => {
 
                             {
                                 (shoppinCardCount === 1) && <div>
-                                    <StyledShoppingCount>{shoppinCardCount}</StyledShoppingCount>
+                                    <StyledShoppingCount>{PN.convertEnToPe(shoppinCardCount)}</StyledShoppingCount>
                                     <StyledRemoveIcon><DeleteOutlineOutlinedIcon
                                         onClick={() => dispatch(removeItem(product))}/></StyledRemoveIcon>
                                 </div>
