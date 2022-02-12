@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import ListItemText from '@mui/material/ListItemText';
 import ListItem from '@mui/material/ListItem';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
@@ -14,15 +13,19 @@ import Slide from '@mui/material/Slide';
 import MobileBrandFilter from "./MobileBrandFilter";
 import MobileCategory from "./MobileCategory";
 import PriceFilterSlider from "../PriceFilter/PriceFilterSlider";
-import {Box} from "@material-ui/core";
-import {Stack} from "@mui/material";
 import OnlyAvailableProducts from "../CommodityFilters/OnlyAvailableProducts";
 import OnlyOfferProducts from "../CommodityFilters/OnlyOfferProducts";
+import Image from "next/image";
+import arrow from "./arrow.svg";
+import FilterMobileDrawer from "./FilterMobileDrawer";
+import sort from './sortIcon.png'
+import Container from "@mui/material/Container";
+import MobileHeaderCategory from "./MobileHeaderCategory";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} />;
+    return <Slide direction="right" ref={ref} {...props} />;
 });
-const MobileDialog = () => {
+const MobileDialog = ({brandsOfCategory,setFilterBrand,filterBrand,setOfferFilter,offerFilter,setPriceFilter,maxPrice}) => {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -32,32 +35,47 @@ const MobileDialog = () => {
     const handleClose = () => {
         setOpen(false);
     };
+    const handleDeleteFilter=()=>{
+        setOpen(false)
+        setFilterBrand([])
+        setOfferFilter(false)
+        setPriceFilter([0,maxPrice])
+    }
+
     return (
         <div>
-            <Button variant="outlined" sx={{border: 'none'}} onClick={handleClickOpen}>
-                <Typography>فیلترها</Typography>
-            </Button>
+            <AppBar position="static" color={'white'} elevation={0} sx={{height:'3rem',display:{xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none'}}}>
+                <Toolbar sx={{display:'flex',justifyContent:'space-around',flexGrow:'1',alignItems:'center',alignContent:'center'}}>
+                    <Typography>
+                        <FilterMobileDrawer/>
+                    </Typography>
+                    <Divider orientation="vertical" variant="middle" flexItem sx={{height:'2rem'}} />
+                    <Button onClick={handleClickOpen} variant="outlined" sx={{border: 'none'}}>
+                        <Typography  style={{color: 'black',display:'flex',alignItems:'center'}}><Image width={15} src={arrow}/>فیلترها</Typography>
+                    </Button>
+                </Toolbar>
+            </AppBar>
+
+
             <Dialog
                 fullScreen
                 open={open}
                 onClose={handleClose}
                 TransitionComponent={Transition}
             >
-                <AppBar color={'white'} elevation={0} sx={{position: 'relative'}}>
-                    <Toolbar >
-                        <IconButton
-                            edge="start"
-                            onClick={handleClose}
-                            aria-label="close"
-                        >
+                <AppBar elevation={1} color={'white'}
+                        sx={{position: 'relative', height: '3rem', alignContent: 'baseline', padding: '0'}}>
+                    <Toolbar>
+                        <IconButton color={'black'} edge="start" onClick={handleClose} aria-label="close">
                             <ArrowForwardIcon/>
                         </IconButton>
-                        <Typography sx={{ml: 2, flex: 1,color:'black'}} component="div">
+                        <Typography sx={{mr: 2, flex: 1, fontWeight: 'bold', display: 'flex', alignItems: 'baseline'}}
+                                    component="div">
                             فیلترها
                         </Typography>
-                        <Button autoFocus color="inherit" onClick={handleClose}>
+                        <Typography sx={{fontWeight: 'bold'}} onClick={handleClose}>
                             حذف همه فیلترها
-                        </Button>
+                        </Typography>
                     </Toolbar>
                 </AppBar>
                 <List>
@@ -66,10 +84,11 @@ const MobileDialog = () => {
                     </ListItem>
                     <Divider/>
                     <ListItem button>
-                        <Typography><MobileBrandFilter/></Typography>
+                        <Typography><MobileBrandFilter brandsOfCategory={brandsOfCategory}
+                                                       filterBrand={filterBrand} setFilterBrand={setFilterBrand}/></Typography>
                     </ListItem>
                     <Divider/>
-                    <ListItem button>
+                    <ListItem>
                         <div>
                             <div>
                                 <div style={{display:'flex',justifyContent:'space-between'}}>
@@ -91,7 +110,7 @@ const MobileDialog = () => {
                     </ListItem>
                     <Divider/>
                     <ListItem button>
-                        <Typography><OnlyOfferProducts/></Typography>
+                        <Typography><OnlyOfferProducts offerFilter={offerFilter} setOfferFilter={setOfferFilter}/></Typography>
                     </ListItem>
                     <Divider/>
                     <ListItem button>

@@ -7,11 +7,11 @@ import FilterSelection from "./FilterSelection";
 import {useState} from "react";
 import FilterMobileDrawer from "./FilterMobileDrawer";
 import arrow from './arrow.svg'
-const MobileShowBar = () => {
+const MobileShowBar = ({sort,setSort}) => {
     return (
         <AppBar position="static" color={'white'} elevation={0}>
             <Container maxWidth="xl">
-                <Typography><Image width={15} src={arrow}/><FilterMobileDrawer/></Typography>
+                <Typography><Image width={15} src={arrow}/><FilterMobileDrawer sort={sort} setSort={setSort}/></Typography>
             </Container>
         </AppBar>
     );

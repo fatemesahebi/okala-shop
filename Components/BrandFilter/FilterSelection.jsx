@@ -11,10 +11,11 @@ import FormLabel from '@mui/material/FormLabel';
 import {Typography} from "@mui/material";
 import {useState} from "react";
 
-const FilterSelection = () => {
-    const [show, setShow] = useState('پرفروش ترین');
-    const handleChange = (event) => {
-        setShow(event.target.value);
+const FilterSelection = ({setSort,setSortLable}) => {
+
+    const handleChange = (sortType,e) => {
+        setSort(sortType)
+        setSortLable(e.target.value)
     };
 
     return (
@@ -25,10 +26,10 @@ const FilterSelection = () => {
                 defaultValue="female"
                 name="radio-buttons-group"
             >
-                <FormControlLabel value="پرفروش ترین" control={<Radio onChange={handleChange}/>} label="پرفروشترین"/>
-                <FormControlLabel value="بیشترین تخفیف" control={<Radio onChange={handleChange}/>} label="بیشترین تخفیف"/>
-                <FormControlLabel value="ارزانترین" control={<Radio onChange={handleChange}/>} label="ارزانترین"/>
-                <FormControlLabel value="گرانترین" control={<Radio onChange={handleChange}/>} label="گرانترین"/>
+                <FormControlLabel value="پرفروش ترین" control={<Radio onChange={(e)=>handleChange("mostSale",e)}/>} label="پرفروش ترین"/>
+                <FormControlLabel value="بیشترین تخفیف" control={<Radio onChange={(e)=>handleChange('mostOff',e)}/>} label="بیشترین تخفیف"/>
+                <FormControlLabel value="ارزانترین" control={<Radio onChange={(e)=>handleChange('leastPrice',e)}/>} label="ارزانترین"/>
+                <FormControlLabel value="گرانترین" control={<Radio onChange={(e)=>handleChange('mostPrice',e)}/>} label="گرانترین"/>
             </RadioGroup>
         </FormControl>
 )

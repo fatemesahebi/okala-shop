@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Slide from '@mui/material/Slide';
 import CategorizeResults from "../CategorizeResults/CategorizeResults";
+import CatedorizeResultsMobile from "../CategorizeResults/CatedorizeResultsMobile";
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -25,7 +26,7 @@ const MobileCategory=()=>{
     return (
         <div>
             <Button variant="outlined" sx={{border:'none'}} onClick={handleClickOpen}>
-                <Typography>دسته بندی </Typography>
+                <Typography style={{color:"#2e2d2d"}}>دسته بندی </Typography>
             </Button>
             <Dialog
                 fullScreen
@@ -42,8 +43,8 @@ const MobileCategory=()=>{
                         >
                             <ArrowForwardIcon/>
                         </IconButton>
-                        <Typography sx={{ ml: 2, flex: 1 }}  component="div">
-                            دسته بندی
+                        <Typography sx={{ ml: 2, flex: 1 ,color:'red',paddingRight:"1rem",fontWeight:"bold"}}  component="div">
+                              دسته بندی نتایج
                         </Typography>
                         <Button autoFocus color="inherit" onClick={handleClose}>
                             حذف  فیلتر
@@ -51,7 +52,7 @@ const MobileCategory=()=>{
                     </Toolbar>
                 </AppBar>
                 <List>
-                    <CategorizeResults/>
+                    <CatedorizeResultsMobile/>
                 </List>
             </Dialog>
         </div>

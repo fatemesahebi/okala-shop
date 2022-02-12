@@ -9,7 +9,8 @@ import {
     MenuMobile,
     CategorizeResults,
     Products,
-    BestBrandsFruitsVegetables
+    BestBrandsFruitsVegetables,
+    CatedorizeResultsMobile
 
 } from "../components";
 import * as React from "react";
@@ -17,6 +18,8 @@ import {Paper} from "@mui/material";
 import {Box} from "@material-ui/core";
 import {useEffect, useState} from "react";
 import {getCategoryProducts} from "../lib/axios/getData";
+import MobileHeaderCategory from "../Components/BrandFilter/MobileHeaderCategory";
+import MobileProduct from "../Components/BrandFilter/MobileProduct";
 
 
 function CategoryPage() {
@@ -28,26 +31,25 @@ function CategoryPage() {
     const [priceFilter, setPriceFilter] = useState([0, maxPrice])
     const [offerFilter, setOfferFilter] = useState(false)
     const [sort, setSort] = useState("mostSale")
+    const [screanWidth,setScreanWidth]=useState(750)
+
     let finalData = []
     let pageCount = 1
-
 
     useEffect(() => {
         getCategoryProducts("میوه و سبزیجات").then(data => setDataCategory(data.products))
             .catch(error => console.log(error))
+         setScreanWidth(window.innerWidth)
 
-    }, [])
+
+    }, [screanWidth])
 
 
-    // useEffect(() => {
-    //     finalData = dataMange()
-    // }, [dataCategory,page,filterBrand,searchTerm,priceFilter,offerFilter])
-    //
 
     const dataMange = () => {
         let filterData = []
         let result = []
-        const productNumPerPage = 32
+        const productNumPerPage = (screanWidth >750)? 32 : dataCategory?.length
         if (filterBrand.length === 0) filterData = dataCategory
         else {
             for (let filter of filterBrand) {
@@ -93,6 +95,8 @@ function CategoryPage() {
         {/*<BrandFilter/>*/}
         {/*<CommodityFilters/>*/}
         {/*<PaginationRounded/>*/}
+        <MobileHeaderCategory/>
+        <MobileProduct/>
         <MenuMobile/>
         <div style={{display: 'flex'}}>
             <Box style={{marginTop: '30px'}}>
@@ -100,6 +104,7 @@ function CategoryPage() {
                 <CategorizeResults/>
                 <BrandFilter brandsOfCategory={brandsOfCategory} filterBrand={filterBrand}
                              setFilterBrand={setFilterBrand}/>
+
                 <CommodityFilters offerFilter={offerFilter} setOfferFilter={setOfferFilter}/>
                 <PriceFilter maxPrice={maxPrice} priceFilter={priceFilter} setPriceFilter={setPriceFilter}/>
             </Box>
@@ -108,7 +113,16 @@ function CategoryPage() {
                 borderRadius: '2rem'
             }}
             >
-                <Products finalData={finalData} page={page} setSort={setSort}/>
+                <Products finalData={finalData} page={page} setSort={setSort} sort={sort}
+                          brandsOfCategory={brandsOfCategory}
+                          filterBrand={filterBrand}
+                          setFilterBrand={setFilterBrand}
+                          setOfferFilter={setOfferFilter}
+                          offerFilter={offerFilter}
+                          maxPrice={maxPrice}
+                          setPriceFilter={setPriceFilter}
+
+                />
                 <Paper elevation={0} sx={{my: '20px'}}>
                     <PaginationRounded setPage={setPage} pageCount={pageCount}/>
                 </Paper>
