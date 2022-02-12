@@ -9,7 +9,8 @@ import {
     MenuMobile,
     CategorizeResults,
     Products,
-    BestBrandsFruitsVegetables
+    BestBrandsFruitsVegetables,
+    CatedorizeResultsMobile
 
 } from "../components";
 import * as React from "react";
@@ -103,6 +104,7 @@ function CategoryPage() {
                 <CategorizeResults/>
                 <BrandFilter brandsOfCategory={brandsOfCategory} filterBrand={filterBrand}
                              setFilterBrand={setFilterBrand}/>
+
                 <CommodityFilters offerFilter={offerFilter} setOfferFilter={setOfferFilter}/>
                 <PriceFilter maxPrice={maxPrice} priceFilter={priceFilter} setPriceFilter={setPriceFilter}/>
             </Box>
