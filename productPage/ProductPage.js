@@ -8,6 +8,7 @@ import BasicTabs from "./tabs";
 import {Usersrate} from "./mobile";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import AddIcon from "@mui/icons-material/Add";
+import ImageMagnifire from "./imageMagnifire";
 
 
 const ColorButton = styled(Button)(({theme}) => ({
@@ -45,8 +46,9 @@ const ThumbnailWrapper = styled('div')({
     display: 'flex',
     marginLeft: '16px',
     paddingLeft: ' 24px',
-    flexDirection: 'row-reverse',
-    justifyContent: 'space-between'
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    direction: "rtl"
 })
 
 const InformationWrapper = styled('div')({
@@ -78,15 +80,16 @@ const ProductPage = () => {
     return (
         <HeaderFooterProvider>
             <ProductInfo/>
-            {/*<ImageMagnifire/>*/}
+
             <Container maxWidth={'false'} sx={{background: '#f8f8f8'}}>
                 <MainContainer >
                     <MyContainer>
                         <Box>
                             <InfoSection>
-                                <ThumbnailWrapper>
-
-                                </ThumbnailWrapper>
+                                <ImageMagnifire/>
+                                {/*<ThumbnailWrapper>*/}
+                                {/*    */}
+                                {/*</ThumbnailWrapper>*/}
                                 <InformationWrapper>
                                     <Typography variant={"h6"} component={"div"} sx={{
                                         fontSize: '1.25rem',
