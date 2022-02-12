@@ -26,6 +26,7 @@ import BrandFilter from "./BrandFilter/BrandFilter";
 import PriceFilter from './PriceFilter/PriceFilter';
 import Products from './BrandFilter/Products';
 import BestBrandsFruitsVegetables from "./BestBrandsFruitsVegetables/BestBrandsFruitsVegetables";
+import CategorizeResultsMobile from "./CategorizeResults/CategorizeResultsMobile";
 export {
     Header,
     HeaderDesktop,
@@ -54,5 +55,6 @@ export {
     BrandFilter,
     PriceFilter,
     Products,
-    BestBrandsFruitsVegetables
+    BestBrandsFruitsVegetables,
+    CategorizeResultsMobile
 }

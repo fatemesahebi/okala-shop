@@ -18,13 +18,13 @@ const Accordion = styled((props) => (
 
 const AccordionSummary = styled((props) => (
     <MuiAccordionSummary
-        expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
+        expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' , transform:'rotate(180deg)'}} />}
         {...props}
     />
 ))(({ theme }) => ({
     flexDirection: 'row-reverse',
     '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
-        transform: 'rotate(90deg)',
+        transform: 'rotate(-90deg)',
     },
     '& .MuiAccordionSummary-content': {
         marginLeft: theme.spacing(1),
@@ -35,7 +35,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 
 }));
 
-export default function CatedorizeResultsMobile() {
+export default function CategorizeResultsMobile() {
     const [expanded, setExpanded] = React.useState('panel1');
 
     const handleChange = (panel) => (event, newExpanded) => {
@@ -92,7 +92,7 @@ export default function CatedorizeResultsMobile() {
                             </AccordionSummary>
                             <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>آلباو منجمد</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>آلبالو منجمد</Typography>
                                 </AccordionSummary>
                             </Accordion>
                         </Accordion>

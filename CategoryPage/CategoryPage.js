@@ -10,7 +10,7 @@ import {
     CategorizeResults,
     Products,
     BestBrandsFruitsVegetables,
-    CatedorizeResultsMobile
+    CategorizeResultsMobile
 
 } from "../components";
 import * as React from "react";
