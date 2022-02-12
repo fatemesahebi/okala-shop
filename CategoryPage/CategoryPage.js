@@ -17,6 +17,7 @@ import {Paper} from "@mui/material";
 import {Box} from "@material-ui/core";
 import {useEffect, useState} from "react";
 import {getCategoryProducts} from "../lib/axios/getData";
+import MobileHeaderCategory from "../Components/BrandFilter/MobileHeaderCategory";
 
 
 function CategoryPage() {
@@ -93,6 +94,7 @@ function CategoryPage() {
         {/*<BrandFilter/>*/}
         {/*<CommodityFilters/>*/}
         {/*<PaginationRounded/>*/}
+        <MobileHeaderCategory/>
         <MenuMobile/>
         <div style={{display: 'flex'}}>
             <Box style={{marginTop: '30px'}}>

@@ -1,23 +1,61 @@
 import React from 'react';
-import {Stack, Typography} from "@mui/material";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import search from "../../public/SVG/search.svg";
+import {Button, Stack, Typography} from "@mui/material";
+import {Box, Paper} from "@material-ui/core";
+import Toolbar from "@mui/material/Toolbar";
+import AppBar from "@mui/material/AppBar";
+import MobileDialog from "./MobileDialog";
 import Image from "next/image";
-import {Paper} from "@material-ui/core";
+import magnifier from './magnifier.svg'
+import back from './back.svg'
 
 const MobileHeaderCategory = () => {
     return (
-        <Paper elevation={0} style={{backgroundColor: '#02a0a4',display:'flex',justifyContent:'space-between',width:'600px'}}>
-            <div style={{display:'flex',justifyContent:'space-between'}}>
-                <Typography> <ArrowForwardIcon/></Typography>
-                <Typography>میوه و سبزیجات</Typography>
-            </div>
-            <div>
-                <Typography><Image src={search}/></Typography>
-            </div>
-        </Paper>
-    );
+        <Box>
+            <AppBar position="fixed" sx={{
+                backgroundColor: '#02a0a4',
+                display: {xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none'}
+            }}>
+                <Toolbar variant="dense" sx={{height: '137px', alignItems: 'flex-start', padding: '10px'}}>
+
+                    <Box style={{display:'flex',flexDirection:'column',flexGrow:'1'}}>
+                    <Box style={{display: 'flex', justifyContent: 'space-between',padding:'10px'}}>
+                        <Box style={{display:'flex'}}>
+                        <Image src={back}/>
+                        <Box><Typography sx={{display: 'flex', color: 'white',marginRight:'3.5rem',fontWeight:'bold'}} component="div"> میوه و
+                            سبزیجات </Typography></Box>
+                        </Box>
+
+                        <Box><Image src={magnifier}/></Box>
+                    </Box>
+                        <Box style={{marginTop:'30px'}}>
+                            <Button style={{backgroundColor:'white',color:'black',fontWeight:'bold',marginLeft:'10px',padding:'2px 30px 2px 30px',borderRadius:'30px',display:'inline'}}>میوه</Button>
+                            <Button style={{backgroundColor:'white',color:'black',fontWeight:'bold',marginLeft:'10px',padding:'2px 30px 2px 30px',borderRadius:'30px',display:'inline'}}>سبزی</Button>
+                        </Box>
+
+                    </Box>
+
+
+                    {/*<Box sx={{display: 'flex', justifyContent: 'space-between'}}>*/}
+                    {/*    <Box>b</Box>*/}
+                    {/*    <Box>b</Box>*/}
+                    {/*</Box>*/}
+                    {/*<Box>*/}
+
+                    {/*</Box>*/}
+                </Toolbar>
+
+                <Box>
+                    <MobileDialog/>
+                </Box>
+            </AppBar>
+
+        </Box>
+    )
+        ;
 };
 
 export default MobileHeaderCategory;
-//display={{xl:'block',lg:'block',md:'none',sm:'none',xs:'none'}}
+//
+
+//                             </Box>
+//
