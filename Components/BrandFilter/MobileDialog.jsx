@@ -25,7 +25,7 @@ import MobileHeaderCategory from "./MobileHeaderCategory";
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="right" ref={ref} {...props} />;
 });
-const MobileDialog = () => {
+const MobileDialog = ({brandsOfCategory,setFilterBrand,filterBrand,setOfferFilter,offerFilter,setPriceFilter,maxPrice}) => {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -35,6 +35,13 @@ const MobileDialog = () => {
     const handleClose = () => {
         setOpen(false);
     };
+    const handleDeleteFilter=()=>{
+        setOpen(false)
+        setFilterBrand([])
+        setOfferFilter(false)
+        setPriceFilter([0,maxPrice])
+    }
+
     return (
         <div>
             <AppBar position="static" color={'white'} elevation={0} sx={{height:'3rem',display:{xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none'}}}>
@@ -72,22 +79,23 @@ const MobileDialog = () => {
                     </Toolbar>
                 </AppBar>
                 <List>
-                    <ListItem button sx={{"&.MuiButtonBase-root:hover": {textDecoration: 'none'}}}>
+                    <ListItem button>
                         <Typography><MobileCategory/></Typography>
                     </ListItem>
                     <Divider/>
-                    <ListItem>
-                        <Typography><MobileBrandFilter/></Typography>
+                    <ListItem button>
+                        <Typography><MobileBrandFilter brandsOfCategory={brandsOfCategory}
+                                                       filterBrand={filterBrand} setFilterBrand={setFilterBrand}/></Typography>
                     </ListItem>
                     <Divider/>
                     <ListItem>
                         <div>
                             <div>
-                                <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                                <div style={{display:'flex',justifyContent:'space-between'}}>
                                     <Typography>محدوده قیمت</Typography>
                                     <Typography>مقدار پیشفرض</Typography>
                                 </div>
-                                <div style={{display: 'flex', justifyContent: 'center', width: '100%'}}>
+                                <div style={{display:'flex',justifyContent:'center',width:'100%'}}>
                                     <PriceFilterSlider/>
                                 </div>
 
@@ -102,13 +110,13 @@ const MobileDialog = () => {
                     </ListItem>
                     <Divider/>
                     <ListItem button>
-                        <Typography><OnlyOfferProducts/></Typography>
+                        <Typography><OnlyOfferProducts offerFilter={offerFilter} setOfferFilter={setOfferFilter}/></Typography>
                     </ListItem>
                     <Divider/>
                     <ListItem button>
                         <Button sx={{
-                            mt: '2rem',
-                            width: '55rem',
+                            mt:'2rem',
+                            width:'55rem',
                             backgroundColor: '#f01436',
                             "&.MuiButtonBase-root:hover": {bgcolor: "#f01436"}
                         }} variant="contained"><Typography>اعمال فیلتر</Typography></Button>

@@ -6,9 +6,11 @@ import FilterSelection from "./FilterSelection";
 import {Typography} from "@mui/material";
 import arrow from "./arrow.svg";
 import Image from "next/image";
+import {useState} from "react";
 
-const FilterMobileDrawer = () => {
+const FilterMobileDrawer = ({sort,setSort}) => {
     const [state, setState] = React.useState({bottom: false});
+    const [sortLable,setSortLable]=useState("پرفروش ترین")
 
     const toggleDrawer = (anchor, open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -19,16 +21,14 @@ const FilterMobileDrawer = () => {
     };
     return (
         <React.Fragment key={'bottom'}>
-            <Button onClick={toggleDrawer('bottom', true)}><Typography
-                style={{color: 'black', display: "flex", alignItems: 'center', alignContent: 'center'}}><Image
-                width={15} src={arrow}/>پرفروشترین</Typography></Button>
+            <Button onClick={toggleDrawer('bottom', true)}><Typography>{sortLable}</Typography></Button>
             <Drawer
                 anchor={'bottom'}
                 open={state['bottom']}
                 onClose={toggleDrawer('bottom', false)}
             >
                 <List>
-                    <FilterSelection/>
+                    <FilterSelection setSort={setSort} setSortLable={setSortLable}/>
                 </List>
             </Drawer>
         </React.Fragment>

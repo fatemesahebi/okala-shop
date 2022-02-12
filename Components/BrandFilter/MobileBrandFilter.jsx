@@ -15,7 +15,7 @@ import FormSection from "./FormSection";
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
-const MobileBrandFilter=()=>{
+const MobileBrandFilter=({brandsOfCategory,setFilterBrand,filterBrand})=>{
 const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -54,7 +54,7 @@ const [open, setOpen] = React.useState(false);
                     </Toolbar>
                 </AppBar>
                 <List>
-                <FormSection/>
+                <FormSection filterBrand={filterBrand} setFilterBrand={setFilterBrand} brandsOfCategory={brandsOfCategory}/>
                 </List>
             </Dialog>
         </div>

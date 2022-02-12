@@ -30,26 +30,25 @@ function CategoryPage() {
     const [priceFilter, setPriceFilter] = useState([0, maxPrice])
     const [offerFilter, setOfferFilter] = useState(false)
     const [sort, setSort] = useState("mostSale")
+    const [screanWidth,setScreanWidth]=useState(750)
+
     let finalData = []
     let pageCount = 1
-
 
     useEffect(() => {
         getCategoryProducts("میوه و سبزیجات").then(data => setDataCategory(data.products))
             .catch(error => console.log(error))
+         setScreanWidth(window.innerWidth)
 
-    }, [])
+
+    }, [screanWidth])
 
 
-    // useEffect(() => {
-    //     finalData = dataMange()
-    // }, [dataCategory,page,filterBrand,searchTerm,priceFilter,offerFilter])
-    //
 
     const dataMange = () => {
         let filterData = []
         let result = []
-        const productNumPerPage = 32
+        const productNumPerPage = (screanWidth >750)? 32 : dataCategory?.length
         if (filterBrand.length === 0) filterData = dataCategory
         else {
             for (let filter of filterBrand) {
@@ -112,7 +111,16 @@ function CategoryPage() {
                 borderRadius: '2rem'
             }}
             >
-                <Products finalData={finalData} page={page} setSort={setSort}/>
+                <Products finalData={finalData} page={page} setSort={setSort} sort={sort}
+                          brandsOfCategory={brandsOfCategory}
+                          filterBrand={filterBrand}
+                          setFilterBrand={setFilterBrand}
+                          setOfferFilter={setOfferFilter}
+                          offerFilter={offerFilter}
+                          maxPrice={maxPrice}
+                          setPriceFilter={setPriceFilter}
+
+                />
                 <Paper elevation={0} sx={{my: '20px'}}>
                     <PaginationRounded setPage={setPage} pageCount={pageCount}/>
                 </Paper>
