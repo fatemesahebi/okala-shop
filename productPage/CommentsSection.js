@@ -10,6 +10,7 @@ import Image from "next/image";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import PaginationItem from '@mui/material/PaginationItem';
+import LinearProgress, {linearProgressClasses} from "@mui/material/LinearProgress";
 
 
 const CommentsContainer = styled('div')({
@@ -135,9 +136,20 @@ const Progress = styled('div')({
     borderRadius: '10px',
     MozBoxSizing:'border-box'
 });
-const Pbaar = styled('span')({
-    background: 'rgb(76, 176, 76)'
-});
+
+const BorderLinearProgress = styled(LinearProgress)(({theme}) => ({
+    height: 10,
+    width: "100%",
+
+    [`&.${linearProgressClasses.colorPrimary}`]: {
+        backgroundColor: theme.palette.green.light,
+
+    },
+    [`& .${linearProgressClasses.bar}`]: {
+        backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
+
+    },
+}));
 
 
 export default function CommentsSection (){
@@ -208,37 +220,35 @@ export default function CommentsSection (){
                                         <Image src={starline}/>
                                         <span style={{margin:'0 10px 0 10px'}}>5</span>
                                         <Progress>
-                                            <Pbaar sx={{width: '1rem',
-                                                height: '1rem',
-                                                display: 'block',}}/>
+                                            <BorderLinearProgress value={30} variant="determinate"/>
                                         </Progress>
                                     </RateProgressBar>
                                     <RateProgressBar>
                                         <Image src={starline}/>
                                         <span style={{margin:'0 10px 0 10px'}}>4</span>
                                         <Progress>
-                                            <Pbaar sx={{width:'50%'}}></Pbaar>
+                                            <BorderLinearProgress value={50} variant="determinate"/>
                                         </Progress>
                                     </RateProgressBar>
                                     <RateProgressBar>
                                         <Image src={starline}/>
                                         <span style={{margin:'0 10px 0 10px'}}>3</span>
                                         <Progress>
-                                            <Pbaar sx={{width:'50%'}}></Pbaar>
+                                            <BorderLinearProgress value={80} variant="determinate"/>
                                         </Progress>
                                     </RateProgressBar>
                                     <RateProgressBar>
                                         <Image src={starline}/>
                                         <span style={{margin:'0 10px 0 10px'}}>2</span>
                                         <Progress>
-                                            <Pbaar sx={{width:'50%'}}></Pbaar>
+                                            <BorderLinearProgress value={10} variant="determinate"/>
                                         </Progress>
                                     </RateProgressBar>
                                     <RateProgressBar>
                                         <Image src={starline}/>
                                         <span style={{margin:'0 10px 0 10px'}}>1</span>
                                         <Progress>
-                                            <Pbaar sx={{width:'50%'}}></Pbaar>
+                                            <BorderLinearProgress value={0} variant="determinate"/>
                                         </Progress>
                                     </RateProgressBar>
                                 </RatesProgressSection>
