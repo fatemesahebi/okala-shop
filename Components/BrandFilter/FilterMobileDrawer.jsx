@@ -1,16 +1,11 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import FilterSelection from "./FilterSelection";
 import {Typography} from "@mui/material";
+import arrow from "./arrow.svg";
+import Image from "next/image";
 import {useState} from "react";
 
 const FilterMobileDrawer = ({sort,setSort}) => {

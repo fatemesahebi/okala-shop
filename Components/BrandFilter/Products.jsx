@@ -3,8 +3,9 @@ import {specialOffer} from "../../lib/mirage/data";
 import {Box, Paper} from "@mui/material";
 import SingleProduct from "../productCard/ProductCardElements";
 import ShowBar from "./ShowBar";
-import MobileShowBar from "./MobileShowBar";
+import MobileShowBar from "./MobileProduct";
 import MobileDialog from "./MobileDialog";
+import MobileHeaderCategory from "./MobileHeaderCategory";
 
 const Products = ({finalData,page,setSort,sort,brandsOfCategory,setFilterBrand,
                       filterBrand,offerFilter,setOfferFilter,setPriceFilter,maxPrice}) => {

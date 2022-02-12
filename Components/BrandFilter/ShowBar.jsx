@@ -20,7 +20,7 @@ setSort(sortType)
         <AppBar position="static" color={'white'} elevation={0}>
             <Container>
                 <Toolbar>
-                    <Typography><Image width={20} src={arrow}/></Typography>
+                    <Image width={20} src={arrow}/>
                     <Typography noWrap component="div" sx={{mr: 1, ml: 5, display: {xs: 'none', md: 'flex'}}}>
                         نمایش بر اساس:
                     </Typography>

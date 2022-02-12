@@ -42,7 +42,7 @@ const MobileCategory=()=>{
                         >
                             <ArrowForwardIcon/>
                         </IconButton>
-                        <Typography sx={{ ml: 2, flex: 1 }}  component="div">
+                        <Typography sx={{ ml: 2, flex: 1 ,color:'red'}}  component="div">
                             دسته بندی
                         </Typography>
                         <Button autoFocus color="inherit" onClick={handleClose}>
