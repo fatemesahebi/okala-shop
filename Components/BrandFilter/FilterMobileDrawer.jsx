@@ -10,7 +10,7 @@ import {useState} from "react";
 
 const FilterMobileDrawer = ({sort,setSort}) => {
     const [state, setState] = React.useState({bottom: false});
-    const [sortLable,setSortLable]=useState("پرفروش ترین")
+    const [sortLable,setSortLable]=useState("پرفروشترین")
 
     const toggleDrawer = (anchor, open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -21,7 +21,7 @@ const FilterMobileDrawer = ({sort,setSort}) => {
     };
     return (
         <React.Fragment key={'bottom'}>
-            <Button onClick={toggleDrawer('bottom', true)}><Typography>{sortLable}</Typography></Button>
+            <Button onClick={toggleDrawer('bottom', true)}><Typography style={{color:'black'}}>{sortLable}</Typography></Button>
             <Drawer
                 anchor={'bottom'}
                 open={state['bottom']}
