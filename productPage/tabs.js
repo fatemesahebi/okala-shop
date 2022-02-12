@@ -18,7 +18,7 @@ function TabPanel(props) {
             {...other}
         >
             {value === index && (
-                <Box sx={{ p: 3 }}>
+                <Box sx={{ p: 2 }}>
                     <Typography>{children}</Typography>
                 </Box>
             )}
@@ -48,17 +48,30 @@ export default function BasicTabs() {
     return (
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Tabs value={value}
-                      onChange={handleChange}
-                      textColor="error"
-                      indicatorColor="error" >
-                    <Tab label="ویژگی محصول" {...a11yProps(0)} />
-                    <Tab label="توضیحات محصول" {...a11yProps(1)} />
-                    <Tab label="نظرات کاربران" {...a11yProps(2)} />
+                <Tabs  value={value}
+                       onChange={handleChange}
+                       TabIndicatorProps={{
+                           style: {
+                               backgroundColor: "#f01436",
+                           }
+                       }}
+                > >
+                    <Tab sx={{
+                        fontWeight: "bold",
+                        color: value===value?"#f01436 !important":"black"
+                    }}
+                         label="ویژگی محصول" {...a11yProps(0)} />
+                    <Tab sx={{
+                        fontWeight: "bold",}}
+                         label="توضیحات محصول" {...a11yProps(1)} />
+                    <Tab    sx={{
+                        fontWeight: "bold"}}
+                            label="نظرات کاربران" {...a11yProps(2)} />
                 </Tabs>
             </Box>
-            <TabPanel value={value} index={0}>
-                <Box sx={{}}>
+            <TabPanel sx={{color: value===value?"#f01436 !important":"black"}}
+                      value={value} index={0}>
+                <Box>
                     <ProductFeaturesList/>
                 </Box>
             </TabPanel>

@@ -17,6 +17,8 @@ const ColorButton = styled(Button)(({theme}) => ({
     backgroundColor: 'rgb(240, 20, 54)',
     borderRadius: ' 12px',
     color: ' rgb(248, 248, 248) !important',
+    "&.MuiButtonBase-root:hover":{color: 'rgb(230, 230, 230)',
+        backgroundColor: 'rgb(222, 8, 46) !important'}
 }));
 
 const MainContainer = styled('div')({
@@ -24,7 +26,7 @@ const MainContainer = styled('div')({
     margin: 'auto'
 })
 const MyContainer = styled('div')({
-    maxwidth:'1280px',
+    // width:'1280px',
     padding: '36px',
     position: 'relative',
     background: ' #fff',
@@ -74,6 +76,7 @@ const AmountWrapper = styled('div')({
     marginTop:'2rem'
 });
 
+
 const ProductPage = () => {
     return (
         <HeaderFooterProvider>
@@ -104,7 +107,9 @@ const ProductPage = () => {
                                     <CategoryWrapper>
                                         <Typography variant={"h6"} component={"span"}>
                                             دسته بندی :
-                                            <a> شامپو بدن</a>
+                                            <a style={{color: 'rgba(0, 134, 132, 1)',
+                                                fontSize: '1rem',
+                                                fontWeight: '500'}} href="/#"> شامپو بدن</a>
                                         </Typography>
                                     </CategoryWrapper>
                                     <Usersrate sx={{position: 'inherit'}}>
@@ -118,44 +123,45 @@ const ProductPage = () => {
                                         </ColorButton>
                                         <Box sx={{display: 'flex', flexDirection: 'column',}}>
                                             <Box>
-                                                <span style={{
+                                                <Typography component={"span"} sx={{
+                                                    display:"inline-block",
+                                                    marginLeft:'5px',
+                                                    color: '#fff',
+                                                    width: '45px',
+                                                    fontSize: '1rem',
+                                                    textAlign: 'center',
+                                                    fontWeight: '500',
+                                                    lineHeight: '30px',
+                                                    borderRadius: '8px',
+                                                    backgroundColor: '#4CB04C',
+                                                }}>
+                                                    20%
+                                                </Typography>
+                                                <Typography component={"span"} sx={{
                                                     color: 'rgba(175, 175, 175, 1)',
                                                     fontSize: '1rem',
                                                     textDecoration: 'line-through',
                                                 }}>
                                                     ۴۴۰٬۰۰۰
-                                                </span>
-                                                <span style={{
-                                                    // display:"inline-block",
-                                                    // // marginLeft:'5px',
-                                                    color: '#fff',
-                                                    width: '60px',
-                                                    fontSize: '1rem',
-                                                    textAlign: 'center',
-                                                    fontWeight: '500',
-                                                    lineHeight: '26px',
-                                                    borderRadius: '8px',
-                                                    backgroundColor: '#4CB04C',
-                                                }}>
-                                                20%
-                                            </span>
+                                                </Typography>
+
                                             </Box>
                                             <Box>
-                                                <span style={{
+                                                <Typography component={"span"} sx={{
                                                     color: 'rgba(54, 54, 54, 1)',
                                                     fontSize: '1.25rem',
-                                                    fontWeight: '400',
-                                                    marginRight: ' 8px',
+                                                    fontWeight: 'bold',
                                                 }}>
-                                                    ۳۵۲٬۰۰۰
-                                                </span>
-                                                <span style={{
+                                                      ۳۵۲٬۰۰۰
+                                                </Typography>
+                                                <Typography component={"span"} sx={{
                                                     color: 'rgba(54, 54, 54, 1)',
-                                                    fontSize: '0.75rem',
+                                                    fontSize: '1rem',
                                                     marginRight: ' 2px',
+                                                    fontWeight: 'bold',
                                                 }}>
                                                     ریال
-                                                </span>
+                                                </Typography>
                                             </Box>
                                         </Box>
                                     </AmountWrapper>
@@ -164,7 +170,7 @@ const ProductPage = () => {
                             </InfoSection>
 
                         </Box>
-                        <Box>
+                        <Box sx={{maxWidth:'100%'}}>
                             <BasicTabs/>
                         </Box>
 
