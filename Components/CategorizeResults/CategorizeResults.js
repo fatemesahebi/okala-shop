@@ -17,8 +17,8 @@ import arrowleft from "../../public/SVG/left.svg"
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import {menuData} from "../../lib/mirage/menuData";
 
-export default function CategorizeResults() {
-   const categorizeResultsData=menuData.filter(item=>item.mainTitle==="میوه و سبزیجات")
+export default function CategorizeResults({categoryName}) {
+   const categorizeResultsData= menuData.filter(item=>item.mainTitle===categoryName)
     console.log(categorizeResultsData)
     return (
         <Box display={{xl:'block',lg:'block',md:'none',sm:'none',xs:'none'}} sx={{padding:"1rem 1rem 0 0"}}>
