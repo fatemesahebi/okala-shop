@@ -11,7 +11,7 @@ import back from './back.svg'
 const MobileHeaderCategory = () => {
     return (
         <Box>
-            <AppBar position="fixed" sx={{
+            <AppBar position="fixed"  elevation={0} sx={{
                 backgroundColor: '#02a0a4',
                 display: {xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none'}
             }}>

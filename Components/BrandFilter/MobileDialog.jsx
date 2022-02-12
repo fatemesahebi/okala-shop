@@ -37,12 +37,12 @@ const MobileDialog = () => {
     };
     return (
         <div>
-            <AppBar position="static" color={'white'} elevation={0} sx={{display:{xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none'}}}>
-                <Toolbar sx={{display:'flex',justifyContent:'space-around',flexGrow:'1'}}>
+            <AppBar position="static" color={'white'} elevation={0} sx={{height:'3rem',display:{xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none'}}}>
+                <Toolbar sx={{display:'flex',justifyContent:'space-around',flexGrow:'1',alignItems:'center',alignContent:'center'}}>
                     <Typography>
                         <FilterMobileDrawer/>
                     </Typography>
-                    <Divider orientation="vertical" variant="middle" flexItem />
+                    <Divider orientation="vertical" variant="middle" flexItem sx={{height:'2rem'}} />
                     <Button onClick={handleClickOpen} variant="outlined" sx={{border: 'none'}}>
                         <Typography  style={{color: 'black',display:'flex',alignItems:'center'}}><Image width={15} src={arrow}/>فیلترها</Typography>
                     </Button>
