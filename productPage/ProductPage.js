@@ -1,14 +1,16 @@
 import React from 'react';
 import ProductInfo from "./ProductInfo";
 import {HeaderFooterProvider} from "../components";
-import {Box, Button, Container, Typography} from "@mui/material";
+import {Box,Stack, Button, Container, Typography} from "@mui/material";
 import {styled} from "@mui/styles";
 import CategoryProducts from "../components/CategoryProducts/CategoryProducts";
 import BasicTabs from "./tabs";
 import {Usersrate} from "./mobile";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import AddIcon from "@mui/icons-material/Add";
-
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
 const ColorButton = styled(Button)(({theme}) => ({
     width: '10rem !important',
@@ -23,15 +25,20 @@ const ColorButton = styled(Button)(({theme}) => ({
 
 const MainContainer = styled('div')({
     maxWidth:'1280px!important',
-    margin: 'auto'
+    margin: 'auto',
+    padding: '36px !important',
+    position: 'relative',
+    overflowX: 'hidden',
+    overflowY: 'auto',
+
 })
 const MyContainer = styled('div')({
-    // width:'1280px',
     padding: '36px',
-    position: 'relative',
+    // position: 'relative',
     background: ' #fff',
     borderRadius: '12px',
-    margin:'auto'
+    margin:'auto',
+    marginBottom:'2rem'
 });
 
 const InfoSection = styled('div')({
@@ -75,7 +82,54 @@ const AmountWrapper = styled('div')({
     justifyContent: 'space-between',
     marginTop:'2rem'
 });
-
+function handleClick(event) {
+    event.preventDefault();
+    console.info('You clicked a breadcrumb.');
+}
+const breadcrumbs = [
+    <Link underline={"none"} key="1" color="inherit" href="/" onClick={handleClick}>
+        اکالا
+    </Link>,
+    <Link
+        underline={"none"}
+        key="2"
+        color="inherit"
+        href="/getting-started/installation/"
+        onClick={handleClick}
+    >
+        آرایشی بهداشتی
+    </Link>,
+    <Link
+        underline={"none"}
+        key="2"
+        color="inherit"
+        href="/getting-started/installation/"
+        onClick={handleClick}
+    >
+        بهداشت فردی
+    </Link>,
+    <Link
+        underline={"none"}
+        key="2"
+        color="inherit"
+        href="/getting-started/installation/"
+        onClick={handleClick}
+    >
+        بهداشت سر و بدن
+    </Link>,
+    <Link
+        underline={"none"}
+        key="2"
+        color="inherit"
+        href="/getting-started/installation/"
+        onClick={handleClick}
+    >
+        شامپو بدن
+    </Link>,
+    // <Typography key="3" color="text.primary">
+    //     Breadcrumb
+    // </Typography>,
+];
 
 const ProductPage = () => {
     return (
@@ -83,7 +137,16 @@ const ProductPage = () => {
             <ProductInfo/>
             {/*<ImageMagnifire/>*/}
             <Container maxWidth={'false'} sx={{background: '#f8f8f8'}}>
+
                 <MainContainer >
+                    <Stack sx={{direction:"rtl", marginBottom:'36px', }} spacing={2}>
+                        <Breadcrumbs
+                            separator={<NavigateBeforeIcon fontSize="small" />}
+                            aria-label="breadcrumb"
+                        >
+                            {breadcrumbs}
+                        </Breadcrumbs>
+                    </Stack>
                     <MyContainer>
                         <Box>
                             <InfoSection>
@@ -175,8 +238,9 @@ const ProductPage = () => {
                         </Box>
 
                     </MyContainer>
-                    <CategoryProducts similarProducts={true} category={"محصولات جدید"}/>
-
+                    <MyContainer >
+                        <CategoryProducts similarProducts={true} category={"محصولات جدید"}/>
+                    </MyContainer>
                 </MainContainer>
             </Container>
         </HeaderFooterProvider>
