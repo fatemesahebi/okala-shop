@@ -43,7 +43,7 @@ export default function CatedorizeResultsMobile() {
     };
 
     return (
-        <Box sx={{display: {lg: 'none', md: 'none', xs: 'flex'}, flexDirection: "column"}}>
+        <Box sx={{display: {lg: 'none', md: 'none', xs: 'flex'}, flexDirection: "column",cursor:"pointer"}}>
             <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                 <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
 
@@ -51,31 +51,31 @@ export default function CatedorizeResultsMobile() {
                 <AccordionDetails>
                     <Accordion >
                         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                            <Typography>سبزی</Typography>
+                            <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>سبزی</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             <Accordion >
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>سبزی تازه</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>سبزی تازه</Typography>
                                 </AccordionSummary>
-                                <Accordion>
+                                <Accordion sx={{paddingRight:"1rem"}}>
                                     <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                        <Typography>سبزیجات تازه</Typography>
+                                        <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>سبزیجات تازه</Typography>
                                     </AccordionSummary>
                                 </Accordion>
                             </Accordion>
                             <Accordion>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>سبزیجات خشک و منجمد</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>سبزیجات خشک و منجمد</Typography>
                                 </AccordionSummary>
-                                <Accordion>
+                                <Accordion sx={{paddingRight:"1rem"}}>
                                     <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                        <Typography>سبزیجات منجمد</Typography>
+                                        <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>سبزیجات منجمد</Typography>
                                     </AccordionSummary>
                                 </Accordion>
-                                <Accordion>
+                                <Accordion sx={{paddingRight:"1rem"}}>
                                     <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                        <Typography>سبزیجات خشک</Typography>
+                                        <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>سبزیجات خشک</Typography>
                                     </AccordionSummary>
                                 </Accordion>
                             </Accordion>
@@ -83,271 +83,273 @@ export default function CatedorizeResultsMobile() {
                     </Accordion>
                     <Accordion>
                     <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                        <Typography>میوه</Typography>
+                        <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>میوه</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Accordion >
                             <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                <Typography>میوه منجمد</Typography>
+                                <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>میوه منجمد</Typography>
                             </AccordionSummary>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>آلباو منجمد</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>آلباو منجمد</Typography>
                                 </AccordionSummary>
                             </Accordion>
                         </Accordion>
                         <Accordion >
                             <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                <Typography> صیفی جات</Typography>
+                                <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}> صیفی جات</Typography>
                             </AccordionSummary>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>گل کلم</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>گل کلم</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>لوبیا سبز</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>لوبیا سبز</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>باقلا تازه</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>باقلا تازه</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>بامیه</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>بامیه</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>فلفل تند</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>فلفل تند</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>گوجه فرنگی</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>گوجه فرنگی</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>چغندر</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>چغندر</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>زنجبیل</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>زنجبیل</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>فلفل شیرین</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>فلفل شیرین</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>کاهو و کلم</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>کاهو و کلم</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>لیمو ترش</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>لیمو ترش</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>بلال </Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>بلال </Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>سیر</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>سیر</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
                                     <Typography>شلغم</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>کدو و بادمجان</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>کدو و بادمجان</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>فلفل دلمه</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>فلفل دلمه</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>هویج</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>هویج</Typography>
                                 </AccordionSummary>
-                            </Accordion><Accordion>
+                            </Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                             <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                <Typography>پیاز و سیب زمینی</Typography>
+                                <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>پیاز و سیب زمینی</Typography>
                             </AccordionSummary>
                         </Accordion>
 
-                            <Accordion >
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>قارچ</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>قارچ</Typography>
                                 </AccordionSummary>
                             </Accordion>
                         </Accordion>
 
                         <Accordion >
                             <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                <Typography>میوه تازه</Typography>
+                                <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>میوه تازه</Typography>
                             </AccordionSummary>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>هندوانه و طالبی</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>هندوانه و طالبی</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>نارنگی</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>نارنگی</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>لیمو شیرین </Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>لیمو شیرین </Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>پرتقال</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>پرتقال</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>انار </Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>انار </Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>موز </Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>موز </Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>سیب</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>سیب</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>خیار</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>خیار</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>کیوی </Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>کیوی </Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>گلابی</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>گلابی</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>خربزه </Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>خربزه </Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>انگور </Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>انگور </Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
                                     <Typography>گیلاس</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>هلو و شلیل</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>هلو و شلیل</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>آلو و زردآلو</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>آلو و زردآلو</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>گوجه سبز </Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>گوجه سبز </Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>توت فرنگی</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>توت فرنگی</Typography>
                                 </AccordionSummary>
-                            </Accordion><Accordion>
+                            </Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                             <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                <Typography>آلبالو</Typography>
+                                <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>آلبالو</Typography>
                             </AccordionSummary>
                         </Accordion>
-                            <Accordion >
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>میوه های استوایی </Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>میوه های استوایی </Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>نارگیل </Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>نارگیل </Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography> خرمالو</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}> خرمالو</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>گریپ فروت </Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>گریپ فروت </Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>پسته خام</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>پسته خام</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography> آلوئه ورا</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}> آلوئه ورا</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>زغال اخنه </Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>زغال اخنه </Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>انجیر تازه </Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>انجیر تازه </Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>ملون و دستنبو</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>ملون و دستنبو</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>زالزالک </Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>زالزالک </Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>به</Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>به</Typography>
                                 </AccordionSummary>
                             </Accordion>
-                            <Accordion>
+                            <Accordion sx={{paddingRight:"1rem"}}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                                    <Typography>نارنج </Typography>
+                                    <Typography style={{paddingRight:".5rem",fontWeight:"bold"}}>نارنج </Typography>
                                 </AccordionSummary>
                             </Accordion>
 
