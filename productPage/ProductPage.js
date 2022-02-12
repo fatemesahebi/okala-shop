@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductInfo from "./ProductInfo";
 import {HeaderFooterProvider} from "../components";
-import {Box,Stack, Button, Container, Typography} from "@mui/material";
+import {Box, Button, Container, Stack, Typography} from "@mui/material";
 import {styled} from "@mui/styles";
 import CategoryProducts from "../components/CategoryProducts/CategoryProducts";
 import BasicTabs from "./tabs";
@@ -19,12 +19,14 @@ const ColorButton = styled(Button)(({theme}) => ({
     backgroundColor: 'rgb(240, 20, 54)',
     borderRadius: ' 12px',
     color: ' rgb(248, 248, 248) !important',
-    "&.MuiButtonBase-root:hover":{color: 'rgb(230, 230, 230)',
-        backgroundColor: 'rgb(222, 8, 46) !important'}
+    "&.MuiButtonBase-root:hover": {
+        color: 'rgb(230, 230, 230)',
+        backgroundColor: 'rgb(222, 8, 46) !important'
+    }
 }));
 
 const MainContainer = styled('div')({
-    maxWidth:'1280px!important',
+    maxWidth: '1280px!important',
     margin: 'auto',
     padding: '36px !important',
     position: 'relative',
@@ -37,8 +39,8 @@ const MyContainer = styled('div')({
     // position: 'relative',
     background: ' #fff',
     borderRadius: '12px',
-    margin:'auto',
-    marginBottom:'2rem'
+    margin: 'auto',
+    marginBottom: '2rem'
 });
 
 const InfoSection = styled('div')({
@@ -59,7 +61,7 @@ const ThumbnailWrapper = styled('div')({
 })
 
 const InformationWrapper = styled('div')({
-    width:'32rem',
+    width: '32rem',
     display: 'flex',
     flexGrow: '1',
     flexDirection: 'column',
@@ -80,12 +82,13 @@ const AmountWrapper = styled('div')({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop:'2rem'
+    marginTop: '2rem'
 });
+
 function handleClick(event) {
-    event.preventDefault();
-    console.info('You clicked a breadcrumb.');
+    event.preventDefault()
 }
+
 const breadcrumbs = [
     <Link underline={"none"} key="1" color="inherit" href="/" onClick={handleClick}>
         اکالا
@@ -138,10 +141,10 @@ const ProductPage = () => {
             {/*<ImageMagnifire/>*/}
             <Container maxWidth={'false'} sx={{background: '#f8f8f8'}}>
 
-                <MainContainer >
-                    <Stack sx={{direction:"rtl", marginBottom:'36px', }} spacing={2}>
+                <MainContainer>
+                    <Stack sx={{direction: "rtl", marginBottom: '36px',}} spacing={2}>
                         <Breadcrumbs
-                            separator={<NavigateBeforeIcon fontSize="small" />}
+                            separator={<NavigateBeforeIcon fontSize="small"/>}
                             aria-label="breadcrumb"
                         >
                             {breadcrumbs}
@@ -170,9 +173,11 @@ const ProductPage = () => {
                                     <CategoryWrapper>
                                         <Typography variant={"h6"} component={"span"}>
                                             دسته بندی :
-                                            <a style={{color: 'rgba(0, 134, 132, 1)',
+                                            <a style={{
+                                                color: 'rgba(0, 134, 132, 1)',
                                                 fontSize: '1rem',
-                                                fontWeight: '500'}} href="/#"> شامپو بدن</a>
+                                                fontWeight: '500'
+                                            }} href="/#"> شامپو بدن</a>
                                         </Typography>
                                     </CategoryWrapper>
                                     <Usersrate sx={{position: 'inherit'}}>
@@ -187,8 +192,8 @@ const ProductPage = () => {
                                         <Box sx={{display: 'flex', flexDirection: 'column',}}>
                                             <Box>
                                                 <Typography component={"span"} sx={{
-                                                    display:"inline-block",
-                                                    marginLeft:'5px',
+                                                    display: "inline-block",
+                                                    marginLeft: '5px',
                                                     color: '#fff',
                                                     width: '45px',
                                                     fontSize: '1rem',
@@ -215,7 +220,7 @@ const ProductPage = () => {
                                                     fontSize: '1.25rem',
                                                     fontWeight: 'bold',
                                                 }}>
-                                                      ۳۵۲٬۰۰۰
+                                                    ۳۵۲٬۰۰۰
                                                 </Typography>
                                                 <Typography component={"span"} sx={{
                                                     color: 'rgba(54, 54, 54, 1)',
@@ -231,14 +236,12 @@ const ProductPage = () => {
 
                                 </InformationWrapper>
                             </InfoSection>
-
                         </Box>
-                        <Box sx={{maxWidth:'100%'}}>
+                        <Box sx={{maxWidth: '100%'}}>
                             <BasicTabs/>
                         </Box>
-
                     </MyContainer>
-                    <MyContainer >
+                    <MyContainer>
                         <CategoryProducts similarProducts={true} category={"محصولات جدید"}/>
                     </MyContainer>
                 </MainContainer>

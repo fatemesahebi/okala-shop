@@ -57,9 +57,7 @@ export default function BasicTabs() {
                        }}
                 > >
                     <Tab sx={{
-                        fontWeight: "bold",
-                        color: value===value?"#f01436 !important":"black"
-                    }}
+                        fontWeight: "bold",}}
                          label="ویژگی محصول" {...a11yProps(0)} />
                     <Tab sx={{
                         fontWeight: "bold",}}
