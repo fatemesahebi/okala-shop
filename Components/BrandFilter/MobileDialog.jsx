@@ -10,7 +10,7 @@ import OnlyOfferProducts from "../CommodityFilters/OnlyOfferProducts";
 import Image from "next/image";
 import arrow from "./arrow.svg";
 import sortIcon from '../PriceFilter/sort.svg'
-import nextIcon from '../BrandFilter/nextIcon.svg'
+import nextIcon from './nextIcon.svg'
 import FilterMobileDrawer from "./FilterMobileDrawer";
 import {Box} from "@material-ui/core";
 
