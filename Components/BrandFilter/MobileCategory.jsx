@@ -29,7 +29,7 @@ const MobileCategory=()=>{
     };
     return (
         <div>
-            <Button variant="outlined" sx={{border:'none'}} onClick={handleClickOpen}>
+            <Button variant="outlined" sx={{border:'none',"&.MuiButtonBase-root:hover": {border: "none",backgroundColor:'transparent'}}} onClick={handleClickOpen}>
                 <Typography style={{color:"#2e2d2d"}}>دسته بندی </Typography>
             </Button>
             <Dialog
