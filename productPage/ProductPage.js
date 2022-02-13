@@ -11,10 +11,13 @@ import AddIcon from "@mui/icons-material/Add";
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import ImageMagnifire from "./imageMagnifire";
 
 const ColorButton = styled(Button)(({theme}) => ({
-    width: '10rem !important',
-    height: '38px !important',
+    position: "absolute",
+    bottom: 0,
+    width: '14rem !important',
+    height: '3rem !important',
     minWidth: '104px !important',
     backgroundColor: 'rgb(240, 20, 54)',
     borderRadius: ' 12px',
@@ -138,12 +141,15 @@ const ProductPage = () => {
     return (
         <HeaderFooterProvider>
             <ProductInfo/>
-            {/*<ImageMagnifire/>*/}
             <Container maxWidth={'false'} sx={{background: '#f8f8f8'}}>
 
                 <MainContainer>
                     <Stack sx={{direction: "rtl", marginBottom: '36px',}} spacing={2}>
                         <Breadcrumbs
+                            sx={{
+                                fontSize: "small",
+                                fontWeight: "bold"
+                            }}
                             separator={<NavigateBeforeIcon fontSize="small"/>}
                             aria-label="breadcrumb"
                         >
@@ -153,9 +159,7 @@ const ProductPage = () => {
                     <MyContainer>
                         <Box>
                             <InfoSection>
-                                <ThumbnailWrapper>
-
-                                </ThumbnailWrapper>
+                                <ImageMagnifire/>
                                 <InformationWrapper>
                                     <Typography variant={"h6"} component={"div"} sx={{
                                         fontSize: '1.25rem',
@@ -166,17 +170,20 @@ const ProductPage = () => {
                                         بامبو 400 میلی لیتری دیپ سنس
                                     </Typography>
                                     <BrandWrapper>
-                                        <Button>
+                                        <Button sx={{
+                                            fontSize: '1.1rem',
+                                            fontWeight: "700"
+                                        }}>
                                             <a> دیپ سنس </a>
                                         </Button>
                                     </BrandWrapper>
                                     <CategoryWrapper>
-                                        <Typography variant={"h6"} component={"span"}>
+                                        <Typography fontWeight={700} variant={"h6"} component={"span"}>
                                             دسته بندی :
                                             <a style={{
                                                 color: 'rgba(0, 134, 132, 1)',
                                                 fontSize: '1rem',
-                                                fontWeight: '500'
+                                                fontWeight: '700'
                                             }} href="/#"> شامپو بدن</a>
                                         </Typography>
                                     </CategoryWrapper>
@@ -186,16 +193,20 @@ const ProductPage = () => {
                                     </Usersrate>
                                     <AmountWrapper>
                                         <ColorButton>
-                                            <AddIcon ml={20}/>
-                                            افزودن به سبد خرید
+                                            <AddIcon sx={{
+                                                fontSize: "1.75rem"
+                                            }} ml={20}/>
+                                            <Typography fontSize={"1.15rem"} fontWeight={"bold"}>
+                                                افزودن به سبد خرید
+                                            </Typography>
                                         </ColorButton>
-                                        <Box sx={{display: 'flex', flexDirection: 'column',}}>
+                                        <Box sx={{display: 'flex', flexDirection: 'column', position: "absolute" , bottom: 0 , left: 0}}>
                                             <Box>
                                                 <Typography component={"span"} sx={{
+                                                    padding: "0.2rem 0.8rem",
                                                     display: "inline-block",
                                                     marginLeft: '5px',
                                                     color: '#fff',
-                                                    width: '45px',
                                                     fontSize: '1rem',
                                                     textAlign: 'center',
                                                     fontWeight: '500',
@@ -206,8 +217,10 @@ const ProductPage = () => {
                                                     20%
                                                 </Typography>
                                                 <Typography component={"span"} sx={{
+                                                    paddingRight:"1rem",
                                                     color: 'rgba(175, 175, 175, 1)',
-                                                    fontSize: '1rem',
+                                                    fontSize: '1.3rem',
+                                                    fontWeight: "700",
                                                     textDecoration: 'line-through',
                                                 }}>
                                                     ۴۴۰٬۰۰۰
@@ -217,14 +230,14 @@ const ProductPage = () => {
                                             <Box>
                                                 <Typography component={"span"} sx={{
                                                     color: 'rgba(54, 54, 54, 1)',
-                                                    fontSize: '1.25rem',
+                                                    fontSize: '1.75rem',
                                                     fontWeight: 'bold',
                                                 }}>
                                                     ۳۵۲٬۰۰۰
                                                 </Typography>
                                                 <Typography component={"span"} sx={{
                                                     color: 'rgba(54, 54, 54, 1)',
-                                                    fontSize: '1rem',
+                                                    fontSize: '1.55rem',
                                                     marginRight: ' 2px',
                                                     fontWeight: 'bold',
                                                 }}>
@@ -241,9 +254,7 @@ const ProductPage = () => {
                             <BasicTabs/>
                         </Box>
                     </MyContainer>
-                    <MyContainer>
-                        <CategoryProducts similarProducts={true} category={"محصولات جدید"}/>
-                    </MyContainer>
+                    <CategoryProducts similarProducts={true} category={"محصولات جدید"}/>
                 </MainContainer>
             </Container>
         </HeaderFooterProvider>

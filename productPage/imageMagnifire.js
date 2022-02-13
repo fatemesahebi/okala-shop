@@ -33,7 +33,7 @@ const ImageMagnifire = () => {
                 border: "1px solid rgba(0,0,0,0.1)",
                 borderRadius: "10px"
             }}>
-                <Box onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)} sx={{width: "20rem"}}>
+                <Box onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)} sx={{width: "19.9rem"}}>
                     <MagnifierPreview
                         overlayOpacity={0}
                         overlayBoxColor={"transparent"}
