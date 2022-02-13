@@ -134,8 +134,6 @@ export const Dropdown   = styled('div')({
     justifyContent: 'center',
     alignItems: 'center',
 });
-
-
 export const Buttonwrapper = styled('div')({
     top: '1rem',
     left: '1rem',
@@ -144,7 +142,6 @@ export const Buttonwrapper = styled('div')({
     flexDirection: 'column',
     boxSizing:'inherit'
 });
-
 export const Buttoncontainer = styled('div')({
     width: '40px',
     cursor: 'pointer',
