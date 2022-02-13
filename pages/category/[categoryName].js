@@ -1,17 +1,34 @@
 import {useRouter} from "next/router";
-import {CategoryProducts, FooterContainer, Header} from "../../Components";
+import React from "react";
 
+import CategoryPage from "../../CategoryPage/CategoryPage";
 
-const Category = () => {
+const Category = ({ProductList}) => {
     const router = useRouter()
-    const {categoryName} = router.query
     return (
         <div>
-            <Header/>
-
-            <FooterContainer/>
+            <CategoryPage  categoryName={router.query.categoryName}/>
         </div>
     )
 }
 
 export default Category
+
+export async function getStaticPaths() {
+
+    return {
+        paths: [
+            {params: {categoryName: 'food-stuff'}}
+        ],
+        fallback: 'blocking'
+    };
+}
+
+export async function getStaticProps(context) {
+    console.log(context)
+    let ProductList = []
+
+    return {
+        props: {ProductList}, // will be passed to the page component as props
+    }
+}

@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import Head from 'next/head';
 import CategoryPage from "../CategoryPage/CategoryPage";
-import CatedorizeResultsMobile from "../Components/CategorizeResults/CatedorizeResultsMobile";
+import CategorizeResultsMobile from "../Components/CategorizeResults/CategorizeResultsMobile";
 import {
     getBrandProducts,
 } from "../lib/axios/getData";
@@ -22,7 +22,7 @@ const Home = () => {
         </Head>
         {/*<CategoryPage/>*/}
         {/*<HomePage/>*/}
-        <CatedorizeResultsMobile/>
+        <CategorizeResultsMobile/>
     </div>)
 
 };

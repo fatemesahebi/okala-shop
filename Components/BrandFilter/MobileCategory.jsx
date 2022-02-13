@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Slide from '@mui/material/Slide';
 import CategorizeResults from "../CategorizeResults/CategorizeResults";
-import CatedorizeResultsMobile from "../CategorizeResults/CatedorizeResultsMobile";
+import CategorizeResultsMobile from "../CategorizeResults/CategorizeResultsMobile";
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -52,7 +52,7 @@ const MobileCategory=()=>{
                     </Toolbar>
                 </AppBar>
                 <List>
-                    <CatedorizeResultsMobile/>
+                    <CategorizeResultsMobile/>
                 </List>
             </Dialog>
         </div>
