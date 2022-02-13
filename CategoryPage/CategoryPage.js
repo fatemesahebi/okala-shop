@@ -106,13 +106,15 @@ function CategoryPage({categoryName}) {
                               setPriceFilter={setPriceFilter}
                               maxPrice={maxPrice} setSort={setSort} sort={sort} />
 
-        <MobileProduct/>
+        <MobileProduct finalData={finalData} page={page}/>
 
         <MenuMobile/>
         <div style={{display: 'flex'}}>
             <Box style={{marginTop: '30px'}}>
                 <SearchResults searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-                <CategorizeResults categoryName={categoryNamePe}/>
+                <CategorizeResults categoryName={categoryNamePe}
+                                   dataCategory={dataCategory}
+                />
                 <BrandFilter brandsOfCategory={brandsOfCategory} filterBrand={filterBrand}
                              setFilterBrand={setFilterBrand}/>
 

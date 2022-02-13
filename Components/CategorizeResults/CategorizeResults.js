@@ -17,12 +17,28 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import {menuData} from "../../lib/mirage/menuData";
 import {useEffect, useState} from "react";
 
-export default function CategorizeResults({categoryName}) {
-    const [categorizeResultsData, setCategorizeResultsData] = useState(menuData)
+export default function CategorizeResults({categoryName,dataCategory}) {
+    const getSubMenu=()=>{
+        for (let item of dataCategory){
+            (categorizeResultsData?.[0]?.items1?.[item.batchType]?.items2?.[item.Type]?.count)?
+                categorizeResultsData?.[0]?.items1?.[item.batchType]?.items2?.[item.Type]?.count++
+                : categorizeResultsData?.[0]?.items1?.[item.batchType]?.items2?.[item.Type]?.count=1
+        }
+    }
+  let categorizeResultsData= menuData.filter(item => item.mainTitle === categoryName)
+    getSubMenu()
+    console.log(categorizeResultsData)
 
-    useEffect(() => {
-        setCategorizeResultsData(menuData.filter(item => item.mainTitle === categoryName))
-    }, {categoryName})
+    // const [categorizeResultsData, setCategorizeResultsData] = useState(menuData)
+    // getSubMenu()
+    // console.log(getSubMenu())
+    // useEffect(async() => {
+    //     await setCategorizeResultsData(menuData.filter(item => item.mainTitle === categoryName))
+    //    await getSubMenu()
+    //     console.log(getSubMenu())
+    // }, {categoryName})
+
+
 
     return (
         <Box display={{xl: 'block', lg: 'block', md: 'none', sm: 'none', xs: 'none'}} sx={{padding: "1rem 1rem 0 0"}}>
