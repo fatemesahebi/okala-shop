@@ -7,10 +7,15 @@ import "swiper/css"
 import "swiper/css/navigation"
 import {useEffect, useState} from "react";
 import {getAllProducts, getCategoryProducts, getMostOffProducts, getMostSaleProducts} from "../../lib/axios/getData";
-
+import {categoryList} from "../../lib/mirage/categoryList";
+import {useRouter} from "next/router";
+import Link from '@mui/material/Link';
 SwiperCore.use([Navigation])
 
 const CategoryProducts = ({category, similarProducts}) => {
+
+    const router=useRouter()
+
     const [products, setProducts] = useState([])
     useEffect(() => {
         if (category === "محصولات جدید") {
@@ -31,6 +36,9 @@ const CategoryProducts = ({category, similarProducts}) => {
                 .catch(res => alert(res.status))
         }
     }, [])
+
+    const categoryPath=categoryList.filter(item=>item.groupPe===category)[0]?.groupEn || "#"
+
     return (
         <Container dir="rtl" maxWidth="100vw" sx={{
             margin: "1rem auto",
@@ -75,9 +83,13 @@ const CategoryProducts = ({category, similarProducts}) => {
                         {similarProducts ? "محصولات مشابه" : category}
                     </Typography>
                 </Box>
+                <Link href={'/category/' + categoryPath} underline="none" color="inherit">
+
                 <Box sx={{
                     paddingLeft: "1rem"
-                }}>
+                }}
+                     onClick={()=>{router.push('/category/' + categoryPath)}}
+                >
                     <Typography sx={{
                         display: similarProducts ? "none" : "block",
                         fontWeight: "bold",
@@ -86,6 +98,7 @@ const CategoryProducts = ({category, similarProducts}) => {
                         مشاهده همه
                     </Typography>
                 </Box>
+                </Link>
             </Box>
             <Box dir="rtl" sx={{
                 backgroundColor: "white !important",

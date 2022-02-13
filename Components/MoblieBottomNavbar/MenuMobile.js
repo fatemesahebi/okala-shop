@@ -9,8 +9,9 @@ import {Box, Stack, Typography} from "@mui/material";
 import {Button} from "@mui/material";
 import Image from "next/image"
 
-
+import {useRouter} from "next/router";
 export default function MenuMobile() {
+    const router=useRouter()
     return (
         <Box sx={{display: {lg: 'none', md: 'none', xs: 'flex'}, flexDirection: "column", alignItems: "center"}}>
             <Box item xs={1} sx={{
@@ -33,7 +34,7 @@ export default function MenuMobile() {
                     }}>
                         <Button
                             sx={{width: "50%", color: "#f01436", borderRadius: 0 , borderBottom: "4px solid #f01436"}}>
-                            <Stack>
+                            <Stack onClick={()=>{router.push('/')}}>
                                 <Image fill={"#f01436"} src={home}/>
                                 <Typography style={{fontWeight: "bold", fontSize: ".625rem"}}>خانه</Typography>
                             </Stack>

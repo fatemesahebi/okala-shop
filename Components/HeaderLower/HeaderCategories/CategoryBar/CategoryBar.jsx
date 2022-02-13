@@ -2,8 +2,12 @@ import {Container, Tabs, Tab, Box} from "@mui/material";
 import CategorySidebar from "../CategorySidebar/CategorySidebar";
 import {useState} from "react";
 import {menuData} from "../../../../lib/mirage/menuData"
+import {useRouter} from "next/router";
+import Link from '@mui/material/Link';
 
 const CategoryBar = () => {
+    const router=useRouter()
+
     const [value, setValue] = useState(0)
     const handleChange = (event, newValue) => {
         setValue(newValue)
@@ -39,17 +43,21 @@ const CategoryBar = () => {
                       }}
                 >
                     {menuData.map((item , index) => (
+                        <Link href={'/category/' + item.mainUrl} underline="none" color="inherit">
+
                         <Tab
                             sx={{
                                 fontWeight: "bold",
-                                color: value===index?"#f01436 !important":"black"
+                                color: value===index?"#f01436 !important":"black !important"
                             }}
                             onMouseOver={() => {
                                 document.getElementById(`category-tab-${index}`).click();
                             }}
                             label={item.mainTitle}
+                            onClick={()=>{router.push('/category/' + item.mainUrl)}}
                             id={`category-tab-${index}`}
                             aria-controls={`category-tabpanel-${index}`}/>
+                        </Link>
                     ))}
                 </Tabs>
             </Container>
