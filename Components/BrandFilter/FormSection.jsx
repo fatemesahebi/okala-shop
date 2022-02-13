@@ -6,7 +6,8 @@ import Checkbox from "@mui/material/Checkbox";
 import {InputAdornment, OutlinedInput} from "@material-ui/core";
 import Image from "next/image";
 import search from "../../public/SVG/search.svg";
-import { red } from '@mui/material/colors';
+
+
 const FormSection = ({filterBrand,setFilterBrand,brandsOfCategory}) => {
     const [filter, setFilter] = useState('')
     console.log(brandsOfCategory)
