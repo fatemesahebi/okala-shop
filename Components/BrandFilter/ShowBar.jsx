@@ -6,10 +6,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Image from 'next/image'
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import FilterSelection from "./FilterSelection";
-import {useState} from "react";
 import arrow from './arrow.svg'
 
 const ShowBar = ({setSort}) => {

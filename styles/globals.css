@@ -35,8 +35,7 @@ a {
 }
 .accordion{
 /*background-color: red;*/
-  overflow: scroll;
-  overflow-x: hidden;
+  overflow-y: scroll;
   width: 380px;}
 ::-webkit-scrollbar {
   width: 5px;

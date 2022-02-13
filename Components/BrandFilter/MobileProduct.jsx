@@ -1,6 +1,5 @@
 import React from 'react';
 import {Box, Paper} from "@mui/material";
-import ShowBar from "./ShowBar";
 import SingleProduct from "../productCard/ProductCardElements";
 import {FruitsVegetables} from "../../lib/mirage/dataFV";
 

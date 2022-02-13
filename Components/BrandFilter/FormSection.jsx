@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {Box} from "@mui/material";
 import FormGroup from "@mui/material/FormGroup";
-import {labelData} from "./labelData";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import {InputAdornment, OutlinedInput} from "@material-ui/core";
 import Image from "next/image";
 import search from "../../public/SVG/search.svg";
+import { red } from '@mui/material/colors';
 const FormSection = ({filterBrand,setFilterBrand,brandsOfCategory}) => {
     const [filter, setFilter] = useState('')
     console.log(brandsOfCategory)
@@ -28,7 +28,11 @@ const FormSection = ({filterBrand,setFilterBrand,brandsOfCategory}) => {
                 <FormGroup>
                     {brandsOfCategory?.filter(item => item.includes(filter)).length === 0 ? null :
                         brandsOfCategory?.filter(item => item.includes(filter)).map(item =>
-                        <FormControlLabel key={item} control={<Checkbox
+                        <FormControlLabel key={item} control={<Checkbox  sx={{
+                            '&.Mui-checked': {
+                                color:['#f01436'],
+                            },
+                        }}
                             onChange={(e)=>handleChangeFilterBrand(e,item)}/>} label={item}/>)}
                 </FormGroup>
             </Box>
