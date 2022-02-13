@@ -10,7 +10,7 @@ import {getAllProducts, getCategoryProducts, getMostOffProducts, getMostSaleProd
 
 SwiperCore.use([Navigation])
 
-const CategoryProducts = ({category , similarProducts}) => {
+const CategoryProducts = ({category, similarProducts}) => {
     const [products, setProducts] = useState([])
     useEffect(() => {
         if (category === "محصولات جدید") {
@@ -33,16 +33,25 @@ const CategoryProducts = ({category , similarProducts}) => {
     }, [])
     return (
         <Container dir="rtl" maxWidth="100vw" sx={{
-            margin: "1rem auto !important",
+            margin: "1rem auto",
+            padding: "0 !important",
             width: {
-                xl: "85rem",
+                xl: similarProducts ? "75rem" : "83rem",
                 lg: "100vw"
             },
+            // overflowY: "hidden",
             display: "flex",
             flexDirection: "column",
+            borderRadius: "10px",
             boxShadow: "0px 2px 8px 1px rgb(22 22 22 / 4%)"
         }}>
             <Box sx={{
+                backgroundColor: "white !important",
+                width: {
+                    xl: similarProducts ? "75rem" : "83rem",
+                    lg: "100vw"
+                },
+                borderRadius: "10px 10px 0 0 ",
                 height: "3rem",
                 display: "inline-flex",
                 alignContent: "center",
@@ -50,6 +59,7 @@ const CategoryProducts = ({category , similarProducts}) => {
                 justifyContent: "space-between"
             }}>
                 <Box sx={{
+                    paddingRight: "1rem",
                     display: "inline-flex",
                     gap: "10px"
                 }}>
@@ -62,12 +72,14 @@ const CategoryProducts = ({category , similarProducts}) => {
                     <Typography sx={{
                         fontWeight: "bold"
                     }}>
-                        {similarProducts?"محصولات مشابه":category}
+                        {similarProducts ? "محصولات مشابه" : category}
                     </Typography>
                 </Box>
-                <Box>
+                <Box sx={{
+                    paddingLeft: "1rem"
+                }}>
                     <Typography sx={{
-                        display: similarProducts ? "none":"block",
+                        display: similarProducts ? "none" : "block",
                         fontWeight: "bold",
                         color: "#02a0a4"
                     }}>
@@ -76,6 +88,7 @@ const CategoryProducts = ({category , similarProducts}) => {
                 </Box>
             </Box>
             <Box dir="rtl" sx={{
+                backgroundColor: "white !important",
                 width: {
                     xl: "100%",
                 },
@@ -86,15 +99,15 @@ const CategoryProducts = ({category , similarProducts}) => {
                 justifyContent: "center"
             }} component={"div"}>
                 <Box component={"div"} sx={{
-                    visibility:{
-                      lg:"visible",
-                      xs:"collapse"
+                    visibility: {
+                        lg: "visible",
+                        xs: "collapse"
                     },
                     ":active,:hover": {
                         backgroundColor: "white !important"
                     },
                     position: "relative !important",
-                    transform: "scale(-1)",
+                    transform: "scale(-1) translateX(1.5rem)",
                     border: "1px solid rgba(0,0,0,0.1)",
                     borderRadius: "0.65rem !important",
                     margin: "0 !important",
@@ -108,7 +121,7 @@ const CategoryProducts = ({category , similarProducts}) => {
                 </Box>
                 <Swiper
                     style={{
-                        transform: "translateX(1.5rem)",
+                        // transform: "translateX(0.5rem)",
                         display: "flex",
                         maxWidth: "100%",
                         padding: "0.5rem",
@@ -142,12 +155,12 @@ const CategoryProducts = ({category , similarProducts}) => {
                     ":active,:hover": {
                         backgroundColor: "white"
                     },
-                    visibility:{
-                        lg:"visible",
-                        xs:"collapse"
+                    visibility: {
+                        lg: "visible",
+                        xs: "collapse"
                     },
                     position: "relative !important",
-                    transform: "scale(-1) translateX(-3.5rem)",
+                    transform: "scale(-1) translateX(-2rem)",
                     border: "1px solid rgba(0,0,0,0.1)",
                     borderRadius: "15px !important",
                     margin: "0 !important",

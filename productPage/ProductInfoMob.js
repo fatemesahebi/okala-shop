@@ -4,7 +4,7 @@ const ProductInfoMob = () => {
     return (
         <div>
             {/*<Product/>*/}
-            mobile
+            {/*mobile*/}
         </div>
     );
 };

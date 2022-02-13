@@ -135,22 +135,49 @@ export const Dropdown   = styled('div')({
     alignItems: 'center',
 });
 
+export const Commentinfosec = styled('div')({
+    height: '98px',
+    display: 'flex',
+    padding:' 0 23px',
+    alignItems: 'center',
+    borderBottom: '1px solid rgba(240, 240, 240, 1)',
+    boxSizing:"inherit"
+});
 
-/////////////////!!!!!!!!former app.css styles!!!!/////////////
-// body {
-//     direction: rtl;
-// }
-// .jss51 .attributesContainer :nth-child(2n + 1) {
-//     background: rgba(240, 240, 240, 1);
-// }
-//
-// .jss51 .attributesContainer span {
-//     font-size: 0.75rem;
-//     font-weight: 400;
-//     line-height: 22px;
-// }
-// .attributesContainer span:first-child {
-//     flex: 0 0 150px;
-//     color: rgba(143, 143, 143, 1);
-//     margin-left: 12px;
-// }
+export const Rateswrapper = styled('div')({
+    height: '24px',
+    display: 'flex',
+    flex: '0 0 calc(100% - 70px)',
+    overflow: 'auto',
+    maxHeight: 'calc(100% - 70px)',
+    boxSizing: 'inherit',
+});
+export const Ratesinfo = styled('div')({
+    padding: '14px 24px 20px'
+});
+export const Ratesprogress = styled('div')({
+    paddingBottom: '10px',
+    borderBottom:' 4px solid rgba(240, 240, 240, 1)',
+});
+export const Buttonwrapper = styled('div')({
+    top: '1rem',
+    left: '1rem',
+    display: 'flex',
+    position: 'relative',
+    flexDirection: 'column',
+    boxSizing:'inherit'
+});
+
+export const Buttoncontainer = styled('div')({
+    width: '40px',
+    cursor: 'pointer',
+    display: 'flex',
+    padding: '5px 0',
+    position: 'relative',
+    alignItems: 'center',
+    borderRadius: '8px',
+    margiBottom: '8px',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(248, 248, 248, 1)',
+})
