@@ -20,7 +20,7 @@ import {useEffect, useState} from "react";
 import {getCategoryProducts} from "../lib/axios/getData";
 import MobileHeaderCategory from "../Components/BrandFilter/MobileHeaderCategory";
 import MobileProduct from "../Components/BrandFilter/MobileProduct";
-
+import {categoryList} from "./categoryList"
 
 
 function CategoryPage({categoryName}) {
@@ -33,15 +33,18 @@ function CategoryPage({categoryName}) {
     const [offerFilter, setOfferFilter] = useState(false)
     const [sort, setSort] = useState("mostSale")
     const [screanWidth,setScreanWidth]=useState(750)
-
     let finalData = []
     let pageCount = 1
+
+    let categoryNamePe= categoryList.filter(item=>item.groupEn===categoryName)[0].groupPe
+    console.log({categoryName})
+    console.log({categoryNamePe})
     // let category= (categoryName)? categoryName : "میوه و سبزیجات"
     useEffect(() => {
-        getCategoryProducts(categoryName).then(data => setDataCategory(data.products))
+        getCategoryProducts(categoryNamePe).then(data => setDataCategory(data.products))
             .catch(error => console.log(error))
          setScreanWidth(window.innerWidth)
-
+        console.log(dataCategory)
 
     }, [screanWidth])
 
@@ -80,7 +83,8 @@ function CategoryPage({categoryName}) {
     }
     const getBrandsOfCategory = () => {
         let brandsOfCategory = []
-        dataCategory.map(item => (!brandsOfCategory.includes(item.brand)) ? brandsOfCategory.push(item.brand) : null)
+        dataCategory.map(item => (!brandsOfCategory.includes(item.brand)) ?
+            brandsOfCategory.push(item.brand) : null)
         return brandsOfCategory
     }
 
@@ -96,7 +100,7 @@ function CategoryPage({categoryName}) {
         {/*<BrandFilter/>*/}
         {/*<CommodityFilters/>*/}
         {/*<PaginationRounded/>*/}
-        <MobileHeaderCategory categoryName={categoryName} brandsOfCategory={brandsOfCategory}
+        <MobileHeaderCategory categoryName={categoryNamePe} brandsOfCategory={brandsOfCategory}
                               filterBrand={filterBrand} setFilterBrand={setFilterBrand}
                               setOfferFilter={setOfferFilter} offerFilter={offerFilter}
                               setPriceFilter={setPriceFilter}
@@ -108,7 +112,7 @@ function CategoryPage({categoryName}) {
         <div style={{display: 'flex'}}>
             <Box style={{marginTop: '30px'}}>
                 <SearchResults searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-                <CategorizeResults categoryName={categoryName}/>
+                <CategorizeResults categoryName={categoryNamePe}/>
                 <BrandFilter brandsOfCategory={brandsOfCategory} filterBrand={filterBrand}
                              setFilterBrand={setFilterBrand}/>
 

@@ -14,7 +14,7 @@ const MobileHeaderCategory = ({categoryName,brandsOfCategory,filterBrand,offerFi
     const categorizeResultsData = menuData.filter(item => item.mainTitle === categoryName)
     console.log(categorizeResultsData)
     let categoryTags = categorizeResultsData ?
-        [categorizeResultsData[0].items1[0].title, categorizeResultsData[0].items1[1].title]
+        [categorizeResultsData?.[0]?.items1?.[0]?.title, categorizeResultsData?.[0]?.items1?.[1]?.title]
         : ['', '']
     return (
         <Box>

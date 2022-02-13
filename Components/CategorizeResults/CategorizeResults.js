@@ -18,15 +18,12 @@ import {menuData} from "../../lib/mirage/menuData";
 import {useEffect, useState} from "react";
 
 export default function CategorizeResults({categoryName}) {
-   const [categorizeResultsData,setCategorizeResultsData]=useState(menuData)
+    const [categorizeResultsData, setCategorizeResultsData] = useState(menuData)
 
-    useEffect(()=>{
+    useEffect(() => {
         setCategorizeResultsData(menuData.filter(item => item.mainTitle === categoryName))
-        console.log("&&&")
-    },{categoryName})
-    console.log(categorizeResultsData)
-    console.log(categorizeResultsData[0]?.items1[0]?.title)
-    console.log(categorizeResultsData[0]?.items1[0]?.items2[0]?.items3[0]?.title)
+    }, {categoryName})
+
 
     return (
         <Box display={{xl: 'block', lg: 'block', md: 'none', sm: 'none', xs: 'none'}} sx={{padding: "1rem 1rem 0 0"}}>
@@ -50,11 +47,11 @@ export default function CategorizeResults({categoryName}) {
                     <Stack sx={{flexDirection: "row", paddingRight: "1rem"}}>
                         <Image src={arrowdwon}/>
                         <Button style={{color: "gray", fontSize: ".9rem", fontWeight: "bold", lineHeight: ".7rem"}}>
-                            {categorizeResultsData[0].mainTitle}</Button>
+                            {categorizeResultsData?.[0]?.mainTitle}</Button>
                     </Stack>
-                    {categorizeResultsData[0]?.items1?.map((cat1, i) =>
+                    {categorizeResultsData?.[0]?.items1?.map((cat1, i) =>
                         <>
-                            <Stack key={i+cat1} sx={{flexDirection: "row", marginRight: "2.2rem"}}>
+                            <Stack key={i + cat1} sx={{flexDirection: "row", marginRight: "2.2rem"}}>
                                 <Image src={arrowleft}/>
                                 <Button style={{
                                     color: "gray",
@@ -63,11 +60,11 @@ export default function CategorizeResults({categoryName}) {
                                     marginRight: "-.6rem",
                                     lineHeight: ".7rem"
                                 }}>
-                                    {categorizeResultsData[0]?.items1[i]?.title}</Button>
+                                    {categorizeResultsData?.[0]?.items1?.[i]?.title}</Button>
                             </Stack>
-                            {categorizeResultsData[0]?.items1[i]?.items2?.map((cat2, j) =>
+                            {categorizeResultsData?.[0]?.items1?.[i]?.items2?.map((cat2, j) =>
                                 <>
-                                    <Stack key={j+cat2} sx={{flexDirection: "row", marginRight: "3rem"}}>
+                                    <Stack key={j + cat2} sx={{flexDirection: "row", marginRight: "3rem"}}>
                                         <Image src={arrowdwon}/>
                                         <Button style={{
                                             color: "gray",
@@ -75,19 +72,20 @@ export default function CategorizeResults({categoryName}) {
                                             fontWeight: "bold",
                                             lineHeight: ".7rem"
                                         }}>
-                                            {categorizeResultsData[0]?.items1[i]?.items2[j]?.title}</Button>
+                                            {categorizeResultsData?.[0]?.items1?.[i]?.items2?.[j]?.title}</Button>
                                     </Stack>
                                     {
-                                        categorizeResultsData[0]?.items1[i]?.items2[j]?.items3?.map((cat3, k) =>
+                                        categorizeResultsData?.[0]?.items1?.[i]?.items2?.[j]?.items3?.map((cat3, k) =>
                                             <>
-                                                <Stack key={k+cat3} sx={{flexDirection: "row", marginRight: "3.9rem"}}>
+                                                <Stack key={k + cat3}
+                                                       sx={{flexDirection: "row", marginRight: "3.9rem"}}>
                                                     <Button style={{
                                                         color: "gray",
                                                         fontSize: ".9rem",
                                                         fontWeight: "bold",
                                                         lineHeight: ".7rem"
                                                     }}>
-                                                        {categorizeResultsData[0]?.items1[i]?.items2[j]?.items3[k]?.title}</Button>
+                                                        {categorizeResultsData?.[0]?.items1?.[i]?.items2?.[j]?.items3?.[k]?.title}</Button>
                                                 </Stack>
                                             </>
                                         )}
