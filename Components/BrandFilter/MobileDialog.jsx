@@ -9,7 +9,7 @@ import OnlyAvailableProducts from "../CommodityFilters/OnlyAvailableProducts";
 import OnlyOfferProducts from "../CommodityFilters/OnlyOfferProducts";
 import Image from "next/image";
 import arrow from "./arrow.svg";
-import sort from '../PriceFilter/sort.svg'
+import sortIcon from '../PriceFilter/sort.svg'
 import next from './next.svg'
 import FilterMobileDrawer from "./FilterMobileDrawer";
 import {Box} from "@material-ui/core";
@@ -58,7 +58,7 @@ const MobileDialog = ({
                         flexGrow: '0.97',
                         justifyContent: 'center'
                     }}>
-                        <Image src={arrow}/><FilterMobileDrawer sort={sort} setSort={setSort} />
+                        <Image src={arrow}/><FilterMobileDrawer sort={sort} setSort={setSort}  />
                     </Typography>
 
 
@@ -70,7 +70,7 @@ const MobileDialog = ({
                                 flexGrow: '1',
                                 "&.MuiButtonBase-root:hover": {border: "none", backgroundColor: 'transparent'}
                             }}>
-                        <Image src={sort}/>
+                        <Image src={sortIcon}/>
                         <Typography
                             style={{
                                 color: 'black',

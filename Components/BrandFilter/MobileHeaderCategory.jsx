@@ -66,7 +66,7 @@ const MobileHeaderCategory = ({categoryName,brandsOfCategory,filterBrand,offerFi
                                   filterBrand={filterBrand} setFilterBrand={setFilterBrand}
                                   setOfferFilter={setOfferFilter} offerFilter={offerFilter}
                                   setPriceFilter={setPriceFilter}
-                                  maxPrice={maxPrice} setSort={setSort} sort={sort}/>
+                                  maxPrice={maxPrice}/>
                 </Box>
             </AppBar>
 
@@ -76,7 +76,3 @@ const MobileHeaderCategory = ({categoryName,brandsOfCategory,filterBrand,offerFi
 };
 
 export default MobileHeaderCategory;
-//
-
-//                             </Box>
-//
