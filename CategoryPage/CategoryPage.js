@@ -22,6 +22,7 @@ import MobileHeaderCategory from "../Components/BrandFilter/MobileHeaderCategory
 import MobileProduct from "../Components/BrandFilter/MobileProduct";
 
 
+
 function CategoryPage({categoryName}) {
     let maxPrice = 1185000
     const [dataCategory, setDataCategory] = useState([])
@@ -100,7 +101,9 @@ function CategoryPage({categoryName}) {
                               setOfferFilter={setOfferFilter} offerFilter={offerFilter}
                               setPriceFilter={setPriceFilter}
                               maxPrice={maxPrice} setSort={setSort} sort={sort} />
+
         <MobileProduct/>
+
         <MenuMobile/>
         <div style={{display: 'flex'}}>
             <Box style={{marginTop: '30px'}}>
