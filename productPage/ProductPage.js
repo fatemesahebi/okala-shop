@@ -11,10 +11,14 @@ import AddIcon from "@mui/icons-material/Add";
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import ImageMagnifire from "./imageMagnifire";
+import PN from "persian-number";
 
 const ColorButton = styled(Button)(({theme}) => ({
-    width: '10rem !important',
-    height: '38px !important',
+    position: "absolute",
+    bottom: 0,
+    width: '14rem !important',
+    height: '3rem !important',
     minWidth: '104px !important',
     backgroundColor: 'rgb(240, 20, 54)',
     borderRadius: ' 12px',
@@ -62,6 +66,7 @@ const ThumbnailWrapper = styled('div')({
 
 const InformationWrapper = styled('div')({
     width: '32rem',
+    minHeight: "20rem",
     display: 'flex',
     flexGrow: '1',
     flexDirection: 'column',
@@ -136,117 +141,127 @@ const breadcrumbs = [
 
 const ProductPage = () => {
     return (
-        <HeaderFooterProvider>
-            <ProductInfo/>
-            {/*<ImageMagnifire/>*/}
-            <Container maxWidth={'false'} sx={{background: '#f8f8f8'}}>
+        <Box display={{md: "block" , xs: "none"}}>
+            <HeaderFooterProvider>
+                <Container maxWidth={'false'} sx={{background: '#f8f8f8'}}>
 
-                <MainContainer>
-                    <Stack sx={{direction: "rtl", marginBottom: '36px',}} spacing={2}>
-                        <Breadcrumbs
-                            separator={<NavigateBeforeIcon fontSize="small"/>}
-                            aria-label="breadcrumb"
-                        >
-                            {breadcrumbs}
-                        </Breadcrumbs>
-                    </Stack>
-                    <MyContainer>
-                        <Box>
-                            <InfoSection>
-                                <ThumbnailWrapper>
-
-                                </ThumbnailWrapper>
-                                <InformationWrapper>
-                                    <Typography variant={"h6"} component={"div"} sx={{
-                                        fontSize: '1.25rem',
-                                        fontWeight: 'bold',
-                                        marginBottom: '47px'
-                                    }}>
-                                        شامپو بدن مناسب پوست چرب
-                                        بامبو 400 میلی لیتری دیپ سنس
-                                    </Typography>
-                                    <BrandWrapper>
-                                        <Button>
-                                            <a> دیپ سنس </a>
-                                        </Button>
-                                    </BrandWrapper>
-                                    <CategoryWrapper>
-                                        <Typography variant={"h6"} component={"span"}>
-                                            دسته بندی :
-                                            <a style={{
-                                                color: 'rgba(0, 134, 132, 1)',
-                                                fontSize: '1rem',
-                                                fontWeight: '500'
-                                            }} href="/#"> شامپو بدن</a>
+                    <MainContainer>
+                        <Stack sx={{direction: "rtl", marginBottom: '36px',}} spacing={2}>
+                            <Breadcrumbs
+                                sx={{
+                                    fontSize: "small",
+                                    fontWeight: "bold"
+                                }}
+                                separator={<NavigateBeforeIcon fontSize="small"/>}
+                                aria-label="breadcrumb"
+                            >
+                                {breadcrumbs}
+                            </Breadcrumbs>
+                        </Stack>
+                        <MyContainer>
+                            <Box>
+                                <InfoSection>
+                                    <ImageMagnifire/>
+                                    <InformationWrapper>
+                                        <Typography variant={"h6"} component={"div"} sx={{
+                                            fontSize: '1.25rem',
+                                            fontWeight: 'bold',
+                                            marginBottom: '47px'
+                                        }}>
+                                            شامپو بدن مناسب پوست چرب
+                                            بامبو 400 میلی لیتری دیپ سنس
                                         </Typography>
-                                    </CategoryWrapper>
-                                    <Usersrate sx={{position: 'inherit'}}>
-                                        <StarOutlineIcon/>
-                                        <span>4.0</span>
-                                    </Usersrate>
-                                    <AmountWrapper>
-                                        <ColorButton>
-                                            <AddIcon ml={20}/>
-                                            افزودن به سبد خرید
-                                        </ColorButton>
-                                        <Box sx={{display: 'flex', flexDirection: 'column',}}>
-                                            <Box>
-                                                <Typography component={"span"} sx={{
-                                                    display: "inline-block",
-                                                    marginLeft: '5px',
-                                                    color: '#fff',
-                                                    width: '45px',
+                                        <BrandWrapper>
+                                            <Button sx={{
+                                                fontSize: '1.1rem',
+                                                fontWeight: "700"
+                                            }}>
+                                                <a> دیپ سنس </a>
+                                            </Button>
+                                        </BrandWrapper>
+                                        <CategoryWrapper>
+                                            <Typography fontWeight={700} variant={"h6"} component={"span"}>
+                                                دسته بندی :
+                                                <a style={{
+                                                    color: 'rgba(0, 134, 132, 1)',
                                                     fontSize: '1rem',
-                                                    textAlign: 'center',
-                                                    fontWeight: '500',
-                                                    lineHeight: '30px',
-                                                    borderRadius: '8px',
-                                                    backgroundColor: '#4CB04C',
-                                                }}>
-                                                    20%
+                                                    fontWeight: '700'
+                                                }} href="/#"> شامپو بدن</a>
+                                            </Typography>
+                                        </CategoryWrapper>
+                                        <Usersrate sx={{position: 'inherit'}}>
+                                            <StarOutlineIcon/>
+                                            <span>4.0</span>
+                                        </Usersrate>
+                                        <AmountWrapper>
+                                            <ColorButton>
+                                                <AddIcon sx={{
+                                                    fontSize: "1.75rem"
+                                                }} ml={20}/>
+                                                <Typography fontSize={"1.15rem"} fontWeight={"bold"}>
+                                                    افزودن به سبد خرید
                                                 </Typography>
-                                                <Typography component={"span"} sx={{
-                                                    color: 'rgba(175, 175, 175, 1)',
-                                                    fontSize: '1rem',
-                                                    textDecoration: 'line-through',
-                                                }}>
-                                                    ۴۴۰٬۰۰۰
-                                                </Typography>
+                                            </ColorButton>
+                                            <Box sx={{display: 'flex', flexDirection: 'column', position: "absolute" , bottom: 0 , left: 0}}>
+                                                <Box>
+                                                    <Typography component={"span"} sx={{
+                                                        padding: "0.2rem 0.8rem",
+                                                        display: "inline-block",
+                                                        marginLeft: '5px',
+                                                        color: '#fff',
+                                                        fontSize: '1rem',
+                                                        textAlign: 'center',
+                                                        fontWeight: '700',
+                                                        lineHeight: '30px',
+                                                        borderRadius: '8px',
+                                                        backgroundColor: '#4CB04C',
+                                                    }}>
+                                                        {PN.convertEnToPe(20)}%
+                                                    </Typography>
+                                                    <Typography component={"span"} sx={{
+                                                        paddingRight:"1rem",
+                                                        color: 'rgba(175, 175, 175, 1)',
+                                                        fontSize: '1.3rem',
+                                                        fontWeight: "700",
+                                                        textDecoration: 'line-through',
+                                                    }}>
+                                                        ۴۴۰٬۰۰۰
+                                                    </Typography>
 
+                                                </Box>
+                                                <Box>
+                                                    <Typography component={"span"} sx={{
+                                                        color: 'rgba(54, 54, 54, 1)',
+                                                        fontSize: '1.75rem',
+                                                        fontWeight: 'bold',
+                                                    }}>
+                                                        ۳۵۲٬۰۰۰
+                                                    </Typography>
+                                                    <Typography component={"span"} sx={{
+                                                        color: 'rgba(54, 54, 54, 1)',
+                                                        fontSize: '1.55rem',
+                                                        marginRight: ' 2px',
+                                                        fontWeight: 'bold',
+                                                    }}>
+                                                        ریال
+                                                    </Typography>
+                                                </Box>
                                             </Box>
-                                            <Box>
-                                                <Typography component={"span"} sx={{
-                                                    color: 'rgba(54, 54, 54, 1)',
-                                                    fontSize: '1.25rem',
-                                                    fontWeight: 'bold',
-                                                }}>
-                                                    ۳۵۲٬۰۰۰
-                                                </Typography>
-                                                <Typography component={"span"} sx={{
-                                                    color: 'rgba(54, 54, 54, 1)',
-                                                    fontSize: '1rem',
-                                                    marginRight: ' 2px',
-                                                    fontWeight: 'bold',
-                                                }}>
-                                                    ریال
-                                                </Typography>
-                                            </Box>
-                                        </Box>
-                                    </AmountWrapper>
+                                        </AmountWrapper>
 
-                                </InformationWrapper>
-                            </InfoSection>
-                        </Box>
-                        <Box sx={{maxWidth: '100%'}}>
-                            <BasicTabs/>
-                        </Box>
-                    </MyContainer>
-                    <MyContainer>
+                                    </InformationWrapper>
+                                </InfoSection>
+                            </Box>
+                            <Box sx={{maxWidth: '100%'}}>
+                                <BasicTabs/>
+                            </Box>
+                        </MyContainer>
                         <CategoryProducts similarProducts={true} category={"محصولات جدید"}/>
-                    </MyContainer>
-                </MainContainer>
-            </Container>
-        </HeaderFooterProvider>
+                    </MainContainer>
+                </Container>
+            </HeaderFooterProvider>
+        </Box>
+
     );
 };
 

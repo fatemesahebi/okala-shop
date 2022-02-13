@@ -53,16 +53,23 @@ export default function BasicTabs() {
                        TabIndicatorProps={{
                            style: {
                                backgroundColor: "#f01436",
+
                            }
                        }}
                 > >
                     <Tab sx={{
+                        fontSize: "1.1rem",
+                        color: value===0?"#f01436 !important":"black",
                         fontWeight: "bold",}}
                          label="ویژگی محصول" {...a11yProps(0)} />
                     <Tab sx={{
+                        fontSize: "1.1rem",
+                        color: value===1?"#f01436 !important":"black",
                         fontWeight: "bold",}}
                          label="توضیحات محصول" {...a11yProps(1)} />
-                    <Tab    sx={{
+                    <Tab sx={{
+                        fontSize: "1.1rem",
+                        color: value===2?"#f01436 !important":"black",
                         fontWeight: "bold"}}
                             label="نظرات کاربران" {...a11yProps(2)} />
                 </Tabs>

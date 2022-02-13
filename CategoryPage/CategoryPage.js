@@ -95,7 +95,11 @@ function CategoryPage({categoryName}) {
         {/*<BrandFilter/>*/}
         {/*<CommodityFilters/>*/}
         {/*<PaginationRounded/>*/}
-        <MobileHeaderCategory categoryName={categoryName} />
+        <MobileHeaderCategory categoryName={categoryName} brandsOfCategory={brandsOfCategory}
+                              filterBrand={filterBrand} setFilterBrand={setFilterBrand}
+                              setOfferFilter={setOfferFilter} offerFilter={offerFilter}
+                              setPriceFilter={setPriceFilter}
+                              maxPrice={maxPrice} setSort={setSort} sort={sort} />
         <MobileProduct/>
         <MenuMobile/>
         <div style={{display: 'flex'}}>
@@ -109,7 +113,7 @@ function CategoryPage({categoryName}) {
                 <PriceFilter maxPrice={maxPrice} priceFilter={priceFilter} setPriceFilter={setPriceFilter}/>
             </Box>
             <Paper elevation={0} sx={{
-                display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '30px',
+                display:{xl: 'flex', lg: 'flex', md: 'flex', sm: 'none', xs: 'none'}, flexDirection: 'column', alignItems: 'center', marginTop: '30px',
                 borderRadius: '2rem'
             }}
             >
@@ -121,6 +125,7 @@ function CategoryPage({categoryName}) {
                           offerFilter={offerFilter}
                           maxPrice={maxPrice}
                           setPriceFilter={setPriceFilter}
+
 
                 />
                 <Paper elevation={0} sx={{my: '20px'}}>

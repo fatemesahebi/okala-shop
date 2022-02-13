@@ -1,20 +1,20 @@
 import React from 'react';
-import { styled } from '@mui/system';
+import {styled} from '@mui/system';
 
 const StyledList = styled('ul')({
     display: 'flex',
     flexWrap: 'wrap',
     listStyle: 'none',
-    boxSizing:'Border-box',
+    boxSizing: 'Border-box',
 });
 
 const Content = styled('div')({
     display: 'flex',
     padding: '16px 12px',
-    background: 'rgba(248, 248, 248, 1)',
-    minHeight:' 48px',
+    // background: 'rgba(248, 248, 248, 1)',
+    minHeight: ' 48px',
     alignItems: 'center',
-    boxSizing:'inherit'
+    boxSizing: 'inherit'
 })
 
 const CustomSpan = styled('span')({
@@ -23,48 +23,45 @@ const CustomSpan = styled('span')({
         marginLeft: '12px',
     },
     fontSize: ' .875rem',
-    fontWeight: '400',
-    lineHeight: '16px',  boxSizing:'inherit'
+    fontWeight: '700',
+    lineHeight: '16px', boxSizing: 'inherit'
 });
-
-const Customli = styled('li')({
-    flexGrow: '0',
-    flexShrink: '0',
-    flexBasis:'33.3333%',
-    padding: '0 2px',
-    maxWidth: '33.3333%',
-    marginBottom: '4px',
-    boxSizing:'inherit'
-
-})
 
 export const Data = [
     {
         summary: 'ویژگی های محصول',
         detail:
-            <StyledList >
-                <Customli>
-                    <Content>
-                        <CustomSpan>
-                            سایر ویژگی ها :
-                        </CustomSpan>
-                        <CustomSpan>
-                            شوینده غیر صابونی با کف مطلوب.آبکشی آسان
+            <>
+                <Content>
+                    <CustomSpan>
+                        سایر ویژگی ها :
+                    </CustomSpan>
+                    <CustomSpan>
+                        شوینده غیر صابونی با کف مطلوب.آبکشی آسان
 
-                        </CustomSpan>
-                    </Content>
-                </Customli>
-                <Customli>
-                    <Content>
-                        <CustomSpan>
-                            حجم
-                        </CustomSpan>
-                        <CustomSpan>
-                            400 میلی لیتر
+                    </CustomSpan>
+                </Content>
+            </>
+    },
+    {
+        summary: 'ویژگی های محصول',
+        detail:
+            <>
+                <Content>
+                    <CustomSpan>
+                        حجم
+                    </CustomSpan>
+                    <CustomSpan>
+                        400 میلی لیتر
 
-                        </CustomSpan>
-                    </Content>
-                </Customli><Customli>
+                    </CustomSpan>
+                </Content>
+            </>
+    },
+    {
+        summary: 'ویژگی های محصول',
+        detail:
+            <>
                 <Content>
                     <CustomSpan>
                         کاربرد
@@ -74,7 +71,12 @@ export const Data = [
 
                     </CustomSpan>
                 </Content>
-            </Customli><Customli>
+            </>
+    },
+    {
+        summary: 'ویژگی های محصول',
+        detail:
+            <>
                 <Content>
                     <CustomSpan>
                         جنس بسته بندی :
@@ -84,7 +86,12 @@ export const Data = [
                         پلاستیک
                     </CustomSpan>
                 </Content>
-            </Customli><Customli>
+            </>
+    },
+    {
+        summary: 'ویژگی های محصول',
+        detail:
+            <>
                 <Content>
                     <CustomSpan>
                         ویتامین ها :
@@ -95,7 +102,12 @@ export const Data = [
 
                     </CustomSpan>
                 </Content>
-            </Customli><Customli>
+            </>
+    },
+    {
+        summary: 'ویژگی های محصول',
+        detail:
+            <>
                 <Content>
                     <CustomSpan>
                         شماره مجوز/ پروانه بهداشت :
@@ -104,7 +116,12 @@ export const Data = [
                         4495/ظ/56
                     </CustomSpan>
                 </Content>
-            </Customli><Customli>
+            </>
+    },
+    {
+        summary: 'ویژگی های محصول',
+        detail:
+            <>
                 <Content>
                     <CustomSpan>
                         بسته بندی قابل بازیافت :
@@ -113,78 +130,103 @@ export const Data = [
                         بله
                     </CustomSpan>
                 </Content>
-            </Customli>
-                <Customli>
-                    <Content>
-                        <CustomSpan>
-                            مناسب برای نوع پوست :
+            </>
+    },
+    {
+        summary: 'ویژگی های محصول',
+        detail:
+            <>
+                <Content>
+                    <CustomSpan>
+                        مناسب برای نوع پوست :
 
-                        </CustomSpan>
-                        <CustomSpan>
-                            مناسب پوست های چرب
-                        </CustomSpan>
-                    </Content>
-                </Customli>
-                <Customli>
-                    <Content>
-                        <CustomSpan>
-                            شرایط نگهداری :
+                    </CustomSpan>
+                    <CustomSpan>
+                        مناسب پوست های چرب
+                    </CustomSpan>
+                </Content>
+            </>
+    },
+    {
+        summary: 'ویژگی های محصول',
+        detail:
+            <>
+                <Content>
+                    <CustomSpan>
+                        شرایط نگهداری :
 
-                        </CustomSpan>
-                        <CustomSpan>
-                            در دمای معمولی نگه داری شود.
+                    </CustomSpan>
+                    <CustomSpan>
+                        در دمای معمولی نگه داری شود.
 
-                        </CustomSpan>
-                    </Content>
-                </Customli>
-                <Customli>
-                    <Content>
-                        <CustomSpan>
-                            مواد تشکیل دهنده (ترکیبات) :
+                    </CustomSpan>
+                </Content>
+            </>
+    },
+    {
+        summary: 'ویژگی های محصول',
+        detail:
+            <>
+                <Content>
+                    <CustomSpan>
+                        مواد تشکیل دهنده (ترکیبات) :
 
-                        </CustomSpan>
-                        <CustomSpan>
-                            آب، سدیم هیالورونات، عصاره درخت چای، سالیسیلیک اسید، آلانتوئین، عصاره بامبو، روغن آملا، بیزابولول، سورفاکتانت های غیر آنیونی و آمفوتریک، گلیسرین، پروپیلن گلیکول، کوکو گلوکوزید، دکسپانتنول، فنوکسی اتانول، سدیم کلراید، کاپریلیل گلیکول، عصاره آلوئه ورا، اسانس، ا.د.ت.آ، ویتامین E، سیتریک اسید.
+                    </CustomSpan>
+                    <CustomSpan>
+                        آب، سدیم هیالورونات، عصاره درخت چای، سالیسیلیک اسید، آلانتوئین، عصاره بامبو، روغن آملا،
+                        بیزابولول، سورفاکتانت های غیر آنیونی و آمفوتریک، گلیسرین، پروپیلن گلیکول، کوکو گلوکوزید،
+                        دکسپانتنول، فنوکسی اتانول، سدیم کلراید، کاپریلیل گلیکول، عصاره آلوئه ورا، اسانس، ا.د.ت.آ،
+                        ویتامین E، سیتریک اسید.
 
-                        </CustomSpan>
-                    </Content>
-                </Customli>
-                <Customli>
-                    <Content>
-                        <CustomSpan>
-                            وزن محصول :
+                    </CustomSpan>
+                </Content>
+            </>
+    },
+    {
+        summary: 'ویژگی های محصول',
+        detail:
+            <>
+                <Content>
+                    <CustomSpan>
+                        وزن محصول :
 
-                        </CustomSpan>
-                        <CustomSpan>
-                            400 گرم
+                    </CustomSpan>
+                    <CustomSpan>
+                        400 گرم
 
-                        </CustomSpan>
-                    </Content>
-                </Customli>
-                <Customli>
-                    <Content>
-                        <CustomSpan>
-                            مناسب
-                        </CustomSpan>
-                        <CustomSpan>
-                            مناسب برای بانوان و آقایان
+                    </CustomSpan>
+                </Content>
+            </>
+    },
+    {
+        summary: 'ویژگی های محصول',
+        detail:
+            <>
+                <Content>
+                    <CustomSpan>
+                        مناسب
+                    </CustomSpan>
+                    <CustomSpan>
+                        مناسب برای بانوان و آقایان
 
-                        </CustomSpan>
-                    </Content>
-                </Customli>
-                <Customli>
-                    <Content>
-                        <CustomSpan>
-                            عصاره :
+                    </CustomSpan>
+                </Content>
+            </>
+    },
+    {
+        summary: 'ویژگی های محصول',
+        detail:
+            <>
+                <Content>
+                    <CustomSpan>
+                        عصاره :
 
-                        </CustomSpan>
-                        <CustomSpan>
-                            درخت چای، بامبو، آلوئه ورا
+                    </CustomSpan>
+                    <CustomSpan>
+                        درخت چای، بامبو، آلوئه ورا
 
-                        </CustomSpan>
-                    </Content>
-                </Customli>
-
-            </StyledList>
-    }
+                    </CustomSpan>
+                </Content>
+            </>
+    },
 ];

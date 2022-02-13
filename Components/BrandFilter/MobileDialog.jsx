@@ -1,13 +1,5 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import ListItem from '@mui/material/ListItem';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+import {Button, ListItem, List, Divider, AppBar, Toolbar, IconButton, Typography, Dialog} from '@mui/material';
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Slide from '@mui/material/Slide';
 import MobileBrandFilter from "./MobileBrandFilter";
@@ -17,15 +9,24 @@ import OnlyAvailableProducts from "../CommodityFilters/OnlyAvailableProducts";
 import OnlyOfferProducts from "../CommodityFilters/OnlyOfferProducts";
 import Image from "next/image";
 import arrow from "./arrow.svg";
+import sortIcon from '../PriceFilter/sort.svg'
+import nextIcon from './nextIcon.svg'
 import FilterMobileDrawer from "./FilterMobileDrawer";
-import sort from './sortIcon.png'
-import Container from "@mui/material/Container";
-import MobileHeaderCategory from "./MobileHeaderCategory";
+import {Box} from "@material-ui/core";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="right" ref={ref} {...props} />;
 });
-const MobileDialog = ({brandsOfCategory,setFilterBrand,filterBrand,setOfferFilter,offerFilter,setPriceFilter,maxPrice}) => {
+const MobileDialog = ({
+                          brandsOfCategory,
+                          setFilterBrand,
+                          filterBrand,
+                          setOfferFilter,
+                          offerFilter,
+                          setPriceFilter,
+                          maxPrice,sort,setSort
+
+                      }) => {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -35,23 +36,50 @@ const MobileDialog = ({brandsOfCategory,setFilterBrand,filterBrand,setOfferFilte
     const handleClose = () => {
         setOpen(false);
     };
-    const handleDeleteFilter=()=>{
+    const handleDeleteFilter = () => {
         setOpen(false)
         setFilterBrand([])
         setOfferFilter(false)
-        setPriceFilter([0,maxPrice])
+        setPriceFilter([0, maxPrice])
     }
 
     return (
         <div>
-            <AppBar position="static" color={'white'} elevation={0} sx={{height:'3rem',display:{xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none'}}}>
-                <Toolbar sx={{display:'flex',justifyContent:'space-around',flexGrow:'1',alignItems:'center',alignContent:'center'}}>
-                    <Typography>
-                        <FilterMobileDrawer/>
+            <AppBar position="static" color={'white'} elevation={0}
+                    sx={{height: '3rem', display: {xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none'}}}>
+                <Toolbar sx={{
+                    display: 'flex',
+                    justifyContent: 'space-around',
+                    alignItems: 'center',
+                    alignContent: 'center'
+                }}>
+                    <Typography style={{
+                        display: 'flex',
+                        flexGrow: '0.97',
+                        justifyContent: 'center'
+                    }}>
+                        <Image src={arrow}/><FilterMobileDrawer sort={sort} setSort={setSort}  />
                     </Typography>
-                    <Divider orientation="vertical" variant="middle" flexItem sx={{height:'2rem'}} />
-                    <Button onClick={handleClickOpen} variant="outlined" sx={{border: 'none'}}>
-                        <Typography  style={{color: 'black',display:'flex',alignItems:'center'}}><Image width={15} src={arrow}/>فیلترها</Typography>
+
+
+                    <Divider orientation="vertical" variant="middle" flexItem sx={{height: '2rem'}}/>
+                    <Button onClick={handleClickOpen} variant="outlined"
+                            sx={{
+                                border: 'none',
+                                display: 'flex',
+                                flexGrow: '1',
+                                "&.MuiButtonBase-root:hover": {border: "none", backgroundColor: 'transparent'}
+                            }}>
+                        <Image src={sortIcon}/>
+                        <Typography
+                            style={{
+                                color: 'black',
+                                display: 'flex',
+                                alignItems: 'center',
+                                fontWeight: 'bold',
+                                marginRight: '5px',
+                                fontSize: '14px'
+                            }}>فیلترها</Typography>
                     </Button>
                 </Toolbar>
             </AppBar>
@@ -80,26 +108,40 @@ const MobileDialog = ({brandsOfCategory,setFilterBrand,filterBrand,setOfferFilte
                 </AppBar>
                 <List>
                     <ListItem button>
-                        <Typography><MobileCategory/></Typography>
+
                     </ListItem>
                     <Divider/>
-                    <ListItem button>
+                    <ListItem button sx={{display: 'flex', justifyContent: 'space-between', flexGrow: '1'}}>
+                        <Typography><MobileCategory/></Typography>
+                        <Image src={nextIcon}/>
+                    </ListItem>
+                    <Divider/>
+                    <ListItem button sx={{display: 'flex', justifyContent: 'space-between', flexGrow: '1'}}>
                         <Typography><MobileBrandFilter brandsOfCategory={brandsOfCategory}
-                                                       filterBrand={filterBrand} setFilterBrand={setFilterBrand}/></Typography>
+                                                       filterBrand={filterBrand}
+                                                       setFilterBrand={setFilterBrand}/></Typography>
+                        <Image src={nextIcon}/>
                     </ListItem>
                     <Divider/>
                     <ListItem>
-                        <div>
-                            <div>
-                                <div style={{display:'flex',justifyContent:'space-between'}}>
-                                    <Typography>محدوده قیمت</Typography>
-                                    <Typography>مقدار پیشفرض</Typography>
-                                </div>
-                                <div style={{display:'flex',justifyContent:'center',width:'100%'}}>
-                                    <PriceFilterSlider/>
-                                </div>
+                        <div style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            flexGrow: '1'
+                        }}>
+                            <Box style={{display: 'flex', justifyContent: 'space-between', flexGrow: '1'}}>
+                                <Box>
+                                    <Box><Typography component="div"> محدوده قیمت</Typography></Box>
 
-                            </div>
+                                </Box>
+                                <Box>
+                                    <Box><Typography>مقدار پیشفرض</Typography></Box>
+
+                                </Box>
+                            </Box>
+                            <Box style={{display: 'flex', justifyContent: 'center', flexGrow: '1'}}>
+                                <Box sx={{width: '90vw'}}><PriceFilterSlider/></Box>
+                            </Box>
                         </div>
 
 
@@ -110,13 +152,14 @@ const MobileDialog = ({brandsOfCategory,setFilterBrand,filterBrand,setOfferFilte
                     </ListItem>
                     <Divider/>
                     <ListItem button>
-                        <Typography><OnlyOfferProducts offerFilter={offerFilter} setOfferFilter={setOfferFilter}/></Typography>
+                        <Typography><OnlyOfferProducts offerFilter={offerFilter}
+                                                       setOfferFilter={setOfferFilter}/></Typography>
                     </ListItem>
                     <Divider/>
                     <ListItem button>
                         <Button sx={{
-                            mt:'2rem',
-                            width:'55rem',
+                            mt: '2rem',
+                            width: '100vw',
                             backgroundColor: '#f01436',
                             "&.MuiButtonBase-root:hover": {bgcolor: "#f01436"}
                         }} variant="contained"><Typography>اعمال فیلتر</Typography></Button>

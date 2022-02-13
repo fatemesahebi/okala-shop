@@ -5,9 +5,11 @@ import { Link } from '@mui/material';
 
 const Breadcrumb = styled('ul')({
     background:'#f8f8f8',
-    height: '50px',
+    height: '3rem',
     display: 'flex',
-    padding: '0 16px',
+    alignContent: "center",
+    padding: '2rem 16px',
+    overflowY: "hidden",
     overflowX: 'auto',
     alignItems: 'center',
     whiteSpace: 'nowrap',

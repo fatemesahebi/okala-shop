@@ -1,19 +1,14 @@
 import React from 'react';
 import { styled } from '@mui/system';
 
-const Styledlist = styled('ul')({
-    paddingRight: '0',
-    listStyle: 'none',
-});
 
 const Content = styled('div')({
     display: 'flex',
     padding:' 8px 16px',
-    background: 'rgba(248, 248, 248, 1)',
     alignItems: 'center',
 })
 
-const Customspan = styled('span')({
+const CustomSpan = styled('span')({
     fontSize: '.75rem',
     fontWeight: '400',
     lineHeight: '22px',
@@ -31,166 +26,207 @@ const Customli = styled('li')({
 export const Data = [
     {
         summary: 'ویژگی های محصول',
-        detail: <Styledlist>
-            <Customli>
-                <Content>
-                    <Customspan>
-                        سایر ویژگی ها :
-                    </Customspan>
-                    <Customspan>
-                        شوینده غیر صابونی با کف مطلوب.آبکشی آسان
+        detail: [{
+            summary: 'ویژگی های محصول',
+            detail:
+                <>
+                    <Content>
+                        <CustomSpan>
+                            سایر ویژگی ها :
+                        </CustomSpan>
+                        <CustomSpan>
+                            شوینده غیر صابونی با کف مطلوب.آبکشی آسان
 
-                    </Customspan>
-                </Content>
-            </Customli>
-            <Customli>
-                <Content>
-                    <Customspan>
-                        حجم
-                    </Customspan>
-                    <Customspan>
-                        400 میلی لیتر
+                        </CustomSpan>
+                    </Content>
+                </>
+        },
+            {
+                summary: 'ویژگی های محصول',
+                detail:
+                    <>
+                        <Content>
+                            <CustomSpan>
+                                حجم
+                            </CustomSpan>
+                            <CustomSpan>
+                                400 میلی لیتر
 
-                    </Customspan>
-                </Content>
-            </Customli><Customli>
-            <Content>
-                <Customspan>
-                    کاربرد
-                </Customspan>
-                <Customspan>
-                    متعادل کننده چربی پوست و از بین برنده آکنه.کمک به درمان جوش بدن
+                            </CustomSpan>
+                        </Content>
+                    </>
+            },
+            {
+                summary: 'ویژگی های محصول',
+                detail:
+                    <>
+                        <Content>
+                            <CustomSpan>
+                                کاربرد
+                            </CustomSpan>
+                            <CustomSpan>
+                                متعادل کننده چربی پوست و از بین برنده آکنه.کمک به درمان جوش بدن
 
-                </Customspan>
-            </Content>
-        </Customli><Customli>
-            <Content>
-                <Customspan>
-                    جنس بسته بندی :
+                            </CustomSpan>
+                        </Content>
+                    </>
+            },
+            {
+                summary: 'ویژگی های محصول',
+                detail:
+                    <>
+                        <Content>
+                            <CustomSpan>
+                                جنس بسته بندی :
 
-                </Customspan>
-                <Customspan>
-                    پلاستیک
-                </Customspan>
-            </Content>
-        </Customli><Customli>
-            <Content>
-                <Customspan>
-                    ویتامین ها :
+                            </CustomSpan>
+                            <CustomSpan>
+                                پلاستیک
+                            </CustomSpan>
+                        </Content>
+                    </>
+            },
+            {
+                summary: 'ویژگی های محصول',
+                detail:
+                    <>
+                        <Content>
+                            <CustomSpan>
+                                ویتامین ها :
 
-                </Customspan>
-                <Customspan>
-                    ویتامین E
+                            </CustomSpan>
+                            <CustomSpan>
+                                ویتامین E
 
-                </Customspan>
-            </Content>
-        </Customli><Customli>
-            <Content>
-                <Customspan>
-                    شماره مجوز/ پروانه بهداشت :
+                            </CustomSpan>
+                        </Content>
+                    </>
+            },
+            {
+                summary: 'ویژگی های محصول',
+                detail:
+                    <>
+                        <Content>
+                            <CustomSpan>
+                                شماره مجوز/ پروانه بهداشت :
+                            </CustomSpan>
+                            <CustomSpan>
+                                4495/ظ/56
+                            </CustomSpan>
+                        </Content>
+                    </>
+            },
+            {
+                summary: 'ویژگی های محصول',
+                detail:
+                    <>
+                        <Content>
+                            <CustomSpan>
+                                بسته بندی قابل بازیافت :
+                            </CustomSpan>
+                            <CustomSpan>
+                                بله
+                            </CustomSpan>
+                        </Content>
+                    </>
+            },
+            {
+                summary: 'ویژگی های محصول',
+                detail:
+                    <>
+                        <Content>
+                            <CustomSpan>
+                                مناسب برای نوع پوست :
 
-                </Customspan>
-                <Customspan>
-                    4495/ظ/56
+                            </CustomSpan>
+                            <CustomSpan>
+                                مناسب پوست های چرب
+                            </CustomSpan>
+                        </Content>
+                    </>
+            },
+            {
+                summary: 'ویژگی های محصول',
+                detail:
+                    <>
+                        <Content>
+                            <CustomSpan>
+                                شرایط نگهداری :
 
-                </Customspan>
-            </Content>
-        </Customli><Customli>
-            <Content>
-                <Customspan>
-                    بسته بندی قابل بازیافت :
-                </Customspan>
-                <Customspan>
-                    بله
-                </Customspan>
-            </Content>
-        </Customli>
-            <Customli>
-                <Content>
-                    <Customspan>
-                        مناسب برای نوع پوست :
+                            </CustomSpan>
+                            <CustomSpan>
+                                در دمای معمولی نگه داری شود.
 
-                    </Customspan>
-                    <Customspan>
-                        مناسب پوست های چرب
-                    </Customspan>
-                </Content>
-            </Customli>
-            <Customli>
-                <Content>
-                    <Customspan>
-                        شرایط نگهداری :
+                            </CustomSpan>
+                        </Content>
+                    </>
+            },
+            {
+                summary: 'ویژگی های محصول',
+                detail:
+                    <>
+                        <Content>
+                            <CustomSpan>
+                                مواد تشکیل دهنده (ترکیبات) :
 
-                    </Customspan>
-                    <Customspan>
-                        در دمای معمولی نگه داری شود.
+                            </CustomSpan>
+                            <CustomSpan>
+                                آب، سدیم هیالورونات، عصاره درخت چای، سالیسیلیک اسید، آلانتوئین، عصاره بامبو، روغن آملا،
+                                بیزابولول، سورفاکتانت های غیر آنیونی و آمفوتریک، گلیسرین، پروپیلن گلیکول، کوکو گلوکوزید،
+                                دکسپانتنول، فنوکسی اتانول، سدیم کلراید، کاپریلیل گلیکول، عصاره آلوئه ورا، اسانس، ا.د.ت.آ،
+                                ویتامین E، سیتریک اسید.
 
-                    </Customspan>
-                </Content>
-            </Customli>
-            <Customli>
-                <Content>
-                    <Customspan>
-                        مواد تشکیل دهنده (ترکیبات) :
+                            </CustomSpan>
+                        </Content>
+                    </>
+            },
+            {
+                summary: 'ویژگی های محصول',
+                detail:
+                    <>
+                        <Content>
+                            <CustomSpan>
+                                وزن محصول :
 
-                    </Customspan>
-                    <Customspan>
-                        آب، سدیم هیالورونات، عصاره درخت چای، سالیسیلیک اسید، آلانتوئین، عصاره بامبو، روغن آملا،
-                        بیزابولول، سورفاکتانت های غیر آنیونی و آمفوتریک، گلیسرین، پروپیلن گلیکول، کوکو گلوکوزید،
-                        دکسپانتنول، فنوکسی اتانول، سدیم کلراید، کاپریلیل گلیکول، عصاره آلوئه ورا، اسانس، ا.د.ت.آ،
-                        ویتامین E، سیتریک اسید.
+                            </CustomSpan>
+                            <CustomSpan>
+                                400 گرم
 
-                    </Customspan>
-                </Content>
-            </Customli>
-            <Customli>
-                <Content>
-                    <Customspan>
-                        وزن محصول :
+                            </CustomSpan>
+                        </Content>
+                    </>
+            },
+            {
+                summary: 'ویژگی های محصول',
+                detail:
+                    <>
+                        <Content>
+                            <CustomSpan>
+                                مناسب
+                            </CustomSpan>
+                            <CustomSpan>
+                                مناسب برای بانوان و آقایان
 
-                    </Customspan>
-                    <Customspan>
-                        400 گرم
+                            </CustomSpan>
+                        </Content>
+                    </>
+            },
+            {
+                summary: 'ویژگی های محصول',
+                detail:
+                    <>
+                        <Content>
+                            <CustomSpan>
+                                عصاره :
 
-                    </Customspan>
-                </Content>
-            </Customli>
-            <Customli>
-                <Content>
-                    <Customspan>
-                        مناسب
-                    </Customspan>
-                    <Customspan>
-                        مناسب برای بانوان و آقایان
+                            </CustomSpan>
+                            <CustomSpan>
+                                درخت چای، بامبو، آلوئه ورا
 
-                    </Customspan>
-                </Content>
-            </Customli>
-            <Customli>
-                <Content>
-                    <Customspan>
-                        عصاره :
-
-                    </Customspan>
-                    <Customspan>
-                        درخت چای، بامبو، آلوئه ورا
-
-                    </Customspan>
-                </Content>
-            </Customli>
-            <Customli>
-                <Content>
-                    <Customspan>
-
-                    </Customspan>
-                    <Customspan>
-
-                    </Customspan>
-                </Content>
-            </Customli>
-
-        </Styledlist>
-
+                            </CustomSpan>
+                        </Content>
+                    </>
+            }]
     },
     {
         summary: 'توضیحات محصول',
