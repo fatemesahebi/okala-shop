@@ -11,13 +11,9 @@ const Products = ({
                   }) => {
     return (
         <Paper elevation={0}
-               sx={{padding: '20px', width: {xs: '80vw', sm: '80vw', md: '80vw', lg: '80vw', xl: '65vw'}}}>
+               sx={{width: {xs: '80vw', sm: '80vw', md: '80vw', lg: '80vw', xl: '58vw'}}}>
             <Box display={{xl: 'flex', lg: 'flex', md: 'flex', sm: 'none', xs: 'none'}}>
                 <ShowBar setSort={setSort}/>
-
-            </Box>
-            <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
-
             </Box>
             <Box>
                 <Paper elevation={0}

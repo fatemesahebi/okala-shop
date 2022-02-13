@@ -13,8 +13,8 @@ const ShowBar = ({setSort}) => {
 setSort(sortType)
     }
     return (
-        <AppBar position="static" color={'white'} elevation={0}>
-            <Container>
+        <AppBar position="static" color={'white'} elevation={0} sx={{display:'flex',justifyContent:'flex-start'}}>
+            <Container >
                 <Toolbar>
                     <Image width={20} src={arrow}/>
                     <Typography noWrap component="div" sx={{mr: 1, ml: 5, display: {xs: 'none', md: 'flex'}}}>
