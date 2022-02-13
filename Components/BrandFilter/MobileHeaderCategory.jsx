@@ -34,14 +34,6 @@ const MobileHeaderCategory = () => {
 
                     </Box>
 
-
-                    {/*<Box sx={{display: 'flex', justifyContent: 'space-between'}}>*/}
-                    {/*    <Box>b</Box>*/}
-                    {/*    <Box>b</Box>*/}
-                    {/*</Box>*/}
-                    {/*<Box>*/}
-
-                    {/*</Box>*/}
                 </Toolbar>
 
                 <Box>

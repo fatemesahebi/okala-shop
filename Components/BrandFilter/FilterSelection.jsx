@@ -26,7 +26,7 @@ const FilterSelection = ({setSort,setSortLable}) => {
                 defaultValue="female"
                 name="radio-buttons-group"
             >
-                <FormControlLabel value="پرفروش ترین" control={<Radio onChange={(e)=>handleChange("mostSale",e)}/>} label="پرفروش ترین"/>
+                <FormControlLabel value="پرفروشترین" control={<Radio onChange={(e)=>handleChange("mostSale",e)}/>} label="پرفروش ترین"/>
                 <FormControlLabel value="بیشترین تخفیف" control={<Radio onChange={(e)=>handleChange('mostOff',e)}/>} label="بیشترین تخفیف"/>
                 <FormControlLabel value="ارزانترین" control={<Radio onChange={(e)=>handleChange('leastPrice',e)}/>} label="ارزانترین"/>
                 <FormControlLabel value="گرانترین" control={<Radio onChange={(e)=>handleChange('mostPrice',e)}/>} label="گرانترین"/>

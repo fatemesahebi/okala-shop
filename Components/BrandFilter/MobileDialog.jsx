@@ -1,13 +1,5 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import ListItem from '@mui/material/ListItem';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+import {Button,ListItem,List,Divider,AppBar,Toolbar,IconButton,Typography,Dialog} from '@mui/material';
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Slide from '@mui/material/Slide';
 import MobileBrandFilter from "./MobileBrandFilter";
@@ -17,10 +9,11 @@ import OnlyAvailableProducts from "../CommodityFilters/OnlyAvailableProducts";
 import OnlyOfferProducts from "../CommodityFilters/OnlyOfferProducts";
 import Image from "next/image";
 import arrow from "./arrow.svg";
+import sort from '../PriceFilter/sort.svg'
 import FilterMobileDrawer from "./FilterMobileDrawer";
-import sort from './sortIcon.png'
-import Container from "@mui/material/Container";
-import MobileHeaderCategory from "./MobileHeaderCategory";
+import {Box} from "@material-ui/core";
+import styled from "@emotion/styled";
+import Slider from "@mui/material/Slider";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="right" ref={ref} {...props} />;
@@ -57,7 +50,6 @@ const MobileDialog = ({
                 <Toolbar sx={{
                     display: 'flex',
                     justifyContent: 'space-around',
-                    flexGrow: '1',
                     alignItems: 'center',
                     alignContent: 'center'
                 }}>
@@ -66,19 +58,19 @@ const MobileDialog = ({
                         color: 'black',
                         display: 'flex',
                         fontWeight: 'bold',
-                        flexGrow: '1',
+                        flexGrow: '0.97',
                         justifyContent: 'center'
                     }}>
-                        <Image width={15} src={arrow}/><FilterMobileDrawer/>
+                        <Image  src={arrow}/><FilterMobileDrawer/>
                     </Typography>
 
 
                     <Divider orientation="vertical" variant="middle" flexItem sx={{height: '2rem'}}/>
-                    <Button variant="outlined"
+                    <Button onClick={handleClickOpen} variant="outlined"
                             sx={{border: 'none', display: 'flex', fontWeight: 'bold', flexGrow: '1'}}>
-                        <Typography onClick={handleClickOpen}
-                                    style={{color: 'black', display: 'flex', alignItems: 'center'}}><Image width={15}
-                                                                                                           src={arrow}/>فیلترها</Typography>
+                        <Typography
+                            style={{color: 'black', display: 'flex', alignItems: 'center', fontWeight: 'bold'}}><Image
+                            src={sort}/>فیلترها</Typography>
                     </Button>
                 </Toolbar>
             </AppBar>
@@ -117,17 +109,24 @@ const MobileDialog = ({
                     </ListItem>
                     <Divider/>
                     <ListItem>
-                        <div>
-                            <div>
-                                <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                                    <Typography>محدوده قیمت</Typography>
-                                    <Typography>مقدار پیشفرض</Typography>
-                                </div>
-                                <div style={{display: 'flex', justifyContent: 'center', width: '100%'}}>
-                                    <PriceFilterSlider/>
-                                </div>
+                        <div style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            flexGrow: '1'
+                        }}>
+                            <Box style={{display: 'flex', justifyContent: 'space-between', flexGrow: '1'}}>
+                                <Box>
+                                    <Box><Typography  component="div"> محدوده قیمت</Typography></Box>
 
-                            </div>
+                                </Box>
+                                <Box>
+                                    <Box><Typography>مقدار پیشفرض</Typography></Box>
+
+                                </Box>
+                            </Box>
+                            <Box style={{display:'flex',justifyContent:'center',flexGrow:'1'}}>
+                                <Box sx={{width:'90vw'}}><PriceFilterSlider/></Box>
+                            </Box>
                         </div>
 
 
@@ -145,7 +144,7 @@ const MobileDialog = ({
                     <ListItem button>
                         <Button sx={{
                             mt: '2rem',
-                            width: '55rem',
+                            width: '100vw',
                             backgroundColor: '#f01436',
                             "&.MuiButtonBase-root:hover": {bgcolor: "#f01436"}
                         }} variant="contained"><Typography>اعمال فیلتر</Typography></Button>
