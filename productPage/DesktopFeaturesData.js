@@ -5,7 +5,7 @@ const StyledList = styled('ul')({
     display: 'flex',
     flexWrap: 'wrap',
     listStyle: 'none',
-    boxSizing:'Border-box'
+    boxSizing:'Border-box',
 });
 
 const Content = styled('div')({
@@ -15,7 +15,6 @@ const Content = styled('div')({
     minHeight:' 48px',
     alignItems: 'center',
     boxSizing:'inherit'
-
 })
 
 const CustomSpan = styled('span')({
@@ -29,7 +28,6 @@ const CustomSpan = styled('span')({
 });
 
 const Customli = styled('li')({
-
     flexGrow: '0',
     flexShrink: '0',
     flexBasis:'33.3333%',

@@ -3,9 +3,15 @@ import React from "react";
 import {Button, Typography,Box} from "@mui/material";
 import chat from "../public/SVG/chat.svg"
 import star from "../public/SVG/star.svg"
+import starfull from "../public/SVG/starfull.svg"
+import starline from "../public/SVG/starline.svg"
+import rateEmptyStar from "../public/SVG/rateEmptyStar.svg"
 import Image from "next/image";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import PaginationItem from '@mui/material/PaginationItem';
+import LinearProgress, {linearProgressClasses} from "@mui/material/LinearProgress";
+
 
 const CommentsContainer = styled('div')({
     marginTop:'50px'
@@ -33,6 +39,9 @@ const ColorButton = styled(Button)(({theme}) => ({
     backgroundColor: 'rgb(240, 20, 54)',
     borderRadius: ' 12px',
     color: ' rgb(248, 248, 248) !important',
+    "&.MuiButtonBase-root:hover":{
+        color: 'rgb(230, 230, 230)',
+        backgroundColor: 'rgb(222, 8, 46) !important'}
 }));
 const Comment = styled('div')({
     padding: '12px 12px 24px',
@@ -82,7 +91,67 @@ const Date = styled('span')({
     background: 'rgb(248, 248, 248)',
     color: 'rgb(0, 0, 0)',
     fontWeight:'Bold'
-})
+});
+
+const PageNumber = styled(Pagination)(({theme}) => ({
+    "&.MuiPagination-ul": {
+        justifyContent: 'center',
+        margin: 0,
+        display: 'flex',
+        padding: '0',
+        flexWrap: 'wrap',
+        listStyle: 'none',
+        alignItems: 'center',
+        background: 'rgba(224, 242, 244, 1)',
+        color: 'rgba(0, 134, 132, 1)',
+    },
+        "&.MuiPagination-ul .MuiPaginationItem-page":{
+            color: 'rgba(0, 134, 132, 1)',
+            background: 'rgba(224, 242, 244, 1)',},
+    }));
+
+const RatesWrapper = styled('div')({
+    width: '430px',
+    margin: '0 auto',
+});
+
+const RatesInfoSection = styled('div')({
+    padding: '14px 24px 20px',
+});
+const RatesProgressSection = styled('div')({
+    paddingBottom: '10px'
+});
+const RateProgressBar = styled('div')({
+    display: 'flex',
+    padding: '0 24px',
+    alignItems: 'center',
+    marginBottom: '10px',
+});
+const Progress = styled('div')({
+    flex: '1',
+    height: '4px',
+    overflow: 'hidden',
+    position: 'relative',
+    background: 'rgba(240, 240, 240, 1)',
+    borderRadius: '10px',
+    MozBoxSizing:'border-box'
+});
+
+const BorderLinearProgress = styled(LinearProgress)(({theme}) => ({
+    height: 10,
+    width: "100%",
+
+    [`&.${linearProgressClasses.colorPrimary}`]: {
+        backgroundColor: theme.palette.green.light,
+
+    },
+    [`& .${linearProgressClasses.bar}`]: {
+        backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
+
+    },
+}));
+
+
 export default function CommentsSection (){
     return(
         <div>
@@ -120,7 +189,71 @@ export default function CommentsSection (){
                         </Box>
                     </CommentsTopRight>
                     <CommentsTopLeft>
-
+                        <RatesWrapper>
+                            <RatesInfoSection>
+                                <Box >
+                                    <Typography component={"span"} sx={{
+                                        color: 'rgba(22, 22, 22, 1)',
+                                        fontSize: '1rem',
+                                        fontWeight: '700',
+                                        lineHeight: '24px',
+                                        marginLeft:' 17px',}}>
+                                        4.0
+                                    </Typography>
+                                    <Box sx={{marginLeft: '9px',
+                                        display: 'inline-block',
+                                        position: 'relative',
+                                        direction: 'ltr',
+                                        textAlign: 'center',}}>
+                                        <Image src={starfull}/>
+                                        <Image src={starfull}/>
+                                        <Image src={starfull}/>
+                                        <Image src={starfull}/>
+                                        <Image src={rateEmptyStar}/>
+                                    </Box>
+                                    <span>
+                                        از 1 نظر
+                                    </span>
+                                </Box>
+                                <RatesProgressSection>
+                                    <RateProgressBar>
+                                        <Image src={starline}/>
+                                        <span style={{margin:'0 10px 0 10px'}}>5</span>
+                                        <Progress>
+                                            <BorderLinearProgress value={30} variant="determinate"/>
+                                        </Progress>
+                                    </RateProgressBar>
+                                    <RateProgressBar>
+                                        <Image src={starline}/>
+                                        <span style={{margin:'0 10px 0 10px'}}>4</span>
+                                        <Progress>
+                                            <BorderLinearProgress value={50} variant="determinate"/>
+                                        </Progress>
+                                    </RateProgressBar>
+                                    <RateProgressBar>
+                                        <Image src={starline}/>
+                                        <span style={{margin:'0 10px 0 10px'}}>3</span>
+                                        <Progress>
+                                            <BorderLinearProgress value={80} variant="determinate"/>
+                                        </Progress>
+                                    </RateProgressBar>
+                                    <RateProgressBar>
+                                        <Image src={starline}/>
+                                        <span style={{margin:'0 10px 0 10px'}}>2</span>
+                                        <Progress>
+                                            <BorderLinearProgress value={10} variant="determinate"/>
+                                        </Progress>
+                                    </RateProgressBar>
+                                    <RateProgressBar>
+                                        <Image src={starline}/>
+                                        <span style={{margin:'0 10px 0 10px'}}>1</span>
+                                        <Progress>
+                                            <BorderLinearProgress value={0} variant="determinate"/>
+                                        </Progress>
+                                    </RateProgressBar>
+                                </RatesProgressSection>
+                            </RatesInfoSection>
+                        </RatesWrapper>
                     </CommentsTopLeft>
                 </CommentsTopSection>
                 <CommentsBottomSection>
@@ -158,7 +291,8 @@ export default function CommentsSection (){
                     </Comment>
                 </CommentsBottomSection>
                 <Stack alignItems={"center"} justifyContent={"center"} spacing={2}>
-                    <Pagination  color={"primary"} count={1} variant="outlined" shape="rounded" />
+                    <PageNumber count={1} variant="outlined" shape="rounded" ></PageNumber>
+                    {/*<Pagination  color={"primary"} count={1} variant="outlined" shape="rounded" />*/}
                 </Stack>
             </CommentsContainer>
         </div>

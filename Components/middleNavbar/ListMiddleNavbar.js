@@ -7,15 +7,15 @@ import "swiper/css";
 
 const productList = [
 
-    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F390613&w=384&q=75",text: "مواد غذایی"},
-    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F390615&w=384&q=75",text: "نوشیدنی و دمنوش ها"},
-    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F389665&w=384&q=75",text: "خواربار"},
-    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F390614&w=384&q=75" ,text: "آرایشی بهداشتی"},
-    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F389667&w=384&q=75",text: "میوه و سبزیجات"},
-    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F389666&w=384&q=75",text: "ابزار و ملزومات"},
-    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F389669&w=384&q=75",text: "لوازم التحریر و اداری"},
-    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F389671&w=384&q=75",text: "مادر و کودک"},
-    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F389670&w=384&q=75",text: "پوشاک"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F390613&w=384&q=75",text: "مواد غذایی",group:"food-stuff"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F390615&w=384&q=75",text: "نوشیدنی و دمنوش ها",group:"drink-herbal-tea"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F389665&w=384&q=75",text: "خواربار",group:"food-stuff"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F390614&w=384&q=75" ,text:"آرایشی بهداشتی",group:"food-stuff"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F389667&w=384&q=75",text: "میوه و سبزیجات",group:"fruits-vegetables"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F389666&w=384&q=75",text: "ابزار و ملزومات",group:"food-stuff"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F389669&w=384&q=75",text: "لوازم التحریر و اداری",group:"food-stuff"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F389671&w=384&q=75",text: "مادر و کودک",group:"food-stuff"},
+    {image: "https://new.okala.com/_next/image?url=https%3A%2F%2Fcdn.okala.com%2FMedia%2FIndex%2FCategory%2F389670&w=384&q=75",text: "پوشاک",group:"food-stuff"},
 
 ]
 function ListMiddleNavbar(){
@@ -56,7 +56,10 @@ function ListMiddleNavbar(){
                 }}
             >
 
-                    {productList.map((item,index) => (<SwiperSlide><MiddleNavbar key={index} imagesProducts={item.image} textProducts={item.text}/> </SwiperSlide>))}
+                    {productList.map((item,index) =>
+                        (<SwiperSlide>
+                            <MiddleNavbar key={index} imagesProducts={item.image} textProducts={item.text} group={item.group}/>
+                        </SwiperSlide>))}
             </Swiper>
         </Box>
     )

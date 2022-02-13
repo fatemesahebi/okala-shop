@@ -12,22 +12,30 @@ import Image from "next/image"
 
 export default function MenuMobile() {
     return (
-        <Box sx={{display: {lg: 'none', md: 'none', xs:'flex'},flexDirection:"column", alignItems: "center"}}>
+        <Box sx={{display: {lg: 'none', md: 'none', xs: 'flex'}, flexDirection: "column", alignItems: "center"}}>
             <Box item xs={1} sx={{
                 display: {lg: 'none', md: 'none'},
-                zIndex: 12,
+                zIndex: 101,
                 justifyContent: "space-between",
                 flexShrink: "1",
                 width: "100vw",
                 position: "fixed",
-                bottom: "0",
+                bottom: "-0.1rem",
             }}>
                 <Stack sx={{display: "flex", flexDirection: "row", justifyContent: "space-between", flexShrink: "1"}}>
-                    <Box sx={{height: '50px' ,backgroundColor: "white !important", width: "33%", display: "inline-flex", justifyContent: "space-around", zIndex: 12}}>
-                        <Button sx={{width: "50%", }}>
+                    <Box sx={{
+                        height: '50px',
+                        backgroundColor: "white !important",
+                        width: {sm: "40%", xs: "33%"},
+                        display: "inline-flex",
+                        justifyContent: "space-around",
+                        zIndex: 101
+                    }}>
+                        <Button
+                            sx={{width: "50%", color: "#f01436", borderRadius: 0 , borderBottom: "4px solid #f01436"}}>
                             <Stack>
-                                <Image src={home}/>
-                                <Typography style={{color: "#888a89", fontSize: ".625rem"}}>خانه</Typography>
+                                <Image fill={"#f01436"} src={home}/>
+                                <Typography style={{fontWeight: "bold", fontSize: ".625rem"}}>خانه</Typography>
                             </Stack>
                         </Button>
                         <Button sx={{width: "50%"}}>
@@ -55,15 +63,21 @@ export default function MenuMobile() {
                             <Image src={cart}/>
                         </Button>
                     </Box>
-                    <Box sx={{backgroundColor: "white !important", width: {sm:"40%" , xs: "33%"}, display: "inline-flex", justifyContent: "space-around", zIndex: 12}}>
-                        <Button sx={{backgroundColor: "white !important"}}>
+                    <Box sx={{
+                        backgroundColor: "white !important",
+                        width: {sm: "40%", xs: "33%"},
+                        display: "inline-flex",
+                        justifyContent: "space-around",
+                        zIndex: 101
+                    }}>
+                        <Button sx={{width: "50%"}}>
                             <Stack>
                                 <Image src={grouping}/>
                                 <Typography style={{color: "#888a89", fontSize: ".625rem"}}>دسته بندی</Typography>
                             </Stack>
                         </Button>
 
-                        <Button sx={{backgroundColor: "white !important"}}>
+                        <Button sx={{width: "50%"}}>
                             <Stack>
                                 <Image src={profile}/>
                                 <Typography style={{color: "#888a89", fontSize: ".625rem"}}>پروفایل</Typography>
@@ -72,7 +86,14 @@ export default function MenuMobile() {
                     </Box>
                 </Stack>
             </Box>
-            <Box sx={{position: "fixed", bottom: "-1.7rem", zIndex: 11, display: "flex", width:"30rem", justifyContent: 'center'}}>
+            <Box sx={{
+                position: "fixed",
+                bottom: "-1.7rem",
+                zIndex: 11,
+                display: "flex",
+                width: "30rem",
+                justifyContent: 'center'
+            }}>
                 <Image src={bottomCurve}/>
             </Box>
         </Box>

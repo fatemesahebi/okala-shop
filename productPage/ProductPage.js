@@ -1,15 +1,16 @@
 import React from 'react';
 import ProductInfo from "./ProductInfo";
 import {HeaderFooterProvider} from "../components";
-import {Box, Button, Container, Typography} from "@mui/material";
+import {Box, Button, Container, Stack, Typography} from "@mui/material";
 import {styled} from "@mui/styles";
 import CategoryProducts from "../components/CategoryProducts/CategoryProducts";
 import BasicTabs from "./tabs";
 import {Usersrate} from "./mobile";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import AddIcon from "@mui/icons-material/Add";
-import ImageMagnifire from "./imageMagnifire";
-
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
 const ColorButton = styled(Button)(({theme}) => ({
     width: '10rem !important',
@@ -18,19 +19,28 @@ const ColorButton = styled(Button)(({theme}) => ({
     backgroundColor: 'rgb(240, 20, 54)',
     borderRadius: ' 12px',
     color: ' rgb(248, 248, 248) !important',
+    "&.MuiButtonBase-root:hover": {
+        color: 'rgb(230, 230, 230)',
+        backgroundColor: 'rgb(222, 8, 46) !important'
+    }
 }));
 
 const MainContainer = styled('div')({
-    maxWidth:'1280px!important',
-    margin: 'auto'
+    maxWidth: '1280px!important',
+    margin: 'auto',
+    padding: '36px !important',
+    position: 'relative',
+    overflowX: 'hidden',
+    overflowY: 'auto',
+
 })
 const MyContainer = styled('div')({
-    maxwidth:'1280px',
     padding: '36px',
-    position: 'relative',
+    // position: 'relative',
     background: ' #fff',
     borderRadius: '12px',
-    margin:'auto'
+    margin: 'auto',
+    marginBottom: '2rem'
 });
 
 const InfoSection = styled('div')({
@@ -46,13 +56,12 @@ const ThumbnailWrapper = styled('div')({
     display: 'flex',
     marginLeft: '16px',
     paddingLeft: ' 24px',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    direction: "rtl"
+    flexDirection: 'row-reverse',
+    justifyContent: 'space-between'
 })
 
 const InformationWrapper = styled('div')({
-    width:'32rem',
+    width: '32rem',
     display: 'flex',
     flexGrow: '1',
     flexDirection: 'column',
@@ -73,23 +82,80 @@ const AmountWrapper = styled('div')({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop:'2rem'
+    marginTop: '2rem'
 });
+
+function handleClick(event) {
+    event.preventDefault()
+}
+
+const breadcrumbs = [
+    <Link underline={"none"} key="1" color="inherit" href="/" onClick={handleClick}>
+        اکالا
+    </Link>,
+    <Link
+        underline={"none"}
+        key="2"
+        color="inherit"
+        href="/getting-started/installation/"
+        onClick={handleClick}
+    >
+        آرایشی بهداشتی
+    </Link>,
+    <Link
+        underline={"none"}
+        key="2"
+        color="inherit"
+        href="/getting-started/installation/"
+        onClick={handleClick}
+    >
+        بهداشت فردی
+    </Link>,
+    <Link
+        underline={"none"}
+        key="2"
+        color="inherit"
+        href="/getting-started/installation/"
+        onClick={handleClick}
+    >
+        بهداشت سر و بدن
+    </Link>,
+    <Link
+        underline={"none"}
+        key="2"
+        color="inherit"
+        href="/getting-started/installation/"
+        onClick={handleClick}
+    >
+        شامپو بدن
+    </Link>,
+    // <Typography key="3" color="text.primary">
+    //     Breadcrumb
+    // </Typography>,
+];
 
 const ProductPage = () => {
     return (
         <HeaderFooterProvider>
             <ProductInfo/>
-
+            {/*<ImageMagnifire/>*/}
             <Container maxWidth={'false'} sx={{background: '#f8f8f8'}}>
-                <MainContainer >
+
+                <MainContainer>
+                    <Stack sx={{direction: "rtl", marginBottom: '36px',}} spacing={2}>
+                        <Breadcrumbs
+                            separator={<NavigateBeforeIcon fontSize="small"/>}
+                            aria-label="breadcrumb"
+                        >
+                            {breadcrumbs}
+                        </Breadcrumbs>
+                    </Stack>
                     <MyContainer>
                         <Box>
                             <InfoSection>
-                                <ImageMagnifire/>
-                                {/*<ThumbnailWrapper>*/}
-                                {/*    */}
-                                {/*</ThumbnailWrapper>*/}
+                                <ThumbnailWrapper>
+
+                                </ThumbnailWrapper>
                                 <InformationWrapper>
                                     <Typography variant={"h6"} component={"div"} sx={{
                                         fontSize: '1.25rem',
@@ -107,7 +173,11 @@ const ProductPage = () => {
                                     <CategoryWrapper>
                                         <Typography variant={"h6"} component={"span"}>
                                             دسته بندی :
-                                            <a> شامپو بدن</a>
+                                            <a style={{
+                                                color: 'rgba(0, 134, 132, 1)',
+                                                fontSize: '1rem',
+                                                fontWeight: '500'
+                                            }} href="/#"> شامپو بدن</a>
                                         </Typography>
                                     </CategoryWrapper>
                                     <Usersrate sx={{position: 'inherit'}}>
@@ -121,59 +191,59 @@ const ProductPage = () => {
                                         </ColorButton>
                                         <Box sx={{display: 'flex', flexDirection: 'column',}}>
                                             <Box>
-                                                <span style={{
+                                                <Typography component={"span"} sx={{
+                                                    display: "inline-block",
+                                                    marginLeft: '5px',
+                                                    color: '#fff',
+                                                    width: '45px',
+                                                    fontSize: '1rem',
+                                                    textAlign: 'center',
+                                                    fontWeight: '500',
+                                                    lineHeight: '30px',
+                                                    borderRadius: '8px',
+                                                    backgroundColor: '#4CB04C',
+                                                }}>
+                                                    20%
+                                                </Typography>
+                                                <Typography component={"span"} sx={{
                                                     color: 'rgba(175, 175, 175, 1)',
                                                     fontSize: '1rem',
                                                     textDecoration: 'line-through',
                                                 }}>
                                                     ۴۴۰٬۰۰۰
-                                                </span>
-                                                <span style={{
-                                                    // display:"inline-block",
-                                                    // // marginLeft:'5px',
-                                                    color: '#fff',
-                                                    width: '60px',
-                                                    fontSize: '1rem',
-                                                    textAlign: 'center',
-                                                    fontWeight: '500',
-                                                    lineHeight: '26px',
-                                                    borderRadius: '8px',
-                                                    backgroundColor: '#4CB04C',
-                                                }}>
-                                                20%
-                                            </span>
+                                                </Typography>
+
                                             </Box>
                                             <Box>
-                                                <span style={{
+                                                <Typography component={"span"} sx={{
                                                     color: 'rgba(54, 54, 54, 1)',
                                                     fontSize: '1.25rem',
-                                                    fontWeight: '400',
-                                                    marginRight: ' 8px',
+                                                    fontWeight: 'bold',
                                                 }}>
                                                     ۳۵۲٬۰۰۰
-                                                </span>
-                                                <span style={{
+                                                </Typography>
+                                                <Typography component={"span"} sx={{
                                                     color: 'rgba(54, 54, 54, 1)',
-                                                    fontSize: '0.75rem',
+                                                    fontSize: '1rem',
                                                     marginRight: ' 2px',
+                                                    fontWeight: 'bold',
                                                 }}>
                                                     ریال
-                                                </span>
+                                                </Typography>
                                             </Box>
                                         </Box>
                                     </AmountWrapper>
 
                                 </InformationWrapper>
                             </InfoSection>
-
                         </Box>
-                        <Box>
+                        <Box sx={{maxWidth: '100%'}}>
                             <BasicTabs/>
                         </Box>
-
                     </MyContainer>
-                    <CategoryProducts similarProducts={true} category={"محصولات جدید"}/>
-
+                    <MyContainer>
+                        <CategoryProducts similarProducts={true} category={"محصولات جدید"}/>
+                    </MyContainer>
                 </MainContainer>
             </Container>
         </HeaderFooterProvider>
