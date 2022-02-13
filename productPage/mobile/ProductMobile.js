@@ -44,7 +44,7 @@ const ColorButton = styled(Button)(({theme}) => ({
 export default function ProductMobile() {
     return (
         <Box display={ {md: "none" , xs: "block"}}>
-            <HeaderFooterProvider>
+            <Box>
                 <React.Fragment sx={{
                     backgroundColor: '#F8F8F8',
                     height: '100%',
@@ -214,7 +214,7 @@ export default function ProductMobile() {
                         </Pricewrapper>
                     </Addtocart>
                 </React.Fragment>
-            </HeaderFooterProvider>
+            </Box>
         </Box>
 
     )

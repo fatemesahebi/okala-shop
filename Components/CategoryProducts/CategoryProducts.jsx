@@ -36,8 +36,8 @@ const CategoryProducts = ({category, similarProducts}) => {
             margin: "1rem auto",
             padding: "0 !important",
             width: {
-                xl: similarProducts ? "75rem" : "83rem",
-                lg: "100vw"
+                xl: similarProducts ? "75rem" : "81rem",
+                lg: "98vw"
             },
             // overflowY: "hidden",
             display: "flex",
@@ -48,8 +48,8 @@ const CategoryProducts = ({category, similarProducts}) => {
             <Box sx={{
                 backgroundColor: "white !important",
                 width: {
-                    xl: similarProducts ? "75rem" : "83rem",
-                    lg: "100vw"
+                    xl: similarProducts ? "75rem" : "81rem",
+                    lg: "98vw"
                 },
                 borderRadius: "10px 10px 0 0 ",
                 height: "3rem",

@@ -142,7 +142,7 @@ const breadcrumbs = [
 const ProductPage = () => {
     return (
         <Box display={{md: "block" , xs: "none"}}>
-            <HeaderFooterProvider>
+            <Box>
                 <Container maxWidth={'false'} sx={{background: '#f8f8f8'}}>
 
                     <MainContainer>
@@ -259,7 +259,7 @@ const ProductPage = () => {
                         <CategoryProducts similarProducts={true} category={"محصولات جدید"}/>
                     </MainContainer>
                 </Container>
-            </HeaderFooterProvider>
+            </Box>
         </Box>
 
     );
