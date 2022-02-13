@@ -83,7 +83,6 @@ export const Showcomments = styled('div')({
 });
 
 export const Addtocart = styled('div')({
-
     left: '0',
     right: '0',
     bottom: '0',
