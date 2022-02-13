@@ -11,7 +11,7 @@ import AddIcon from "@mui/icons-material/Add";
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
-import ImageMagnifire from "./imageMagnifire";
+// import ImageMagnifire from "./imageMagnifire";
 import PN from "persian-number";
 
 const ColorButton = styled(Button)(({theme}) => ({
@@ -55,7 +55,7 @@ const InfoSection = styled('div')({
 });
 
 const ThumbnailWrapper = styled('div')({
-    width: '550px',
+    width: '600px',
     height: '408px',
     display: 'flex',
     marginLeft: '16px',
