@@ -10,7 +10,7 @@ import OnlyOfferProducts from "../CommodityFilters/OnlyOfferProducts";
 import Image from "next/image";
 import arrow from "./arrow.svg";
 import sortIcon from '../PriceFilter/sort.svg'
-import next from './next.svg'
+import nextIcon from '../BrandFilter/nextIcon.svg'
 import FilterMobileDrawer from "./FilterMobileDrawer";
 import {Box} from "@material-ui/core";
 
@@ -113,14 +113,14 @@ const MobileDialog = ({
                     <Divider/>
                     <ListItem button sx={{display: 'flex', justifyContent: 'space-between', flexGrow: '1'}}>
                         <Typography><MobileCategory/></Typography>
-                        <Image src={next}/>
+                        <Image src={nextIcon}/>
                     </ListItem>
                     <Divider/>
                     <ListItem button sx={{display: 'flex', justifyContent: 'space-between', flexGrow: '1'}}>
                         <Typography><MobileBrandFilter brandsOfCategory={brandsOfCategory}
                                                        filterBrand={filterBrand}
                                                        setFilterBrand={setFilterBrand}/></Typography>
-                        <Image src={next}/>
+                        <Image src={nextIcon}/>
                     </ListItem>
                     <Divider/>
                     <ListItem>
