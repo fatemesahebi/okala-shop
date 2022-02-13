@@ -135,30 +135,7 @@ export const Dropdown   = styled('div')({
     alignItems: 'center',
 });
 
-export const Commentinfosec = styled('div')({
-    height: '98px',
-    display: 'flex',
-    padding:' 0 23px',
-    alignItems: 'center',
-    borderBottom: '1px solid rgba(240, 240, 240, 1)',
-    boxSizing:"inherit"
-});
 
-export const Rateswrapper = styled('div')({
-    height: '24px',
-    display: 'flex',
-    flex: '0 0 calc(100% - 70px)',
-    overflow: 'auto',
-    maxHeight: 'calc(100% - 70px)',
-    boxSizing: 'inherit',
-});
-export const Ratesinfo = styled('div')({
-    padding: '14px 24px 20px'
-});
-export const Ratesprogress = styled('div')({
-    paddingBottom: '10px',
-    borderBottom:' 4px solid rgba(240, 240, 240, 1)',
-});
 export const Buttonwrapper = styled('div')({
     top: '1rem',
     left: '1rem',
