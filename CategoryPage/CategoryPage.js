@@ -20,7 +20,7 @@ import {useEffect, useState} from "react";
 import {getCategoryProducts} from "../lib/axios/getData";
 import MobileHeaderCategory from "../Components/BrandFilter/MobileHeaderCategory";
 import MobileProduct from "../Components/BrandFilter/MobileProduct";
-import {categoryList} from "./categoryList"
+import {categoryList} from "../lib/mirage/categoryList"
 
 
 function CategoryPage({categoryName}) {

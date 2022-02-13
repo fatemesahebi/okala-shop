@@ -6,7 +6,8 @@ import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import {Box} from "@mui/material";
-
+import {useRouter} from "next/router";
+import Link from '@mui/material/Link';
 const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(() => ({
@@ -37,12 +38,18 @@ export default function CategoryAccordion({categories , items}) {
     const handleChange = (event) => {
         setExpanded(!expanded);
     };
+    const router=useRouter()
 
     return (
         <div dir={"rtl"}>
             <Accordion expanded={expanded} onChange={handleChange}>
                 <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                    <Typography>{categories.mainTitle || categories.title}</Typography>
+
+                    <Link href={'/category/' + categories.mainUrl|| "#"} underline="none" color="inherit">
+                        <Typography onClick={()=>{router.push('/category/' + categories.mainUrl|| "#")}}>
+                            {categories.mainTitle || categories.title}</Typography>
+                    </Link>
+
                 </AccordionSummary>
                 <AccordionDetails>
                     { items !== "noitems" ? categories[items].map(item => (
