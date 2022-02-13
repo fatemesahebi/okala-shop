@@ -25,11 +25,11 @@ function HomePage() {
             <CategoryProducts similarProducts={false} category={"پرفروشترین در منطقه شما"}/>
             <CategoryProducts similarProducts={false} category={"پرتخفیف ترین ها"}/>
             <DoubleBanner/>
-            <CategoryProducts similarProducts={false} category={"نوشیدنی"}/>
+            <CategoryProducts similarProducts={false} category={"نوشیدنی و دمنوش ها"}/>
             <CategoryProducts similarProducts={false} category={"میوه و سبزیجات"}/>
-            <CategoryProducts similarProducts={false} category={"غذا"}/>
-            <CategoryProducts similarProducts={false} category={"لوازم بهداشتی"}/>
-            <CategoryProducts similarProducts={false} category={"سایر غذاها"}/>
+            <CategoryProducts similarProducts={false} category={"مواد غذایی"}/>
+            <CategoryProducts similarProducts={false} category={"آرایشی بهداشتی"}/>
+            <CategoryProducts similarProducts={false} category={"خواربار"}/>
             <OkalaBlogHeader/>
             <OkalaBlog/>
             <ListBrands/>
