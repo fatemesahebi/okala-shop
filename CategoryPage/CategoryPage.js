@@ -9,7 +9,8 @@ import {
     MenuMobile,
     CategorizeResults,
     Products,
-    BestBrandsFruitsVegetables
+    BestBrandsFruitsVegetables,
+    CategorizeResultsMobile
 
 } from "../components";
 import * as React from "react";
@@ -21,7 +22,7 @@ import MobileHeaderCategory from "../Components/BrandFilter/MobileHeaderCategory
 import MobileProduct from "../Components/BrandFilter/MobileProduct";
 
 
-function CategoryPage() {
+function CategoryPage({categoryName}) {
     let maxPrice = 1185000
     const [dataCategory, setDataCategory] = useState([])
     const [page, setPage] = useState(1)
@@ -34,9 +35,9 @@ function CategoryPage() {
 
     let finalData = []
     let pageCount = 1
-
+    // let category= (categoryName)? categoryName : "میوه و سبزیجات"
     useEffect(() => {
-        getCategoryProducts("میوه و سبزیجات").then(data => setDataCategory(data.products))
+        getCategoryProducts(categoryName).then(data => setDataCategory(data.products))
             .catch(error => console.log(error))
          setScreanWidth(window.innerWidth)
 
@@ -94,15 +95,16 @@ function CategoryPage() {
         {/*<BrandFilter/>*/}
         {/*<CommodityFilters/>*/}
         {/*<PaginationRounded/>*/}
-        <MobileHeaderCategory/>
+        <MobileHeaderCategory categoryName={categoryName} />
         <MobileProduct/>
         <MenuMobile/>
         <div style={{display: 'flex'}}>
             <Box style={{marginTop: '30px'}}>
                 <SearchResults searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-                <CategorizeResults/>
+                <CategorizeResults categoryName={categoryName}/>
                 <BrandFilter brandsOfCategory={brandsOfCategory} filterBrand={filterBrand}
                              setFilterBrand={setFilterBrand}/>
+
                 <CommodityFilters offerFilter={offerFilter} setOfferFilter={setOfferFilter}/>
                 <PriceFilter maxPrice={maxPrice} priceFilter={priceFilter} setPriceFilter={setPriceFilter}/>
             </Box>
