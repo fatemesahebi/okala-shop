@@ -8,12 +8,13 @@ import Image from "next/image";
 import magnifier from './magnifier.svg'
 import back from './back.svg'
 import {menuData} from "../../lib/mirage/menuData";
+import MobileHeaderSearchCategory from "./MobileHeaderSearchCategory";
 
 const MobileHeaderCategory = ({categoryName,brandsOfCategory,filterBrand,offerFilter,setOfferFilter,setPriceFilter,maxPrice,setFilterBrand,sort,setSort}) => {
     const categorizeResultsData = menuData.filter(item => item.mainTitle === categoryName)
     console.log(categorizeResultsData)
     let categoryTags = categorizeResultsData ?
-        [categorizeResultsData[0].items1[0].title, categorizeResultsData[0].items1[1].title]
+        [categorizeResultsData?.[0]?.items1?.[0]?.title, categorizeResultsData?.[0]?.items1?.[1]?.title]
         : ['', '']
     return (
         <Box>
@@ -21,22 +22,24 @@ const MobileHeaderCategory = ({categoryName,brandsOfCategory,filterBrand,offerFi
                 backgroundColor: '#02a0a4',
                 display: {xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none'}
             }}>
-                <Toolbar variant="dense" sx={{height: '137px', alignItems: 'flex-start', padding: '10px'}}>
+                <Toolbar variant="dense" sx={{height: '137px', alignItems: 'flex-start'}}>
 
                     <Box style={{display: 'flex', flexDirection: 'column', flexGrow: '1'}}>
-                        <Box style={{display: 'flex', justifyContent: 'space-between', padding: '10px'}}>
+                        <Box style={{display: 'flex', justifyContent: 'space-between',alignItems:'center',alignContent:'center',flexGrow:'1'}}>
                             <Box style={{display: 'flex'}}>
                                 <Image src={back}/>
-                                <Box><Typography
-                                    sx={{display: 'flex', color: 'white', marginRight: '3.5rem', fontWeight: 'bold'}}
+                                <Typography
+                                    sx={{display: 'flex', color: 'white', marginRight: '2rem', fontWeight: 'bold'}}
                                     component="div">
                                     {categoryName}
-                                </Typography></Box>
+                                </Typography>
                             </Box>
 
-                            <Box><Image src={magnifier}/></Box>
+                            <Box>
+                                <MobileHeaderSearchCategory/>
+                            </Box>
                         </Box>
-                        <Box style={{marginTop: '30px'}}>
+                        <Box style={{marginTop: '20px'}}>
                             <Button style={{
                                 backgroundColor: 'white',
                                 color: 'black',

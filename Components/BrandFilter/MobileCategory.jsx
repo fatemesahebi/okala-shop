@@ -8,10 +8,6 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Slide from '@mui/material/Slide';
-import CategorizeResults from "../CategorizeResults/CategorizeResults";
-import arrowleft from "../../public/SVG/left.svg"
-import Image from "next/image";
-
 import CategorizeResultsMobile from "../CategorizeResults/CategorizeResultsMobile";
 import {ListItem} from "@mui/material";
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -64,7 +60,7 @@ const MobileCategory=()=>{
                             width: '100vw',
                             backgroundColor: '#f01436',
                             "&.MuiButtonBase-root:hover": {bgcolor: "#f01436"}
-                        }} variant="contained"><Typography>اعمال فیلتر</Typography></Button>
+                        }} variant="contained"><Typography>ثبت فیلتر</Typography></Button>
                     </ListItem>
                 </List>
             </Dialog>

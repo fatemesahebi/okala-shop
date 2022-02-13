@@ -12,6 +12,7 @@ import Typography from '@mui/material/Typography';
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Slide from '@mui/material/Slide';
 import FormSection from "./FormSection";
+import MobileDialogFormSection from "./MobileDialogFormSection";
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -55,10 +56,10 @@ const [open, setOpen] = React.useState(false);
                 </AppBar>
                 <List>
                     <ListItem>
-                        <FormSection filterBrand={filterBrand} setFilterBrand={setFilterBrand} brandsOfCategory={brandsOfCategory}/>
+                        <MobileDialogFormSection filterBrand={filterBrand} setFilterBrand={setFilterBrand} brandsOfCategory={brandsOfCategory}/>
                     </ListItem>
 
-                    <ListItem button  sx={{display:'flex',justifyContent:'flex-end',position:'sticky',bottom:'0',backgroundColor:'white'}}>
+                    <ListItem button  sx={{display:'flex',justifyContent:'flex-end',position:'fixed',bottom:'0',backgroundColor:'white'}}>
                         <Button sx={{
                             width: '100vw',
                             backgroundColor: '#f01436',
