@@ -20,7 +20,7 @@ const productList = [
 ]
 function ListMiddleNavbar(){
     return(
-        <Box sx={{ margin: "auto", width: {xs: "100%",lg: '85rem'},fontSize:"1rem",fontWeight:"bold" }}>
+        <Box sx={{ margin: "auto", width: {xs: "100%",lg: '85rem'},fontSize:".875rem",fontWeight:"bold" ,cursor:"pointer"}}>
             <Swiper
                 slidesPerView={3}
                 spaceBetween={2}
