@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Button,ListItem,List,Divider,AppBar,Toolbar,IconButton,Typography,Dialog} from '@mui/material';
+import {Button, ListItem, List, Divider, AppBar, Toolbar, IconButton, Typography, Dialog} from '@mui/material';
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Slide from '@mui/material/Slide';
 import MobileBrandFilter from "./MobileBrandFilter";
@@ -10,10 +10,9 @@ import OnlyOfferProducts from "../CommodityFilters/OnlyOfferProducts";
 import Image from "next/image";
 import arrow from "./arrow.svg";
 import sort from '../PriceFilter/sort.svg'
+import next from './next.svg'
 import FilterMobileDrawer from "./FilterMobileDrawer";
 import {Box} from "@material-ui/core";
-import styled from "@emotion/styled";
-import Slider from "@mui/material/Slider";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="right" ref={ref} {...props} />;
@@ -25,7 +24,8 @@ const MobileDialog = ({
                           setOfferFilter,
                           offerFilter,
                           setPriceFilter,
-                          maxPrice
+                          maxPrice,sort,setSort
+
                       }) => {
     const [open, setOpen] = React.useState(false);
 
@@ -53,24 +53,33 @@ const MobileDialog = ({
                     alignItems: 'center',
                     alignContent: 'center'
                 }}>
-
                     <Typography style={{
-                        color: 'black',
                         display: 'flex',
-                        fontWeight: 'bold',
                         flexGrow: '0.97',
                         justifyContent: 'center'
                     }}>
-                        <Image  src={arrow}/><FilterMobileDrawer/>
+                        <Image src={arrow}/><FilterMobileDrawer sort={sort} setSort={setSort} />
                     </Typography>
 
 
                     <Divider orientation="vertical" variant="middle" flexItem sx={{height: '2rem'}}/>
                     <Button onClick={handleClickOpen} variant="outlined"
-                            sx={{border: 'none', display: 'flex', fontWeight: 'bold', flexGrow: '1'}}>
+                            sx={{
+                                border: 'none',
+                                display: 'flex',
+                                flexGrow: '1',
+                                "&.MuiButtonBase-root:hover": {border: "none", backgroundColor: 'transparent'}
+                            }}>
+                        <Image src={sort}/>
                         <Typography
-                            style={{color: 'black', display: 'flex', alignItems: 'center', fontWeight: 'bold'}}><Image
-                            src={sort}/>فیلترها</Typography>
+                            style={{
+                                color: 'black',
+                                display: 'flex',
+                                alignItems: 'center',
+                                fontWeight: 'bold',
+                                marginRight: '5px',
+                                fontSize: '14px'
+                            }}>فیلترها</Typography>
                     </Button>
                 </Toolbar>
             </AppBar>
@@ -99,13 +108,19 @@ const MobileDialog = ({
                 </AppBar>
                 <List>
                     <ListItem button>
-                        <Typography><MobileCategory/></Typography>
+
                     </ListItem>
                     <Divider/>
-                    <ListItem button>
+                    <ListItem button sx={{display: 'flex', justifyContent: 'space-between', flexGrow: '1'}}>
+                        <Typography><MobileCategory/></Typography>
+                        <Image src={next}/>
+                    </ListItem>
+                    <Divider/>
+                    <ListItem button sx={{display: 'flex', justifyContent: 'space-between', flexGrow: '1'}}>
                         <Typography><MobileBrandFilter brandsOfCategory={brandsOfCategory}
                                                        filterBrand={filterBrand}
                                                        setFilterBrand={setFilterBrand}/></Typography>
+                        <Image src={next}/>
                     </ListItem>
                     <Divider/>
                     <ListItem>
@@ -116,7 +131,7 @@ const MobileDialog = ({
                         }}>
                             <Box style={{display: 'flex', justifyContent: 'space-between', flexGrow: '1'}}>
                                 <Box>
-                                    <Box><Typography  component="div"> محدوده قیمت</Typography></Box>
+                                    <Box><Typography component="div"> محدوده قیمت</Typography></Box>
 
                                 </Box>
                                 <Box>
@@ -124,8 +139,8 @@ const MobileDialog = ({
 
                                 </Box>
                             </Box>
-                            <Box style={{display:'flex',justifyContent:'center',flexGrow:'1'}}>
-                                <Box sx={{width:'90vw'}}><PriceFilterSlider/></Box>
+                            <Box style={{display: 'flex', justifyContent: 'center', flexGrow: '1'}}>
+                                <Box sx={{width: '90vw'}}><PriceFilterSlider/></Box>
                             </Box>
                         </div>
 

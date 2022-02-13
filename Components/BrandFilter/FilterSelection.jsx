@@ -1,15 +1,10 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 import {Typography} from "@mui/material";
-import {useState} from "react";
 
 const FilterSelection = ({setSort,setSortLable}) => {
 
@@ -26,7 +21,7 @@ const FilterSelection = ({setSort,setSortLable}) => {
                 defaultValue="female"
                 name="radio-buttons-group"
             >
-                <FormControlLabel value="پرفروشترین" control={<Radio onChange={(e)=>handleChange("mostSale",e)}/>} label="پرفروش ترین"/>
+                <FormControlLabel value="پرفروشترین" control={<Radio onChange={(e)=>handleChange("mostSale",e)}/>} label="پرفروشترین"/>
                 <FormControlLabel value="بیشترین تخفیف" control={<Radio onChange={(e)=>handleChange('mostOff',e)}/>} label="بیشترین تخفیف"/>
                 <FormControlLabel value="ارزانترین" control={<Radio onChange={(e)=>handleChange('leastPrice',e)}/>} label="ارزانترین"/>
                 <FormControlLabel value="گرانترین" control={<Radio onChange={(e)=>handleChange('mostPrice',e)}/>} label="گرانترین"/>

@@ -27,8 +27,8 @@ const [open, setOpen] = React.useState(false);
     };
     return (
         <div>
-            <Button variant="outlined" sx={{border:'none'}} onClick={handleClickOpen}>
-               <Typography>برندها</Typography>
+            <Button variant="outlined" sx={{border:'none',"&.MuiButtonBase-root:hover": {border: "none",backgroundColor:'transparent'}}} onClick={handleClickOpen}>
+               <Typography style={{color:"#2e2d2d"}}>برندها</Typography>
             </Button>
             <Dialog
                 fullScreen
@@ -54,7 +54,17 @@ const [open, setOpen] = React.useState(false);
                     </Toolbar>
                 </AppBar>
                 <List>
-                <FormSection filterBrand={filterBrand} setFilterBrand={setFilterBrand} brandsOfCategory={brandsOfCategory}/>
+                    <ListItem>
+                        <FormSection filterBrand={filterBrand} setFilterBrand={setFilterBrand} brandsOfCategory={brandsOfCategory}/>
+                    </ListItem>
+
+                    <ListItem button  sx={{display:'flex',justifyContent:'flex-end',position:'sticky',bottom:'0',backgroundColor:'white'}}>
+                        <Button sx={{
+                            width: '100vw',
+                            backgroundColor: '#f01436',
+                            "&.MuiButtonBase-root:hover": {bgcolor: "#f01436"}
+                        }} variant="contained"><Typography>تبت فیلتر</Typography></Button>
+                    </ListItem>
                 </List>
             </Dialog>
         </div>

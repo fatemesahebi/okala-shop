@@ -4,8 +4,6 @@ import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import FilterSelection from "./FilterSelection";
 import {Typography} from "@mui/material";
-import arrow from "./arrow.svg";
-import Image from "next/image";
 import {useState} from "react";
 
 const FilterMobileDrawer = ({sort,setSort}) => {
@@ -21,7 +19,7 @@ const FilterMobileDrawer = ({sort,setSort}) => {
     };
     return (
         <React.Fragment key={'bottom'}>
-            <Button onClick={toggleDrawer('bottom', true)}><Typography style={{color:'black'}}>{sortLable}</Typography></Button>
+            <Button  onClick={toggleDrawer('bottom', true)}><Typography style={{color:'black',fontSize:'14px',fontWeight:'bold'}}>{sortLable}</Typography></Button>
             <Drawer
                 anchor={'bottom'}
                 open={state['bottom']}

@@ -9,7 +9,7 @@ import magnifier from './magnifier.svg'
 import back from './back.svg'
 import {menuData} from "../../lib/mirage/menuData";
 
-const MobileHeaderCategory = ({categoryName}) => {
+const MobileHeaderCategory = ({categoryName,brandsOfCategory,filterBrand,offerFilter,setOfferFilter,setPriceFilter,maxPrice,setFilterBrand,sort,setSort}) => {
     const categorizeResultsData = menuData.filter(item => item.mainTitle === categoryName)
     console.log(categorizeResultsData)
     let categoryTags = categorizeResultsData ?
@@ -62,7 +62,11 @@ const MobileHeaderCategory = ({categoryName}) => {
                 </Toolbar>
 
                 <Box>
-                    <MobileDialog/>
+                    <MobileDialog brandsOfCategory={brandsOfCategory}
+                                  filterBrand={filterBrand} setFilterBrand={setFilterBrand}
+                                  setOfferFilter={setOfferFilter} offerFilter={offerFilter}
+                                  setPriceFilter={setPriceFilter}
+                                  maxPrice={maxPrice} setSort={setSort} sort={sort}/>
                 </Box>
             </AppBar>
 
