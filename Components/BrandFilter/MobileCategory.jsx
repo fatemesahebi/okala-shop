@@ -31,7 +31,6 @@ const MobileCategory=()=>{
         <div>
             <Button variant="outlined" sx={{border:'none'}} onClick={handleClickOpen}>
                 <Typography style={{color:"#2e2d2d"}}>دسته بندی </Typography>
-                <Image src={arrowleft}/>
             </Button>
             <Dialog
                 fullScreen
