@@ -9,6 +9,9 @@ import Typography from '@mui/material/Typography';
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Slide from '@mui/material/Slide';
 import CategorizeResults from "../CategorizeResults/CategorizeResults";
+import arrowleft from "../../public/SVG/left.svg"
+import Image from "next/image";
+
 import CategorizeResultsMobile from "../CategorizeResults/CategorizeResultsMobile";
 import {ListItem} from "@mui/material";
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -26,8 +29,9 @@ const MobileCategory=()=>{
     };
     return (
         <div>
-            <Button variant="outlined"  sx={{border:'none',"&.MuiButtonBase-root:hover": {border: "none",backgroundColor:'transparent'}}} onClick={handleClickOpen}>
+            <Button variant="outlined" sx={{border:'none'}} onClick={handleClickOpen}>
                 <Typography style={{color:"#2e2d2d"}}>دسته بندی </Typography>
+                <Image src={arrowleft}/>
             </Button>
             <Dialog
                 fullScreen
