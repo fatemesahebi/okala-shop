@@ -51,7 +51,7 @@ const InfoSection = styled('div')({
 });
 
 const ThumbnailWrapper = styled('div')({
-    width: '550px',
+    width: '600px',
     height: '408px',
     display: 'flex',
     marginLeft: '16px',
