@@ -42,19 +42,19 @@ a {
   width: 5px;
 
 }
-::-webkit-scrollbar-button{
-  height: 50px;
-}
-  /* Track */
-::-webkit-scrollbar-track {
-  background: white;
-}
+/*::-webkit-scrollbar-button{*/
+/*  height: 50px;*/
+/*}*/
+/*  !* Track *!*/
+/*::-webkit-scrollbar-track {*/
+/*  background: white;*/
+/*}*/
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #AAAAAA;
- border-radius: 20px;
+/*!* Handle *!*/
+/*::-webkit-scrollbar-thumb {*/
+/*  background: #AAAAAA;*/
+/* border-radius: 20px;*/
 
-}
+/*}*/
 
 

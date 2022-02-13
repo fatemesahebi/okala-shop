@@ -40,7 +40,7 @@ const ImageMagnifire = () => {
                         overlayBoxOpacity={0.2}
                         overlayBoxImage={"https://htmlcolorcodes.com/assets/images/colors/baby-blue-color-solid-background-1920x1080.png"}
                         cursorStyle={"move"}
-                        imageSrc={"https://s3-us-west-1.amazonaws.com/react-package-assets/images/wristwatch_355.jpg"}/>
+                        imageSrc={"https://s3-us-west-1.amazonaws.com/react-package-assets/images/wristwatch_1200.jpg"}/>
                 </Box>
             </Box>
             <Box sx={{
