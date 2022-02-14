@@ -8,13 +8,13 @@ import Image from "next/image";
 import search from "../../public/SVG/search.svg";
 
 
-const FormSection = ({filterBrand,setFilterBrand,brandsOfCategory}) => {
+const FormSection = ({filterBrand, setFilterBrand, brandsOfCategory}) => {
     const [filter, setFilter] = useState('')
-    console.log(brandsOfCategory)
-    const handleChangeFilterBrand=(e,item)=>{
-        (e.target.checked)?
-            setFilterBrand([...filterBrand,item])
-            : setFilterBrand(filterBrand.filter(filter=> filter!== item))
+    const handleChangeFilterBrand = (e, item) => {
+        (e.target.checked) ?
+            setFilterBrand([...filterBrand, item.title])
+            : setFilterBrand(filterBrand.filter(filter => filter !== item.title))
+
     }
     return (
         <div>
@@ -27,14 +27,15 @@ const FormSection = ({filterBrand,setFilterBrand,brandsOfCategory}) => {
                                placeholder={'جستجوی نام برند ...'}/></Box>
             <Box component="div">
                 <FormGroup>
-                    {brandsOfCategory?.filter(item => item.includes(filter)).length === 0 ? null :
-                        brandsOfCategory?.filter(item => item.includes(filter)).map(item =>
-                        <FormControlLabel key={item} control={<Checkbox  sx={{
-                            '&.Mui-checked': {
-                                color:['#f01436'],
-                            },
-                        }}
-                            onChange={(e)=>handleChangeFilterBrand(e,item)}/>} label={item}/>)}
+                    {brandsOfCategory.filter(item => item.title.includes(filter)).length === 0 ? null :
+                        brandsOfCategory.filter(item => item.title.includes(filter)).map(item =>
+
+                    <FormControlLabel key={item.title} control={<Checkbox checked={item.active} sx={{
+                        '&.Mui-checked': {
+                            color: ['#f01436'],
+                        },
+                    }} onChange={(e) => handleChangeFilterBrand(e, item)}/>}
+                                      label={item?.title}/>)}
                 </FormGroup>
             </Box>
         </div>
