@@ -7,6 +7,7 @@ import {styled} from "@mui/styles";
 import Image from "next/image";
 import grouping from "./../../public/SVG/grouping.svg"
 import * as PropTypes from "prop-types";
+import PN from "persian-number";
 const MainContainer = styled('div')({
     maxWidth: '1280px!important',
     margin: 'auto',
@@ -82,7 +83,7 @@ export default function CategoryBreadcrumbs(){
                     </MainContainer>
                 </Container>
                 <Stack sx={{flexDirection:"row",padding:'.5rem 0 0 0!important',marginLeft:"2%"}}>
-                    <Typography sx={{fontFamily:"iranSans",fontSize:".8rem",marginLeft:"1rem"}}>290کالا</Typography>
+                    <Typography sx={{fontFamily:"iranSans",fontSize:".8rem",marginLeft:"1rem"}}>{PN.convertEnToPe(290)}کالا</Typography>
                     <Box display={{md: "none" , xs: "block", xl:"none",lg:"none",sm:"block"}}>
                     <Image width={30} height={30} src={grouping}/>
                     </Box>

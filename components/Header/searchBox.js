@@ -58,7 +58,8 @@ function SearchBox() {
                 borderRadius: '10px',
             }}>
                 <Image src={searchSvg}/>
-                <Input disableUnderline
+                <Input style={{fontFamily:"iranSans"}}
+                       disableUnderline
                        value={searchTerm}
                        placeholder={'جستجو در محصولات اکالا'}
                        sx={{fontSize: '14px', paddingRight: '10px', color: 'black.main', width: '80%'}}
