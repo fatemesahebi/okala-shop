@@ -18,6 +18,13 @@ import {
     getProduct
 } from "../lib/axios/getData";
 import img0 from "../public/images/0.png";
+import {Swiper , SwiperSlide} from "swiper/react";
+import Image from "next/image"
+import "swiper/css"
+import {useDispatch, useSelector} from "react-redux";
+import {addToCart, decreaseItem, removeItem} from "../redux/cartReducer";
+import RemoveIcon from "@mui/icons-material/Remove";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 
 const ColorButton = styled(Button)(({theme}) => ({
     position: "absolute",
@@ -128,6 +135,10 @@ const ProductPage = ({productId , productInitial}) => {
 
         offPercent: 19
     })
+    const dispatch = useDispatch()
+    let shoppingCardId = useSelector(state => state.cart.items.findIndex((item) => item.id === product.id) > -1
+        ? state.cart.items.findIndex((item) => item.id === product.id) : -1)
+    let  shoppinCardCount = useSelector(state => shoppingCardId === -1 ? 0 : state.cart.items[shoppingCardId].count)
     useEffect(() => {
         getProduct(productId)
             .then(data => setProduct(data.product))
@@ -183,7 +194,45 @@ const ProductPage = ({productId , productInitial}) => {
                         <MyContainer>
                             <Box>
                                 <InfoSection>
-                                    {product.productImage.src !== "" && <ImageMagnifire image={String(product.productImage.src)}/>}
+                                    {product.productImage.src !== "" &&
+                                    <Box sx={{
+                                        display: "inline-flex",
+                                    }}>
+
+                                        <Box>
+                                            <Swiper spaceBetween={0} slidesPerView={"auto"} style={{height: "15rem", width: "60px"}} direction={"vertical"}>
+                                                <SwiperSlide>
+                                                    <Box sx={{
+                                                        my: ".5rem",
+                                                        width: "60px",
+                                                        height: "60px",
+                                                        border: "1px solid rgba(0,0,0,0.1)",
+                                                        borderRadius: "5px",
+                                                        display: "flex",
+                                                        flexDirection: "column",
+                                                        alignItems: "center",
+                                                        justifyContent: "center"
+                                                    }}>
+                                                        <Image width={"50px"} height={"50px"} src={product.productImage}/>
+                                                    </Box>
+                                                    <Box sx={{
+                                                        my: ".5rem",
+                                                        width: "60px",
+                                                        height: "60px",
+                                                        border: "1px solid rgba(0,0,0,0.1)",
+                                                        borderRadius: "5px",
+                                                        display: "flex",
+                                                        flexDirection: "column",
+                                                        alignItems: "center",
+                                                        justifyContent: "center"
+                                                    }}>
+                                                        <Image width={"50px"} height={"50px"} src={product.productImage}/>
+                                                    </Box>
+                                                </SwiperSlide>
+                                            </Swiper>
+                                        </Box>
+                                        <ImageMagnifire image={String(product.productImage.src)}/>
+                                    </Box>}
                                     <InformationWrapper>
                                         <Typography variant={"h6"} component={"div"} sx={{
                                             fontSize: '1.25rem',
@@ -214,7 +263,9 @@ const ProductPage = ({productId , productInitial}) => {
                                             <span>4.0</span>
                                         </Usersrate>
                                         <AmountWrapper>
-                                            <ColorButton>
+                                            { shoppinCardCount === 0 && <ColorButton onClick={() => {
+                                                dispatch(addToCart(product));
+                                            }}>
                                                 <AddIcon sx={{
                                                     fontSize: "1.75rem"
                                                 }} ml={20}/>
@@ -222,6 +273,37 @@ const ProductPage = ({productId , productInitial}) => {
                                                     افزودن به سبد خرید
                                                 </Typography>
                                             </ColorButton>
+                                            }
+                                            {(shoppinCardCount === 1) && <ColorButton >
+                                                <AddIcon onClick={() => {
+                                                    dispatch(addToCart(product));
+                                                }} sx={{
+                                                    fontSize: "1.75rem"
+                                                }} ml={20}/>
+                                                <Typography fontSize={"1.15rem"} fontWeight={"bold"}>
+                                                    تعداد در سبد: {PN.convertEnToPe(shoppinCardCount)}
+                                                </Typography>
+                                                <DeleteOutlineOutlinedIcon
+                                                    onClick={() => dispatch(removeItem(product))} sx={{
+                                                    fontSize: "1.75rem"
+                                                }} ml={20}/>
+                                            </ColorButton>}
+                                            {(shoppinCardCount > 1) && <ColorButton >
+                                                <AddIcon onClick={() => {
+                                                    dispatch(addToCart(product));
+                                                }} sx={{
+                                                    fontSize: "1.75rem"
+                                                }} ml={20}/>
+                                                <Typography fontSize={"1.15rem"} fontWeight={"bold"}>
+                                                    تعداد در سبد: {PN.convertEnToPe(shoppinCardCount)}
+                                                </Typography>
+                                                <RemoveIcon
+                                                    onClick={() => dispatch(decreaseItem(product))} sx={{
+                                                    fontSize: "1.75rem"
+                                                }} ml={20}/>
+                                            </ColorButton>}
+
+
                                             <Box sx={{
                                                 display: 'flex',
                                                 flexDirection: 'column',
