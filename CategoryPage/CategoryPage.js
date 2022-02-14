@@ -10,7 +10,9 @@ import {
     CategorizeResults,
     Products,
     BestBrandsFruitsVegetables,
-    CategorizeResultsMobile
+    CategorizeResultsMobile,
+    CategoryBreadcrumbs,
+    SearchResultMobile
 
 } from "../components";
 import * as React from "react";
@@ -94,12 +96,10 @@ function CategoryPage({categoryName}) {
 
 
     return (<div style={{backgroundColor: "#f8f8f8"}}>
-        {/*<Header/>*/}
-        {/*<SearchResults/>*/}
-        {/*<CategorizeResults/>*/}
-        {/*<BrandFilter/>*/}
-        {/*<CommodityFilters/>*/}
-        {/*<PaginationRounded/>*/}
+        <Header/>
+        <Box style={{marginTop:"14%"}}>
+        <CategoryBreadcrumbs/>
+        <SearchResultMobile/>
         <MobileHeaderCategory categoryName={categoryNamePe} brandsOfCategory={brandsOfCategory}
                               filterBrand={filterBrand} setFilterBrand={setFilterBrand}
                               setOfferFilter={setOfferFilter} offerFilter={offerFilter}
@@ -110,7 +110,7 @@ function CategoryPage({categoryName}) {
 
         <MenuMobile/>
         <div style={{display: 'flex'}}>
-            <Box style={{marginTop: '30px'}}>
+            <Box style={{maxWidth:"1280",margin:"1% 8% 0 0"}}>
                 <SearchResults searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
                 <CategorizeResults categoryName={categoryNamePe}
                                    dataCategory={dataCategory}
@@ -142,8 +142,10 @@ function CategoryPage({categoryName}) {
                 </Paper>
             </Paper>
         </div>
+
         <BestBrandsFruitsVegetables/>
         <FooterContainer/>
+        </Box>
     </div>)
 }
 
