@@ -56,7 +56,7 @@ const ImageMagnifire = ({image}) => {
                 height: "20rem",
                 overflow: "hidden",
                 position: "absolute",
-                right: "32rem",
+                right: "36rem",
                 zIndex: 100
             }}>
                 <MagnifierZoom style={{width: "30rem", height: "30rem", margin: "auto"}}
