@@ -8,34 +8,58 @@ import Image from "next/image";
 import close from "../../public/SVG/icons8-close.svg";
 
 
-
-export default function AppliedFilters(){
-    const handleClick = () => {
-        console.info('You clicked the Chip.');
+export default function AppliedFilters({filterBrand, setFilterBrand,
+                                           maxPrice, priceFilter, setPriceFilter}) {
+    const handleDeleteAll = () => {
+        setPriceFilter([0,maxPrice])
+        setFilterBrand([])
     };
 
-    const handleDelete = () => {
-        console.info('You clicked the delete icon.');
+    const handleDelete = (deleteBrandFilter) => {
+        setFilterBrand(filterBrand.filter(item=> item!== deleteBrandFilter))
     };
     return (
-        <Box display={{xl:'block',lg:'block',md:'block',sm:'none',xs:'none'}} sx={{padding:"1rem 1rem 0 0"}}>
-            <Box sx={{width:"20rem",boxShadow:"rgba(0, 0, 0, 0.04) 0px 3px 5px",borderRadius:".3rem",background:"white"}}>
+        <Box display={{xl: 'block', lg: 'block', md: 'block', sm: 'none', xs: 'none'}} sx={{padding: "1rem 1rem 0 0"}}>
+            <Box sx={{
+                width: "20rem",
+                boxShadow: "rgba(0, 0, 0, 0.04) 0px 3px 5px",
+                borderRadius: ".3rem",
+                background: "white"
+            }}>
                 <AccordionSummary>
-                    <Typography sx={{borderRight:"4px solid rgba(124, 200, 204, 1)",height:"1rem",top:".5rem",paddingRight:".41rem",right:"0",fontWeight:"bolder"}}>فیلتر های اعمال شده</Typography>
-                    <button style={{color:"red",background:"white",border:"0",marginRight:"4.5rem",cursor:"pointer"}}>حذف همه </button>
+                    <Typography sx={{
+                        borderRight: "4px solid rgba(124, 200, 204, 1)",
+                        height: "1rem",
+                        top: ".5rem",
+                        paddingRight: ".41rem",
+                        right: "0",
+                        fontWeight: "bolder"
+                    }}>فیلتر های اعمال شده</Typography>
+                    <button style={{
+                        color: "red",
+                        background: "white",
+                        border: "0",
+                        marginRight: "4.5rem",
+                        cursor: "pointer"
+                    }}
+                    onClick={handleDeleteAll}
+                    >حذف همه
+                    </button>
                 </AccordionSummary>
 
-                <Stack direction="row" spacing={1} sx={{padding:"1rem"}}>
-                    <Chip sx={{marginLeft:".7rem"}}
-                        label="بلوط"
-                        onClick={handleClick}
+                <Stack direction="row" spacing={1} sx={{padding: "1rem"}}>
+
+                    {(priceFilter[0]!==0)&& (priceFilter[1]!== maxPrice) &&  <Chip
+                        label= {`از ${priceFilter[0]} تا ${priceFilter[1]}`}
                         onDelete={handleDelete}
                     />
-                    <Chip
-                        label="ناردون"
-                        onClick={handleClick}
-                        onDelete={handleDelete}
-                    />
+                    }
+                    {
+                        filterBrand.map(brand => <Chip sx={{marginLeft: ".7rem"}}
+                                                    label={brand}
+                                                    onDelete={()=>handleDelete(brand)}/>)
+                    }
+
                 </Stack>
             </Box>
 

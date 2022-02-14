@@ -292,7 +292,9 @@ export default function Comments({comments, setComments}){
                 </CommentDiscription>
             </Comment>
             <Addtocart>
-                <ColorButton>
+                <ColorButton sx={{
+                    display: comments ? "block" : "none"
+                }}>
                     افزودن نظر
                 </ColorButton>
             </Addtocart>

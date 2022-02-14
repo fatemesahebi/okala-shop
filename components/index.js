@@ -30,6 +30,7 @@ import CategorizeResultsMobile from "./CategorizeResults/CategorizeResultsMobile
 import CategoryBreadcrumbs from "./CategoryBreadcrumbs/CategoryBreadcrumbs";
 import SearchResultMobile from "./SearchResultMobile/SearchResultMobile";
 import AppliedFilters from "./Appliedfilters/AppliedFilters";
+import CategoryBreadcrumbsDesktop from "./CategoryBreadcrumbs/CategoryBreadcrumbsDesktop";
 export {
     Header,
     HeaderDesktop,
@@ -62,5 +63,6 @@ export {
     CategorizeResultsMobile,
     CategoryBreadcrumbs,
     SearchResultMobile,
-    AppliedFilters
+    AppliedFilters,
+    CategoryBreadcrumbsDesktop
 }
