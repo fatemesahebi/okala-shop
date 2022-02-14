@@ -8,9 +8,9 @@ import Image from "next/image";
 import grouping from "./../../public/SVG/grouping.svg"
 import * as PropTypes from "prop-types";
 const MainContainer = styled('div')({
-    // maxWidth: '1280px!important',
-    // margin: 'auto',
-    padding: '1rem 1rem 0 0!important',
+    maxWidth: '1280px!important',
+    margin: 'auto',
+    padding: '1rem 1.2rem 0 0!important',
     // position: 'relative',
     // overflowX: 'hidden',
     // overflowY: 'auto',
