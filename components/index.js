@@ -27,6 +27,9 @@ import PriceFilter from './PriceFilter/PriceFilter';
 import Products from './BrandFilter/Products';
 import BestBrandsFruitsVegetables from "./BestBrandsFruitsVegetables/BestBrandsFruitsVegetables";
 import CategorizeResultsMobile from "./CategorizeResults/CategorizeResultsMobile";
+import CategoryBreadcrumbs from "./CategoryBreadcrumbs/CategoryBreadcrumbs";
+import SearchResultMobile from "./SearchResultMobile/SearchResultMobile";
+import AppliedFilters from "./Appliedfilters/AppliedFilters";
 export {
     Header,
     HeaderDesktop,
@@ -56,5 +59,8 @@ export {
     PriceFilter,
     Products,
     BestBrandsFruitsVegetables,
-    CategorizeResultsMobile
+    CategorizeResultsMobile,
+    CategoryBreadcrumbs,
+    SearchResultMobile,
+    AppliedFilters
 }

@@ -45,7 +45,7 @@ function SearchBox() {
     const filterDtat = (searchTerm === "") ? [] : products.filter(product => product.productName.includes(searchTerm) ||
         product.brand.includes(searchTerm))
     return (
-        <>
+        <Box>
             <Box sx={{
                 display: 'flex',
                 flexDirection: 'row',
@@ -160,7 +160,7 @@ function SearchBox() {
 
             </Paper>
 
-        </>
+        </Box>
 
     )
 }

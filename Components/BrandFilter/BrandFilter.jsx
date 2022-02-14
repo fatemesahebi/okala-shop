@@ -11,7 +11,7 @@ import {Paper} from "@material-ui/core";
 const BrandFilter = ({setFilterBrand,filterBrand,brandsOfCategory}) => {
     return (
         <Box sx={{display: 'flex',justifyContent:'flex-start',padding:"1rem"}} >
-            <Box display={{xl:'block',lg:'block',md:'none',sm:'none',xs:'none'}}>
+            <Box display={{xl:'block',lg:'block',md:'block',sm:'none',xs:'none'}}>
                 <Accordion sx={{width:"20rem",boxShadow:"rgba(0, 0, 0, 0.04) 0px 3px 5px",borderRadius:"1rem"}}>
                     <AccordionSummary
                                       expandIcon={<ExpandMoreIcon/>}

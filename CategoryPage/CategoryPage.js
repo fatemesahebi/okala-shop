@@ -10,12 +10,15 @@ import {
     CategorizeResults,
     Products,
     BestBrandsFruitsVegetables,
-    CategorizeResultsMobile
+    CategorizeResultsMobile,
+    CategoryBreadcrumbs,
+    SearchResultMobile,
+    AppliedFilters,
 
 } from "../components";
 import * as React from "react";
 import {Paper} from "@mui/material";
-import {Box} from "@material-ui/core";
+import {Box} from "@mui/material";
 import {useEffect, useState} from "react";
 import {getCategoryProducts} from "../lib/axios/getData";
 import MobileHeaderCategory from "../Components/BrandFilter/MobileHeaderCategory";
@@ -93,13 +96,15 @@ function CategoryPage({categoryName}) {
     finalData = dataMange()
 
 
-    return (<div style={{backgroundColor: "#f8f8f8"}}>
-        {/*<Header/>*/}
-        {/*<SearchResults/>*/}
-        {/*<CategorizeResults/>*/}
-        {/*<BrandFilter/>*/}
-        {/*<CommodityFilters/>*/}
-        {/*<PaginationRounded/>*/}
+    return (<div style={{backgroundColor: "#f8f8f8" , width: "100vw"}}>
+        <Box sx={{
+            display: {md: "block" , xs: "none"}
+        }} >
+            <Header/>
+        </Box>
+        <Box sx={{marginTop: {md:"15rem" , xs: "12rem"}}}>
+        {/*<CategoryBreadcrumbs/>*/}
+        <SearchResultMobile/>
         <MobileHeaderCategory categoryName={categoryNamePe} brandsOfCategory={brandsOfCategory}
                               filterBrand={filterBrand} setFilterBrand={setFilterBrand}
                               setOfferFilter={setOfferFilter} offerFilter={offerFilter}
@@ -109,41 +114,49 @@ function CategoryPage({categoryName}) {
         <MobileProduct finalData={finalData} page={page}/>
 
         <MenuMobile/>
-        <div style={{display: 'flex'}}>
-            <Box style={{marginTop: '30px'}}>
-                <SearchResults searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-                <CategorizeResults categoryName={categoryNamePe}
-                                   dataCategory={dataCategory}
-                />
-                <BrandFilter brandsOfCategory={brandsOfCategory} filterBrand={filterBrand}
-                             setFilterBrand={setFilterBrand}/>
+            <Box display={{md: "block" , xs: "none"}}>
+                <div style={{display: "flex", width: "100vw"  , justifyContent: "center"}}>
+                    <Box style={{maxWidth:"1280" , marginTop:"1rem" , paddingRight: "1rem"}}>
+                        <AppliedFilters/>
+                        <SearchResults searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+                        <CategorizeResults categoryName={categoryNamePe}
+                                           dataCategory={dataCategory}
+                        />
+                        <BrandFilter brandsOfCategory={brandsOfCategory} filterBrand={filterBrand}
+                                     setFilterBrand={setFilterBrand}/>
 
-                <CommodityFilters offerFilter={offerFilter} setOfferFilter={setOfferFilter}/>
-                <PriceFilter maxPrice={maxPrice} priceFilter={priceFilter} setPriceFilter={setPriceFilter}/>
+                        <CommodityFilters offerFilter={offerFilter} setOfferFilter={setOfferFilter}/>
+                        <PriceFilter maxPrice={maxPrice} priceFilter={priceFilter} setPriceFilter={setPriceFilter}/>
+                    </Box>
+                    <Paper elevation={0} sx={{
+                        display:{xl: 'flex', lg: 'flex', md: 'flex', sm: 'none', xs: 'none'}, flexDirection: 'column', alignItems: 'center', marginTop: '30px',
+                        borderRadius: '2rem'
+                    }}
+                    >
+                        <Products finalData={finalData} page={page} setSort={setSort} sort={sort}
+                                  brandsOfCategory={brandsOfCategory}
+                                  filterBrand={filterBrand}
+                                  setFilterBrand={setFilterBrand}
+                                  setOfferFilter={setOfferFilter}
+                                  offerFilter={offerFilter}
+                                  maxPrice={maxPrice}
+                                  setPriceFilter={setPriceFilter}
+
+
+                        />
+                        <Paper elevation={0} sx={{my: '20px'}}>
+                            <PaginationRounded setPage={setPage} pageCount={pageCount}/>
+                        </Paper>
+                    </Paper>
+                </div>
             </Box>
-            <Paper elevation={0} sx={{
-                display:{xl: 'flex', lg: 'flex', md: 'flex', sm: 'none', xs: 'none'}, flexDirection: 'column', alignItems: 'center', marginTop: '30px',
-                borderRadius: '2rem'
-            }}
-            >
-                <Products finalData={finalData} page={page} setSort={setSort} sort={sort}
-                          brandsOfCategory={brandsOfCategory}
-                          filterBrand={filterBrand}
-                          setFilterBrand={setFilterBrand}
-                          setOfferFilter={setOfferFilter}
-                          offerFilter={offerFilter}
-                          maxPrice={maxPrice}
-                          setPriceFilter={setPriceFilter}
-
-
-                />
-                <Paper elevation={0} sx={{my: '20px'}}>
-                    <PaginationRounded setPage={setPage} pageCount={pageCount}/>
-                </Paper>
-            </Paper>
-        </div>
-        <BestBrandsFruitsVegetables/>
-        <FooterContainer/>
+            <Box sx={{
+                display: {md: "block" , xs:"none"}
+            }}>
+                <BestBrandsFruitsVegetables/>
+                <FooterContainer/>
+            </Box>
+        </Box>
     </div>)
 }
 

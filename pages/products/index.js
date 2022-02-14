@@ -6,8 +6,8 @@ import {HeaderFooterProvider} from "../../Components";
 const ProductPageInformation = () => {
     return (
         <HeaderFooterProvider>
-            <ProductMobile/>
-            <ProductPage/>
+            <ProductMobile productId={1}/>
+            <ProductPage productId={1}/>
         </HeaderFooterProvider>
     );
 };

@@ -43,7 +43,7 @@ export default function CategorizeResultsMobile() {
     };
 
     return (
-        <Box sx={{display: {lg: 'none', md: 'none', xs: 'flex'}, flexDirection: "column",cursor:"pointer"}}>
+        <Box sx={{display: {sm: 'flex', md: 'flex', xs: 'flex'}, flexDirection: "column",cursor:"pointer"}}>
             <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                 <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
 

@@ -56,7 +56,7 @@ const brandsData = [
 
 function BestBrandsFruitsVegetables() {
     return (
-        <Box style={{padding:"2% 23% 0 11%"}} display={{xl: 'block', lg: 'block', md: 'none', sm: 'none', xs: 'none'}}>
+        <Box style={{padding:"2% 32% 0 11%"}} display={{xl: 'block', lg: 'block', md: 'block', sm: 'none', xs: 'none'}}>
             <Typography sx={{fontWeight:"bold"}}>برترین برندها</Typography>
             <hr style={{color:"rgba(230,230,230,0.3)"}}/>
             <Box >
