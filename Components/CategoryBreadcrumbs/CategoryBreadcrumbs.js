@@ -65,7 +65,7 @@ export default function CategoryBreadcrumbs(){
     return(
         <Box display={{md: "block" , xs: "block"}}>
             <Stack sx={{flexDirection:"row"}}>
-                <Container maxWidth={'false'} sx={{background: 'white'}}>
+                <Container maxWidth={'false'} >
                     <MainContainer>
                         <Stack sx={{direction: "rtl"}} spacing={2}>
                             <Breadcrumbs
