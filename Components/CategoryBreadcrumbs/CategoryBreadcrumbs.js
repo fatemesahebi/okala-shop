@@ -82,7 +82,7 @@ export default function CategoryBreadcrumbs(){
                     </MainContainer>
                 </Container>
                 <Stack sx={{flexDirection:"row",padding:'.5rem 0 0 0!important',marginLeft:"2%"}}>
-                    <Typography sx={{fontFamily:"iranSans",fontSize:".8rem",marginLeft:"1rem",marginTop:".3rem"}}>290کالا</Typography>
+                    <Typography sx={{fontFamily:"iranSans",fontSize:".8rem",marginLeft:"1rem"}}>290کالا</Typography>
                     <Box display={{md: "none" , xs: "block", xl:"none",lg:"none",sm:"block"}}>
                     <Image width={30} height={30} src={grouping}/>
                     </Box>
