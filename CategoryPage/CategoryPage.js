@@ -40,15 +40,13 @@ function CategoryPage({categoryName}) {
     let finalData = []
     let pageCount = 1
 
+
     let categoryNamePe= categoryList.filter(item=>item.groupEn===categoryName)[0].groupPe
-    console.log({categoryName})
-    console.log({categoryNamePe})
-    // let category= (categoryName)? categoryName : "میوه و سبزیجات"
     useEffect(() => {
-        getCategoryProducts(categoryNamePe).then(data => setDataCategory(data.products))
+         getCategoryProducts(categoryNamePe).then(data => setDataCategory(data.products))
+
             .catch(error => console.log(error))
          setScreanWidth(window.innerWidth)
-        console.log(dataCategory)
 
     }, [screanWidth])
 
@@ -85,18 +83,36 @@ function CategoryPage({categoryName}) {
 
         return result
     }
-    const getBrandsOfCategory = () => {
+
+
+    function getBrandsOfCategory(){
         let brandsOfCategory = []
-        dataCategory.map(item => (!brandsOfCategory.includes(item.brand)) ?
-            brandsOfCategory.push(item.brand) : null)
-        return brandsOfCategory
+        let brandCategoryEn=[]
+         let result=[]
+        dataCategory.map(item => {if(!brandsOfCategory.includes(item.brand)) {
+            brandsOfCategory.push(item.brand)
+            brandCategoryEn.push(item.brandEn)
+            }})
+
+        brandsOfCategory.map((item,index)=>
+            result.push({title:item,active:false,count:1,brandEn:brandCategoryEn[index]}) )
+
+        dataCategory.map(product=> result.map(brand=> (brand.title===product.brand)?
+            {...brand,count:brand.count++,brandEn:product.brandEn} : null))
+
+        // result.map(item=> filterBrand.includes(item.tiltle)? {...item,active:true} : item )
+        for (let item of result){
+            if (filterBrand.includes(item.title)) item.active=true
+        }
+
+        return result
     }
 
 
-    let brandsOfCategory = getBrandsOfCategory()
+
     finalData = dataMange()
-
-
+    let brandsOfCategory= getBrandsOfCategory()
+    console.log(brandsOfCategory)
     return (<div style={{backgroundColor: "#f8f8f8" , width: "100vw"}}>
         <Box sx={{
             display: {md: "block" , xs: "none"}
@@ -118,13 +134,21 @@ function CategoryPage({categoryName}) {
             <Box display={{md: "block" , xs: "none"}}>
                 <div style={{display: "flex", width: "100vw"  , justifyContent: "center"}}>
                     <Box style={{maxWidth:"1280" , marginTop:"1rem" , paddingRight: "1rem"}}>
-                        <AppliedFilters/>
+                        <AppliedFilters filterBrand={filterBrand} setFilterBrand={setFilterBrand}
+                                        priceFilter={priceFilter} setPriceFilter={setPriceFilter}
+                                        maxPrice={maxPrice}
+                                        brandsOfCategory={brandsOfCategory}
+                        />
                         <SearchResults searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
                         <CategorizeResults categoryName={categoryNamePe}
                                            dataCategory={dataCategory}
+
                         />
                         <BrandFilter brandsOfCategory={brandsOfCategory} filterBrand={filterBrand}
-                                     setFilterBrand={setFilterBrand}/>
+                                     setFilterBrand={setFilterBrand}
+
+
+                        />
 
                         <CommodityFilters offerFilter={offerFilter} setOfferFilter={setOfferFilter}/>
                         <PriceFilter maxPrice={maxPrice} priceFilter={priceFilter} setPriceFilter={setPriceFilter}/>

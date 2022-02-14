@@ -8,7 +8,7 @@ import FormSection from "./FormSection";
 // import ShowBar from "./othersection/ShowBar";
 import {Paper} from "@material-ui/core";
 
-const BrandFilter = ({setFilterBrand,filterBrand,brandsOfCategory}) => {
+const BrandFilter = ({setFilterBrand,filterBrand,brandsOfCategory,setBrandsOfCategory}) => {
     return (
         <Box sx={{display: 'flex',justifyContent:'flex-start',padding:"1rem"}} >
             <Box display={{xl:'block',lg:'block',md:'block',sm:'none',xs:'none'}}>
@@ -21,7 +21,11 @@ const BrandFilter = ({setFilterBrand,filterBrand,brandsOfCategory}) => {
                         <Typography sx={{borderRight:"4px solid rgba(124, 200, 204, 1)",height:"1rem",top:".5rem",paddingRight:".41rem",right:"0",fontWeight:"bolder"}}> برندهای موجود</Typography>
                     </AccordionSummary>
                     <AccordionDetails sx={{height: '300px', width: '308px', overflow: "scroll", overflowX: 'hidden'}}>
-                        <FormSection brandsOfCategory={brandsOfCategory} setFilterBrand={setFilterBrand} filterBrand={filterBrand}/>
+                        <FormSection
+                            brandsOfCategory={brandsOfCategory} setFilterBrand={setFilterBrand}
+                            filterBrand={filterBrand}
+
+                        />
                     </AccordionDetails>
                 </Accordion>
             </Box>
