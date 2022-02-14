@@ -1,5 +1,5 @@
 import React from 'react';
-import {Input, OutlinedInput, Typography} from "@material-ui/core";
+import {Input, OutlinedInput, Typography} from "@mui/material";
 
 const RangePriceInput = ({priceFilter}) => {
     return (
