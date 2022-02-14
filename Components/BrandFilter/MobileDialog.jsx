@@ -14,6 +14,7 @@ import nextIcon from './nextIcon.svg'
 import FilterMobileDrawer from "./FilterMobileDrawer";
 import {Box} from "@material-ui/core";
 import RangePriceInput from "../PriceFilter/RangePriceInput";
+import {MobileDialogInput} from "./MobileDialogInput";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="right" ref={ref} {...props} />;
@@ -144,7 +145,7 @@ const MobileDialog = ({
                                 <Box sx={{width: '90vw',display:'flex',justifyContent:'center'}}><PriceFilterSlider/></Box>
                             </Box>
                             <Box>
-                                <Box sx={{width: '100vw',display:'flex',justifyContent:'center'}}><RangePriceInput priceFilter={priceFilter}/></Box>
+                                <Box sx={{width: '100vw',display:'flex',justifyContent:'center'}}><MobileDialogInput priceFilter={priceFilter}/></Box>
                             </Box>
 
                         </div>
