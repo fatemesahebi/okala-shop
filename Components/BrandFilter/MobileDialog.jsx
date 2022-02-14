@@ -36,7 +36,10 @@ const MobileDialog = ({
     };
 
     const handleClose = () => {
-        setOpen(false);
+        setOpen(false)
+
+
+
     };
     const handleDeleteFilter = () => {
         setOpen(false)
@@ -103,7 +106,7 @@ const MobileDialog = ({
                                     component="div">
                             فیلترها
                         </Typography>
-                        <Typography sx={{fontWeight: 'bold'}} onClick={handleClose}>
+                        <Typography sx={{fontWeight: 'bold'}} onClick={handleDeleteFilter}>
                             حذف همه فیلترها
                         </Typography>
                     </Toolbar>

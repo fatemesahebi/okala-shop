@@ -25,7 +25,14 @@ const [open, setOpen] = React.useState(false);
 
     const handleClose = () => {
         setOpen(false);
+
     };
+    const handleDeletFilter=()=>{
+        setFilterBrand([])
+        setOpen(false);
+
+
+    }
     return (
         <div>
             <Button variant="outlined" sx={{border:'none',"&.MuiButtonBase-root:hover": {border: "none",backgroundColor:'transparent'}}} onClick={handleClickOpen}>
@@ -49,7 +56,7 @@ const [open, setOpen] = React.useState(false);
                         <Typography  sx={{ ml: 2, flex: 1 ,color:'red'}}  component="div">
                             برندها
                         </Typography>
-                        <Button autoFocus color="inherit" onClick={handleClose}>
+                        <Button autoFocus color="inherit" onClick={handleDeletFilter}>
                             حذف  فیلتر
                         </Button>
                     </Toolbar>
@@ -64,7 +71,7 @@ const [open, setOpen] = React.useState(false);
                             width: '100vw',
                             backgroundColor: '#f01436',
                             "&.MuiButtonBase-root:hover": {bgcolor: "#f01436"}
-                        }} variant="contained"><Typography>تبت فیلتر</Typography></Button>
+                        }} variant="contained"><Typography>ثبت فیلتر</Typography></Button>
                     </ListItem>
                 </List>
             </Dialog>

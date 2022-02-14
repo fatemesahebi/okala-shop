@@ -113,7 +113,11 @@ function CategoryPage({categoryName}) {
     finalData = dataMange()
     let brandsOfCategory= getBrandsOfCategory()
     console.log(brandsOfCategory)
-    return (<div style={{backgroundColor: "#f8f8f8" , width: "100vw"}}>
+
+
+
+    return (
+        <div style={{backgroundColor: "#f8f8f8" , width: "100vw"}}>
         <Box sx={{
             display: {md: "block" , xs: "none"}
         }} >
