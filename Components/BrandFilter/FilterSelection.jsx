@@ -6,7 +6,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 import {Typography} from "@mui/material";
 
-const FilterSelection = ({setSort,setSortLable}) => {
+const FilterSelection = ({setSort,setSortLable,sort}) => {
 
     const handleChange = (sortType,e) => {
         setSort(sortType)
@@ -21,10 +21,10 @@ const FilterSelection = ({setSort,setSortLable}) => {
                 defaultValue="female"
                 name="radio-buttons-group"
             >
-                <FormControlLabel value="پرفروشترین" control={<Radio onChange={(e)=>handleChange("mostSale",e)}/>} label="پرفروشترین"/>
-                <FormControlLabel value="بیشترین تخفیف" control={<Radio onChange={(e)=>handleChange('mostOff',e)}/>} label="بیشترین تخفیف"/>
-                <FormControlLabel value="ارزانترین" control={<Radio onChange={(e)=>handleChange('leastPrice',e)}/>} label="ارزانترین"/>
-                <FormControlLabel value="گرانترین" control={<Radio onChange={(e)=>handleChange('mostPrice',e)}/>} label="گرانترین"/>
+                <FormControlLabel value="پرفروشترین" control={<Radio checked={(sort==="mostSale")? true : false} onChange={(e)=>handleChange("mostSale",e)}/>} label="پرفروشترین"/>
+                <FormControlLabel value="بیشترین تخفیف" control={<Radio checked={(sort==="mostOff")? true : false} onChange={(e)=>handleChange('mostOff',e)}/>} label="بیشترین تخفیف"/>
+                <FormControlLabel value="ارزانترین" control={<Radio checked={(sort==="leastPrice")? true : false} onChange={(e)=>handleChange('leastPrice',e)}/>} label="ارزانترین"/>
+                <FormControlLabel value="گرانترین" control={<Radio checked={(sort==="mostPrice")? true : false} onChange={(e)=>handleChange('mostPrice',e)}/>} label="گرانترین"/>
             </RadioGroup>
         </FormControl>
 )

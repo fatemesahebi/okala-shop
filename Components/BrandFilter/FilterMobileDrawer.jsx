@@ -26,7 +26,7 @@ const FilterMobileDrawer = ({sort,setSort}) => {
                 onClose={toggleDrawer('bottom', false)}
             >
                 <List>
-                    <FilterSelection setSort={setSort} setSortLable={setSortLable}/>
+                    <FilterSelection sort={sort} setSort={setSort} setSortLable={setSortLable}/>
                 </List>
             </Drawer>
         </React.Fragment>
