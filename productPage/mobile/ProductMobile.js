@@ -12,11 +12,9 @@ import {styled} from '@mui/system';
 import AddIcon from '@mui/icons-material/Add';
 import Breadcrumbs from './breadcrumb';
 import CategoryProducts from '../../components/CategoryProducts/CategoryProducts'
-import {HeaderFooterProvider} from "../../components";
+import {FooterContainer, HeaderFooterProvider} from "../../components";
 import chat from "../../public/SVG/chat.svg";
 import heart from "../../public/SVG/heart.svg";
-
-
 import {
     Addtocart,
     Bottomwrapper,
@@ -33,6 +31,10 @@ import Image from "next/image";
 import {useEffect, useState} from "react";
 import {getProduct} from "../../lib/axios/getData";
 import PN from "persian-number";
+import Comments from "./comments";
+import {Swiper , SwiperSlide} from "swiper/react";
+import "swiper/css"
+import "swiper/css/pagination"
 
 const ColorButton = styled(Button)(({theme}) => ({
     width: '104px !important',
@@ -45,13 +47,14 @@ const ColorButton = styled(Button)(({theme}) => ({
 
 
 export default function ProductMobile({productId}) {
+    const [comments , setComments] = useState(false)
     const [product, setProduct] = useState({
         id: 0,
         productImage: {src: ""},
         productName: "",
         brand: "",
         brandEn: "",
-        categories: "" ,
+        categories: "",
         category: "",
         batchType: "",
         Type: "",
@@ -73,7 +76,7 @@ export default function ProductMobile({productId}) {
             .catch(res => alert(res.status))
     }, [])
     return (
-        <Box display={ {md: "none" , xs: "block"}}>
+        <Box display={{md: "none", xs: "block"}}>
             <Box>
                 <React.Fragment sx={{
                     backgroundColor: '#F8F8F8',
@@ -93,7 +96,7 @@ export default function ProductMobile({productId}) {
                         </IconButton>
                     </Topsection>
                     <Container sx={{backgroundColor: 'white'}}>
-                        <Slidercontainer sx={{direction: 'ltr'}}>
+                        <Slidercontainer sx={{direction: 'ltr' , background: "white"}}>
                             <Buttonwrapper>
                                 <Buttoncontainer>
                                     <Image src={heart}/>
@@ -105,6 +108,26 @@ export default function ProductMobile({productId}) {
                             </span>
                                 </Buttoncontainer>
                             </Buttonwrapper>
+                            <Box sx={{
+                                maxWidth: "fit-content",
+                                height: "3rem",
+                                margin: "auto"
+                            }}>
+                                <Swiper>
+
+                                </Swiper>
+                                {product.productName !== "" && (
+                                    <Swiper style={{width: "200px" , height: "220px"}} slidesPerView={1} pagination={true} >
+                                        <SwiperSlide>
+                                            <Image width={"200px"} height={"200px"} src={product.productImage}/>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <Image width={"200px"} height={"200px"} src={product.productImage}/>
+                                        </SwiperSlide>
+                                    </Swiper>
+                                )}
+                            </Box>
+
                         </Slidercontainer>
                         <Infosection sx={{backgroundColor: 'white'}}>
                             <Topwrapper sx={{fontSize: '1rem'}}>
@@ -185,12 +208,15 @@ export default function ProductMobile({productId}) {
                                 <span>1نظر ثبت شده</span>
                             </span>
                             </Box>
-                            <Box sx={{display: 'flex'}}>
+                            <Box onClick={() => setComments(!comments)} sx={{display: 'flex'}}>
                                 <span>مشاهده نظرات</span>
                             </Box>
+
+
                         </Showcomments>
                         {product.productName !== "" && <Breadcrumbs product={product}/>}
-                        {product.categories !== "" && <CategoryProducts similarProducts={true} category={product.categories}/>}
+                        {product.categories !== "" &&
+                        <CategoryProducts similarProducts={true} category={product.categories}/>}
 
                     </Container>
 
@@ -247,6 +273,11 @@ export default function ProductMobile({productId}) {
                         </Pricewrapper>
                     </Addtocart>
                 </React.Fragment>
+            </Box>
+            <Box sx={{
+                // display: comments ? "none":"block"
+            }}>
+                <Comments comments={comments} setComments={setComments}/>
             </Box>
         </Box>
 

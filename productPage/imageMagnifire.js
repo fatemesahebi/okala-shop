@@ -1,6 +1,7 @@
 import {MagnifierContainer, Magnifier, MagnifierPreview, MagnifierZoom} from "react-image-magnifiers"
 import React, {useEffect, useState} from 'react';
 import Box from "@mui/material/Box";
+import {Swiper , SwiperSlide} from "swiper/react";
 
 const imageBaseUrl =
     "https://s3-us-west-1.amazonaws.com/react-package-assets/images/";

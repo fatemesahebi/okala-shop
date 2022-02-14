@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import ProductInfo from "./ProductInfo";
 import {HeaderFooterProvider} from "../components";
 import {Box, Button, Container, Stack, Typography} from "@mui/material";
-import {styled} from "@mui/styles";
+import {styled} from "@mui/system";
 import CategoryProducts from "../components/CategoryProducts/CategoryProducts";
 import BasicTabs from "./tabs";
 import {Usersrate} from "./mobile";
@@ -109,7 +109,7 @@ const ProductPage = ({productId , productInitial}) => {
     const [product, setProduct] = useState(productInitial? productInitial :{
         id: 0,
         productImage: {src: ""},
-        productName: "dfgd",
+        productName: "",
         brand: "",
         brandEn: "",
         categories: "" ,
