@@ -12,9 +12,10 @@ import {styled} from '@mui/system';
 import AddIcon from '@mui/icons-material/Add';
 import Breadcrumbs from './breadcrumb';
 import CategoryProducts from '../../components/CategoryProducts/CategoryProducts'
-import {FooterContainer, HeaderFooterProvider} from "../../components";
+import {FooterContainer, HeaderFooterProvider, ShoppingCard} from "../../components";
 import chat from "../../public/SVG/chat.svg";
 import heart from "../../public/SVG/heart.svg";
+import basket from "../../public/SVG/shopBascket.svg"
 import {
     Addtocart,
     Bottomwrapper,
@@ -35,6 +36,10 @@ import Comments from "./comments";
 import {Swiper , SwiperSlide} from "swiper/react";
 import "swiper/css"
 import "swiper/css/pagination"
+import {addToCart, decreaseItem, removeItem} from "../../redux/cartReducer";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import RemoveIcon from "@mui/icons-material/Remove";
+import {useDispatch, useSelector} from "react-redux";
 
 const ColorButton = styled(Button)(({theme}) => ({
     width: '104px !important',
@@ -48,6 +53,7 @@ const ColorButton = styled(Button)(({theme}) => ({
 
 export default function ProductMobile({productId}) {
     const [comments , setComments] = useState(false)
+    const [cart , setCart] = useState(false)
     const [product, setProduct] = useState({
         id: 0,
         productImage: {src: ""},
@@ -70,6 +76,10 @@ export default function ProductMobile({productId}) {
 
         offPercent: 19
     })
+    const dispatch = useDispatch()
+    let shoppingCardId = useSelector(state => state.cart.items.findIndex((item) => item.id === product.id) > -1
+        ? state.cart.items.findIndex((item) => item.id === product.id) : -1)
+    let  shoppinCardCount = useSelector(state => shoppingCardId === -1 ? 0 : state.cart.items[shoppingCardId].count)
     useEffect(() => {
         getProduct(productId)
             .then(data => setProduct(data.product))
@@ -141,7 +151,7 @@ export default function ProductMobile({productId}) {
                                 </Typography>
                                 <Usersrate>
                                     <StarOutlineIcon/>
-                                    <span>4.0</span>
+                                    <span>۴.۰</span>
                                 </Usersrate>
                             </Topwrapper>
                             <Bottomwrapper>
@@ -221,10 +231,40 @@ export default function ProductMobile({productId}) {
                     </Container>
 
                     <Addtocart>
-                        <ColorButton>
-                            <AddIcon ml={20}/>
-                            خرید
-                        </ColorButton>
+                        <Box display={"inline-flex"}>
+                            { shoppinCardCount === 0 && <ColorButton onClick={() => {
+                                dispatch(addToCart(product));
+                            }}>
+                                <AddIcon ml={20}/>
+                                <Typography fontWeight={"bold"}>
+                                    خرید
+                                </Typography>
+                            </ColorButton>
+                            }
+                            {(shoppinCardCount === 1) && <ColorButton >
+                                <AddIcon onClick={() => {
+                                    dispatch(addToCart(product));
+                                }} ml={20}/>
+                                <Typography fontWeight={"bold"}>
+                                    خرید
+                                </Typography>
+                                <DeleteOutlineOutlinedIcon
+                                    onClick={() => dispatch(removeItem(product))} ml={20}/>
+                            </ColorButton>}
+                            {(shoppinCardCount >= 2) && <ColorButton >
+                                <AddIcon onClick={() => {
+                                    dispatch(addToCart(product));
+                                }} ml={20}/>
+                                <Typography fontWeight={"bold"}>
+                                    خرید
+                                </Typography>
+                                <RemoveIcon
+                                    onClick={() => dispatch(decreaseItem(product))} ml={20}/>
+                            </ColorButton>}
+                            <Button onClick={() => setCart(true)}>
+                                <Image src={basket}/>
+                            </Button>
+                        </Box>
                         <Pricewrapper sx={{flexDirection: 'column'}}>
                             <Box sx={{
                                 display: 'flex',
@@ -274,11 +314,11 @@ export default function ProductMobile({productId}) {
                     </Addtocart>
                 </React.Fragment>
             </Box>
-            <Box sx={{
-                // display: comments ? "none":"block"
-            }}>
+            <Box>
                 <Comments comments={comments} setComments={setComments}/>
+                <ShoppingCard open={cart} setOpen={setCart}/>
             </Box>
+
         </Box>
 
     )

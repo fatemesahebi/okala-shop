@@ -31,7 +31,7 @@ let CountOrder=useSelector(state=>state.cart.items.length)
             left:0,
             top:0,
             bottom:0,
-            width: '520px',
+            width: {md:'520px', xs: "100vw"},
             zIndex: '100',
             color: 'black',
             height: '100vh',
