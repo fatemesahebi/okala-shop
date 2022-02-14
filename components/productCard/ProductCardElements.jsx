@@ -144,7 +144,7 @@ const SingleProduct = ({product}) => {
 
     const router=useRouter()
 
-    const productUrl= product.productName.replace(/\s+/g, '-')
+    const productUrl= product.productName?.replace(/\s+/g, '-')
     const dispatch = useDispatch()
     let shoppingCardId = useSelector(state => state.cart.items.findIndex((item) => item.id === product.id) > -1
             ? state.cart.items.findIndex((item) => item.id === product.id) : -1)
@@ -183,7 +183,7 @@ const SingleProduct = ({product}) => {
                             }
 
 
-                            <StyledImage src={product.productImage.src}/>
+                            <StyledImage src={product.productImage?.src}/>
                         </StyledCardMedia>
                                 <StyledCardContent>
                                     <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
