@@ -139,12 +139,26 @@ const ColorButton = styled(Button)(({theme}) => ({
     }
 }));
 
-export default function Comments(){
+export default function Comments({comments, setComments}){
     return(
-        <div>
-            <Topsection>
-                <ArrowForwardOutlinedIcon/>
-            </Topsection>
+        <div style={{
+            border: "1px solid rgba(0,0,0,0.1)",
+            borderRadius: "10px 10px 0 0 ",
+            width: "100vw",
+            height: "100vh",
+            background: "white",
+            top: comments ? "8.41rem":"100vh",
+            overflow: "hidden",
+            right: 0,
+            zIndex: "160",
+            position: "fixed",
+            transition: "all 0.5s"
+        }}>
+            <Box onClick={() => setComments(!comments)}>
+                <Topsection>
+                    <ArrowForwardOutlinedIcon/>
+                </Topsection>
+            </Box>
             <ProductInfo>
                 <Box sx={{
                     display: 'inline-block',

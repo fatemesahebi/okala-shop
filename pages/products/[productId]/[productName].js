@@ -2,12 +2,14 @@ import React from 'react';
 import ProductPage from "../../../productPage/ProductPage";
 import ProductMobile from "../../../productPage/mobile/ProductMobile"
 import {HeaderFooterProvider} from "../../../Components";
+import {useRouter} from "next/router";
 
 const ProductPageInformation = () => {
+    const router = useRouter()
     return (
         <HeaderFooterProvider>
-            <ProductMobile productId={1}/>
-            <ProductPage productId={1}/>
+            <ProductMobile productId={router.query.productId}/>
+            <ProductPage productId={router.query.productId}/>
         </HeaderFooterProvider>
     );
 };
@@ -18,7 +20,7 @@ export async function getStaticPaths() {
 
     return {
         paths: [
-            {params: {productId: 'food-stuff' , productName: 'food-stuff'}}
+            {params: {productId: '1' , productName: 'food-stuff'}}
         ],
         fallback: 'blocking'
     };

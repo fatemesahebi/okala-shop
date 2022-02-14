@@ -9,7 +9,7 @@ import {BottomRow} from "./bottomrow";
 
 export function FooterContainer() {
     return (
-        <Box display={{xl: 'block', lg: 'block', md: 'block', sm: 'none', xs: 'none'}}>
+        <Box>
         <footer style={{backgroundColor:'#F0F0F0',}} >
             <Box sx={{backgroundColor:' #F0F0F0', marginBottom:'.125rem'
             }} >

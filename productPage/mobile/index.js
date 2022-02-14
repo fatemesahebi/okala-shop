@@ -19,8 +19,9 @@ export const Topsection = styled('div')({
     justifyContent: 'space-between',
 });
 export const Slidercontainer = styled('div')({
+
     width: '100%',
-    height: '232px',
+    height: '272px',
     background: 'teal',
     paddingBottom: '24px',
     borderBottom: '1px solid rgba(240, 240, 240, 1)',
@@ -134,6 +135,8 @@ export const Dropdown   = styled('div')({
     alignItems: 'center',
 });
 export const Buttonwrapper = styled('div')({
+    zIndex: "100",
+    maxWidth:"fit-content",
     top: '1rem',
     left: '1rem',
     display: 'flex',
