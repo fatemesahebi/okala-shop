@@ -8,22 +8,22 @@ import Image from "next/image";
 import grouping from "./../../public/SVG/grouping.svg"
 import * as PropTypes from "prop-types";
 const MainContainer = styled('div')({
-    maxWidth: '1280px!important',
-    margin: 'auto',
+    // maxWidth: '1280px!important',
+    // margin: 'auto',
     padding: '1rem 1rem 0 0!important',
-    position: 'relative',
-    overflowX: 'hidden',
-    overflowY: 'auto',
+    // position: 'relative',
+    // overflowX: 'hidden',
+    // overflowY: 'auto',
 
 })
-const MyContainer = styled('div')({
-    // padding: '36px',
-    // position: 'relative',
-    background: ' #fff',
-    borderRadius: '12px',
-    margin: 'auto',
-    // marginBottom: '2rem'
-});
+// const MyContainer = styled('div')({
+//     // padding: '36px',
+//     // position: 'relative',
+//     background: ' #fff',
+//     borderRadius: '12px',
+//     margin: 'auto',
+//     marginBottom: '2rem'
+// });
 function handleClick(event) {
     event.preventDefault()
 }
@@ -44,23 +44,23 @@ const breadcrumbs = [
 
 ];
 
-
-const ColorButton = styled(Button)(({theme}) => ({
-    position: "absolute",
-    bottom: 0,
-    width: '14rem !important',
-    height: '3rem !important',
-    minWidth: '104px !important',
-    backgroundColor: 'rgb(240, 20, 54)',
-    borderRadius: ' 12px',
-    color: ' rgb(248, 248, 248) !important',
-    "&.MuiButtonBase-root:hover": {
-        color: 'rgb(230, 230, 230)',
-        backgroundColor: 'rgb(222, 8, 46) !important'
-    }
-}));
-
-ColorButton.propTypes = {children: PropTypes.node};
+//
+// const ColorButton = styled(Button)(({theme}) => ({
+//     position: "absolute",
+//     bottom: 0,
+//     width: '14rem !important',
+//     // height: '3rem !important',
+//     minWidth: '104px !important',
+//     backgroundColor: 'rgb(240, 20, 54)',
+//     borderRadius: ' 12px',
+//     color: ' rgb(248, 248, 248) !important',
+//     "&.MuiButtonBase-root:hover": {
+//         color: 'rgb(230, 230, 230)',
+//         backgroundColor: 'rgb(222, 8, 46) !important'
+//     }
+// }));
+//
+// ColorButton.propTypes = {children: PropTypes.node};
 export default function CategoryBreadcrumbs(){
     return(
         <Box display={{md: "block" , xs: "block"}}>

@@ -29,6 +29,7 @@ import BestBrandsFruitsVegetables from "./BestBrandsFruitsVegetables/BestBrandsF
 import CategorizeResultsMobile from "./CategorizeResults/CategorizeResultsMobile";
 import CategoryBreadcrumbs from "./CategoryBreadcrumbs/CategoryBreadcrumbs";
 import SearchResultMobile from "./SearchResultMobile/SearchResultMobile";
+import AppliedFilters from "./Appliedfilters/AppliedFilters";
 export {
     Header,
     HeaderDesktop,
@@ -60,5 +61,6 @@ export {
     BestBrandsFruitsVegetables,
     CategorizeResultsMobile,
     CategoryBreadcrumbs,
-    SearchResultMobile
+    SearchResultMobile,
+    AppliedFilters
 }

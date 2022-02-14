@@ -12,7 +12,8 @@ import {
     BestBrandsFruitsVegetables,
     CategorizeResultsMobile,
     CategoryBreadcrumbs,
-    SearchResultMobile
+    SearchResultMobile,
+    AppliedFilters,
 
 } from "../components";
 import * as React from "react";
@@ -97,7 +98,7 @@ function CategoryPage({categoryName}) {
 
     return (<div style={{backgroundColor: "#f8f8f8"}}>
         <Header/>
-        <Box style={{marginTop:"14%"}}>
+        <Box style={{marginTop:"15%"}}>
         <CategoryBreadcrumbs/>
         <SearchResultMobile/>
         <MobileHeaderCategory categoryName={categoryNamePe} brandsOfCategory={brandsOfCategory}
@@ -111,6 +112,7 @@ function CategoryPage({categoryName}) {
         <MenuMobile/>
         <div style={{display: 'flex'}}>
             <Box style={{maxWidth:"1280",margin:"1% 8% 0 0"}}>
+                <AppliedFilters/>
                 <SearchResults searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
                 <CategorizeResults categoryName={categoryNamePe}
                                    dataCategory={dataCategory}
