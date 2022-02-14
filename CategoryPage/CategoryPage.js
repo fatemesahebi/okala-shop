@@ -103,7 +103,7 @@ function CategoryPage({categoryName}) {
             <Header/>
         </Box>
         <Box sx={{marginTop: {md:"15rem" , xs: "12rem"}}}>
-        <CategoryBreadcrumbs />
+        {/*<CategoryBreadcrumbs />*/}
         <SearchResultMobile/>
         <MobileHeaderCategory categoryName={categoryNamePe} brandsOfCategory={brandsOfCategory}
                               filterBrand={filterBrand} setFilterBrand={setFilterBrand}
