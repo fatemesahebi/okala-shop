@@ -10,7 +10,10 @@ import {Button} from "@mui/material";
 import Image from "next/image"
 
 import {useRouter} from "next/router";
+import {useState} from "react";
+import {ShoppingCard} from "../index";
 export default function MenuMobile() {
+    const [open , setOpen] = useState(false)
     const router=useRouter()
     return (
         <Box sx={{display: {lg: 'none', md: 'none', xs: 'flex'}, flexDirection: "column", alignItems: "center"}}>
@@ -53,7 +56,7 @@ export default function MenuMobile() {
                         display: "inline-flex",
                         justifyContent: "center"
                     }}>
-                        <Button sx={{
+                        <Button onClick={() => setOpen(true)} sx={{
                             minWidth: "0",
                             width: "55px",
                             height: "55px",
@@ -97,6 +100,7 @@ export default function MenuMobile() {
             }}>
                 <Image src={bottomCurve}/>
             </Box>
+            <ShoppingCard open={open} setOpen={setOpen}/>
         </Box>
 
     );
