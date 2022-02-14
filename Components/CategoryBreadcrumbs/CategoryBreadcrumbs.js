@@ -65,7 +65,7 @@ export default function CategoryBreadcrumbs(){
     return(
         <Box display={{md: "block" , xs: "block"}}>
             <Stack sx={{flexDirection:"row"}}>
-                <Container maxWidth={'false'} sx={{background: '#f8f8f8'}}>
+                <Container maxWidth={'false'} sx={{background: 'white'}}>
                     <MainContainer>
                         <Stack sx={{direction: "rtl"}} spacing={2}>
                             <Breadcrumbs
@@ -78,14 +78,12 @@ export default function CategoryBreadcrumbs(){
                             >
                                 {breadcrumbs}
                             </Breadcrumbs>
-
                         </Stack>
-
                     </MainContainer>
                 </Container>
-                <Stack sx={{flexDirection:"row",padding:'1rem 1.2rem 0 0!important'}}>
-                    <Typography sx={{fontFamily:"iranSans",fontSize:".8rem"}}>290کالا</Typography>
-                    <Image display={{lg:"none",xl:"none",md:"none",sm:"flex",xs:"flex"}} src={grouping}/>
+                <Stack sx={{flexDirection:"row",padding:'1rem 0 0 0!important',marginLeft:"2%"}}>
+                    <Typography sx={{fontFamily:"iranSans",fontSize:".8rem",marginLeft:"1rem"}}>290کالا</Typography>
+                    <Image width={30} height={30} src={grouping}/>
                 </Stack>
             </Stack>
         </Box>
