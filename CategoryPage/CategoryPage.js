@@ -108,7 +108,7 @@ function CategoryPage({categoryName}) {
         <MobileHeaderCategory categoryName={categoryNamePe} brandsOfCategory={brandsOfCategory}
                               filterBrand={filterBrand} setFilterBrand={setFilterBrand}
                               setOfferFilter={setOfferFilter} offerFilter={offerFilter}
-                              setPriceFilter={setPriceFilter}
+                              setPriceFilter={setPriceFilter} priceFilter={priceFilter}
                               maxPrice={maxPrice} setSort={setSort} sort={sort} />
 
         <MobileProduct finalData={finalData} page={page}/>
@@ -123,7 +123,7 @@ function CategoryPage({categoryName}) {
                                            dataCategory={dataCategory}
                         />
                         <BrandFilter brandsOfCategory={brandsOfCategory} filterBrand={filterBrand}
-                                     setFilterBrand={setFilterBrand}/>
+                                     setFilterBrand={setFilterBrand}  />
 
                         <CommodityFilters offerFilter={offerFilter} setOfferFilter={setOfferFilter}/>
                         <PriceFilter maxPrice={maxPrice} priceFilter={priceFilter} setPriceFilter={setPriceFilter}/>
