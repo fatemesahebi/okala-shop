@@ -152,7 +152,7 @@ const SingleProduct = ({product}) => {
 
     return (
         <Container sx={{padding: "0 !important"}} maxWidth='xs'>
-            <Link href={ `/products/${product.id}/${productUrl}`} underline="none" color="inherit">
+
             <Grid container spacing={4}
                   onClick={()=>{router.push(`/products/${product.id}/${productUrl}`)}}
             >
@@ -185,7 +185,9 @@ const SingleProduct = ({product}) => {
 
                             <StyledImage src={product.productImage?.src}/>
                         </StyledCardMedia>
+
                                 <StyledCardContent>
+                                    <Link href={ `/products/${product.id}/${productUrl}`} underline="none" color="inherit">
                                     <StyledProductName variant='paragraph'>{product.productName}</StyledProductName>
                                     <StyledPrice style={{
                                         visibility: product.offPercent === 0 ? "hidden":"visible"
@@ -204,11 +206,13 @@ const SingleProduct = ({product}) => {
                                                 variant='paragraph'>{PN.convertEnToPe(PN.sliceNumber(`${product.priceOffer}`))} ریال</StyledPriceOffer>
                                         </Grid>
                                     </div>
+                                    </Link>
                                 </StyledCardContent>
+
                     </StyledCard>
                 </Grid>
             </Grid>
-            </Link>
+
         </Container>
 
     );
