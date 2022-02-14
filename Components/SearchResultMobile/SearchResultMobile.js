@@ -7,7 +7,7 @@ export default function SearchResultMobile() {
     return (
             <Box sx={{display: {lg: 'none', md: 'none', xs: 'block',sm:"block"}}} style={{background:"white"}}>
                 <Typography sx={{padding:".5rem 1rem 0 0"}}>نتایج جستجو</Typography>
-                <CategoryBreadcrumbs/>
+                <CategoryBreadcrumbs />
         </Box>
     );
 }
