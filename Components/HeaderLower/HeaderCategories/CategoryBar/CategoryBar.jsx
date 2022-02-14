@@ -43,7 +43,7 @@ const CategoryBar = () => {
                       }}
                 >
                     {menuData.map((item , index) => (
-                        <Link href={'/category/' + item.mainUrl} underline="none" color="inherit">
+                        // <Link href={'/category/' + item.mainUrl} underline="none" color="inherit">
 
                         <Tab
                             sx={{
@@ -51,13 +51,14 @@ const CategoryBar = () => {
                                 color: value===index?"#f01436 !important":"black !important"
                             }}
                             onMouseOver={() => {
-                                document.getElementById(`category-tab-${index}`).click();
+
+                                value !== index && document.getElementById(`category-tab-${index}`).click();
                             }}
                             label={item.mainTitle}
-                            onClick={()=>{router.push('/category/' + item.mainUrl)}}
+                            onClick={()=>{value === index && router.push('/category/' + item.mainUrl)}}
                             id={`category-tab-${index}`}
                             aria-controls={`category-tabpanel-${index}`}/>
-                        </Link>
+                        // </Link>
                     ))}
                 </Tabs>
             </Container>
