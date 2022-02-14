@@ -56,14 +56,14 @@ const MobileHeaderSearchCategory = () => {
                 onClose={handleClose}
                 TransitionComponent={Transition}
             >
-                <AppBar elevation={5} color={'white'}
+                <AppBar elevation={2} color={'white'}
                         sx={{position: 'relative', height: '4rem', alignContent: 'baseline', padding: '0'}}>
                     <Toolbar sx={{display:'flex',justifyContent:'space-between'}}>
                         <Box>
                             <IconButton color={'black'} edge="start" onClick={handleClose} aria-label="close">
                                 <ArrowForwardIcon/>
                             </IconButton>
-                            <Input sx={{marginRight:'5px',outline:'none'}} defaultValue="جستجو در فروشگاه اکالا"  />
+                            <Input disableUnderline={true} sx={{marginRight:'2rem',fontSize:'0.875rem',outline:'none',color:'#d8d8d8','.MuiInput-input':{backgroundColor:'red'}}} placeholder="جستجو در فروشگاه اکالا"/>
                         </Box>
 
 
