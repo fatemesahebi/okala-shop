@@ -63,7 +63,7 @@ const MobileHeaderSearchCategory = () => {
                             <IconButton color={'black'} edge="start" onClick={handleClose} aria-label="close">
                                 <ArrowForwardIcon/>
                             </IconButton>
-                            <Input disableUnderline={true} sx={{marginRight:'2rem',fontSize:'0.875rem',outline:'none',color:'#d8d8d8'}} placeholder="جستجو در فروشگاه اکالا"/>
+                            <Input disableUnderline={true} sx={{marginRight:'2rem',fontSize:'0.875rem',outline:'none',color:'#d8d8d8'}} style={{fontFamily:"iranSans"}} placeholder="جستجو در فروشگاه اکالا"/>
                         </Box>
 
 
