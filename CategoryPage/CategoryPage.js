@@ -20,7 +20,7 @@ import {useEffect, useState} from "react";
 import {getCategoryProducts} from "../lib/axios/getData";
 import MobileHeaderCategory from "../Components/BrandFilter/MobileHeaderCategory";
 import MobileProduct from "../Components/BrandFilter/MobileProduct";
-import {categoryList} from "./categoryList"
+import {categoryList} from "../lib/mirage/categoryList"
 
 
 function CategoryPage({categoryName}) {
@@ -106,13 +106,15 @@ function CategoryPage({categoryName}) {
                               setPriceFilter={setPriceFilter}
                               maxPrice={maxPrice} setSort={setSort} sort={sort} />
 
-        <MobileProduct/>
+        <MobileProduct finalData={finalData} page={page}/>
 
         <MenuMobile/>
         <div style={{display: 'flex'}}>
             <Box style={{marginTop: '30px'}}>
                 <SearchResults searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-                <CategorizeResults categoryName={categoryNamePe}/>
+                <CategorizeResults categoryName={categoryNamePe}
+                                   dataCategory={dataCategory}
+                />
                 <BrandFilter brandsOfCategory={brandsOfCategory} filterBrand={filterBrand}
                              setFilterBrand={setFilterBrand}/>
 

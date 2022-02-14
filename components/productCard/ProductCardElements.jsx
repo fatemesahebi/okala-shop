@@ -8,7 +8,8 @@ import styled from '@emotion/styled'
 import PN from "persian-number";
 import {addToCart, decreaseItem, removeItem} from "../../redux/cartReducer";
 import {useSelector, useDispatch} from "react-redux";
-
+import {useRouter} from "next/router";
+import Link from '@mui/material/Link';
 const StyledCard = styled.div({
     height: '312px',
     width: '220px',
@@ -141,6 +142,9 @@ const StyledNoneOffer = styled.div({
 
 const SingleProduct = ({product}) => {
 
+    const router=useRouter()
+
+    const productUrl= product.productName.replace(/\s+/g, '-')
     const dispatch = useDispatch()
     let shoppingCardId = useSelector(state => state.cart.items.findIndex((item) => item.id === product.id) > -1
             ? state.cart.items.findIndex((item) => item.id === product.id) : -1)
@@ -148,8 +152,10 @@ const SingleProduct = ({product}) => {
 
     return (
         <Container sx={{padding: "0 !important"}} maxWidth='xs'>
-
-            <Grid container spacing={4}>
+            <Link href={ `/products/${product.id}/${productUrl}`} underline="none" color="inherit">
+            <Grid container spacing={4}
+                  onClick={()=>{router.push(`/products/${product.id}/${productUrl}`)}}
+            >
                 <Grid item>
                     <StyledCard>
                         <StyledCardMedia>
@@ -202,7 +208,7 @@ const SingleProduct = ({product}) => {
                     </StyledCard>
                 </Grid>
             </Grid>
-
+            </Link>
         </Container>
 
     );

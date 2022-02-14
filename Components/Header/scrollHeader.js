@@ -8,6 +8,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
 import AppBar from '@mui/material/AppBar';
 
+
 export function HideOnScroll(props) {
     const { children, window } = props;
     const trigger = useScrollTrigger({

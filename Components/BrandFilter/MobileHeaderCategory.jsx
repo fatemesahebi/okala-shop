@@ -10,9 +10,19 @@ import back from './back.svg'
 import {menuData} from "../../lib/mirage/menuData";
 import MobileHeaderSearchCategory from "./MobileHeaderSearchCategory";
 
-const MobileHeaderCategory = ({categoryName,brandsOfCategory,filterBrand,offerFilter,setOfferFilter,setPriceFilter,maxPrice,setFilterBrand,sort,setSort}) => {
+const MobileHeaderCategory = ({
+                                  categoryName,
+                                  brandsOfCategory,
+                                  filterBrand,
+                                  offerFilter,
+                                  setOfferFilter,
+                                  setPriceFilter,
+                                  maxPrice,
+                                  setFilterBrand,
+                                  sort,
+                                  setSort
+                              }) => {
     const categorizeResultsData = menuData.filter(item => item.mainTitle === categoryName)
-    console.log(categorizeResultsData)
     let categoryTags = categorizeResultsData ?
         [categorizeResultsData?.[0]?.items1?.[0]?.title, categorizeResultsData?.[0]?.items1?.[1]?.title]
         : ['', '']
@@ -25,7 +35,13 @@ const MobileHeaderCategory = ({categoryName,brandsOfCategory,filterBrand,offerFi
                 <Toolbar variant="dense" sx={{height: '137px', alignItems: 'flex-start'}}>
 
                     <Box style={{display: 'flex', flexDirection: 'column', flexGrow: '1'}}>
-                        <Box style={{display: 'flex', justifyContent: 'space-between',alignItems:'center',alignContent:'center',flexGrow:'1'}}>
+                        <Box style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            alignContent: 'center',
+                            flexGrow: '1'
+                        }}>
                             <Box style={{display: 'flex'}}>
                                 <Image src={back}/>
                                 <Typography
@@ -69,7 +85,8 @@ const MobileHeaderCategory = ({categoryName,brandsOfCategory,filterBrand,offerFi
                                   filterBrand={filterBrand} setFilterBrand={setFilterBrand}
                                   setOfferFilter={setOfferFilter} offerFilter={offerFilter}
                                   setPriceFilter={setPriceFilter}
-                                  maxPrice={maxPrice}/>
+                                  maxPrice={maxPrice}
+                                  sort={sort} setSort={setSort}/>
                 </Box>
             </AppBar>
 
