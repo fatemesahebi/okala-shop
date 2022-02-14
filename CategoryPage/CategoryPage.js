@@ -14,6 +14,7 @@ import {
     CategoryBreadcrumbs,
     SearchResultMobile,
     AppliedFilters,
+    CategoryBreadcrumbsDesktop
 
 } from "../components";
 import * as React from "react";
@@ -103,7 +104,7 @@ function CategoryPage({categoryName}) {
             <Header/>
         </Box>
         <Box sx={{marginTop: {md:"15rem" , xs: "12rem"}}}>
-        {/*<CategoryBreadcrumbs />*/}
+            <CategoryBreadcrumbsDesktop/>
         <SearchResultMobile/>
         <MobileHeaderCategory categoryName={categoryNamePe} brandsOfCategory={brandsOfCategory}
                               filterBrand={filterBrand} setFilterBrand={setFilterBrand}
