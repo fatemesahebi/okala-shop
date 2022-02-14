@@ -6,10 +6,9 @@ import {useRouter} from "next/router";
 import Box from "@mui/material/Box";
 import {getProduct} from "../../../lib/axios/getData";
 
-const Products = () => {
+const Products = ({Product}) => {
     const router = useRouter()
     return (
-
         <HeaderFooterProvider>
             <Box>{router.query.productId}</Box>
             <ProductMobile productId={1}/>
@@ -20,12 +19,21 @@ const Products = () => {
 
 export default Products
 
-// export async function getStaticPaths() {
-//
-//     return {
-//         paths: [
-//             {params: {productId: "1" , productName: ""}}
-//         ],
-//         fallback: 'blocking'
-//     };
-// }
+export async function getStaticPaths() {
+
+    return {
+        paths: [
+            {params: {productId: "1" , productName: ""}}
+        ],
+        fallback: 'blocking'
+    };
+}
+
+export async function getStaticProps(context) {
+    console.log(context)
+    let Product = {}
+
+    return {
+        props: {Product}, // will be passed to the page component as props
+    }
+}

@@ -30,6 +30,9 @@ import {
     Usersrate
 } from './index';
 import Image from "next/image";
+import {useEffect, useState} from "react";
+import {getProduct} from "../../lib/axios/getData";
+import PN from "persian-number";
 
 const ColorButton = styled(Button)(({theme}) => ({
     width: '104px !important',
@@ -42,6 +45,33 @@ const ColorButton = styled(Button)(({theme}) => ({
 
 
 export default function ProductMobile({productId}) {
+    const [product, setProduct] = useState({
+        id: 0,
+        productImage: {src: ""},
+        productName: "",
+        brand: "",
+        brandEn: "",
+        categories: "" ,
+        category: "",
+        batchType: "",
+        Type: "",
+        price: 0,
+        get isOff() {
+            return !this.offPercent
+        },
+        get priceOffer() {
+            return (this.price - (this.price / 100) * this.offPercent)
+        },
+        date: new Date(),
+        selerCount: 1,
+
+        offPercent: 19
+    })
+    useEffect(() => {
+        getProduct(productId)
+            .then(data => setProduct(data.product))
+            .catch(res => alert(res.status))
+    }, [])
     return (
         <Box display={ {md: "none" , xs: "block"}}>
             <Box>
@@ -84,7 +114,7 @@ export default function ProductMobile({productId}) {
                                     fontWeight: 'bold',
                                     lineHeight: '24px',
                                 }} variant='h6' component='h1'>
-                                    شامپو بدن مناسب پوست چرب بامبو 400 میلی لیتری دیپ سنس
+                                    {product.productName}
                                 </Typography>
                                 <Usersrate>
                                     <StarOutlineIcon/>
@@ -99,7 +129,7 @@ export default function ProductMobile({productId}) {
                                         fontSize: '0.9rem',
                                         marginRight: '8px',
                                     }}>
-                                        دیپ سنس</span>
+                                        {product.brand}</span>
                                     </Link>
                                 </Brandwrapper>
                                 <Pricewrapper>
@@ -113,20 +143,20 @@ export default function ProductMobile({productId}) {
                                     <span style={{
                                         color: 'rgba(54, 54, 54, 1)',
                                         fontSize: '1.25rem',
-                                        fontWeight: '400',
+                                        fontWeight: '700',
                                         marginRight: ' 8px',
-                                    }}>۳۵۲٬۰۰۰</span>
+                                    }}>{PN.convertEnToPe(PN.sliceNumber(product.priceOffer))}</span>
 
                                     <span style={{
                                         color: '#fff',
                                         width: '46px',
                                         fontSize: '0.875rem',
                                         textAlign: 'center',
-                                        fontWeight: '500',
+                                        fontWeight: '700',
                                         lineHeight: '26px',
                                         borderRadius: '8px',
                                         backgroundColor: '#4CB04C',
-                                    }}>20%</span>
+                                    }}>{PN.convertEnToPe(PN.sliceNumber(product.offPercent))}%</span>
 
                                     <span style={{
                                         position: 'absolute',
@@ -135,12 +165,12 @@ export default function ProductMobile({productId}) {
                                         color: 'rgba(175, 175, 175, 1)',
                                         fontSize: '0.75rem',
                                         textDecoration: 'line-through',
-                                    }}>۴۴۰٬۰۰۰</span>
+                                    }}>{PN.convertEnToPe(PN.sliceNumber(product.price))}</span>
                                 </Pricewrapper>
                             </Bottomwrapper>
                         </Infosection>
                         <div style={{background: 'white'}}>
-                            <Accordion/>
+                            {product.productName !== "" && <Accordion description={product.productName}/>}
                         </div>
                         <Showcomments sx={{background: 'white'}}>
                             <Box sx={{display: 'flex'}}>
@@ -159,8 +189,8 @@ export default function ProductMobile({productId}) {
                                 <span>مشاهده نظرات</span>
                             </Box>
                         </Showcomments>
-                        <Breadcrumbs/>
-                        <CategoryProducts similarProducts={true} category={"محصولات جدید"}/>
+                        {product.productName !== "" && <Breadcrumbs product={product}/>}
+                        {product.categories !== "" && <CategoryProducts similarProducts={true} category={product.categories}/>}
 
                     </Container>
 
@@ -179,7 +209,7 @@ export default function ProductMobile({productId}) {
                                 color: '#fff',
                                 fontSize: '0.75rem',
                                 textAlign: 'center',
-                                fontWeight: '500',
+                                fontWeight: '700',
                                 lineHeight: '18px',
                                 backgroundColor: '#4CB04C',
                                 paddingRight: '0.5rem',
@@ -187,29 +217,32 @@ export default function ProductMobile({productId}) {
                                 borderRadius: '0.25rem',
                                 marginLeft: '0.5rem',
                             }}>
-                                20%
+                                {PN.convertEnToPe(PN.sliceNumber(product.offPercent))}%
                             </span>
                                 <span style={{
                                     color: 'rgba(175, 175, 175, 1)',
                                     fontSize: '0.75rem',
                                     textDecoration: 'line-through',
                                 }}>
-                                ۴۴۰٬۰۰۰
+                                {PN.convertEnToPe(PN.sliceNumber(product.price))}
                             </span>
                             </Box>
-                            <Box>
-                            <span style={{
-                                color: 'rgba(54, 54, 54, 1)',
-                                fontSize: '0.75rem',
+                            <Box dir={"rtl"} sx={{
+                                display: "inline-flex"
                             }}>
-                                ریال
-                            </span>
                                 <span style={{
                                     color: 'rgba(54, 54, 54, 1)',
                                     fontSize: '1.1rem',
-                                    fontWeight: '400',
+                                    fontWeight: '700',
                                     marginRight: ' 2px',
-                                }}>۳۵۲٬۰۰۰</span>
+                                    marginLeft: "5px"
+                                }}>{PN.convertEnToPe(PN.sliceNumber(product.priceOffer))}</span>
+                                <span style={{
+                                    color: 'rgba(54, 54, 54, 1)',
+                                    fontSize: '0.85rem',
+                                }}>
+                                ریال
+                            </span>
                             </Box>
                         </Pricewrapper>
                     </Addtocart>

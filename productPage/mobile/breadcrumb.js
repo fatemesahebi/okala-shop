@@ -28,7 +28,7 @@ const Listitems = styled('li')({
     listStyle:'none'
 })
 
-export default function Breadcrumbs() {
+export default function Breadcrumbs({product}) {
     return (
         <Breadcrumb>
             <Listitems>
@@ -39,25 +39,25 @@ export default function Breadcrumbs() {
             </Listitems>
             <Listitems>
                 <Link ml={2} href="#" underline="none" color="inherit">
-                    آرایشی بهداشتی
+                    {product.categories}
                 </Link>
                 <ArrowBackIosNewIcon fontSize='small'/>
             </Listitems>
             <Listitems>
                 <Link ml={2} href="#" underline="none" color="inherit">
-                    بهداشت سر و بدن
+                    {product.batchType}
                 </Link>
                 <ArrowBackIosNewIcon fontSize='small'/>
             </Listitems>
             <Listitems>
                 <Link ml={2} href="#" underline="none" color="inherit">
-                    شامپو بدن
+                    {product.Type}
                 </Link>
                 <ArrowBackIosNewIcon fontSize='small'/>
             </Listitems>
             <Listitems>
                 <Link ml={2} href="#" underline="none" color="inherit">
-                    شامپو بدن مناسب پوست چرب بامبو  400 میلی لیتری دیپ سنس
+                    {product.productName}
                 </Link>
                 <ArrowBackIosNewIcon fontSize='small'/>
             </Listitems>

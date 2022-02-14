@@ -12,7 +12,7 @@ const Styledlist = styled('ul')({
 
 const Customli = styled('li')({})
 
-const Accordion = () => {
+const Accordion = ({description}) => {
     const [clicked, setClicked] = useState(false);
 
     const toggle = index => {
@@ -73,7 +73,7 @@ const Accordion = () => {
                                     <Dropdown sx={{
                                         backgroundColor: "white !important"
                                     }}>
-                                        <p>{item.detail}</p>
+                                        <p>{description}</p>
                                     </Dropdown>
                                 ) : null}
                             </>

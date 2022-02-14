@@ -105,11 +105,11 @@ const breadcrumbs = [
     // </Typography>,
 ];
 
-const ProductPage = ({productId}) => {
-    const [product, setProduct] = useState({
+const ProductPage = ({productId , productInitial}) => {
+    const [product, setProduct] = useState(productInitial? productInitial :{
         id: 0,
         productImage: {src: ""},
-        productName: "",
+        productName: "dfgd",
         brand: "",
         brandEn: "",
         categories: "" ,
@@ -131,7 +131,7 @@ const ProductPage = ({productId}) => {
     useEffect(() => {
         getProduct(productId)
             .then(data => setProduct(data.product))
-            .catch(res => alert(res.status))
+            .catch(error => alert(error))
     }, [])
     return (
         <Box display={{md: "block", xs: "none"}}>
