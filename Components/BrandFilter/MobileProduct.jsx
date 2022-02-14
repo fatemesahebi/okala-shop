@@ -4,7 +4,7 @@ import SingleProduct from "../productCard/ProductCardElements";
 
 const MobileProduct = ({finalData,page}) => {
     return (
-        <Box sx={{marginTop:'12rem'}} display={{xl: 'none', lg: 'none', md: 'none', sm: 'block', xs: 'block'}}
+        <Box sx={{marginTop:'0'}} display={{xl: 'none', lg: 'none', md: 'none', sm: 'block', xs: 'block'}}
         >
             <Paper elevation={0}
                    sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-start'}}>
