@@ -260,7 +260,7 @@ const ProductPage = ({productId , productInitial}) => {
                                         </CategoryWrapper>
                                         <Usersrate sx={{position: 'inherit'}}>
                                             <StarOutlineIcon/>
-                                            <span>4.0</span>
+                                            <span>۴.۰</span>
                                         </Usersrate>
                                         <AmountWrapper>
                                             { shoppinCardCount === 0 && <ColorButton onClick={() => {
