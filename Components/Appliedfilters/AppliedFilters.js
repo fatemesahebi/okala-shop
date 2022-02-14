@@ -24,7 +24,8 @@ export default function AppliedFilters({filterBrand, setFilterBrand,
                 width: "20rem",
                 boxShadow: "rgba(0, 0, 0, 0.04) 0px 3px 5px",
                 borderRadius: ".3rem",
-                background: "white"
+                background: "white",
+
             }}>
                 <AccordionSummary>
                     <Typography sx={{
@@ -47,7 +48,9 @@ export default function AppliedFilters({filterBrand, setFilterBrand,
                     </button>
                 </AccordionSummary>
 
-                <Stack direction="row" spacing={1} sx={{padding: "1rem"}}>
+                <Stack direction="row" spacing={1} sx={{padding: "1rem",
+                    display:"flex",
+                    flexWrap:"wrap"}}>
 
                     {(priceFilter[0]!==0)&& (priceFilter[1]!== maxPrice) &&  <Chip
                         label= {`از ${priceFilter[0]} تا ${priceFilter[1]}`}
@@ -55,7 +58,7 @@ export default function AppliedFilters({filterBrand, setFilterBrand,
                     />
                     }
                     {
-                        filterBrand.map(brand => <Chip sx={{marginLeft: ".7rem"}}
+                        filterBrand.map(brand => <Chip sx={{marginLeft: ".7rem",marginBottom:".5rem"}}
                                                     label={brand}
                                                     onDelete={()=>handleDelete(brand)}/>)
                     }
