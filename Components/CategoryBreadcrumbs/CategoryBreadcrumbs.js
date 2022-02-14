@@ -64,11 +64,10 @@ const breadcrumbs = [
 export default function CategoryBreadcrumbs(){
     return(
         <Box display={{md: "block" , xs: "block"}}>
-            <Box>
+            <Stack sx={{flexDirection:"row"}}>
                 <Container maxWidth={'false'} sx={{background: '#f8f8f8'}}>
-
                     <MainContainer>
-                        <Stack sx={{direction: "rtl", marginBottom: '36px',}} spacing={2}>
+                        <Stack sx={{direction: "rtl"}} spacing={2}>
                             <Breadcrumbs
                                 sx={{
                                     fontSize: "small",
@@ -78,17 +77,17 @@ export default function CategoryBreadcrumbs(){
                                 aria-label="breadcrumb"
                             >
                                 {breadcrumbs}
-                                <Stack sx={{flexDirection:"row"}}>
-                                    <Typography sx={{fontFamily:"iranSans"}}>290 کالا</Typography>
-                                    <Image  src={grouping}/>
-                                </Stack>
                             </Breadcrumbs>
 
                         </Stack>
 
                     </MainContainer>
                 </Container>
-            </Box>
+                <Stack sx={{flexDirection:"row",padding:'1rem 1.2rem 0 0!important'}}>
+                    <Typography sx={{fontFamily:"iranSans",fontSize:".8rem"}}>290کالا</Typography>
+                    <Image display={{lg:"none",xl:"none",md:"none",sm:"flex",xs:"flex"}} src={grouping}/>
+                </Stack>
+            </Stack>
         </Box>
     )
 }

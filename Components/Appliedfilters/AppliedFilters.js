@@ -26,7 +26,7 @@ export default function AppliedFilters(){
                 </AccordionSummary>
 
                 <Stack direction="row" spacing={1} sx={{padding:"1rem"}}>
-                    <Chip
+                    <Chip sx={{marginLeft:".7rem"}}
                         label="بلوط"
                         onClick={handleClick}
                         onDelete={handleDelete}
