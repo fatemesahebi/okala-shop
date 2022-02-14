@@ -38,7 +38,7 @@ function a11yProps(index) {
     };
 }
 
-export default function BasicTabs() {
+export default function BasicTabs({description}) {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
@@ -86,7 +86,7 @@ export default function BasicTabs() {
                         fontSize: '.875rem',
                         fontWeight: '500',
                         lineHeight:' 22px',
-                    }}>شامپو بدن مناسب پوست چرب بامبو 400 میلی لیتری دیپ سنس
+                    }}>{description}
                     </p>
                 </Box>
             </TabPanel>
