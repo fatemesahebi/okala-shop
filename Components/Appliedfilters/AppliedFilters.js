@@ -41,7 +41,9 @@ export default function AppliedFilters({filterBrand, setFilterBrand,
                         background: "white",
                         border: "0",
                         marginRight: "4.5rem",
-                        cursor: "pointer"
+                        cursor: "pointer",
+                        fontFamily:"iranSans",
+                        fontWeight:"bolder"
                     }}
                     onClick={handleDeleteAll}
                     >حذف همه
