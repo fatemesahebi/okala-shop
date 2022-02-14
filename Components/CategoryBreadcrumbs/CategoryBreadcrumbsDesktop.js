@@ -5,7 +5,7 @@ import CategoryBreadcrumbs from "../CategoryBreadcrumbs/CategoryBreadcrumbs";
 
 export default function CategoryBreadcrumbsDesktop() {
     return (
-        <Box sx={{display: {lg: 'block', md: 'block', xs: 'none',sm:"none"}, overflowY: "hidden" , background: "white",}}>
+        <Box sx={{display: {lg: 'block', md: 'block', xs: 'none',sm:"none"}, overflowY: "hidden" ,}}>
             <CategoryBreadcrumbs />
         </Box>
     );
