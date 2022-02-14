@@ -41,7 +41,7 @@ const ColorButton = styled(Button)(({theme}) => ({
 }));
 
 
-export default function ProductMobile() {
+export default function ProductMobile({productId}) {
     return (
         <Box display={ {md: "none" , xs: "block"}}>
             <Box>

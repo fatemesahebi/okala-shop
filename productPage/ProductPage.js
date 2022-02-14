@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import ProductInfo from "./ProductInfo";
 import {HeaderFooterProvider} from "../components";
 import {Box, Button, Container, Stack, Typography} from "@mui/material";
@@ -13,6 +13,11 @@ import Link from '@mui/material/Link';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 // import ImageMagnifire from "./imageMagnifire";
 import PN from "persian-number";
+import ImageMagnifire from "./imageMagnifire";
+import {
+    getProduct
+} from "../lib/axios/getData";
+import img0 from "../public/images/0.png";
 
 const ColorButton = styled(Button)(({theme}) => ({
     position: "absolute",
@@ -95,53 +100,41 @@ function handleClick(event) {
 }
 
 const breadcrumbs = [
-    <Link underline={"none"} key="1" color="inherit" href="/" onClick={handleClick}>
-        اکالا
-    </Link>,
-    <Link
-        underline={"none"}
-        key="2"
-        color="inherit"
-        href="/getting-started/installation/"
-        onClick={handleClick}
-    >
-        آرایشی بهداشتی
-    </Link>,
-    <Link
-        underline={"none"}
-        key="2"
-        color="inherit"
-        href="/getting-started/installation/"
-        onClick={handleClick}
-    >
-        بهداشت فردی
-    </Link>,
-    <Link
-        underline={"none"}
-        key="2"
-        color="inherit"
-        href="/getting-started/installation/"
-        onClick={handleClick}
-    >
-        بهداشت سر و بدن
-    </Link>,
-    <Link
-        underline={"none"}
-        key="2"
-        color="inherit"
-        href="/getting-started/installation/"
-        onClick={handleClick}
-    >
-        شامپو بدن
-    </Link>,
     // <Typography key="3" color="text.primary">
     //     Breadcrumb
     // </Typography>,
 ];
 
-const ProductPage = () => {
+const ProductPage = ({productId}) => {
+    const [product, setProduct] = useState({
+        id: 0,
+        productImage: {src: ""},
+        productName: "",
+        brand: "",
+        brandEn: "",
+        categories: "" ,
+        category: "",
+        batchType: "",
+        Type: "",
+        price: 0,
+        get isOff() {
+            return !this.offPercent
+        },
+        get priceOffer() {
+            return (this.price - (this.price / 100) * this.offPercent)
+        },
+        date: new Date(),
+        selerCount: 1,
+
+        offPercent: 19
+    })
+    useEffect(() => {
+        getProduct(productId)
+            .then(data => setProduct(data.product))
+            .catch(res => alert(res.status))
+    }, [])
     return (
-        <Box display={{md: "block" , xs: "none"}}>
+        <Box display={{md: "block", xs: "none"}}>
             <Box>
                 <Container maxWidth={'false'} sx={{background: '#f8f8f8'}}>
 
@@ -155,28 +148,55 @@ const ProductPage = () => {
                                 separator={<NavigateBeforeIcon fontSize="small"/>}
                                 aria-label="breadcrumb"
                             >
-                                {breadcrumbs}
+                                <Link underline={"none"} key="1" color="inherit" href="/" onClick={handleClick}>
+                                    اکالا
+                                </Link>
+                                <Link
+                                    underline={"none"}
+                                    key="2"
+                                    color="inherit"
+                                    href="/getting-started/installation/"
+                                    onClick={handleClick}
+                                >
+                                    {product.categories}
+                                </Link>
+                                <Link
+                                    underline={"none"}
+                                    key="2"
+                                    color="inherit"
+                                    href="/getting-started/installation/"
+                                    onClick={handleClick}
+                                >
+                                    {product.batchType}
+                                </Link>
+                                <Link
+                                    underline={"none"}
+                                    key="2"
+                                    color="inherit"
+                                    href="/getting-started/installation/"
+                                    onClick={handleClick}
+                                >
+                                    {product.Type}
+                                </Link>
                             </Breadcrumbs>
                         </Stack>
                         <MyContainer>
                             <Box>
                                 <InfoSection>
-                                    <ImageMagnifire/>
+                                    {product.productImage.src !== "" && <ImageMagnifire image={String(product.productImage.src)}/>}
                                     <InformationWrapper>
                                         <Typography variant={"h6"} component={"div"} sx={{
                                             fontSize: '1.25rem',
                                             fontWeight: 'bold',
                                             marginBottom: '47px'
-                                        }}>
-                                            شامپو بدن مناسب پوست چرب
-                                            بامبو 400 میلی لیتری دیپ سنس
+                                        }}>{product.productName}
                                         </Typography>
                                         <BrandWrapper>
                                             <Button sx={{
                                                 fontSize: '1.1rem',
                                                 fontWeight: "700"
                                             }}>
-                                                <a> دیپ سنس </a>
+                                                <a> {product.brand} </a>
                                             </Button>
                                         </BrandWrapper>
                                         <CategoryWrapper>
@@ -186,7 +206,7 @@ const ProductPage = () => {
                                                     color: 'rgba(0, 134, 132, 1)',
                                                     fontSize: '1rem',
                                                     fontWeight: '700'
-                                                }} href="/#"> شامپو بدن</a>
+                                                }} href="/#"> {product.Type}</a>
                                             </Typography>
                                         </CategoryWrapper>
                                         <Usersrate sx={{position: 'inherit'}}>
@@ -202,7 +222,13 @@ const ProductPage = () => {
                                                     افزودن به سبد خرید
                                                 </Typography>
                                             </ColorButton>
-                                            <Box sx={{display: 'flex', flexDirection: 'column', position: "absolute" , bottom: 0 , left: 0}}>
+                                            <Box sx={{
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                position: "absolute",
+                                                bottom: 0,
+                                                left: 0
+                                            }}>
                                                 <Box>
                                                     <Typography component={"span"} sx={{
                                                         padding: "0.2rem 0.8rem",
@@ -216,16 +242,16 @@ const ProductPage = () => {
                                                         borderRadius: '8px',
                                                         backgroundColor: '#4CB04C',
                                                     }}>
-                                                        {PN.convertEnToPe(20)}%
+                                                        {PN.convertEnToPe(product.offPercent)}%
                                                     </Typography>
                                                     <Typography component={"span"} sx={{
-                                                        paddingRight:"1rem",
+                                                        paddingRight: "1rem",
                                                         color: 'rgba(175, 175, 175, 1)',
                                                         fontSize: '1.3rem',
                                                         fontWeight: "700",
                                                         textDecoration: 'line-through',
                                                     }}>
-                                                        ۴۴۰٬۰۰۰
+                                                        {PN.convertEnToPe(PN.sliceNumber(product.price))}
                                                     </Typography>
 
                                                 </Box>
@@ -235,7 +261,7 @@ const ProductPage = () => {
                                                         fontSize: '1.75rem',
                                                         fontWeight: 'bold',
                                                     }}>
-                                                        ۳۵۲٬۰۰۰
+                                                        {PN.convertEnToPe(PN.sliceNumber(product.priceOffer))}
                                                     </Typography>
                                                     <Typography component={"span"} sx={{
                                                         color: 'rgba(54, 54, 54, 1)',
@@ -253,10 +279,10 @@ const ProductPage = () => {
                                 </InfoSection>
                             </Box>
                             <Box sx={{maxWidth: '100%'}}>
-                                <BasicTabs/>
+                                {product.productName !== "" && <BasicTabs description={product.productName}/>}
                             </Box>
                         </MyContainer>
-                        <CategoryProducts similarProducts={true} category={"محصولات جدید"}/>
+                        {product.categories !== "" && <CategoryProducts similarProducts={true} category={product.categories}/>}
                     </MainContainer>
                 </Container>
             </Box>

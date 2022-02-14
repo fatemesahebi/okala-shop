@@ -1,5 +1,5 @@
 import {MagnifierContainer, Magnifier, MagnifierPreview, MagnifierZoom} from "react-image-magnifiers"
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Box from "@mui/material/Box";
 
 const imageBaseUrl =
@@ -18,7 +18,7 @@ const images = [
     {name: "wristwatch_1200.jpg", vw: "1200w"}
 ];
 
-const ImageMagnifire = () => {
+const ImageMagnifire = ({image}) => {
     const [show, setShow] = useState(false)
     return (
         <MagnifierContainer style={{display: "flex", flexDirection: "row",}}>
@@ -40,7 +40,7 @@ const ImageMagnifire = () => {
                         overlayBoxOpacity={0.2}
                         overlayBoxImage={"https://htmlcolorcodes.com/assets/images/colors/baby-blue-color-solid-background-1920x1080.png"}
                         cursorStyle={"move"}
-                        imageSrc={"https://s3-us-west-1.amazonaws.com/react-package-assets/images/wristwatch_1200.jpg"}/>
+                        imageSrc={image}/>
                 </Box>
             </Box>
             <Box sx={{
@@ -59,7 +59,7 @@ const ImageMagnifire = () => {
                 zIndex: 100
             }}>
                 <MagnifierZoom style={{width: "30rem", height: "30rem", margin: "auto"}}
-                               imageSrc={"https://s3-us-west-1.amazonaws.com/react-package-assets/images/wristwatch_1200.jpg"}/>
+                               imageSrc={image}/>
             </Box>
         </MagnifierContainer>
     );
