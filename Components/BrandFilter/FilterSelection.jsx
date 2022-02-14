@@ -21,10 +21,10 @@ const FilterSelection = ({setSort,setSortLable}) => {
                 defaultValue="female"
                 name="radio-buttons-group"
             >
-                <FormControlLabel value="پرفروشترین" control={<Radio onChange={(e)=>handleChange("mostSale",e)}/>} label="پرفروشترین"/>
-                <FormControlLabel value="بیشترین تخفیف" control={<Radio onChange={(e)=>handleChange('mostOff',e)}/>} label="بیشترین تخفیف"/>
-                <FormControlLabel value="ارزانترین" control={<Radio onChange={(e)=>handleChange('leastPrice',e)}/>} label="ارزانترین"/>
-                <FormControlLabel value="گرانترین" control={<Radio onChange={(e)=>handleChange('mostPrice',e)}/>} label="گرانترین"/>
+                <FormControlLabel value="پرفروشترین" control={<Radio  sx={{'&.Mui-checked': {color:['#02a0a4']}}} onChange={(e)=>handleChange("mostSale",e)}/>} label="پرفروشترین"/>
+                <FormControlLabel value="بیشترین تخفیف" control={<Radio  sx={{'&.Mui-checked': {color:['#02a0a4']}}} onChange={(e)=>handleChange('mostOff',e)}/>} label="بیشترین تخفیف"/>
+                <FormControlLabel value="ارزانترین" control={<Radio  sx={{'&.Mui-checked': {color:['#02a0a4']}}} onChange={(e)=>handleChange('leastPrice',e)}/>} label="ارزانترین"/>
+                <FormControlLabel value="گرانترین" control={<Radio  sx={{'&.Mui-checked': {color:['#02a0a4']}}} onChange={(e)=>handleChange('mostPrice',e)}/>} label="گرانترین"/>
             </RadioGroup>
         </FormControl>
 )

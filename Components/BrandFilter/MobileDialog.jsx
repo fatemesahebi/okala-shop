@@ -13,6 +13,8 @@ import sortIcon from '../PriceFilter/sort.svg'
 import nextIcon from './nextIcon.svg'
 import FilterMobileDrawer from "./FilterMobileDrawer";
 import {Box} from "@material-ui/core";
+import RangePriceInput from "../PriceFilter/RangePriceInput";
+import {MobileDialogInput} from "./MobileDialogInput";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="right" ref={ref} {...props} />;
@@ -24,7 +26,7 @@ const MobileDialog = ({
                           setOfferFilter,
                           offerFilter,
                           setPriceFilter,
-                          maxPrice,sort,setSort
+                          maxPrice,sort,setSort,priceFilter
 
                       }) => {
     const [open, setOpen] = React.useState(false);
@@ -127,7 +129,7 @@ const MobileDialog = ({
                         <div style={{
                             display: 'flex',
                             flexDirection: 'column',
-                            flexGrow: '1'
+                            flexGrow: '1',
                         }}>
                             <Box style={{display: 'flex', justifyContent: 'space-between', flexGrow: '1'}}>
                                 <Box>
@@ -140,8 +142,12 @@ const MobileDialog = ({
                                 </Box>
                             </Box>
                             <Box style={{display: 'flex', justifyContent: 'center', flexGrow: '1'}}>
-                                <Box sx={{width: '90vw'}}><PriceFilterSlider/></Box>
+                                <Box sx={{width: '90vw',display:'flex',justifyContent:'center'}}><PriceFilterSlider/></Box>
                             </Box>
+                            <Box>
+                                <Box sx={{width: '100vw',display:'flex',justifyContent:'center'}}><MobileDialogInput priceFilter={priceFilter}/></Box>
+                            </Box>
+
                         </div>
 
 

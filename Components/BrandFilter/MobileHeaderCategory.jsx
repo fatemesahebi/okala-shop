@@ -19,7 +19,7 @@ const MobileHeaderCategory = ({
                                   setPriceFilter,
                                   maxPrice,
                                   setFilterBrand,
-                                  sort,
+                                  sort,priceFilter,
                                   setSort
                               }) => {
     const categorizeResultsData = menuData.filter(item => item.mainTitle === categoryName)
@@ -85,7 +85,7 @@ const MobileHeaderCategory = ({
                                   filterBrand={filterBrand} setFilterBrand={setFilterBrand}
                                   setOfferFilter={setOfferFilter} offerFilter={offerFilter}
                                   setPriceFilter={setPriceFilter}
-                                  maxPrice={maxPrice}
+                                  maxPrice={maxPrice} priceFilter={priceFilter}
                                   sort={sort} setSort={setSort}/>
                 </Box>
             </AppBar>

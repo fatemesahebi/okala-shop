@@ -22,7 +22,7 @@ setSort(sortType)
                     </Typography>
                     <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
                         <Button onClick={() => handleSortData('mostSale')} color={'black'}
-                                sx={{fontWeight: 'bold', display: 'block'}}>پر فروشترین</Button>
+                                sx={{fontWeight: 'bold', display: 'block',":disabled":{color:'red'} }}>پر فروشترین</Button>
                         <Button onClick={() => handleSortData('mostOff')} color={'black'}
                                 sx={{fontWeight: 'bold', display: 'block'}}>بیشترین تخفیف</Button>
                         <Button onClick={() => handleSortData('leastPrice')} color={'black'}
