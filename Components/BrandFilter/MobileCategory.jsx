@@ -10,10 +10,11 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Slide from '@mui/material/Slide';
 import CategorizeResultsMobile from "../CategorizeResults/CategorizeResultsMobile";
 import {ListItem} from "@mui/material";
+import {menuData} from "../../lib/mirage/menuData";
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
-const MobileCategory=()=>{
+const MobileCategory=({categoryName})=>{
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -53,7 +54,7 @@ const MobileCategory=()=>{
                 </AppBar>
                 <List sx={{display:'flex',flexDirection:'column',justifyContent:'space-between',flexGrow:'1'}}>
                     <ListItem>
-                        <CategorizeResultsMobile/>
+                        <CategorizeResultsMobile  categoryName={categoryName}/>
                     </ListItem>
                     <ListItem button  sx={{display:'flex',justifyContent:'flex-end',position:'sticky',bottom:'0'}}>
                         <Button sx={{

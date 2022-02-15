@@ -1,5 +1,17 @@
 import * as React from 'react';
-import {Button, ListItem, List, Divider, AppBar, Toolbar, IconButton, Typography, Dialog} from '@mui/material';
+import {
+    Button,
+    ListItem,
+    List,
+    Divider,
+    AppBar,
+    Toolbar,
+    IconButton,
+    Typography,
+    Dialog,
+    Chip,
+    Stack
+} from '@mui/material';
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Slide from '@mui/material/Slide';
 import MobileBrandFilter from "./MobileBrandFilter";
@@ -15,12 +27,14 @@ import FilterMobileDrawer from "./FilterMobileDrawer";
 import {Box} from "@material-ui/core";
 import RangePriceInput from "../PriceFilter/RangePriceInput";
 import {MobileDialogInput} from "./MobileDialogInput";
+import {useState} from "react";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="right" ref={ref} {...props} />;
 });
 const MobileDialog = ({
                           brandsOfCategory,
+                          categoryName,
                           setFilterBrand,
                           filterBrand,
                           setOfferFilter,
@@ -28,8 +42,17 @@ const MobileDialog = ({
                           setPriceFilter,
                           maxPrice,sort,setSort,priceFilter
 
-                      }) => {
+                      }) =>
+
+{
     const [open, setOpen] = React.useState(false);
+    const [value,setValue]=useState([0,100])
+
+
+   const handleDefaultPrice=()=>{
+        setValue([0,100])
+       setPriceFilter([0,maxPrice])
+    }
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -37,9 +60,6 @@ const MobileDialog = ({
 
     const handleClose = () => {
         setOpen(false)
-
-
-
     };
     const handleDeleteFilter = () => {
         setOpen(false)
@@ -48,8 +68,12 @@ const MobileDialog = ({
         setPriceFilter([0, maxPrice])
     }
 
+    const handleDelete = (deleteBrandFilter) => {
+        setFilterBrand(filterBrand.filter(item=> item!== deleteBrandFilter))
+    };
+
     return (
-        <div>
+        <div sx={{width:"80vw", overflowX:"hidden"}}>
             <AppBar position="static" color={'white'} elevation={0}
                     sx={{height: '3rem', display: {xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none'}}}>
                 <Toolbar sx={{
@@ -111,13 +135,36 @@ const MobileDialog = ({
                         </Typography>
                     </Toolbar>
                 </AppBar>
+
                 <List>
+                    {((priceFilter[0]!==0)||(priceFilter[1]!== maxPrice)|| priceFilter.length!==0) &&
+
                     <ListItem button>
 
+                        <Stack direction="row" spacing={1} sx={{padding: "1rem",
+                            display:"flex",
+                            flexWrap:"wrap"}}>
+
+                            {(priceFilter[0]!==0) || (priceFilter[1]!== maxPrice) &&
+                            <Chip
+                                label= {`از ${priceFilter[0]} تا ${priceFilter[1]}`}
+                                onDelete={handleDelete}
+                            />
+                            }
+                            {
+                                filterBrand.map(brand =>
+                                    <Chip sx={{marginLeft: ".7rem",marginBottom:".5rem"}}
+                                          label={brand}
+                                          onDelete={()=>handleDelete(brand)}/>)
+                            }
+
+                        </Stack>
                     </ListItem>
+
+                    }
                     <Divider/>
                     <ListItem button sx={{display: 'flex', justifyContent: 'space-between', flexGrow: '1'}}>
-                        <Typography><MobileCategory/></Typography>
+                        <Typography><MobileCategory categoryName={categoryName}/></Typography>
                         <Image src={nextIcon}/>
                     </ListItem>
                     <Divider/>
@@ -140,15 +187,21 @@ const MobileDialog = ({
 
                                 </Box>
                                 <Box>
-                                    <Box><Typography>مقدار پیشفرض</Typography></Box>
+                                    <Button sx={{color:"midGray.main"}} onClick={()=>handleDefaultPrice}><Typography>مقدار پیش فرض</Typography></Button>
 
                                 </Box>
                             </Box>
                             <Box style={{display: 'flex', justifyContent: 'center', flexGrow: '1'}}>
-                                <Box sx={{width: '90vw',display:'flex',justifyContent:'center'}}><PriceFilterSlider/></Box>
+                                <Box sx={{width: '90vw',display:'flex',justifyContent:'center'}}>
+                                    <PriceFilterSlider  maxPrice={maxPrice}
+                                                        value={value} setValue={setValue}
+                                                        priceFilter={priceFilter} setPriceFilter={setPriceFilter}/>
+
+                                </Box>
                             </Box>
                             <Box>
-                                <Box sx={{width: '100vw',display:'flex',justifyContent:'center'}}><MobileDialogInput priceFilter={priceFilter}/></Box>
+                                <Box sx={{width: '100vw',display:'flex',justifyContent:'center'}}>
+                                    <MobileDialogInput priceFilter={priceFilter}/></Box>
                             </Box>
 
                         </div>
@@ -166,7 +219,9 @@ const MobileDialog = ({
                     </ListItem>
                     <Divider/>
                     <ListItem button>
-                        <Button sx={{
+                        <Button
+                            onClick={handleClose}
+                            sx={{
                             mt: '2rem',
                             width: '100vw',
                             backgroundColor: '#f01436',

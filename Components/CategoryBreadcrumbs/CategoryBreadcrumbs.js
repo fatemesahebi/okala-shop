@@ -1,5 +1,5 @@
 import Link from "@mui/material/Link";
-import React from "react";
+import React, {useState,useEffect} from "react";
 import {Box, Button, Container, Stack, Typography} from "@mui/material";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
@@ -7,6 +7,7 @@ import {styled} from "@mui/styles";
 import Image from "next/image";
 import grouping from "./../../public/SVG/grouping.svg"
 import * as PropTypes from "prop-types";
+import {menuData} from "../../lib/mirage/menuData";
 import PN from "persian-number";
 const MainContainer = styled('div')({
     maxWidth: '1280px!important',
@@ -25,25 +26,7 @@ const MainContainer = styled('div')({
 //     margin: 'auto',
 //     marginBottom: '2rem'
 // });
-function handleClick(event) {
-    event.preventDefault()
-}
 
-const breadcrumbs = [
-    <Link underline={"none"} key="1" color="inherit" href="/" onClick={handleClick}>
-        اکالا
-    </Link>,
-    <Link
-        underline={"none"}
-        key="2"
-        color="inherit"
-        href="/getting-started/installation/"
-        onClick={handleClick}
-    >
-        میوه و سبزیجات
-    </Link>
-
-];
 
 //
 // const ColorButton = styled(Button)(({theme}) => ({
@@ -62,7 +45,32 @@ const breadcrumbs = [
 // }));
 //
 // ColorButton.propTypes = {children: PropTypes.node};
-export default function CategoryBreadcrumbs(){
+export default function CategoryBreadcrumbs({categoryName,dataCategory}){
+const [breadState,setBreadState]=useState(["",dataCategory?.length||76])
+    useEffect(()=>{
+     setBreadState([categoryName,dataCategory?.length])
+ },[categoryName])
+
+    function handleClick(event) {
+        event.preventDefault()
+    }
+
+    const breadcrumbs = [
+        <Link underline={"none"} key="1" color="inherit" href="/" onClick={handleClick}>
+            اکالا
+        </Link>,
+        <Link
+            underline={"none"}
+            key="2"
+            color="inherit"
+            href="/category/fruitsVegetables"
+            onClick={handleClick}>
+            {breadState[0]}
+
+        </Link>
+
+    ];
+
     return(
         <Box display={{md: "block" , xs: "block"}}>
             <Stack sx={{flexDirection:"row"}}>
@@ -83,7 +91,7 @@ export default function CategoryBreadcrumbs(){
                     </MainContainer>
                 </Container>
                 <Stack sx={{flexDirection:"row",padding:'.5rem 0 0 0!important',marginLeft:"2%"}}>
-                    <Typography sx={{fontFamily:"iranSans",fontSize:".8rem",marginLeft:"1rem"}}>{PN.convertEnToPe(290)}کالا</Typography>
+                    <Typography sx={{fontFamily:"iranSans",fontSize:".8rem",marginLeft:"1rem"}}>{PN.convertEnToPe(`${breadState[1]}`)}کالا</Typography>
                     <Box display={{md: "none" , xs: "block", xl:"none",lg:"none",sm:"block"}}>
                     <Image width={30} height={30} src={grouping}/>
                     </Box>

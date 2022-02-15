@@ -6,10 +6,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import search from "./../../public/SVG/search.svg"
 import Image from "next/image";
-import Paper from '@mui/material/Paper';
-import InputBase from '@mui/material/InputBase';
-import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
+
 import {Box, Button, Stack} from "@mui/material";
 import arrowdwon from "./../../public/SVG/arrowdwon.svg"
 import arrowleft from "../../public/SVG/left.svg"

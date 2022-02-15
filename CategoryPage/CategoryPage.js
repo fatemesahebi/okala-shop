@@ -70,8 +70,8 @@ function CategoryPage({categoryName}) {
 
          if (sort === "mostSale") filterData = filterData.sort((a, b)=>( b.selerCount - a.selerCount))
         else if (sort === "mostOff") filterData = filterData.sort((a, b) =>(b.offPercent - a.offPercent))
-       else if (sort === "leastPrice") filterData = filterData.sort((a,b)=>(a.price - b.price))
-        else  filterData = filterData.sort((a, b) => (b.price - a.price) )
+       else if (sort === "leastPrice") filterData = filterData.sort((a,b)=>(a.priceOffer - b.priceOffer))
+        else  filterData = filterData.sort((a, b) => (b.priceOffer - a.priceOffer) )
 
 
         pageCount = (Math.floor((filterData.length) / productNumPerPage)) + 1
@@ -112,7 +112,6 @@ function CategoryPage({categoryName}) {
 
     finalData = dataMange()
     let brandsOfCategory= getBrandsOfCategory()
-    console.log(brandsOfCategory)
 
 
 
@@ -124,13 +123,17 @@ function CategoryPage({categoryName}) {
             <Header/>
         </Box>
         <Box sx={{marginTop: {md:"15rem" , xs: "12rem"}}}>
-            <CategoryBreadcrumbsDesktop/>
-        <SearchResultMobile/>
+            <CategoryBreadcrumbsDesktop categoryName={categoryNamePe}
+                                        dataCategory={dataCategory}
+            />
+        <SearchResultMobile categoryName={categoryNamePe}
+                            dataCategory={dataCategory}/>
         <MobileHeaderCategory categoryName={categoryNamePe} brandsOfCategory={brandsOfCategory}
                               filterBrand={filterBrand} setFilterBrand={setFilterBrand}
                               setOfferFilter={setOfferFilter} offerFilter={offerFilter}
                               setPriceFilter={setPriceFilter} priceFilter={priceFilter}
-                              maxPrice={maxPrice} setSort={setSort} sort={sort} />
+                              maxPrice={maxPrice} setSort={setSort} sort={sort}
+        />
 
         <MobileProduct finalData={finalData} page={page}/>
 
