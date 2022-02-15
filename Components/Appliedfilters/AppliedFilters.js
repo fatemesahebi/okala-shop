@@ -20,6 +20,8 @@ export default function AppliedFilters({filterBrand, setFilterBrand,
     };
     return (
         <Box display={{xl: 'block', lg: 'block', md: 'block', sm: 'none', xs: 'none'}} sx={{padding: "1rem 1rem 0 0"}}>
+            {((priceFilter[0]!==0)||(priceFilter[1]!== maxPrice)|| priceFilter.length!==0) &&
+
             <Box sx={{
                 width: "20rem",
                 boxShadow: "rgba(0, 0, 0, 0.04) 0px 3px 5px",
@@ -27,6 +29,7 @@ export default function AppliedFilters({filterBrand, setFilterBrand,
                 background: "white",
 
             }}>
+
                 <AccordionSummary>
                     <Typography sx={{
                         borderRight: "4px solid rgba(124, 200, 204, 1)",
@@ -65,7 +68,7 @@ export default function AppliedFilters({filterBrand, setFilterBrand,
 
                 </Stack>
             </Box>
-
+                }
         </Box>
     );
 }

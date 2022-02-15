@@ -86,7 +86,9 @@ const MobileHeaderCategory = ({
                                   setOfferFilter={setOfferFilter} offerFilter={offerFilter}
                                   setPriceFilter={setPriceFilter}
                                   maxPrice={maxPrice} priceFilter={priceFilter}
-                                  sort={sort} setSort={setSort}/>
+                                  sort={sort} setSort={setSort}
+                                  categoryName={categoryName}
+                    />
                 </Box>
             </AppBar>
 
