@@ -8,13 +8,55 @@ import bottomCurve from "./../../public/SVG/bottomNavCurvedLine.svg"
 import {Box, Stack, Typography} from "@mui/material";
 import {Button} from "@mui/material";
 import Image from "next/image"
-
-import {useRouter} from "next/router";
+import {styled} from "@mui/system";
+import ShoppingCard from '../shoppingCard/shoppingCard'
 import {useState} from "react";
-import {ShoppingCard} from "../index";
+import {useSelector} from "react-redux";
+import {useRouter} from "next/router";
+import PN from "persian-number";
+import shopBascket from "../../public/SVG/shopBascket.svg";
+
+
+import MenuItem from "@mui/material/MenuItem";
+
+const IconHeader = styled('div')(
+    () => `
+                    height: 56px;
+                    min-width: 56px;
+                    display: inline-flex;
+                    vertical-align: center;
+                    align-items: center;
+                    justify-content:center;
+                    border-radius:10px;
+   `,
+);
+const DropDownTypo = styled(Typography)(
+    () => `
+            font-size:0.85rem;
+            font-weight:600;
+            padding-right:6px ;
+            line-height:40px;
+            
+   `,
+);
+
+
 export default function MenuMobile() {
     const [open , setOpen] = useState(false)
     const router=useRouter()
+    const handleOpenShoppingCard = () => {
+        setOpen(true)
+    }
+    const totalOrder = useSelector(state => state.cart.items.length)
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const openMenu = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
     return (
         <Box sx={{display: {lg: 'none', md: 'none', xs: 'flex'}, flexDirection: "column", alignItems: "center"}}>
             <Box item xs={1} sx={{
@@ -64,8 +106,48 @@ export default function MenuMobile() {
                             borderRadius: "50%",
                             backgroundColor: "white !important"
                         }}>
+                            <IconHeader  onClick={handleOpenShoppingCard}>
+                                {
+                                    (totalOrder != 0) && <Typography sx={{
+                                        backgroundColor: 'red.main',
+                                        color: 'white.main',
+                                        fontWeight: 700,
+                                        borderRadius: '100%',
+                                        width: 20,
+                                        height: 20,
+                                        textAlign: "center",
+                                        mb:2.5,
+                                        zIndex: '100',
+                                        fontSize: '0.8rem',
+
+                                    }}>{PN.convertEnToPe(totalOrder)}</Typography>
+                                }
+                                <Image src={shopBascket}/>
+
+                            </IconHeader>
+
                             <Image src={cart}/>
                         </Button>
+                        {/*<IconHeader sx={{backgroundColor: 'aqua.light'}} onClick={handleOpenShoppingCard}>*/}
+                        {/*    {*/}
+                        {/*        (totalOrder != 0) && <Typography sx={{*/}
+                        {/*            backgroundColor: 'red.main',*/}
+                        {/*            color: 'white.main',*/}
+                        {/*            fontWeight: 700,*/}
+                        {/*            borderRadius: '100%',*/}
+                        {/*            width: 20,*/}
+                        {/*            height: 20,*/}
+                        {/*            textAlign: "center",*/}
+                        {/*            mb:2.5,*/}
+                        {/*            zIndex: '100',*/}
+                        {/*            fontSize: '0.8rem',*/}
+
+                        {/*        }}>{PN.convertEnToPe(totalOrder)}</Typography>*/}
+                        {/*    }*/}
+                        {/*    <Image src={shopBascket}/>*/}
+
+                        {/*</IconHeader>*/}
+
                     </Box>
                     <Box sx={{
                         backgroundColor: "white !important",
