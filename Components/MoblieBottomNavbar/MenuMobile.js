@@ -109,24 +109,27 @@ export default function MenuMobile() {
                             <IconHeader  onClick={handleOpenShoppingCard}>
                                 {
                                     (totalOrder != 0) && <Typography sx={{
-                                        backgroundColor: 'red.main',
+                                        backgroundColor: '#02b2c9',
                                         color: 'white.main',
                                         fontWeight: 700,
                                         borderRadius: '100%',
                                         width: 20,
                                         height: 20,
                                         textAlign: "center",
-                                        mb:2.5,
+                                        mb:6,
+
                                         zIndex: '100',
                                         fontSize: '0.8rem',
 
                                     }}>{PN.convertEnToPe(totalOrder)}</Typography>
                                 }
-                                <Image src={cart}/>
+                                <Box sx={{margin:".8rem 0 .5rem .9rem"}}>
+                                    <Image src={cart}/>
+                                </Box>
 
                             </IconHeader>
 
-                            <Image src={cart}/>
+                            {/*<Image src={cart}/>*/}
                         </Button>
                         {/*<IconHeader sx={{backgroundColor: 'aqua.light'}} onClick={handleOpenShoppingCard}>*/}
                         {/*    {*/}
