@@ -122,7 +122,7 @@ export default function MenuMobile() {
 
                                     }}>{PN.convertEnToPe(totalOrder)}</Typography>
                                 }
-                                <Image src={shopBascket}/>
+                                <Image src={cart}/>
 
                             </IconHeader>
 
