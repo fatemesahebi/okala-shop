@@ -11,7 +11,7 @@ import {
     FooterContainer,
     OkalaBlog,
     HeaderFooterProvider, MenuMobile
-} from "../components";
+} from "../Components";
 import {Box} from "@material-ui/core";
 function HomePage() {
 

@@ -16,7 +16,7 @@ import {
     AppliedFilters,
     CategoryBreadcrumbsDesktop
 
-} from "../components";
+} from "../Components";
 import * as React from "react";
 import {Paper} from "@mui/material";
 import {Box} from "@mui/material";

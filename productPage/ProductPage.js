@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import ProductInfo from "./ProductInfo";
-import {HeaderFooterProvider} from "../components";
+import {HeaderFooterProvider} from "../Components";
 import {Box, Button, Container, Stack, Typography} from "@mui/material";
 import {styled} from "@mui/system";
-import CategoryProducts from "../components/CategoryProducts/CategoryProducts";
+import CategoryProducts from "../Components/CategoryProducts/CategoryProducts";
 import BasicTabs from "./tabs";
 import {Usersrate} from "./mobile";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
