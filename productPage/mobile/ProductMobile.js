@@ -11,8 +11,8 @@ import {Button} from '@mui/material';
 import {styled} from '@mui/system';
 import AddIcon from '@mui/icons-material/Add';
 import Breadcrumbs from './breadcrumb';
-import CategoryProducts from '../../components/CategoryProducts/CategoryProducts'
-import {FooterContainer, HeaderFooterProvider, ShoppingCard} from "../../components";
+import CategoryProducts from '../../Components/CategoryProducts/CategoryProducts'
+import {FooterContainer, HeaderFooterProvider, ShoppingCard} from "../../Components";
 import chat from "../../public/SVG/chat.svg";
 import heart from "../../public/SVG/heart.svg";
 import basket from "../../public/SVG/shopBascket.svg"
