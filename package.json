@@ -29,7 +29,8 @@
     "styled-components": "^5.3.3",
     "stylis": "^4.0.13",
     "stylis-plugin-rtl": "^2.1.1",
-    "swiper": "^8.0.1"
+    "swiper": "^8.0.1",
+    "miragejs": "^0.1.43"
   },
   "devDependencies": {
     "@material-ui/core": "^4.12.3",
