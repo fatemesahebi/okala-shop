@@ -4,7 +4,7 @@ import {CssBaseline, ThemeProvider} from "@mui/material";
 import theme from "../styles/theme";
 import store from "../redux/state";
 import {Provider} from "react-redux";
-if (process.env.NODE_ENV === "development") {
+if (true) {
   makeServer({ environment: "development" })
 }
 
