@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 
     return {
         paths: [
-            {params: {categoryName: 'food-stuff'}}
+            {params: {categoryName: 'foodStuffs'}}
         ],
         fallback: 'blocking'
     };
