@@ -4,7 +4,7 @@ import CategoryPage from "../../CategoryPage/CategoryPage";
 const Category = () => {
     return (
         <div>
-            <CategoryPage/>
+            {/* <CategoryPage/> */}
         </div>
     );
 };
