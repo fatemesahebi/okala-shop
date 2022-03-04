@@ -5,7 +5,7 @@ import theme from "../styles/theme";
 import store from "../redux/state";
 import {Provider} from "react-redux";
 if (true) {
-  makeServer({ environment: "development" })
+  makeServer()
 }
 
 function MyApp({ Component, pageProps }) {
