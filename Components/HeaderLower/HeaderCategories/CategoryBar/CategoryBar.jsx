@@ -46,6 +46,7 @@ const CategoryBar = () => {
                         // <Link href={'/category/' + item.mainUrl} underline="none" color="inherit">
 
                         <Tab
+                            key={index}
                             sx={{
                                 fontWeight: "bold",
                                 color: value===index?"#f01436 !important":"black !important"
@@ -63,7 +64,7 @@ const CategoryBar = () => {
                 </Tabs>
             </Container>
             {menuData.map((item, index) => (
-                <Box role={"tabpanel"} id={`category-tabpanel-${index}`} aria-labelledby={`category-tab-${index}`} hidden={value !== index}>
+                <Box key={index} role={"tabpanel"} id={`category-tabpanel-${index}`} aria-labelledby={`category-tab-${index}`} hidden={value !== index}>
                     {value === index && (
                         <CategorySidebar categories={item}/>
                     )}

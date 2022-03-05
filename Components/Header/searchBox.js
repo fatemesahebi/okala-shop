@@ -98,8 +98,8 @@ function SearchBox() {
                     spaceBetween={0}
                     >
                     {filterDtat.map(
-                        product => (
-                            <SwiperSlide style={{
+                        (product,i) => (
+                            <SwiperSlide key={i} style={{
                                 width: "220px"
                             }}>
                                 <Box sx={{
@@ -149,8 +149,8 @@ function SearchBox() {
                 >
                     {filterDtat.map(
 
-                        product => (
-                            <Box sx={{
+                        (product,i) => (
+                            <Box key={i} sx={{
                                 border: "1px solid rgba(0,0,0,0.1)"
                             }}>
                                 <SingleProduct key={product.id + product.productName} product={product}/>

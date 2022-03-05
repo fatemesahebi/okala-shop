@@ -21,8 +21,8 @@ const CategoryBox = ({categories}) => {
                     {categories.title}
                 </Typography>
             </Box>
-            {categories.items3.map(item => (
-                <Typography sx={{
+            {categories.items3.map((item,i) => (
+                <Typography key={i} sx={{
                     paddingRight: "2rem",
                     color: "black !important",
                     fontSize: "0.9rem",

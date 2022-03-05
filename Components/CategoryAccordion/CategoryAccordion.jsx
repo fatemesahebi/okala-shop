@@ -52,8 +52,8 @@ export default function CategoryAccordion({categories , items}) {
 
                 </AccordionSummary>
                 <AccordionDetails>
-                    { items !== "noitems" ? categories[items].map(item => (
-                        <Box>
+                    { items !== "noitems" ? categories[items].map((item,i) => (
+                        <Box key={i}>
                             <CategoryAccordion categories={item} items={items === "items1" ? "items2":items === "items2" ? "items3" : "noitems"}/>
                         </Box>
 

@@ -152,8 +152,8 @@ const MobileDialog = ({
                             />
                             }
                             {
-                                filterBrand.map(brand =>
-                                    <Chip sx={{marginLeft: ".7rem",marginBottom:".5rem"}}
+                                filterBrand.map((brand,index) =>
+                                    <Chip key={index} sx={{marginLeft: ".7rem",marginBottom:".5rem"}}
                                           label={brand}
                                           onDelete={()=>handleDelete(brand)}/>)
                             }

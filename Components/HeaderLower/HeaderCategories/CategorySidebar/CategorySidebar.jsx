@@ -33,6 +33,7 @@ const CategorySidebar = ({categories}) => {
                 >
                     {categories.items1.map((item, index) => (
                         <Tab
+                            key={index}
                             sx={{
                                 width: "17rem",
                                 alignItems: "flex-start",
@@ -51,7 +52,7 @@ const CategorySidebar = ({categories}) => {
                 </Tabs>
             </Box>
             {categories.items1.map((item, index) => (
-                <Box role={"tabpanel"} id={`sidebar-tabpanel-${index}`} aria-labelledby={`sidebar-tab-${index}`} hidden={value !== index}>
+                <Box key={index} role={"tabpanel"} id={`sidebar-tabpanel-${index}`} aria-labelledby={`sidebar-tab-${index}`} hidden={value !== index}>
                     {value === index && (
                         <Subcategories categories={item}/>
                     )}

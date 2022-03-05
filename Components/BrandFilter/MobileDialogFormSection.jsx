@@ -30,8 +30,8 @@ const MobileDialogFormSection = ({filterBrand, setFilterBrand, brandsOfCategory}
             <Box component="div">
                 <FormGroup sx={{width: '95vw', overflowY: 'scroll'}}>
                     {brandsOfCategory?.filter(item => item.title.includes(filter)).length === 0 ? null :
-                        brandsOfCategory?.filter(item => item.title.includes(filter)).map(item =>
-                            <Stack justifyContent={"start"} alignItems={"center"} direction={"row"}>
+                        brandsOfCategory?.filter(item => item.title.includes(filter)).map((item,i) =>
+                            <Stack key={i} justifyContent={"start"} alignItems={"center"} direction={"row"}>
                                 <FormControlLabel key={item} control={<Checkbox checked={item.active} sx={{
                                     color: "lightGray.main",
                                     fontSize: "0.7 rem",

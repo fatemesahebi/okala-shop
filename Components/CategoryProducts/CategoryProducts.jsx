@@ -152,8 +152,8 @@ const CategoryProducts = ({category, similarProducts}) => {
                     spaceBetween={0}
                     slidesPerView={"auto"}
                 >
-                    {products.slice(0, 10).map(item => (
-                        <SwiperSlide style={{
+                    {products.slice(0, 10).map((item,i) => (
+                        <SwiperSlide key={i} style={{
                             maxWidth: "fit-content"
                         }}>
                             <Box sx={{

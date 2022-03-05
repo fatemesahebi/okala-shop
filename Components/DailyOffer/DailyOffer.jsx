@@ -111,8 +111,8 @@ const DailyOffer = () => {
                             disableOnInteraction: false
                         }}
                     >
-                        {products.slice(0, 10).map(item => (
-                            <SwiperSlide>
+                        {products.slice(0, 10).map((item,i) => (
+                            <SwiperSlide key={i}>
                                 <SingleProduct key={item.id} product={item}/>
                             </SwiperSlide>
                         ))}
@@ -168,8 +168,8 @@ const DailyOffer = () => {
                     scrollBehavior: "smooth",
                     margin: "0 !important"
                 }}>
-                    {products.slice(0, 10).map(item => (
-                        <SingleProduct key={item.id} product={item}/>
+                    {products.slice(0, 10).map((item,i) => (
+                        <SingleProduct key={i} product={item}/>
                     ))}
                 </Container>
             </Container>

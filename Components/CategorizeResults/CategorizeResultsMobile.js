@@ -51,7 +51,7 @@ export default function CategorizeResultsMobile({categoryName}) {
                 <AccordionDetails>
                         {categorizeResultsData[0].items1.map((cat1, i) =>
                             <>
-                            <Accordion>
+                            <Accordion key={i}>
 
                             <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
                                     <Typography style={{paddingRight: ".5rem", fontWeight: "bold"}}>
@@ -59,7 +59,7 @@ export default function CategorizeResultsMobile({categoryName}) {
                                 </AccordionSummary>
                                 {categorizeResultsData[0].items1[i].items2.map((cat2, j) =>
                                     <>
-                                        <Accordion>
+                                        <Accordion key={j}>
                                             <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
                                                 <Typography style={{paddingRight: ".5rem", fontWeight: "bold"}}>
                                                     {categorizeResultsData[0].items1[i].items2[j].title}
@@ -67,7 +67,7 @@ export default function CategorizeResultsMobile({categoryName}) {
                                             </AccordionSummary>
                                             {categorizeResultsData[0].items1[i].items2[j].items3.map((cat3, k) =>
 
-                                                <Accordion sx={{paddingRight: "1rem"}}>
+                                                <Accordion key={k} sx={{paddingRight: "1rem"}}>
                                                     <AccordionSummary aria-controls="panel2d-content"
                                                                       id="panel2d-header">
                                                         <Typography style={{paddingRight: ".5rem", fontWeight: "bold"}}>

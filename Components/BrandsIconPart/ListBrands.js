@@ -94,7 +94,7 @@ function ListBrands() {
                     }}
                 >
                     {brandsData.map((item, index) => (
-                        <SwiperSlide> <CreateBrand key={index} imageBrand={item.image} amongs={item.among}/>
+                        <SwiperSlide key={index}> <CreateBrand  imageBrand={item.image} amongs={item.among}/>
                         </SwiperSlide>))}
                 </Swiper>
             </Box>
