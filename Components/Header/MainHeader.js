@@ -48,7 +48,7 @@ function MainHeader() {
     const handleOpenShoppingCard = () => {
         setOpen(true)
     }
-    const totalOrder = useSelector(state => state.cart.items.length)
+    const totalOrder = useSelector(state => state?.cart?.items?.length)
     const [anchorEl, setAnchorEl] = React.useState(null);
     const openMenu = Boolean(anchorEl);
     const handleClick = (event) => {

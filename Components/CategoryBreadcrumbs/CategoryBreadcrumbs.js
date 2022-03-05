@@ -50,9 +50,10 @@ const [breadState,setBreadState]=useState(["",dataCategory?.length||76])
     useEffect(()=>{
      setBreadState([categoryName,dataCategory?.length])
  },[categoryName])
-
+    // console.log({breadState})
+    // console.log(dataCategory?.length,"*8")
     function handleClick(event) {
-        event.preventDefault()
+        event.preventDefault(dataCategory?.length)
     }
 
     const breadcrumbs = [

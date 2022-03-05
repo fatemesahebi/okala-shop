@@ -16,8 +16,8 @@ const Subcategories = ({categories}) => {
                 width: "40rem",
                 height: "31.5rem"
             }}>
-                {categories.items2.map((item) => (
-                    <CategoryBox categories={item}/>
+                {categories.items2.map((item,index) => (
+                    <CategoryBox key={index} categories={item}/>
                     ))}
             </Box>
         </Box>

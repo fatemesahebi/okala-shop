@@ -118,7 +118,7 @@ export default function MenuMobile() {
                                         textAlign: "center",
                                         mb:6,
 
-                                        zIndex: '100',
+                                        zIndex: '10',
                                         fontSize: '0.8rem',
 
                                     }}>{PN.convertEnToPe(totalOrder)}</Typography>

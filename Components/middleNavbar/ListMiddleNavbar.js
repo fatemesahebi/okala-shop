@@ -100,8 +100,8 @@ function ListMiddleNavbar() {
             >
 
                 {productList.map((item, index) =>
-                    (<SwiperSlide>
-                        <MiddleNavbar key={index} imagesProducts={item.image} textProducts={item.text}
+                    (<SwiperSlide key={index}>
+                        <MiddleNavbar  imagesProducts={item.image} textProducts={item.text}
                                       group={item.group}/>
                     </SwiperSlide>))}
             </Swiper>

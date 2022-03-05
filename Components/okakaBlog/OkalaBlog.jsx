@@ -16,7 +16,7 @@ const OkalaBlog = () => {
 
                 }}>
                     <Swiper initialSlide='0' breakpoints={{320:{slidesPerView:1},375:{slidesPerView:1},425:{slidesPerView:1.5,spaceBetween:15},768:{slidesPerView:2.5},1024:{slidesPerView:3,spaceBetween:22},1440:{slidesPerView:4}}}>
-                        {okalaBlog.map(blogItem => <SwiperSlide><OkalaBlogElement key={blogItem.id}
+                        {okalaBlog.map(blogItem => <SwiperSlide key={blogItem.id}><OkalaBlogElement
                                                                                   blogItem={blogItem}/></SwiperSlide>)}
                     </Swiper>
                 </Grid>

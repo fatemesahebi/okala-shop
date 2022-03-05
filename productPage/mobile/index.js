@@ -90,7 +90,7 @@ export const Addtocart = styled('div')({
     height: '56px',
     display: 'flex',
     padding: '9px 16px',
-    zIndex: '10',
+    zIndex: '100',
     position: 'fixed',
     background: '#fff',
     boxShadow: '0 -1px 10px #dfdfdf',

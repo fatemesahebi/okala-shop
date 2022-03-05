@@ -261,9 +261,9 @@ export default function ProductMobile({productId}) {
                                 <RemoveIcon
                                     onClick={() => dispatch(decreaseItem(product))} ml={20}/>
                             </ColorButton>}
-                            <Button onClick={() => setCart(true)}>
-                                <Image src={basket}/>
-                            </Button>
+                            {/*<Button onClick={() => setCart(true)}>*/}
+                            {/*    <Image src={basket}/>*/}
+                            {/*</Button>*/}
                         </Box>
                         <Pricewrapper sx={{flexDirection: 'column'}}>
                             <Box sx={{
