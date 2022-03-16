@@ -155,7 +155,7 @@ function Application() {
                   width: "200px",
                   height: "208px",
                 }}
-                src="https:/okala.com/_next/image?url=%2Fstatic%2Fimages%2FsiteImages%2FmobileMockup.png&w=640&q=75"
+                src="https://okala.com/_next/image?url=%2Fstatic%2Fimages%2FsiteImages%2FmobileMockup.png&w=640&q=75"
               />
             </Box>
           </Grid>
