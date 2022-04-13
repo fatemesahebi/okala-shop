@@ -14,10 +14,7 @@ import {useState} from "react";
 import {useSelector} from "react-redux";
 import {useRouter} from "next/router";
 import PN from "persian-number";
-import shopBascket from "../../public/SVG/shopBascket.svg";
 
-
-import MenuItem from "@mui/material/MenuItem";
 
 const IconHeader = styled('div')(
     () => `
@@ -123,33 +120,13 @@ export default function MenuMobile() {
 
                                     }}>{PN.convertEnToPe(totalOrder)}</Typography>
                                 }
-                                <Box sx={{margin:".8rem 0 .5rem .9rem"}}>
+                                <Box sx={{margin:".8rem 0 .5rem .8rem",padding:"0 0 0 .5rem"}}>
                                     <Image src={cart}/>
                                 </Box>
 
                             </IconHeader>
 
-                            {/*<Image src={cart}/>*/}
                         </Button>
-                        {/*<IconHeader sx={{backgroundColor: 'aqua.light'}} onClick={handleOpenShoppingCard}>*/}
-                        {/*    {*/}
-                        {/*        (totalOrder != 0) && <Typography sx={{*/}
-                        {/*            backgroundColor: 'red.main',*/}
-                        {/*            color: 'white.main',*/}
-                        {/*            fontWeight: 700,*/}
-                        {/*            borderRadius: '100%',*/}
-                        {/*            width: 20,*/}
-                        {/*            height: 20,*/}
-                        {/*            textAlign: "center",*/}
-                        {/*            mb:2.5,*/}
-                        {/*            zIndex: '100',*/}
-                        {/*            fontSize: '0.8rem',*/}
-
-                        {/*        }}>{PN.convertEnToPe(totalOrder)}</Typography>*/}
-                        {/*    }*/}
-                        {/*    <Image src={shopBascket}/>*/}
-
-                        {/*</IconHeader>*/}
 
                     </Box>
                     <Box sx={{

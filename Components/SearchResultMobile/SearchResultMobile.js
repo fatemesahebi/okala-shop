@@ -1,8 +1,6 @@
 import * as React from 'react';
 import {Box, Typography} from "@mui/material";
 import CategoryBreadcrumbs from "../CategoryBreadcrumbs/CategoryBreadcrumbs";
-import grouping from "../../public/SVG/grouping.svg";
-import Image from "next/image";
 
 
 export default function SearchResultMobile({categoryName,dataCategory}) {

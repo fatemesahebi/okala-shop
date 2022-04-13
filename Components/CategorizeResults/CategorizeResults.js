@@ -4,31 +4,14 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import search from "./../../public/SVG/search.svg"
 import Image from "next/image";
 
 import {Box, Button, Stack} from "@mui/material";
 import arrowdwon from "./../../public/SVG/arrowdwon.svg"
 import arrowleft from "../../public/SVG/left.svg"
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import {menuData} from "../../lib/mirage/menuData";
-import {useEffect, useState} from "react";
 
-export default function CategorizeResults({categoryName,dataCategory}) {
-    // const getSubMenu=()=>{
-    //     for (let item of dataCategory){
-    //         console.log(item.Type)
-    //         categorizeResultsData[0]?.items1?.map((item,i)=>
-    //             item.items2.map(Type=> (Type.name===item.Type)?
-    //                 (Type.count)? Type.count++ : Type.count=1
-    //         : null
-    //         ))
-    //         console.log("********")
-    //         // (categorizeResultsData?.[0]?.items1?.[item.batchType]?.items2?.[item.Type]?.count)?
-    //         //     categorizeResultsData?.[0]?.items1?.[item.batchType]?.items2?.[item.Type]?.count++
-    //         //     : categorizeResultsData?.[0]?.items1?.[item.batchType]?.items2?.[item.Type]?.count=1
-    //     }
-    // }
+export default function CategorizeResults({categoryName}) {
   let categorizeResultsData= menuData.filter(item => item.mainTitle === categoryName)
 
 

@@ -4,8 +4,6 @@ import Typography from '@mui/material/Typography';
 import {Box, Chip, Stack} from "@mui/material";
 import AccordionSummary from "@mui/material/AccordionSummary";
 
-import Image from "next/image";
-import close from "../../public/SVG/icons8-close.svg";
 
 
 export default function AppliedFilters({filterBrand, setFilterBrand,

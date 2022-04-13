@@ -5,8 +5,6 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import FormSection from "./FormSection";
-// import ShowBar from "./othersection/ShowBar";
-import { Paper } from "@mui/material";
 
 const BrandFilter = ({
   setFilterBrand,
